@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
+  "extends": "@tsconfig/node22/tsconfig.json",
   "include": [
     "lang/**/*",
     "src/**/*",
@@ -31,6 +31,6 @@
       "@u/*": ["./src/scripts/util/*"],
       "@l/*": ["./lang/*"],
     },
-    "tsBuildInfoFile": "src/.temp/tsconfig.node.tsbuildinfo"
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo"
   }
 }

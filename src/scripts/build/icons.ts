@@ -5,18 +5,18 @@ import fs from 'fs-extra'
 export interface Icons { [ key: string ]: string }
 
 // we use svgo to optimize icon from icon path
+// need to remove commented attribute because they are false as default (svgo v2+)
 export async function icons(iconPath: string, prefix: string = ''): Promise<string> {
     const options: Config = {
         plugins: [
             {
                 name: 'preset-default',
-                // @ts-ignore
-                removeDimensions: false,
-                removeScriptElement: false,
-                removeStyleElement: false,
+                // removeDimensions: false,
+                // removeScriptElement: false,
+                // removeStyleElement: false,
                 params: {
                     overrides: {
-                        removeViewBox: false,
+                        // removeViewBox: false,
                         cleanupNumericValues: {
                             floatPrecision: 3
                         },
@@ -28,7 +28,7 @@ export async function icons(iconPath: string, prefix: string = ''): Promise<stri
                     }
                 }
             },
-            "convertStyleToAttrs"
+            'convertStyleToAttrs'
         ]
     }
 
