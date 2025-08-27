@@ -4,7 +4,6 @@ import { ref, onMounted, computed, reactive, watch, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import { heightViewport, RefElement } from '@u/util'
 
-
 // components
 import PrButton from '@c/core/PrButton.vue'
 import PrLink from '@c/core/PrLink.vue'
@@ -24,7 +23,7 @@ const { t } = useI18n()
 const el = ref<RefElement>(null)
 
 onMounted(() => {
-  heightViewport(el.value.$el, { 'offsetTop': true })
+  heightViewport(el.value.$el, { offsetTop: true })
 })
 
 interface Routers {
@@ -36,33 +35,29 @@ interface Routers {
 const route = useRoute()
 
 const routers = ref<Routers[]>([
-  { link: "", title: "auth.step.one.title", isComplete: "pr-complete" },
-  { link: "businessType", title: "auth.step.two.title" },
-  { link: "businessDetails", title: "auth.step.three.title" },
-  { link: "businessOrganization", title: "auth.step.four.title" },
-  { link: "personalDetails", title: "auth.step.five.title" },
+  { link: '', title: 'auth.step.one.title', isComplete: 'pr-complete' },
+  { link: 'businessType', title: 'auth.step.two.title' },
+  { link: 'businessDetails', title: 'auth.step.three.title' },
+  { link: 'businessOrganization', title: 'auth.step.four.title' },
+  { link: 'personalDetails', title: 'auth.step.five.title' },
 ])
 
 // Different tips for each page
 // We are using Route Meta, we don't know if this is a good way or not
 // We need to review this and use a better way
 function metaInfo(i: string) {
-  return computed<any>(() => route.meta[i] )
+  return computed<any>(() => route.meta[i])
 }
 
-const header = metaInfo('header');
-const comment_1 = metaInfo('comment_1');
-const comment_2 = metaInfo('comment_2');
-
+const header = metaInfo('header')
+const comment_1 = metaInfo('comment_1')
+const comment_2 = metaInfo('comment_2')
 
 const checkRoute = ref(route.path)
 
-watchEffect(()=> {
+watchEffect(() => {
   checkRoute.value = route.path
 })
-
-
-
 </script>
 
 <template>
@@ -84,7 +79,10 @@ watchEffect(()=> {
                   <transition name="router" mode="out-in">
                     <pr-link :key="checkRoute" :to="{ name: item.link }">
                       <pr-icon v-if="item.isComplete" icon="line-check" ratio="0.75"></pr-icon>
-                      <pr-icon v-else-if="item.link === route.name" icon="line-arrow-right"></pr-icon>
+                      <pr-icon
+                        v-else-if="item.link === route.name"
+                        icon="line-arrow-right"
+                      ></pr-icon>
                       <span v-else>{{ index + 1 }}</span>
                       <span>{{ t(item.title) }}</span>
                     </pr-link>
@@ -99,29 +97,30 @@ watchEffect(()=> {
               </transition>
             </pr-tile>
           </div>
-            <div class="pr-auth-container uk-width-expand@m">
-              <div>
-                <transition name="nested" mode="out-in">
-                  <div :key="checkRoute">
-                    <div class="pr-auth-helper-container uk-width-auto">
-                      <span>{{ t('auth.helper_text') }}</span>
-                      <pr-button to="/" text>{{ t('auth.get_help') }}</pr-button>
-                    </div>
-                    <div class="uk-tile pr-auth-tile-muted pr-auth-tile-xlarge" style="padding-bottom: 40px" >
-                      <h2 class="pr-auth-heading uk-margin-remove-bottom">
-                        {{ $t(header) }}
-                      </h2>
-                      <p class="uk-margin-small-top">
-                        {{ $t(comment_1) }}<br/>{{ $t(comment_2) }}
-                      </p>
-                      <div class="uk-margin-medium-top">
-                        <router-view  style="min-height: 45vh" />
-                      </div>
+          <div class="pr-auth-container uk-width-expand@m">
+            <div>
+              <transition name="nested" mode="out-in">
+                <div :key="checkRoute">
+                  <div class="pr-auth-helper-container uk-width-auto">
+                    <span>{{ t('auth.helper_text') }}</span>
+                    <pr-button to="/" text>{{ t('auth.get_help') }}</pr-button>
+                  </div>
+                  <div
+                    class="uk-tile pr-auth-tile-muted pr-auth-tile-xlarge"
+                    style="padding-bottom: 40px"
+                  >
+                    <h2 class="pr-auth-heading uk-margin-remove-bottom">
+                      {{ $t(header) }}
+                    </h2>
+                    <p class="uk-margin-small-top">{{ $t(comment_1) }}<br />{{ $t(comment_2) }}</p>
+                    <div class="uk-margin-medium-top">
+                      <router-view style="min-height: 45vh" />
                     </div>
                   </div>
-                </transition>
-              </div>
+                </div>
+              </transition>
             </div>
+          </div>
         </pr-grid>
       </pr-container>
     </div>
@@ -134,10 +133,9 @@ watchEffect(()=> {
   transition: all 0.3s ease-in-out;
 }
 
-.nested-enter-from{
+.nested-enter-from {
   transform: translateY(40px);
   opacity: 0;
-
 }
 
 .nested-leave-to {
@@ -158,8 +156,4 @@ watchEffect(()=> {
 .router-leave-active {
   transition: opacity 0.5s ease;
 }
-
-
-
-
 </style>

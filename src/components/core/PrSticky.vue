@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<StickyPropsType>(), {
   clsActive: 'uk-active',
   showOnUp: false,
   media: false,
-  targetOffset: false
+  targetOffset: false,
 })
 
 onMounted(() => {
@@ -32,15 +32,13 @@ onMounted(() => {
     widthElement: props.widthElement,
     showOnUp: props.showOnUp,
     media: props.media,
-    targetOffset: props.targetOffset
+    targetOffset: props.targetOffset,
   })
-
 })
-
 </script>
 
 <template>
   <div ref="el">
-    <slot/>
+    <slot />
   </div>
 </template>

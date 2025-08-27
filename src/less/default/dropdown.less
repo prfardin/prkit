@@ -3,82 +3,90 @@
 //
 // ========================================================================
 
-
 // Variables
 // ========================================================================
 
-@dropdown-margin:                               @global-small-margin;
-@dropdown-viewport-margin:                      var(--dropdown-viewport-margin);
-@dropdown-min-width:                            var(--dropdown-min-width);
-@dropdown-padding:                              var(--dropdown-padding);
-@dropdown-color:                                @global-color;
-@dropdown-color-mode:                           dark;
-@dropdown-focus-outline:                        @base-focus-outline;
+@dropdown-margin: @global-small-margin;
+@dropdown-viewport-margin: var(--dropdown-viewport-margin);
+@dropdown-min-width: var(--dropdown-min-width);
+@dropdown-padding: var(--dropdown-padding);
+@dropdown-color: @global-color;
+@dropdown-color-mode: dark;
+@dropdown-focus-outline: @base-focus-outline;
 
-@dropdown-large-padding:                        var(--dropdown-large-padding);
+@dropdown-large-padding: var(--dropdown-large-padding);
 
-@dropdown-dropbar-padding-bottom:               @dropdown-padding;
-@dropdown-dropbar-viewport-margin:              var(--dropdown-dropbar-viewport-margin);
-@dropdown-dropbar-viewport-margin-s:            @global-gutter;
-@dropdown-dropbar-viewport-margin-m:            @global-medium-gutter;
+@dropdown-dropbar-padding-bottom: @dropdown-padding;
+@dropdown-dropbar-viewport-margin: var(--dropdown-dropbar-viewport-margin);
+@dropdown-dropbar-viewport-margin-s: @global-gutter;
+@dropdown-dropbar-viewport-margin-m: @global-medium-gutter;
 
-@dropdown-dropbar-large-padding-top:            @dropdown-large-padding;
-@dropdown-dropbar-large-padding-bottom:         @dropdown-dropbar-large-padding-top;
+@dropdown-dropbar-large-padding-top: @dropdown-large-padding;
+@dropdown-dropbar-large-padding-bottom: @dropdown-dropbar-large-padding-top;
 
-@dropdown-nav-item-color:                       @global-muted-color;
-@dropdown-nav-item-hover-color:                 @global-color;
-@dropdown-nav-header-color:                     @global-emphasis-color;
-@dropdown-nav-divider-border-width:             @global-border-width;
-@dropdown-nav-divider-border:                   @global-border;
-@dropdown-nav-sublist-item-color:               @global-muted-color;
-@dropdown-nav-sublist-item-hover-color:         @global-color;
+@dropdown-nav-item-color: @global-muted-color;
+@dropdown-nav-item-hover-color: @global-color;
+@dropdown-nav-header-color: @global-emphasis-color;
+@dropdown-nav-divider-border-width: @global-border-width;
+@dropdown-nav-divider-border: @global-border;
+@dropdown-nav-sublist-item-color: @global-muted-color;
+@dropdown-nav-sublist-item-hover-color: @global-color;
 
-@dropdown-background:                           @global-background;
+@dropdown-background: @global-background;
 
-@dropdown-dropbar-padding-top:                  var(--dropdown-dropbar-padding-top);
+@dropdown-dropbar-padding-top: var(--dropdown-dropbar-padding-top);
 
-@dropdown-nav-subtitle-font-size:               var(--dropdown-nav-subtitle-font-size);
+@dropdown-nav-subtitle-font-size: var(--dropdown-nav-subtitle-font-size);
 
 //
 // New
 //
 
-@dropdown-nav-font-size:                        @global-small-font-size;
+@dropdown-nav-font-size: @global-small-font-size;
 
-@dropdown-box-shadow:                           var(--dropdown-box-shadow);
-
+@dropdown-box-shadow: var(--dropdown-box-shadow);
 
 // Component
 // ========================================================================
 
-.hook-dropdown() { box-shadow: @dropdown-box-shadow; }
-
+.hook-dropdown() {
+  box-shadow: @dropdown-box-shadow;
+}
 
 // Dropbar modifier
 // ========================================================================
 
-.hook-dropdown-dropbar() { box-shadow: none; }
+.hook-dropdown-dropbar() {
+  box-shadow: none;
+}
 
-.hook-dropdown-dropbar-large() {}
-
+.hook-dropdown-dropbar-large() {
+}
 
 // Nav
 // ========================================================================
 
-.hook-dropdown-nav() { font-size: @dropdown-nav-font-size; }
+.hook-dropdown-nav() {
+  font-size: @dropdown-nav-font-size;
+}
 
-.hook-dropdown-nav-item() {}
+.hook-dropdown-nav-item() {
+}
 
-.hook-dropdown-nav-item-hover() {}
+.hook-dropdown-nav-item-hover() {
+}
 
-.hook-dropdown-nav-subtitle() {}
+.hook-dropdown-nav-subtitle() {
+}
 
-.hook-dropdown-nav-header() {}
+.hook-dropdown-nav-header() {
+}
 
-.hook-dropdown-nav-divider() {}
-
+.hook-dropdown-nav-divider() {
+}
 
 // Miscellaneous
 // ========================================================================
 
-.hook-dropdown-misc() {}
+.hook-dropdown-misc() {
+}

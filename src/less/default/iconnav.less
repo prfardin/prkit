@@ -3,55 +3,58 @@
 //
 // ========================================================================
 
-
 // Variables
 // ========================================================================
 
-@iconnav-margin-horizontal:                      @global-small-margin;
-@iconnav-margin-vertical:                        @iconnav-margin-horizontal;
+@iconnav-margin-horizontal: @global-small-margin;
+@iconnav-margin-vertical: @iconnav-margin-horizontal;
 
-@iconnav-item-color:                             @global-muted-color;
+@iconnav-item-color: @global-muted-color;
 
-@iconnav-item-hover-color:                       @global-color;
+@iconnav-item-hover-color: @global-color;
 
-@iconnav-item-active-color:                      @global-color;
+@iconnav-item-active-color: @global-color;
 
 //
 // New
 //
 
-@subnav-item-font-size:                         @global-small-font-size;
-
+@subnav-item-font-size: @global-small-font-size;
 
 // Component
 // ========================================================================
 
-.hook-iconnav() {}
-
-.hook-iconnav-item() {
-    font-size: @subnav-item-font-size;
-    transition: 0.1s ease-in-out;
-    transition-property: color, background-color;
+.hook-iconnav() {
 }
 
-.hook-iconnav-item-hover() {}
+.hook-iconnav-item() {
+  font-size: @subnav-item-font-size;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color;
+}
 
-.hook-iconnav-item-active() {}
+.hook-iconnav-item-hover() {
+}
 
+.hook-iconnav-item-active() {
+}
 
 // Miscellaneous
 // ========================================================================
 
-.hook-iconnav-misc() {}
-
+.hook-iconnav-misc() {
+}
 
 // Inverse
 // ========================================================================
 
-@inverse-iconnav-item-color:               @inverse-global-muted-color;
-@inverse-iconnav-item-hover-color:         @inverse-global-color;
-@inverse-iconnav-item-active-color:        @inverse-global-color;
+@inverse-iconnav-item-color: @inverse-global-muted-color;
+@inverse-iconnav-item-hover-color: @inverse-global-color;
+@inverse-iconnav-item-active-color: @inverse-global-color;
 
-.hook-inverse-iconnav-item() {}
-.hook-inverse-iconnav-item-hover() {}
-.hook-inverse-iconnav-item-active() {}
+.hook-inverse-iconnav-item() {
+}
+.hook-inverse-iconnav-item-hover() {
+}
+.hook-inverse-iconnav-item-active() {
+}

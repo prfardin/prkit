@@ -10,10 +10,10 @@ const routes: RouteRecordRaw[] = []
 isDev() && routes.push(...devRoutes())
 
 const router: Router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
-    linkActiveClass: 'uk-active',
-    linkExactActiveClass: 'uk-active',
-    routes
+  history: createWebHistory(import.meta.env.BASE_URL),
+  linkActiveClass: 'uk-active',
+  linkExactActiveClass: 'uk-active',
+  routes,
 })
 
 export default router

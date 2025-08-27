@@ -3,54 +3,60 @@
 //
 // ========================================================================
 
-
 // Variables
 // ========================================================================
 
-@dropbar-margin:                                var(--dropbar-margin);
-@dropbar-padding-top:                           var(--dropbar-padding-top);
-@dropbar-padding-bottom:                        @dropbar-padding-top;
-@dropbar-padding-horizontal:                    var(--dropbar-padding-horizontal);
-@dropbar-padding-horizontal-s:                  @global-gutter;
-@dropbar-padding-horizontal-m:                  @global-medium-gutter;
-@dropbar-color:                                 @global-color;
-@dropbar-color-mode:                            dark;
-@dropbar-focus-outline:                         @base-focus-outline;
+@dropbar-margin: var(--dropbar-margin);
+@dropbar-padding-top: var(--dropbar-padding-top);
+@dropbar-padding-bottom: @dropbar-padding-top;
+@dropbar-padding-horizontal: var(--dropbar-padding-horizontal);
+@dropbar-padding-horizontal-s: @global-gutter;
+@dropbar-padding-horizontal-m: @global-medium-gutter;
+@dropbar-color: @global-color;
+@dropbar-color-mode: dark;
+@dropbar-focus-outline: @base-focus-outline;
 
-@dropbar-large-padding-top:                     var(--dropbar-large-padding-top);
-@dropbar-large-padding-bottom:                  @dropbar-large-padding-top;
+@dropbar-large-padding-top: var(--dropbar-large-padding-top);
+@dropbar-large-padding-bottom: @dropbar-large-padding-top;
 
-@dropbar-background:                            @global-background;
+@dropbar-background: @global-background;
 
 //
 // New
 //
 
-@dropbar-top-box-shadow:                        var(--dropbar-top-box-shadow);
-@dropbar-bottom-box-shadow:                     var(--dropbar-bottom-box-shadow);
-@dropbar-left-box-shadow:                       var(--dropbar-left-box-shadow);
-@dropbar-right-box-shadow:                      var(--dropbar-right-box-shadow);
-
+@dropbar-top-box-shadow: var(--dropbar-top-box-shadow);
+@dropbar-bottom-box-shadow: var(--dropbar-bottom-box-shadow);
+@dropbar-left-box-shadow: var(--dropbar-left-box-shadow);
+@dropbar-right-box-shadow: var(--dropbar-right-box-shadow);
 
 // Component
 // ========================================================================
 
-.hook-dropbar() {}
-
+.hook-dropbar() {
+}
 
 // Direction modifier
 // ========================================================================
 
-.hook-dropbar-top() { box-shadow: @dropbar-top-box-shadow; }
+.hook-dropbar-top() {
+  box-shadow: @dropbar-top-box-shadow;
+}
 
-.hook-dropbar-bottom() { box-shadow: @dropbar-bottom-box-shadow; }
+.hook-dropbar-bottom() {
+  box-shadow: @dropbar-bottom-box-shadow;
+}
 
-.hook-dropbar-left() { box-shadow: @dropbar-left-box-shadow; }
+.hook-dropbar-left() {
+  box-shadow: @dropbar-left-box-shadow;
+}
 
-.hook-dropbar-right() { box-shadow: @dropbar-right-box-shadow; }
-
+.hook-dropbar-right() {
+  box-shadow: @dropbar-right-box-shadow;
+}
 
 // Miscellaneous
 // ========================================================================
 
-.hook-dropbar-misc() {}
+.hook-dropbar-misc() {
+}

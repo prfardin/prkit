@@ -4,7 +4,7 @@ import { icon, RefElement } from '@u/util'
 import { ref, onMounted, watchEffect } from 'vue'
 
 const props = withDefaults(defineProps<IconPropsType>(), {
-  tag: 'span'
+  tag: 'span',
 })
 
 // define template ref
@@ -20,7 +20,6 @@ const el = ref<RefElement>(null)
 function setIcon() {
   return icon(el.value, { icon: props.icon, ratio: props.ratio as number })
 }
-
 
 /**
  * must change in future

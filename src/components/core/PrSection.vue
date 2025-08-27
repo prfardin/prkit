@@ -3,7 +3,6 @@ import { SectionPropsType } from '@u/props'
 import { sectionClassObject } from '@u/classes'
 import { computed } from 'vue'
 
-
 const props = defineProps<SectionPropsType>()
 
 // define section classes from defined props

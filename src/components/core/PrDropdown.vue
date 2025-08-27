@@ -1,8 +1,6 @@
 <script setup lang="ts">
-
 import { onMounted, ref } from 'vue'
 import UIkit from 'uikit'
-
 
 const test1 = ref<any>(null)
 
@@ -13,17 +11,15 @@ function showDropdown(e: any) {
   dropdown.value.show()
 }
 
-
 onMounted(() => {
   dropdown.value = UIkit.dropdown(test1.value, {
     container: false,
-    target: '.test > li > a.uk-active'
+    target: '.test > li > a.uk-active',
   })
   UIkit.util.on(test1.value, 'beforeshow', (e: any) => {
     console.log(e)
   })
 })
-
 </script>
 
 <template>
@@ -51,5 +47,4 @@ onMounted(() => {
       </div>
     </li>
   </ul>
-
 </template>

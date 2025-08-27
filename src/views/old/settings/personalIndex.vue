@@ -9,14 +9,12 @@ import PrContainer from '@c/core/PrContainer.vue'
 import PrGrid from '@c/core/PrGrid.vue'
 import PrTab from '@c/core/prTab.vue'
 
-
 const tabs = ref<any>([
-  { title: "Personal", href: "/settings" },
-  { title: "Security", href: "/settings/security" },
-  { title: "Notifications", href: "/settings/notifications" },
-  { title: "API Tokens", href: "/settings/tokens" }
+  { title: 'Personal', href: '/settings' },
+  { title: 'Security', href: '/settings/security' },
+  { title: 'Notifications', href: '/settings/notifications' },
+  { title: 'API Tokens', href: '/settings/tokens' },
 ])
-
 </script>
 
 <template>
@@ -56,6 +54,4 @@ const tabs = ref<any>([
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

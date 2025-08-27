@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 // image
 import Avatar from '@i/avatar.png'
 
@@ -9,9 +8,6 @@ import PrGrid from '@c/core/PrGrid.vue'
 import PrButton from '@c/core/PrButton.vue'
 import PrCard from '@c/core/PrCard.vue'
 import PrIcon from '@c/core/PrIcon.vue'
-
-
-
 </script>
 
 <template>
@@ -19,9 +15,9 @@ import PrIcon from '@c/core/PrIcon.vue'
     <div class="uk-margin-medium-bottom">
       <pr-grid class="uk-flex-between uk-flex-middle uk-child-width-auto@m">
         <div>
-          <div class="uk-flex uk-flex-middle" >
+          <div class="uk-flex uk-flex-middle">
             <pr-avatar large circle cls="pr-cream-b-c">
-              <img :src="Avatar" alt="">
+              <img :src="Avatar" alt="" />
             </pr-avatar>
             <div class="uk-margin-left">
               <h2 class="uk-h4 uk-margin-remove">Welcome back, Fardin</h2>
@@ -112,19 +108,28 @@ import PrIcon from '@c/core/PrIcon.vue'
         <div class="uk-width-1-3@m">
           <pr-card primary body default>
             <h3 class="uk-card-title">Default</h3>
-            <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </pr-card>
         </div>
         <div class="uk-width-1-3@m">
           <pr-card body border default>
             <h3 class="uk-card-title">Default</h3>
-            <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </pr-card>
         </div>
         <div class="uk-width-1-3@m">
           <pr-card body border default>
             <h3 class="uk-card-title">Default</h3>
-            <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </pr-card>
         </div>
         <div class="uk-width-1-2@m">
@@ -135,19 +140,28 @@ import PrIcon from '@c/core/PrIcon.vue'
         <div class="uk-width-1-3@m">
           <pr-card primary body default>
             <h3 class="uk-card-title">Default</h3>
-            <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </pr-card>
         </div>
         <div class="uk-width-1-3@m">
           <pr-card body border default>
             <h3 class="uk-card-title">Default</h3>
-            <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </pr-card>
         </div>
         <div class="uk-width-1-3@m">
           <pr-card body border default>
             <h3 class="uk-card-title">Default</h3>
-            <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </pr-card>
         </div>
         <div class="uk-width-1-2@m">
@@ -158,27 +172,33 @@ import PrIcon from '@c/core/PrIcon.vue'
         <div class="uk-width-1-3@m">
           <pr-card primary body default>
             <h3 class="uk-card-title">Default</h3>
-            <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </pr-card>
         </div>
         <div class="uk-width-1-3@m">
           <pr-card body border default>
             <h3 class="uk-card-title">Default</h3>
-            <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </pr-card>
         </div>
         <div class="uk-width-1-3@m">
           <pr-card body border default>
             <h3 class="uk-card-title">Default</h3>
-            <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </pr-card>
         </div>
       </pr-grid>
     </div>
   </div>
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

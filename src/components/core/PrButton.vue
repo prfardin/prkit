@@ -15,13 +15,12 @@ import PrSpinner from '@c/core/PrSpinner.vue'
 // we must redesign ripple util and then use it. it's just for test
 import { useRipple } from '@u/ripple'
 
-
 const props = withDefaults(defineProps<ButtonPropsType>(), {
   tag: 'router-link',
   spinnerMod: 'line',
   mode: 'solid',
   color: 'primary',
-  size: 'md'
+  size: 'md',
 })
 
 // get slots: we check if there is no default slots defined
@@ -45,7 +44,14 @@ function onMouseDown(event: Event) {
 </script>
 
 <template>
-  <component :is="tag" :to="to" :href="href" :class="buttonClass" @mousedown="onMouseDown" :disabled="disabled">
+  <component
+    :is="tag"
+    :to="to"
+    :href="href"
+    :class="buttonClass"
+    @mousedown="onMouseDown"
+    :disabled="disabled"
+  >
     <template v-if="icon">
       <pr-icon :class="iconClass" :icon="icon" :ratio="ratio" />
       <span :class="slotClass" v-if="slots.default"><slot /></span>

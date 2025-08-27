@@ -5,12 +5,11 @@ import { onMounted, ref } from 'vue'
 import PrToggle from '@c/core/PrToggle.vue'
 import PrIcon from '@c/core/PrIcon.vue'
 
-
 const props = withDefaults(defineProps<OffcanvasPropsType>(), {
   escClose: true,
   bgClose: true,
   closeButton: true,
-  notNav: true
+  notNav: true,
 })
 
 const el = ref<RefElement>(null)
@@ -23,10 +22,9 @@ onMounted(() => {
     // @ts-ignore
     escClose: props.escClose,
     bgClose: props.bgClose,
-    container: props.container
+    container: props.container,
   })
 })
-
 </script>
 
 <template>

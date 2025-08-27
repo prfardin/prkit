@@ -8,7 +8,6 @@ import PrInput from '@c/core/form/PrInput.vue'
 import PrLabel from '@c/core/form/PrLabel.vue'
 import PrButton from '@c/core/PrButton.vue'
 
-
 const loader = ref(false)
 const router = useRouter()
 const { t } = useI18n()
@@ -17,7 +16,6 @@ const { t } = useI18n()
 function publishedPasswordMessage() {
   return form.data.password ? 'ذخیره رمز عبور' : 'نیاز به رمز عبور ندارم'
 }
-
 
 interface Form {
   data: {
@@ -29,8 +27,6 @@ interface Form {
 
 // data
 const form = formData({}) as unknown as Form
-
-
 </script>
 
 <template>
@@ -45,7 +41,7 @@ const form = formData({}) as unknown as Form
               icon="question"
               :ratio="0.5"
               icon-class="pr-auth-form-helper"
-            >{{ t('auth.password.password') }}</pr-label
+              >{{ t('auth.password.password') }}</pr-label
             >
             <pr-input
               id="password"
@@ -65,7 +61,7 @@ const form = formData({}) as unknown as Form
               icon="question"
               :ratio="0.5"
               icon-class="pr-auth-form-helper"
-            >{{ t('auth.password.repeatPassword') }}</pr-label
+              >{{ t('auth.password.repeatPassword') }}</pr-label
             >
             <pr-input
               id="repeat_password"
@@ -75,7 +71,7 @@ const form = formData({}) as unknown as Form
               class="uk-width-1-1 verify"
               v-model="form.data.repeat_password"
               type="password"
-              @keyup.enter="router.push({query: { step: 'Type'}})"
+              @keyup.enter="router.push({ query: { step: 'Type' } })"
             />
           </div>
         </pr-grid>
@@ -94,7 +90,7 @@ const form = formData({}) as unknown as Form
             :spinner="loader"
             @click="loader = true"
             spinner-mod="circle"
-          >{{ t('auth.password.signUp') }}</pr-button
+            >{{ t('auth.password.signUp') }}</pr-button
           >
         </div>
       </div>

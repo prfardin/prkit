@@ -7,98 +7,101 @@
 // Variables
 // ========================================================================
 
-@auth-color:                              var(--tm-auth-color);
-@auth-container-color:                    hsl(from @auth-color h s ~'calc(l + 35.25)');
-@auth-primary-color:                      var(--tm-auth-primary-color);
-@auth-default-color:                      @global-white-color;
-@auth-muted-color:                        hsl(from @auth-color h s ~'calc(l + 63.45)');
+@auth-color: var(--tm-auth-color);
+@auth-container-color: hsl(from @auth-color h s ~'calc(l + 35.25)');
+@auth-primary-color: var(--tm-auth-primary-color);
+@auth-default-color: @global-white-color;
+@auth-muted-color: hsl(from @auth-color h s ~'calc(l + 63.45)');
 
-@auth-logo-color:                         @auth-container-color;
-@auth-logo-icon-color:                    @auth-default-color;
-@auth-logo-icon-background-color:         @auth-primary-color;
-@auth-helper-color:                       hsl(from @auth-color h s ~'calc(l + 35.25)');
+@auth-logo-color: @auth-container-color;
+@auth-logo-icon-color: @auth-default-color;
+@auth-logo-icon-background-color: @auth-primary-color;
+@auth-helper-color: hsl(from @auth-color h s ~'calc(l + 35.25)');
 
-@auth-list-color:                         hsl(from @auth-color h s ~'calc(l + 26)');
-@auth-list-bullet-border-color:           @auth-list-complete-color;
-@auth-list-bullet-pointer-color:          @auth-list-bullet-border-color;
-@auth-list-active-color:                  hsl(from @auth-primary-color h s ~'calc(l - 10)');
-@auth-list-complete-color:                hsl(from @auth-list-color h s ~'calc(l + 27)');
-@auth-list-complete-bullet-color:         @auth-default-color;
-@auth-list-complete-background-color:     var(--tm-auth-list-complete-background-color);
+@auth-list-color: hsl(from @auth-color h s ~'calc(l + 26)');
+@auth-list-bullet-border-color: @auth-list-complete-color;
+@auth-list-bullet-pointer-color: @auth-list-bullet-border-color;
+@auth-list-active-color: hsl(from @auth-primary-color h s ~'calc(l - 10)');
+@auth-list-complete-color: hsl(from @auth-list-color h s ~'calc(l + 27)');
+@auth-list-complete-bullet-color: @auth-default-color;
+@auth-list-complete-background-color: var(--tm-auth-list-complete-background-color);
 
-@auth-tile-default-background-color:      @auth-default-color;
-@auth-tile-muted-background-color:        @auth-muted-color;
-@auth-side-background-color:              @auth-primary-color;
+@auth-tile-default-background-color: @auth-default-color;
+@auth-tile-muted-background-color: @auth-muted-color;
+@auth-side-background-color: @auth-primary-color;
 
-@auth-button-primary-color:               @auth-primary-color;
+@auth-button-primary-color: @auth-primary-color;
 
-@auth-label-color:                        hsl(from @auth-color h s ~'calc(l + 18.25)');
-@auth-label-helper-background-color:      @global-white-color;
-@auth-label-helper-border-color:          hsl(from @auth-label-color h s ~'calc(l + 20)');
+@auth-label-color: hsl(from @auth-color h s ~'calc(l + 18.25)');
+@auth-label-helper-background-color: @global-white-color;
+@auth-label-helper-border-color: hsl(from @auth-label-color h s ~'calc(l + 20)');
 
-@auth-input-background-color:             @global-white-color;
-@auth-input-border-color:                 hsl(from @auth-color h s ~'calc(l + 60.5)');
-@auth-form-group-divider-color:           @auth-input-border-color;
+@auth-input-background-color: @global-white-color;
+@auth-input-border-color: hsl(from @auth-color h s ~'calc(l + 60.5)');
+@auth-form-group-divider-color: @auth-input-border-color;
 
-@auth-container-font-size:                0.813rem;
-@auth-container-heading-font-size:        1.625rem;
-@auth-container-heading-font-weight:      700;
-@auth-logo-font-size:                     @global-small-font-size;
-@auth-logo-icon-font-size:                1.125rem;
-@auth-logo-font-weight:                   900;
-@auth-helper-font-size:                   @auth-container-font-size;
-@auth-helper-font-weight:                 500;
-@auth-helper-link-font-weight:            800;
-@auth-list-font-size:                     @global-small-font-size;
-@auth-list-font-weight:                   700;
-@auth-list-active-font-weight:            900;
-@auth-label-font-size:                    0.75rem;
+@auth-container-font-size: 0.813rem;
+@auth-container-heading-font-size: 1.625rem;
+@auth-container-heading-font-weight: 700;
+@auth-logo-font-size: @global-small-font-size;
+@auth-logo-icon-font-size: 1.125rem;
+@auth-logo-font-weight: 900;
+@auth-helper-font-size: @auth-container-font-size;
+@auth-helper-font-weight: 500;
+@auth-helper-link-font-weight: 800;
+@auth-list-font-size: @global-small-font-size;
+@auth-list-font-weight: 700;
+@auth-list-active-font-weight: 900;
+@auth-label-font-size: 0.75rem;
 
-@auth-height:                             600px;
-@auth-logo-icon-height:                   26px;
-@auth-logo-icon-width:                    @auth-logo-icon-height;
-@auth-logo-icon-border-radius:            100%;
+@auth-height: 600px;
+@auth-logo-icon-height: 26px;
+@auth-logo-icon-width: @auth-logo-icon-height;
+@auth-logo-icon-border-radius: 100%;
 
-@auth-input-small-height:                 36px;
-@auth-form-group-divider-height:          calc(@auth-input-small-height - 20px);
-@auth-form-group-divider-height-calc:     calc(100% - @auth-form-group-divider-height);
-@auth-input-phone-code-width:             40px;
-@auth-button-width:                       125px;
+@auth-input-small-height: 36px;
+@auth-form-group-divider-height: calc(@auth-input-small-height - 20px);
+@auth-form-group-divider-height-calc: calc(100% - @auth-form-group-divider-height);
+@auth-input-phone-code-width: 40px;
+@auth-button-width: 125px;
 
-@section-auth-padding-vertical:           calc(@global-medium-margin - @global-xsmall-margin);
-@section-auth-padding-vertical-m:         calc(@global-medium-margin - @global-xsmall-margin);
+@section-auth-padding-vertical: calc(@global-medium-margin - @global-xsmall-margin);
+@section-auth-padding-vertical-m: calc(@global-medium-margin - @global-xsmall-margin);
 
-@auth-tile-padding-horizontal:            calc(@global-gutter - @global-xxsmall-gutter);
-@auth-tile-padding-horizontal-m:          calc(@global-medium-gutter - @global-xxsmall-gutter);
-@auth-tile-padding-vertical:              calc(@global-large-margin + @global-small-margin);
-@auth-tile-padding-vertical-m:            calc(@global-xlarge-margin + @global-margin);
-@auth-tile-padding-list-vertical:         calc(@global-large-margin - @global-small-margin);
-@auth-tile-padding-list-vertical-m:       calc(@global-xlarge-margin - @global-margin);
+@auth-tile-padding-horizontal: calc(@global-gutter - @global-xxsmall-gutter);
+@auth-tile-padding-horizontal-m: calc(@global-medium-gutter - @global-xxsmall-gutter);
+@auth-tile-padding-vertical: calc(@global-large-margin + @global-small-margin);
+@auth-tile-padding-vertical-m: calc(@global-xlarge-margin + @global-margin);
+@auth-tile-padding-list-vertical: calc(@global-large-margin - @global-small-margin);
+@auth-tile-padding-list-vertical-m: calc(@global-xlarge-margin - @global-margin);
 
-@auth-tile-xlarge-padding-horizontal:     @global-medium-gutter;
-@auth-tile-xlarge-padding-horizontal-m:   @global-large-gutter;
-@auth-tile-xlarge-padding-vertical:       calc((@auth-tile-padding-vertical + @global-small-margin) - 10px);
-@auth-tile-xlarge-padding-vertical-m:     calc((@auth-tile-padding-vertical-m + @global-medium-margin) - 10px);
+@auth-tile-xlarge-padding-horizontal: @global-medium-gutter;
+@auth-tile-xlarge-padding-horizontal-m: @global-large-gutter;
+@auth-tile-xlarge-padding-vertical: calc(
+  (@auth-tile-padding-vertical + @global-small-margin) - 10px
+);
+@auth-tile-xlarge-padding-vertical-m: calc(
+  (@auth-tile-padding-vertical-m + @global-medium-margin) - 10px
+);
 
-@auth-logo-margin-horizontal:             @auth-tile-padding-horizontal;
-@auth-logo-margin-horizontal-m:           @auth-tile-padding-horizontal-m;
-@auth-logo-margin-vertical:               calc(@global-medium-margin - @global-xsmall-margin);
-@auth-logo-margin-vertical-m:             calc(@global-medium-margin - @global-xsmall-margin);
-@auth-label-margin:                       calc(@global-xxsmall-gutter - 1px);
+@auth-logo-margin-horizontal: @auth-tile-padding-horizontal;
+@auth-logo-margin-horizontal-m: @auth-tile-padding-horizontal-m;
+@auth-logo-margin-vertical: calc(@global-medium-margin - @global-xsmall-margin);
+@auth-logo-margin-vertical-m: calc(@global-medium-margin - @global-xsmall-margin);
+@auth-label-margin: calc(@global-xxsmall-gutter - 1px);
 
-@auth-side-icon-board-margin-vertical:    38px;
-@auth-side-icon-board-margin-horizontal:  -24px;
-@auth-side-icon-map-margin-vertical:      65px;
-@auth-side-icon-map-margin-horizontal:    55px;
+@auth-side-icon-board-margin-vertical: 38px;
+@auth-side-icon-board-margin-horizontal: -24px;
+@auth-side-icon-map-margin-vertical: 65px;
+@auth-side-icon-map-margin-horizontal: 55px;
 
-@auth-list-margin-top:                    calc(@global-margin + 2px);
+@auth-list-margin-top: calc(@global-margin + 2px);
 
-@auth-list-bullet-height:                 22px;
-@auth-list-bullet-width:                  @auth-list-bullet-height;
-@auth-list-bullet-border-radius:          100%;
-@auth-list-bullet-font-size:              0.75rem;
-@auth-list-bullet-margin:                 calc(@global-margin - 6px);
-
+@auth-list-bullet-height: 22px;
+@auth-list-bullet-width: @auth-list-bullet-height;
+@auth-list-bullet-border-radius: 100%;
+@auth-list-bullet-font-size: 0.75rem;
+@auth-list-bullet-margin: calc(@global-margin - 6px);
 
 /* ========================================================================
    Component: Section
@@ -495,19 +498,23 @@ h6,
 // Inverse
 // ========================================================================
 
-@auth-side-inverse-primary-color:               @auth-primary-color;
-@auth-side-inverse-default-color:               @auth-default-color;
+@auth-side-inverse-primary-color: @auth-primary-color;
+@auth-side-inverse-default-color: @auth-default-color;
 
-@auth-logo-inverse-icon-color:                  @auth-side-inverse-primary-color;
+@auth-logo-inverse-icon-color: @auth-side-inverse-primary-color;
 
-@auth-list-inverse-color:                       @inverse-global-muted-color;
-@auth-list-inverse-active-color:                @auth-side-inverse-default-color;
-@auth-list-inverse-complete-color:              hsl(from @auth-list-complete-background-color h s ~'calc(l + 40)');
-@auth-list-inverse-complete-bullet-color:       @auth-side-inverse-default-color;
-@auth-list-inverse-complete-background-color:   hsl(from @auth-list-complete-background-color h s ~'calc(l + 30)');
+@auth-list-inverse-color: @inverse-global-muted-color;
+@auth-list-inverse-active-color: @auth-side-inverse-default-color;
+@auth-list-inverse-complete-color: hsl(
+  from @auth-list-complete-background-color h s ~'calc(l + 40)'
+);
+@auth-list-inverse-complete-bullet-color: @auth-side-inverse-default-color;
+@auth-list-inverse-complete-background-color: hsl(
+  from @auth-list-complete-background-color h s ~'calc(l + 30)'
+);
 
-@auth-list-bullet-inverse-border-color:         @auth-list-inverse-complete-color;
-@auth-list-bullet-inverse-pointer-color:        @auth-list-bullet-inverse-border-color;
+@auth-list-bullet-inverse-border-color: @auth-list-inverse-complete-color;
+@auth-list-bullet-inverse-pointer-color: @auth-list-bullet-inverse-border-color;
 
 .hook-pr-inverse() {
   .pr-auth-logo-container {
@@ -589,4 +596,3 @@ h6,
     left: 40px;
   }
 }
-

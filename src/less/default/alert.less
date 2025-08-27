@@ -3,95 +3,95 @@
 //
 // ========================================================================
 
-
 // Variables
 // ========================================================================
 
-@alert-margin-vertical:                         @global-margin;
-@alert-padding:                                 var(--alert-padding);
-@alert-padding-right:                           var(--alert-padding-right);
-@alert-background:                              @global-muted-background;
-@alert-color:                                   @global-color;
+@alert-margin-vertical: @global-margin;
+@alert-padding: var(--alert-padding);
+@alert-padding-right: var(--alert-padding-right);
+@alert-background: @global-muted-background;
+@alert-color: @global-color;
 
-@alert-close-top:                               var(--alert-close-top);
-@alert-close-right:                             @alert-padding;
+@alert-close-top: var(--alert-close-top);
+@alert-close-right: @alert-padding;
 
-@alert-primary-background:                      var(--alert-primary-background);
-@alert-primary-color:                           @global-primary-background;
+@alert-primary-background: var(--alert-primary-background);
+@alert-primary-color: @global-primary-background;
 
-@alert-success-background:                      var(--alert-success-background);
-@alert-success-color:                           @global-success-background;
+@alert-success-background: var(--alert-success-background);
+@alert-success-color: @global-success-background;
 
-@alert-warning-background:                      var(--alert-warning-background);
-@alert-warning-color:                           @global-warning-background;
+@alert-warning-background: var(--alert-warning-background);
+@alert-warning-color: @global-warning-background;
 
-@alert-danger-background:                       var(--alert-danger-background);
-@alert-danger-color:                            @global-danger-background;
+@alert-danger-background: var(--alert-danger-background);
+@alert-danger-color: @global-danger-background;
 
 //
 // New
 //
 
-@alert-close-opacity:                           var(--alert-close-opacity);
-@alert-close-hover-opacity:                     var(--alert-close-hover-opacity);
-
+@alert-close-opacity: var(--alert-close-opacity);
+@alert-close-hover-opacity: var(--alert-close-hover-opacity);
 
 // Component
 // ========================================================================
 
-.hook-alert() {}
-
+.hook-alert() {
+}
 
 // Close
 // ========================================================================
 
 .hook-alert-close() {
-    color: inherit;
-    opacity: @alert-close-opacity;
+  color: inherit;
+  opacity: @alert-close-opacity;
 }
 
 .hook-alert-close-hover() {
-    color: inherit;
-    opacity: @alert-close-hover-opacity;
+  color: inherit;
+  opacity: @alert-close-hover-opacity;
 }
-
 
 // Style modifiers
 // ========================================================================
 
-.hook-alert-primary() {}
+.hook-alert-primary() {
+}
 
-.hook-alert-success() {}
+.hook-alert-success() {
+}
 
-.hook-alert-warning() {}
+.hook-alert-warning() {
+}
 
-.hook-alert-danger() {}
-
+.hook-alert-danger() {
+}
 
 // Miscellaneous
 // ========================================================================
 
 .hook-alert-misc() {
-
-    /*
+  /*
      * Content
      */
 
-    .uk-alert h1,
-    .uk-alert h2,
-    .uk-alert h3,
-    .uk-alert h4,
-    .uk-alert h5,
-    .uk-alert h6 { color: inherit; }
+  .uk-alert h1,
+  .uk-alert h2,
+  .uk-alert h3,
+  .uk-alert h4,
+  .uk-alert h5,
+  .uk-alert h6 {
+    color: inherit;
+  }
 
-    .uk-alert a:not([class]) {
-        color: inherit;
-        text-decoration: underline;
-    }
+  .uk-alert a:not([class]) {
+    color: inherit;
+    text-decoration: underline;
+  }
 
-    .uk-alert a:not([class]):hover {
-        color: inherit;
-        text-decoration: underline;
-    }
-
+  .uk-alert a:not([class]):hover {
+    color: inherit;
+    text-decoration: underline;
+  }
 }

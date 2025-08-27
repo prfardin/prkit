@@ -3,70 +3,68 @@
 //
 // ========================================================================
 
-
 // Variables
 // ========================================================================
 
-@article-margin-top:                            @global-large-margin;
+@article-margin-top: @global-large-margin;
 
-@article-title-font-size-m:                     @global-2xlarge-font-size;
-@article-title-font-size:                       var(--article-title-font-size);
-@article-title-line-height:                     var(--article-title-line-height);
+@article-title-font-size-m: @global-2xlarge-font-size;
+@article-title-font-size: var(--article-title-font-size);
+@article-title-line-height: var(--article-title-line-height);
 
-@article-meta-font-size:                        @global-small-font-size;
-@article-meta-line-height:                      var(--article-meta-line-height);
-@article-meta-color:                            @global-muted-color;
+@article-meta-font-size: @global-small-font-size;
+@article-meta-line-height: var(--article-meta-line-height);
+@article-meta-color: @global-muted-color;
 
 //
 // New
 //
 
-@article-meta-link-color:                       @article-meta-color;
-@article-meta-link-hover-color:                 @global-color;
-
+@article-meta-link-color: @article-meta-color;
+@article-meta-link-hover-color: @global-color;
 
 // Component
 // ========================================================================
 
-.hook-article() {}
-
+.hook-article() {
+}
 
 // Adjacent sibling
 // ========================================================================
 
-.hook-article-adjacent() {}
-
+.hook-article-adjacent() {
+}
 
 // Title
 // ========================================================================
 
-.hook-article-title() {}
-
+.hook-article-title() {
+}
 
 // Meta
 // ========================================================================
 
 .hook-article-meta() {
+  a {
+    color: @article-meta-link-color;
+  }
 
-    a { color: @article-meta-link-color; }
-
-    a:hover {
-        color: @article-meta-link-hover-color;
-        text-decoration: none;
-    }
-
+  a:hover {
+    color: @article-meta-link-hover-color;
+    text-decoration: none;
+  }
 }
-
 
 // Miscellaneous
 // ========================================================================
 
-.hook-article-misc() {}
-
+.hook-article-misc() {
+}
 
 // Inverse
 // ========================================================================
 
-@inverse-article-meta-color:                   @inverse-global-muted-color;
+@inverse-article-meta-color: @inverse-global-muted-color;
 
-.hook-inverse-article-meta() {}
+.hook-inverse-article-meta() {
+}

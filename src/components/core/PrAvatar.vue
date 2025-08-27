@@ -3,15 +3,11 @@ import { AvatarPropsType } from '@u/props'
 import { avatarClassObject } from '@u/classes'
 import { computed } from 'vue'
 
-
-
-
 const props = withDefaults(defineProps<AvatarPropsType>(), {
-  tag: "span"
+  tag: 'span',
 })
 
 const avatarClass = computed(() => avatarClassObject(props))
-
 </script>
 
 <template>

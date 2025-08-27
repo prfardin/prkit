@@ -14,7 +14,7 @@ const emit = defineEmits(['click'])
 
 const classes = {
   'uk-button-primary': props.primary,
-  'uk-button-secondary': props.secondary
+  'uk-button-secondary': props.secondary,
 }
 
 function handleClick(e: EventTarget) {

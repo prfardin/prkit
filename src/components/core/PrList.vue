@@ -5,7 +5,7 @@ import { RefElement } from '@u/util'
 import { computed, onMounted, ref } from 'vue'
 
 const props = withDefaults(defineProps<ListPropsType>(), {
-  tag: 'ul'
+  tag: 'ul',
 })
 
 // define section classes from defined props

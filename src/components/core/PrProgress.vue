@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { ProgressPropsType } from '@u/props'
 
-
 const props = withDefaults(defineProps<ProgressPropsType>(), {
-  max: 100
+  max: 100,
 })
-
 </script>
 
 <template>

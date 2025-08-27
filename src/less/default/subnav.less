@@ -3,116 +3,128 @@
 //
 // ========================================================================
 
-
 // Variables
 // ========================================================================
 
-@subnav-margin-horizontal:                      var(--subnav-margin-horizontal);
+@subnav-margin-horizontal: var(--subnav-margin-horizontal);
 
-@subnav-item-color:                             @global-muted-color;
-@subnav-item-hover-color:                       @global-color;
-@subnav-item-hover-text-decoration:             var(--subnav-item-hover-text-decoration);
-@subnav-item-active-color:                      @global-emphasis-color;
+@subnav-item-color: @global-muted-color;
+@subnav-item-hover-color: @global-color;
+@subnav-item-hover-text-decoration: var(--subnav-item-hover-text-decoration);
+@subnav-item-active-color: @global-emphasis-color;
 
-@subnav-divider-margin-horizontal:              @subnav-margin-horizontal;
-@subnav-divider-border-height:                  var(--subnav-divider-border-height);
-@subnav-divider-border-width:                   @global-border-width;
-@subnav-divider-border:                         @global-border;
+@subnav-divider-margin-horizontal: @subnav-margin-horizontal;
+@subnav-divider-border-height: var(--subnav-divider-border-height);
+@subnav-divider-border-width: @global-border-width;
+@subnav-divider-border: @global-border;
 
-@subnav-pill-item-padding-vertical:             var(--subnav-pill-item-padding-vertical);
-@subnav-pill-item-padding-horizontal:           var(--subnav-pill-item-padding-horizontal);
-@subnav-pill-item-background:                   var(--subnav-pill-item-background);
-@subnav-pill-item-color:                        @subnav-item-color;
-@subnav-pill-item-hover-background:             @global-muted-background;
-@subnav-pill-item-hover-color:                  @global-color;
-@subnav-pill-item-onclick-background:           @subnav-pill-item-hover-background;
-@subnav-pill-item-onclick-color:                @subnav-pill-item-hover-color;
-@subnav-pill-item-active-background:            @global-primary-background;
-@subnav-pill-item-active-color:                 @global-inverse-color;
+@subnav-pill-item-padding-vertical: var(--subnav-pill-item-padding-vertical);
+@subnav-pill-item-padding-horizontal: var(--subnav-pill-item-padding-horizontal);
+@subnav-pill-item-background: var(--subnav-pill-item-background);
+@subnav-pill-item-color: @subnav-item-color;
+@subnav-pill-item-hover-background: @global-muted-background;
+@subnav-pill-item-hover-color: @global-color;
+@subnav-pill-item-onclick-background: @subnav-pill-item-hover-background;
+@subnav-pill-item-onclick-color: @subnav-pill-item-hover-color;
+@subnav-pill-item-active-background: @global-primary-background;
+@subnav-pill-item-active-color: @global-inverse-color;
 
-@subnav-item-disabled-color:                    @global-muted-color;
+@subnav-item-disabled-color: @global-muted-color;
 
 //
 // New
 //
 
-@subnav-item-font-size:                         @global-small-font-size;
-@subnav-item-text-transform:                    var(--subnav-item-text-transform);
-
+@subnav-item-font-size: @global-small-font-size;
+@subnav-item-text-transform: var(--subnav-item-text-transform);
 
 // Component
 // ========================================================================
 
-.hook-subnav() {}
-
-.hook-subnav-item() {
-    font-size: @subnav-item-font-size;
-    text-transform: @subnav-item-text-transform;
-    transition: 0.1s ease-in-out;
-    transition-property: color, background-color;
+.hook-subnav() {
 }
 
-.hook-subnav-item-hover() {}
+.hook-subnav-item() {
+  font-size: @subnav-item-font-size;
+  text-transform: @subnav-item-text-transform;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color;
+}
 
-.hook-subnav-item-active() {}
+.hook-subnav-item-hover() {
+}
 
+.hook-subnav-item-active() {
+}
 
 // Divider modifier
 // ========================================================================
 
-.hook-subnav-divider() {}
-
+.hook-subnav-divider() {
+}
 
 // Pill modifier
 // ========================================================================
 
-.hook-subnav-pill-item() {}
+.hook-subnav-pill-item() {
+}
 
-.hook-subnav-pill-item-hover() {}
+.hook-subnav-pill-item-hover() {
+}
 
-.hook-subnav-pill-item-onclick() {}
+.hook-subnav-pill-item-onclick() {
+}
 
-.hook-subnav-pill-item-active() {}
-
+.hook-subnav-pill-item-active() {
+}
 
 // Disabled
 // ========================================================================
 
-.hook-subnav-item-disabled() {}
-
+.hook-subnav-item-disabled() {
+}
 
 // Miscellaneous
 // ========================================================================
 
-.hook-subnav-misc() {}
-
+.hook-subnav-misc() {
+}
 
 // Inverse
 // ========================================================================
 
-@inverse-subnav-item-color:                    @inverse-global-muted-color;
-@inverse-subnav-item-hover-color:              @inverse-global-color;
-@inverse-subnav-item-active-color:             @inverse-global-emphasis-color;
-@inverse-subnav-divider-border:                @inverse-global-border;
-@inverse-subnav-pill-item-background:          transparent;
-@inverse-subnav-pill-item-color:               @inverse-global-muted-color;
-@inverse-subnav-pill-item-hover-background:    @inverse-global-muted-background;
-@inverse-subnav-pill-item-hover-color:         @inverse-global-color;
-@inverse-subnav-pill-item-onclick-background:  @inverse-subnav-pill-item-hover-background;
-@inverse-subnav-pill-item-onclick-color:       @inverse-subnav-pill-item-hover-color;
-@inverse-subnav-pill-item-active-background:   @inverse-global-primary-background;
-@inverse-subnav-pill-item-active-color:        @inverse-global-inverse-color;
-@inverse-subnav-item-disabled-color:           @inverse-global-muted-color;
+@inverse-subnav-item-color: @inverse-global-muted-color;
+@inverse-subnav-item-hover-color: @inverse-global-color;
+@inverse-subnav-item-active-color: @inverse-global-emphasis-color;
+@inverse-subnav-divider-border: @inverse-global-border;
+@inverse-subnav-pill-item-background: transparent;
+@inverse-subnav-pill-item-color: @inverse-global-muted-color;
+@inverse-subnav-pill-item-hover-background: @inverse-global-muted-background;
+@inverse-subnav-pill-item-hover-color: @inverse-global-color;
+@inverse-subnav-pill-item-onclick-background: @inverse-subnav-pill-item-hover-background;
+@inverse-subnav-pill-item-onclick-color: @inverse-subnav-pill-item-hover-color;
+@inverse-subnav-pill-item-active-background: @inverse-global-primary-background;
+@inverse-subnav-pill-item-active-color: @inverse-global-inverse-color;
+@inverse-subnav-item-disabled-color: @inverse-global-muted-color;
 
-.hook-inverse-subnav-item() {}
-.hook-inverse-subnav-item-hover() {}
-.hook-inverse-subnav-item-active() {}
+.hook-inverse-subnav-item() {
+}
+.hook-inverse-subnav-item-hover() {
+}
+.hook-inverse-subnav-item-active() {
+}
 
-.hook-inverse-subnav-divider() {}
+.hook-inverse-subnav-divider() {
+}
 
-.hook-inverse-subnav-pill-item() {}
-.hook-inverse-subnav-pill-item-hover() {}
-.hook-inverse-subnav-pill-item-onclick() {}
-.hook-inverse-subnav-pill-item-active() {}
+.hook-inverse-subnav-pill-item() {
+}
+.hook-inverse-subnav-pill-item-hover() {
+}
+.hook-inverse-subnav-pill-item-onclick() {
+}
+.hook-inverse-subnav-pill-item-active() {
+}
 
-.hook-inverse-subnav-item-disabled() {}
+.hook-inverse-subnav-item-disabled() {
+}

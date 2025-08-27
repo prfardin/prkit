@@ -3,60 +3,67 @@
 //
 // ========================================================================
 
-
 // Variables
 // ========================================================================
 
-@form-range-track-height:                       var(--form-range-track-height);
-@form-range-track-background:                   var(--form-range-track-background);
-@form-range-track-focus-background:             var(--form-range-track-focus-background);
+@form-range-track-height: var(--form-range-track-height);
+@form-range-track-background: var(--form-range-track-background);
+@form-range-track-focus-background: var(--form-range-track-focus-background);
 
-@form-range-thumb-height:                       var(--form-range-thumb-height);
-@form-range-thumb-width:                        @form-range-thumb-height;
-@form-range-thumb-border-radius:                var(--form-range-thumb-border-radius);
+@form-range-thumb-height: var(--form-range-thumb-height);
+@form-range-thumb-width: @form-range-thumb-height;
+@form-range-thumb-border-radius: var(--form-range-thumb-border-radius);
 
-@form-range-thumb-background:                   @global-background;
+@form-range-thumb-background: @global-background;
 
 //
 // New
 //
 
-@form-range-thumb-border-width:                 @global-border-width;
-@form-range-thumb-border:                       var(--form-range-thumb-border);
+@form-range-thumb-border-width: @global-border-width;
+@form-range-thumb-border: var(--form-range-thumb-border);
 
-@form-range-track-border-radius:                var(--form-range-track-border-radius);
-
+@form-range-track-border-radius: var(--form-range-track-border-radius);
 
 // Component
 // ========================================================================
 
-.hook-form-range() {}
-
+.hook-form-range() {
+}
 
 // Thumb
 // ========================================================================
 
-.hook-form-range-thumb() { border: @form-range-thumb-border-width solid @form-range-thumb-border; }
-
+.hook-form-range-thumb() {
+  border: @form-range-thumb-border-width solid @form-range-thumb-border;
+}
 
 // Track
 // ========================================================================
 
-.hook-form-range-track() { border-radius: @form-range-track-border-radius; }
+.hook-form-range-track() {
+  border-radius: @form-range-track-border-radius;
+}
 
-.hook-form-range-track-focus() {}
-
+.hook-form-range-track-focus() {
+}
 
 // Miscellaneous
 // ========================================================================
 
-.hook-form-range-misc() {}
-
+.hook-form-range-misc() {
+}
 
 // Inverse
 // ========================================================================
 
-@inverse-form-range-track-background:          hsl(from @inverse-global-muted-background h s calc(l - 5));                      // instead of: darken(@inverse-global-muted-background, 5%);
-@inverse-form-range-track-focus-background:    rgb(from @inverse-form-range-track-background r g b / ~'calc(alpha + 0.05)');    // instead of: fadein(@inverse-form-range-track-background, 5%);
+@inverse-form-range-track-background: hsl(
+  from @inverse-global-muted-background h s calc(l - 5)
+); // instead of: darken(@inverse-global-muted-background, 5%);
+@inverse-form-range-track-focus-background: rgb(
+  from @inverse-form-range-track-background r g b / ~'calc(alpha + 0.05)'
+); // instead of: fadein(@inverse-form-range-track-background, 5%);
 
-@inverse-form-range-thumb-background:          rgb(from @inverse-global-color r g b / ~'calc(alpha + 1)');                      // instead of: fadein(@inverse-global-color, 100%);
+@inverse-form-range-thumb-background: rgb(
+  from @inverse-global-color r g b / ~'calc(alpha + 1)'
+); // instead of: fadein(@inverse-global-color, 100%);

@@ -9,11 +9,10 @@ const props = withDefaults(defineProps<ChipPropsType>(), {
 })
 
 const chipClass = computed(() => chipClassObject(props))
-
 </script>
 
 <template>
-<span :class="chipClass">
-  <slot />
-</span>
+  <span :class="chipClass">
+    <slot />
+  </span>
 </template>

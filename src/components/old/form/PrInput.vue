@@ -5,7 +5,7 @@ import { computed, ref, onMounted } from 'vue'
 import PrIcon from '@c/core/PrIcon.vue'
 
 const props = withDefaults(defineProps<InputPropsType>(), {
-  type: 'text'
+  type: 'text',
 })
 
 // define input classes from defined props
@@ -33,7 +33,7 @@ const bindProps = {
   autofocus: props.autofocus,
   class: inputClass.value,
   ariaLabel: props.ariaLabel,
-  disabled: props.disabled
+  disabled: props.disabled,
 }
 
 // for autofocus
@@ -42,7 +42,6 @@ onMounted(() => {
     input.value?.focus()
   }
 })
-
 </script>
 
 <template>

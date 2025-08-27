@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import PrSearch from '@c/core/form/PrSearch.vue'
 import PrModal from '@c/core/PrModal.vue'
 import { ref } from 'vue'
@@ -8,8 +7,6 @@ import PrList from '@c/core/PrList.vue'
 import { modal } from '@u/util'
 import router from '@/router'
 
-
-
 const searchValue = ref('')
 
 interface SearchModalType {
@@ -17,34 +14,30 @@ interface SearchModalType {
   autofocus: boolean
 }
 
-const props = withDefaults(defineProps<SearchModalType>(), {
+const props = withDefaults(defineProps<SearchModalType>(), {})
 
-})
-
-const test = ref([
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-])
-
+const test = ref([{}, {}, {}, {}, {}, {}])
 
 function goToResult() {
   router.push('#')
   modal(`#${props.id}`).hide()
 }
-
 </script>
 
 <template>
-  <pr-modal :id="id" class="uk-flex-top" cls="uk-width-large pr-border-rounded-xl uk-padding-small" >
-    <div style="padding: 0 .5rem 0.5rem 0.5rem">
-      <pr-search id="search-modal" name="search-modal" label="Search" label-cls="uk-text-muted uk-text-bold" :autofocus="autofocus" v-model="searchValue" />
+  <pr-modal :id="id" class="uk-flex-top" cls="uk-width-large pr-border-rounded-xl uk-padding-small">
+    <div style="padding: 0 0.5rem 0.5rem 0.5rem">
+      <pr-search
+        id="search-modal"
+        name="search-modal"
+        label="Search"
+        label-cls="uk-text-muted uk-text-bold"
+        :autofocus="autofocus"
+        v-model="searchValue"
+      />
     </div>
     <div>
-      <div style="padding-top: .5rem; padding-left: .75rem; padding-right: .75rem">
+      <div style="padding-top: 0.5rem; padding-left: 0.75rem; padding-right: 0.75rem">
         <span class="uk-text-meta">result</span>
       </div>
       <pr-list class="uk-margin-remove">
@@ -58,10 +51,4 @@ function goToResult() {
   </pr-modal>
 </template>
 
-<style scoped>
-
-
-
-
-
-</style>
+<style scoped></style>

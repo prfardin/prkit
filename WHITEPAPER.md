@@ -1,7 +1,9 @@
 # why we create this ui library?
 
 Since all developers need some tools to speed up their work, we came up with the idea of creating a framework based on UIkit that is structured in Vue, making it easier to implement the UI of our projects.
+
 For the core, we used the UIkit CSS framework because, unlike modern libraries, it offers many additional features like Slideshow, Parallax, and more.
+
 Our goal is for this library to be a collection of Vue components and a set of ready-to-use pages.
 This WHITE PAPER is still a work in progress.
 
@@ -15,3 +17,16 @@ This WHITE PAPER is still a work in progress.
 ## icons
 * huge icons: ***duotone*** need to define class for making it colorable
 * huge icons: ***twotone*** need to define class for making it colorable
+
+
+# Tasklists
+- [ ] we need make this project separate to 4 npm libraries:
+  - icons libraries: *placed at __src/images/core__*
+  - core theme components: *placed at __src/components/__ or __src/components/core__* (the ui framework)
+  - documents: *placed at __src/views/docs__*
+  - starter kit: *ready-to-use pages: including all pre-build pages and layouts, vite build, vite build scripts and etc*
+- [ ] design it for **Nuxt** (starter kit)
+
+# Notes
+
+- we run prettier to all ***/src*** files

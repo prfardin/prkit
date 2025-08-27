@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 // import { TogglePropsType } from '@u/props'
 
 import { onMounted, ref } from 'vue'
@@ -8,19 +7,19 @@ import { RefElement, toggle } from '@u/util'
 interface TogglePropsType {
   tag?: 'a' | 'button'
   href?: string | undefined
-  target?: string | undefined;
-  mode?: string | undefined;
-  cls?: string | undefined;
-  media?: number | string | undefined;
-  animation?: string | undefined;
-  duration?: number | undefined;
-  queued?: boolean | undefined;
+  target?: string | undefined
+  mode?: string | undefined
+  cls?: string | undefined
+  media?: number | string | undefined
+  animation?: string | undefined
+  duration?: number | undefined
+  queued?: boolean | undefined
 }
 
 const el = ref<RefElement>(null)
 
 const props = withDefaults(defineProps<TogglePropsType>(), {
-  tag: 'a'
+  tag: 'a',
 })
 
 onMounted(() => {
@@ -31,10 +30,9 @@ onMounted(() => {
     media: props.media,
     animation: props.animation,
     duration: props.duration,
-    queued: props.queued
+    queued: props.queued,
   })
 })
-
 </script>
 
 <template>

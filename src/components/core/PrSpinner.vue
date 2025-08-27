@@ -5,7 +5,7 @@ import { computed } from 'vue'
 
 const props = withDefaults(defineProps<SpinnerPropsType>(), {
   tag: 'span',
-  mode: 'line'
+  mode: 'line',
 })
 
 // define button classes from defined props

@@ -76,6 +76,4 @@ onMounted(() => {
   </pr-section>
 </template>
 
-<style lang="less">
-
-</style>
+<style lang="less"></style>

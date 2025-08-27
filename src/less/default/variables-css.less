@@ -55,15 +55,15 @@
   --global-sidebar-height: 100vh;
 
   --global-font-size: 16px;
-  --global-line-height: 1.4;                    // 24px
+  --global-line-height: 1.4; // 24px
 
-  --global-2xlarge-font-size: 2.625rem;         // 42px
-  --global-xlarge-font-size: 2rem;              // 32px
-  --global-large-font-size: 1.575rem;           // 25px
-  --global-medium-font-size: 1.25rem;           // 20px
-  --global-small-font-size: 0.875rem;           // 14px
-  --global-xsmall-font-size: 0.8rem;            // 13px
-  --global-xxsmall-font-size: 0.575rem;         // 9px
+  --global-2xlarge-font-size: 2.625rem; // 42px
+  --global-xlarge-font-size: 2rem; // 32px
+  --global-large-font-size: 1.575rem; // 25px
+  --global-medium-font-size: 1.25rem; // 20px
+  --global-small-font-size: 0.875rem; // 14px
+  --global-xsmall-font-size: 0.8rem; // 13px
+  --global-xxsmall-font-size: 0.575rem; // 9px
 
   //
   // Colors
@@ -100,14 +100,24 @@
   --global-icon-iso-solid-stroke-color: var(--global-white-color);
 
   --global-icon-iso-primary-color: var(--global-color);
-  --global-icon-iso-secondary-color: hsl(from var(--global-icon-iso-primary-color) h s calc(l + 10));
+  --global-icon-iso-secondary-color: hsl(
+    from var(--global-icon-iso-primary-color) h s calc(l + 10)
+  );
   --global-icon-iso-tertiary-color: hsl(from var(--global-icon-iso-primary-color) h s calc(l + 20));
-  --global-icon-iso-quaternary-color: hsl(from var(--global-icon-iso-primary-color) h s calc(l + 30));
+  --global-icon-iso-quaternary-color: hsl(
+    from var(--global-icon-iso-primary-color) h s calc(l + 30)
+  );
 
   --global-icon-iso-duotone-primary-color: var(--global-color);
-  --global-icon-iso-duotone-secondary-color: hsl(from var(--global-icon-iso-duotone-primary-color) h s calc(l + 40));
-  --global-icon-iso-duotone-tertiary-color: hsl(from var(--global-icon-iso-duotone-primary-color) h s calc(l + 30));
-  --global-icon-iso-duotone-quaternary-color: hsl(from var(--global-icon-iso-duotone-primary-color) h s calc(l + 20));
+  --global-icon-iso-duotone-secondary-color: hsl(
+    from var(--global-icon-iso-duotone-primary-color) h s calc(l + 40)
+  );
+  --global-icon-iso-duotone-tertiary-color: hsl(
+    from var(--global-icon-iso-duotone-primary-color) h s calc(l + 30)
+  );
+  --global-icon-iso-duotone-quaternary-color: hsl(
+    from var(--global-icon-iso-duotone-primary-color) h s calc(l + 20)
+  );
 
   --global-icon-favourite-color: #ffde6b;
 
@@ -138,10 +148,10 @@
   // Box-Shadows
   //
 
-  --global-small-box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  --global-medium-box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  --global-large-box-shadow: 0 14px 25px rgba(0,0,0,0.16);
-  --global-xlarge-box-shadow: 0 28px 50px rgba(0,0,0,0.16);
+  --global-small-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --global-medium-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --global-large-box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+  --global-xlarge-box-shadow: 0 28px 50px rgba(0, 0, 0, 0.16);
 
   //
   // Spacings
@@ -155,7 +165,9 @@
   --global-large-margin: 70px;
   --global-xlarge-margin: 140px;
 
-  --global-pr-margin-medium: calc(var(--global-margin) + 5px); // instead of: var(--global-margin) + 5px;
+  --global-pr-margin-medium: calc(
+    var(--global-margin) + 5px
+  ); // instead of: var(--global-margin) + 5px;
 
   // Used in grid, column, container, align, card, padding
   --global-gutter: 30px;
@@ -192,7 +204,10 @@
   //
   --global-rounded-radius: 25px;
   --global-middle-transform-top: 50%;
-  --global-middle-transform: translate(0, calc(var(--global-middle-transform-top) * -1)); // instead of: -(var(--global-middle-transform-top))
+  --global-middle-transform: translate(
+    0,
+    calc(var(--global-middle-transform-top) * -1)
+  ); // instead of: -(var(--global-middle-transform-top))
 
   //
   // Base
@@ -211,10 +226,14 @@
   --base-heading-font-weight: normal;
   --base-heading-text-transform: none;
   --base-h1-font-size-m: var(--global-2xlarge-font-size);
-  --base-h1-font-size: calc(var(--global-2xlarge-font-size) * 0.85);        // instead of: var(--global-2xlarge-font-size) * 0.85;
+  --base-h1-font-size: calc(
+    var(--global-2xlarge-font-size) * 0.85
+  ); // instead of: var(--global-2xlarge-font-size) * 0.85;
   --base-h1-line-height: var(--pr-line-height-1-2);
   --base-h2-font-size-m: var(--global-xlarge-font-size);
-  --base-h2-font-size: calc(var(--global-xlarge-font-size) * 0.85);         // instead of: var(--global-xlarge-font-size) * 0.85;
+  --base-h2-font-size: calc(
+    var(--global-xlarge-font-size) * 0.85
+  ); // instead of: var(--global-xlarge-font-size) * 0.85;
   --base-h2-line-height: var(--pr-line-height-1-3);
   --base-h3-font-size: var(--global-large-font-size);
   --base-h3-line-height: var(--pr-line-height-1-3);
@@ -257,23 +276,35 @@
   --global-icon-quaternary-color-light: #595959;
 
   --global-icon-primary-color-muted: var(--global-white-color);
-  --global-icon-secondary-color-muted: hsl(from var(--global-white-color) h s calc(l - 25));      // instead of: darken(var(--global-white-color), 25%);
-  --global-icon-tertiary-color-muted: hsl(from var(--global-white-color) h s calc(l - 35));       // instead of: darken(var(--global-white-color), 35%);
-  --global-icon-quaternary-color-muted: hsl(from var(--global-white-color) h s calc(l - 45));     // instead of: darken(var(--global-white-color), 45%);
+  --global-icon-secondary-color-muted: hsl(
+    from var(--global-white-color) h s calc(l - 25)
+  ); // instead of: darken(var(--global-white-color), 25%);
+  --global-icon-tertiary-color-muted: hsl(
+    from var(--global-white-color) h s calc(l - 35)
+  ); // instead of: darken(var(--global-white-color), 35%);
+  --global-icon-quaternary-color-muted: hsl(
+    from var(--global-white-color) h s calc(l - 45)
+  ); // instead of: darken(var(--global-white-color), 45%);
 
   //
   // Inverse
   //
   --inverse-global-color: var(--global-inverse-color);
   --inverse-global-emphasis-color: var(--global-inverse-color);
-  --inverse-global-muted-color: rgb(from var(--global-inverse-color) r g b / 0.55);                 // instead of: fade(var(--global-inverse-color), 55%);
+  --inverse-global-muted-color: rgb(
+    from var(--global-inverse-color) r g b / 0.55
+  ); // instead of: fade(var(--global-inverse-color), 55%);
   --inverse-global-inverse-color: #858687;
   --inverse-global-secondary-background: #3c4041;
 
   --inverse-global-primary-background: var(--global-inverse-color);
-  --inverse-global-muted-background: rgb(from var(--global-muted-background) r g b / 0.1);         // instead of: fade(var(--global-muted-background), 10%);
+  --inverse-global-muted-background: rgb(
+    from var(--global-muted-background) r g b / 0.1
+  ); // instead of: fade(var(--global-muted-background), 10%);
 
-  --inverse-global-border: rgb(from var(--global-muted-background) r g b / 0.08);                  // instead of: fade(var(--global-muted-background), 8%);
+  --inverse-global-border: rgb(
+    from var(--global-muted-background) r g b / 0.08
+  ); // instead of: fade(var(--global-muted-background), 8%);
 
   --inverse-global-icon-primary-color: #ffffff;
   --inverse-global-icon-secondary-color: var(--global-primary-background);
@@ -289,12 +320,22 @@
 
   // Alert
   --alert-padding: var(--global-small-gutter);
-  --alert-padding-right: calc(var(--alert-padding) + 14px);       // instead of: var(--alert-padding) + 14px;
-  --alert-close-top: calc(var(--alert-padding) + 5px);            // instead of: var(--alert-padding) + 5px;
-  --alert-primary-background: hsl(from color-mix(in srgb, var(--global-primary-background), white 40%) h s ~'calc(l + 20)');   // instead of: lighten(tint(var(--global-primary-background), 40%), 20%);
-  --alert-sucess-background: hsl(from color-mix(in srgb, var(--global-success-background), white 40%) h s ~'calc(l + 25)');    // instead of: lighten(tint(var(--global-success-background), 40%), 25%);
-  --alert-warning-background: hsl(from color-mix(in srgb, var(--global-warning-background), white 45%) h s ~'calc(l + 15)');   // instead of: lighten(tint(var(--global-warning-background), 45%), 15%);
-  --alert-danger-background: hsl(from color-mix(in srgb, var(--global-danger-background), white 40%) h s ~'calc(l + 20)');     // instead of: lighten(tint(var(--global-danger-background), 40%), 20%);
+  --alert-padding-right: calc(
+    var(--alert-padding) + 14px
+  ); // instead of: var(--alert-padding) + 14px;
+  --alert-close-top: calc(var(--alert-padding) + 5px); // instead of: var(--alert-padding) + 5px;
+  --alert-primary-background: hsl(
+    from color-mix(in srgb, var(--global-primary-background), white 40%) h s ~'calc(l + 20)'
+  ); // instead of: lighten(tint(var(--global-primary-background), 40%), 20%);
+  --alert-sucess-background: hsl(
+    from color-mix(in srgb, var(--global-success-background), white 40%) h s ~'calc(l + 25)'
+  ); // instead of: lighten(tint(var(--global-success-background), 40%), 25%);
+  --alert-warning-background: hsl(
+    from color-mix(in srgb, var(--global-warning-background), white 45%) h s ~'calc(l + 15)'
+  ); // instead of: lighten(tint(var(--global-warning-background), 45%), 15%);
+  --alert-danger-background: hsl(
+    from color-mix(in srgb, var(--global-danger-background), white 40%) h s ~'calc(l + 20)'
+  ); // instead of: lighten(tint(var(--global-danger-background), 40%), 20%);
   --alert-close-opacity: var(--pr-opacity-4);
   --alert-close-hover-opacity: var(--pr-opacity-8);
 
@@ -310,7 +351,9 @@
   // Article
   --article-title-line-height: var(--pr-line-height-1-2);
   --article-meta-line-height: var(--pr-line-height-1-4);
-  --article-title-font-size: calc(var(--global-2xlarge-font-size) * 0.85);        // instead of: var(--global-2xlarge-font-size) * 0.85;
+  --article-title-font-size: calc(
+    var(--global-2xlarge-font-size) * 0.85
+  ); // instead of: var(--global-2xlarge-font-size) * 0.85;
 
   // Badge
   --badge-size: 18px;
@@ -319,55 +362,95 @@
   --badge-font-size: var(--pr-font-size-11);
 
   // Breadcrumb
-  --breadcrumb-divider: "/";
+  --breadcrumb-divider: '/';
   --breadcrumb-divider-margin-horizontal: var(--global-margin);
 
   // Button
   --button-primary-background: var(--global-primary-background);
   --button-secondary-background: var(--global-secondary-background);
   --button-danger-background: var(--global-danger-background);
-  --button-primary-hover-background: hsl(from var(--button-primary-background) h s calc(l - 5));            // instead of: darken(var(--button-primary-background), 5%);
-  --button-primary-active-background: hsl(from var(--button-primary-background) h s calc(l - 10));          // instead of: darken(var(--button-primary-background), 10%);
-  --button-secondary-hover-background: hsl(from var(--button-secondary-background) h s calc(l - 5));        // instead of: darken(var(--button-secondary-background), 5%);
-  --button-secondary-active-background: hsl(from var(--button-secondary-background) h s calc(l - 10));      // instead of: darken(var(--button-secondary-background), 10%);
-  --button-danger-hover-background: hsl(from var(--button-danger-background) h s calc(l - 5));              // instead of: darken(var(--button-danger-background), 5%);
-  --button-danger-active-background: hsl(from var(--button-danger-background) h s calc(l - 10));            // instead of: darken(var(--button-danger-background), 10%);
+  --button-primary-hover-background: hsl(
+    from var(--button-primary-background) h s calc(l - 5)
+  ); // instead of: darken(var(--button-primary-background), 5%);
+  --button-primary-active-background: hsl(
+    from var(--button-primary-background) h s calc(l - 10)
+  ); // instead of: darken(var(--button-primary-background), 10%);
+  --button-secondary-hover-background: hsl(
+    from var(--button-secondary-background) h s calc(l - 5)
+  ); // instead of: darken(var(--button-secondary-background), 5%);
+  --button-secondary-active-background: hsl(
+    from var(--button-secondary-background) h s calc(l - 10)
+  ); // instead of: darken(var(--button-secondary-background), 10%);
+  --button-danger-hover-background: hsl(
+    from var(--button-danger-background) h s calc(l - 5)
+  ); // instead of: darken(var(--button-danger-background), 5%);
+  --button-danger-active-background: hsl(
+    from var(--button-danger-background) h s calc(l - 10)
+  ); // instead of: darken(var(--button-danger-background), 10%);
   --button-link-hover-text-decoration: none;
   --button-border-width: var(--global-border-width);
   --button-line-height: calc(var(--global-control-height) - ((var(--button-border-width) * 2)));
-  --button-xsmall-line-height: calc(var(--global-control-xsmall-height) - ((var(--button-border-width) * 2)));  // instead of: var(--global-control-xsmall-height) - (var(--button-border-width) * 2);
-  --button-small-line-height: calc(var(--global-control-small-height) - ((var(--button-border-width) * 2)));    // instead of: var(--global-control-small-height) - (var(--button-border-width) * 2);
-  --button-large-line-height: calc(var(--global-control-large-height) - ((var(--button-border-width) * 2)));    // instead of: var(--global-control-large-height) - (var(--button-border-width) * 2);
+  --button-xsmall-line-height: calc(
+    var(--global-control-xsmall-height) - ((var(--button-border-width) * 2))
+  ); // instead of: var(--global-control-xsmall-height) - (var(--button-border-width) * 2);
+  --button-small-line-height: calc(
+    var(--global-control-small-height) - ((var(--button-border-width) * 2))
+  ); // instead of: var(--global-control-small-height) - (var(--button-border-width) * 2);
+  --button-large-line-height: calc(
+    var(--global-control-large-height) - ((var(--button-border-width) * 2))
+  ); // instead of: var(--global-control-large-height) - (var(--button-border-width) * 2);
   --button-default-background: transparent;
   --button-default-hover-background: transparent;
   --button-default-active-background: transparent;
   --button-disabled-background: transparent;
   --button-text-transform: capitalize;
-  --button-default-hover-border: hsl(from var(--global-border) h s calc(l - 20));               // instead of: darken(var(--global-border), 20%);
-  --button-default-active-border: hsl(from var(--global-border) h s calc(l - 30));              // instead of: darken(var(--global-border), 30%);
-  --button-muted-hover-background: hsl(from var(--global-muted-background) h s calc(l - 2));    // instead of: darken(var(--global-muted-background), 2%);
-  --button-muted-active-background: hsl(from var(--global-muted-background) h s calc(l - 5));   // instead of: darken(var(--global-muted-background), 5%);
-  --button-has-icon-padding-right: calc(var(--global-gutter) / 2);                              // instead of: (var(--global-gutter) / 2);
-  --button-has-icon-padding-left: calc(var(--global-gutter) / 2);                               // instead of: (var(--global-gutter) / 2);
-  --button-small-has-icon-padding-right: calc((var(--global-small-gutter) / 2) + 1.5);          // instead of: (var(--global-small-gutter) / 2) + 1.5;
-  --button-small-has-icon-padding-left: calc(var(--global-small-gutter) / 2);                   // instead of: (var(--global-small-gutter) / 2);
-  --button-xsmall-has-icon-padding-right: calc((var(--global-xsmall-gutter) / 2) + 2);          // instead of: (var(--global-xsmall-gutter) / 2) + 2;
-  --button-xsmall-has-icon-padding-left: calc(var(--global-xsmall-gutter) / 2);                 // instead of: (var(--global-xsmall-gutter) / 2);
+  --button-default-hover-border: hsl(
+    from var(--global-border) h s calc(l - 20)
+  ); // instead of: darken(var(--global-border), 20%);
+  --button-default-active-border: hsl(
+    from var(--global-border) h s calc(l - 30)
+  ); // instead of: darken(var(--global-border), 30%);
+  --button-muted-hover-background: hsl(
+    from var(--global-muted-background) h s calc(l - 2)
+  ); // instead of: darken(var(--global-muted-background), 2%);
+  --button-muted-active-background: hsl(
+    from var(--global-muted-background) h s calc(l - 5)
+  ); // instead of: darken(var(--global-muted-background), 5%);
+  --button-has-icon-padding-right: calc(
+    var(--global-gutter) / 2
+  ); // instead of: (var(--global-gutter) / 2);
+  --button-has-icon-padding-left: calc(
+    var(--global-gutter) / 2
+  ); // instead of: (var(--global-gutter) / 2);
+  --button-small-has-icon-padding-right: calc(
+    (var(--global-small-gutter) / 2) + 1.5
+  ); // instead of: (var(--global-small-gutter) / 2) + 1.5;
+  --button-small-has-icon-padding-left: calc(
+    var(--global-small-gutter) / 2
+  ); // instead of: (var(--global-small-gutter) / 2);
+  --button-xsmall-has-icon-padding-right: calc(
+    (var(--global-xsmall-gutter) / 2) + 2
+  ); // instead of: (var(--global-xsmall-gutter) / 2) + 2;
+  --button-xsmall-has-icon-padding-left: calc(
+    var(--global-xsmall-gutter) / 2
+  ); // instead of: (var(--global-xsmall-gutter) / 2);
 
   // Card
-  --card-header-padding-vertical: ~'round(up, calc(var(--global-gutter) / 2), 1px)';            // instead of: round((var(--global-gutter) / 2));
-  --card-header-padding-vertical-l: ~'round(up, calc(var(--global-medium-gutter) / 2), 1px)';   // instead of: round((var(--global-medium-gutter) / 2));
-  --card-footer-padding-vertical: calc(var(--global-gutter) / 2);                               // instead of: (var(--global-gutter) / 2);
-  --card-footer-padding-vertical-l: ~'round(up, calc(var(--global-medium-gutter) / 2), 1px)';   // instead of: round((var(--global-medium-gutter) / 2));
+  --card-header-padding-vertical: ~'round(up, calc(var(--global-gutter) / 2), 1px)'; // instead of: round((var(--global-gutter) / 2));
+  --card-header-padding-vertical-l: ~'round(up, calc(var(--global-medium-gutter) / 2), 1px)'; // instead of: round((var(--global-medium-gutter) / 2));
+  --card-footer-padding-vertical: calc(
+    var(--global-gutter) / 2
+  ); // instead of: (var(--global-gutter) / 2);
+  --card-footer-padding-vertical-l: ~'round(up, calc(var(--global-medium-gutter) / 2), 1px)'; // instead of: round((var(--global-medium-gutter) / 2));
   --card-title-line-height: var(--pr-line-height-1-4);
   --card-badge-top: 15px;
   --card-badge-right: 15px;
   --card-badge-height: 22px;
   --card-badge-padding-horizontal: 10px;
-  --card-small-header-padding-vertical: ~'round(up, calc(var(--global-margin) / 1.5), 1px)';        // instead of: round((var(--global-margin) / 1.5));
-  --card-small-footer-padding-vertical: ~'round(up, calc(var(--global-margin) / 1.5), 1px)';        // instead of: round((var(--global-margin) / 1.5));
-  --card-large-header-padding-vertical-l: ~'round(up, calc(var(--global-large-gutter) / 2), 1px)';  // instead of: round((var(--global-large-gutter) / 2));
-  --card-large-footer-padding-vertical-l: ~'round(up, calc(var(--global-large-gutter) / 2), 1px)';  // instead of: round((var(--global-large-gutter) / 2));
+  --card-small-header-padding-vertical: ~'round(up, calc(var(--global-margin) / 1.5), 1px)'; // instead of: round((var(--global-margin) / 1.5));
+  --card-small-footer-padding-vertical: ~'round(up, calc(var(--global-margin) / 1.5), 1px)'; // instead of: round((var(--global-margin) / 1.5));
+  --card-large-header-padding-vertical-l: ~'round(up, calc(var(--global-large-gutter) / 2), 1px)'; // instead of: round((var(--global-large-gutter) / 2));
+  --card-large-footer-padding-vertical-l: ~'round(up, calc(var(--global-large-gutter) / 2), 1px)'; // instead of: round((var(--global-large-gutter) / 2));
   --card-badge-border-radius: 2px;
   --card-badge-text-transform: uppercase;
 
@@ -414,18 +497,26 @@
   --dotnav-margin-horizontal: 12px;
   --dotnav-item-width: 10px;
   --dotnav-item-border-radius: 50%;
-  --dotnav-item-hover-background: rgb(from var(--global-color) r g b / 0.6);      // instead of: fade(var(--global-color), 60%);
-  --dotnav-item-onclick-background: rgb(from var(--global-color) r g b / 0.2);    // instead of: fade(var(--global-color), 20%);
-  --dotnav-item-active-background: rgb(from var(--global-color) r g b / 0.6);     // instead of: fade(var(--global-color), 60%);
+  --dotnav-item-hover-background: rgb(
+    from var(--global-color) r g b / 0.6
+  ); // instead of: fade(var(--global-color), 60%);
+  --dotnav-item-onclick-background: rgb(
+    from var(--global-color) r g b / 0.2
+  ); // instead of: fade(var(--global-color), 20%);
+  --dotnav-item-active-background: rgb(
+    from var(--global-color) r g b / 0.6
+  ); // instead of: fade(var(--global-color), 60%);
   --dotnav-item-background: transparent;
   --dotnav-item-border-width: 1px;
-  --dotnav-item-border: rgb(from var(--global-color) r g b / 0.4);                // instead of: fade(var(--global-color), 40%);
+  --dotnav-item-border: rgb(
+    from var(--global-color) r g b / 0.4
+  ); // instead of: fade(var(--global-color), 40%);
   --dotnav-item-hover-border: transparent;
   --dotnav-item-onclick-border: transparent;
   --dotnav-item-active-border: transparent;
 
   // Drop
-  --drop-z-index: calc(var(--global-z-index) + 20);                               // instead of: var(--global-z-index) + 20;
+  --drop-z-index: calc(var(--global-z-index) + 20); // instead of: var(--global-z-index) + 20;
   --drop-viewport-margin: 15px;
   --drop-width: 300px;
   --drop-parent-icon-margin-left: 0.25em;
@@ -448,19 +539,21 @@
   --dropdown-dropbar-viewport-margin: 15px;
   --dropdown-dropbar-padding-top: 5px;
   --dropdown-nav-subtitle-font-size: 12px;
-  --dropdown-box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  --dropdown-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 
   // Dropnav
-  --dropnav-dropbar-z-index: calc(var(--global-z-index) - 20);          // instead of: var(--global-z-index) - 20;
+  --dropnav-dropbar-z-index: calc(
+    var(--global-z-index) - 20
+  ); // instead of: var(--global-z-index) - 20;
 
   // Form
   --form-height: var(--global-control-height);
   --form-padding-horizontal: 10px;
-  --form-padding-vertical: ~'round(up, calc(var(--form-padding-horizontal) * 0.6), 1px)';               // instead of: round(var(--form-padding-horizontal) * 0.6);
+  --form-padding-vertical: ~'round(up, calc(var(--form-padding-horizontal) * 0.6), 1px)'; // instead of: round(var(--form-padding-horizontal) * 0.6);
   --form-small-padding-horizontal: 8px;
-  --form-small-padding-vertical: ~'round(up, calc(var(--form-small-padding-horizontal) * 0.6), 1px)';   // instead of: round(var(--form-small-padding-horizontal) * 0.6);
+  --form-small-padding-vertical: ~'round(up, calc(var(--form-small-padding-horizontal) * 0.6), 1px)'; // instead of: round(var(--form-small-padding-horizontal) * 0.6);
   --form-large-padding-horizontal: 12px;
-  --form-large-padding-vertical: ~'round(up, calc(var(--form-large-padding-horizontal) * 0.6), 1px)';   // instead of: round(var(--form-large-padding-horizontal) * 0.6);
+  --form-large-padding-vertical: ~'round(up, calc(var(--form-large-padding-horizontal) * 0.6), 1px)'; // instead of: round(var(--form-large-padding-horizontal) * 0.6);
   --form-width-xsmall: 50px;
   --form-width-small: 130px;
   --form-width-medium: 200px;
@@ -469,45 +562,73 @@
   --form-datalist-padding-right: 20px;
   --form-radio-size: 16px;
   --form-radio-margin-top: -4px;
-  --form-radio-focus-background: hsl(from var(--form-radio-background) h s calc(l - 5));                  // instead of: darken(var(--form-radio-background), 5%);
-  --form-radio-checked-focus-background: hsl(from var(--global-primary-background) h s calc(l - 10));     // instead of: darken(var(--global-primary-background), 10%);
+  --form-radio-focus-background: hsl(
+    from var(--form-radio-background) h s calc(l - 5)
+  ); // instead of: darken(var(--form-radio-background), 5%);
+  --form-radio-checked-focus-background: hsl(
+    from var(--global-primary-background) h s calc(l - 10)
+  ); // instead of: darken(var(--global-primary-background), 10%);
   --form-legend-line-height: 1.4;
   --form-horizontal-label-width: 200px;
   --form-horizontal-label-margin-top: 7px;
   --form-horizontal-controls-margin-left: 215px;
   --form-horizontal-controls-text-padding-top: 7px;
   --form-border-width: var(--global-border-width);
-  --form-line-height: calc(var(--form-height) - (2 * var(--form-border-width)));                    // instead of: var(--form-height) - (2 * var(--form-border-width));
+  --form-line-height: calc(
+    var(--form-height) - (2 * var(--form-border-width))
+  ); // instead of: var(--form-height) - (2 * var(--form-border-width));
   --form-small-height: var(--global-control-small-height);
-  --form-small-line-height: calc(var(--form-small-height) - (2 * var(--form-border-width)));        // instead of: var(--form-small-height) - (2 * var(--form-border-width));
-  --form-large-line-height: calc(var(--form-small-height) - (2 * var(--form-border-width)));        // instead of: var(--form-small-height) - (2 * var(--form-border-width));
+  --form-small-line-height: calc(
+    var(--form-small-height) - (2 * var(--form-border-width))
+  ); // instead of: var(--form-small-height) - (2 * var(--form-border-width));
+  --form-large-line-height: calc(
+    var(--form-small-height) - (2 * var(--form-border-width))
+  ); // instead of: var(--form-small-height) - (2 * var(--form-border-width));
   --form-radio-background: transparent;
   --form-stacked-margin-bottom: 5px;
   --form-blank-focus-border-style: solid;
-  --form-radio-border: hsl(from var(--global-border) h s calc(l - 10));                                 // instead of: darken(var(--global-border), 10%);
+  --form-radio-border: hsl(
+    from var(--global-border) h s calc(l - 10)
+  ); // instead of: darken(var(--global-border), 10%);
   --form-radio-checked-border: transparent;
 
   // Form Range
   --form-range-track-height: 3px;
-  --form-range-track-background: hsl(from var(--global-muted-background) h s calc(l - 5));              // instead of: darken(var(--global-muted-background), 5%);
-  --form-range-track-focus-background: hsl(from var(--form-range-track-background) h s calc(l - 5));    // instead of: darken(var(--form-range-track-background), 5%);
+  --form-range-track-background: hsl(
+    from var(--global-muted-background) h s calc(l - 5)
+  ); // instead of: darken(var(--global-muted-background), 5%);
+  --form-range-track-focus-background: hsl(
+    from var(--form-range-track-background) h s calc(l - 5)
+  ); // instead of: darken(var(--form-range-track-background), 5%);
   --form-range-thumb-height: 15px;
   --form-range-thumb-border-radius: 500px;
-  --form-range-thumb-border: hsl(from var(--global-border) h s calc(l - 10));                           // instead of: darken(var(--global-border), 10%);
+  --form-range-thumb-border: hsl(
+    from var(--global-border) h s calc(l - 10)
+  ); // instead of: darken(var(--global-border), 10%);
   --form-range-track-border-radius: 500px;
 
   // Heading
-  --heading-small-font-size: calc(var(--heading-small-font-size-m) * 0.8);        // 38px 0.73 | instead of: var(--heading-small-font-size-m) * 0.8
-  --heading-medium-font-size: calc(var(--heading-medium-font-size-m) * 0.825);    // 40px 0.714 | instead of: var(--heading-medium-font-size-m) * 0.825
-  --heading-large-font-size: calc(var(--heading-large-font-size-m) * 0.85);       // 50px 0.78 | instead of: var(--heading-large-font-size-m) * 0.85
-  --heading-small-font-size-m: calc(var(--heading-medium-font-size-l) * 0.8125);  // 3.25rem / 52px | instead of: var(--heading-medium-font-size-l) * 0.8125
-  --heading-medium-font-size-m: calc(var(--heading-medium-font-size-l) * 0.875);  // 3.5rem / 56px | instead of: var(--heading-medium-font-size-l) * 0.875
-  --heading-large-font-size-m: var(--heading-medium-font-size-l);                 // 4rem / 64px
-  --heading-medium-font-size-l: 4rem;       // 64px
-  --heading-large-font-size-l: 6rem;        // 96px
-  --heading-xlarge-font-size-l: 8rem;       // 128px
-  --heading-2xlarge-font-size-l: 11rem;     // 176px
-  --heading-3xlarge-font-size-l: 15rem;     // 240px
+  --heading-small-font-size: calc(
+    var(--heading-small-font-size-m) * 0.8
+  ); // 38px 0.73 | instead of: var(--heading-small-font-size-m) * 0.8
+  --heading-medium-font-size: calc(
+    var(--heading-medium-font-size-m) * 0.825
+  ); // 40px 0.714 | instead of: var(--heading-medium-font-size-m) * 0.825
+  --heading-large-font-size: calc(
+    var(--heading-large-font-size-m) * 0.85
+  ); // 50px 0.78 | instead of: var(--heading-large-font-size-m) * 0.85
+  --heading-small-font-size-m: calc(
+    var(--heading-medium-font-size-l) * 0.8125
+  ); // 3.25rem / 52px | instead of: var(--heading-medium-font-size-l) * 0.8125
+  --heading-medium-font-size-m: calc(
+    var(--heading-medium-font-size-l) * 0.875
+  ); // 3.5rem / 56px | instead of: var(--heading-medium-font-size-l) * 0.875
+  --heading-large-font-size-m: var(--heading-medium-font-size-l); // 4rem / 64px
+  --heading-medium-font-size-l: 4rem; // 64px
+  --heading-large-font-size-l: 6rem; // 96px
+  --heading-xlarge-font-size-l: 8rem; // 128px
+  --heading-2xlarge-font-size-l: 11rem; // 176px
+  --heading-3xlarge-font-size-l: 15rem; // 240px
   --heading-small-line-height: 1.2;
   --heading-medium-line-height: 1.1;
   --heading-large-line-height: 1.1;
@@ -532,12 +653,20 @@
 
   // Icon
   --icon-image-size: 20px;
-  --icon-link-active-color: hsl(from var(--global-color) h s calc(l - 5));                          // instead of: darken(var(--global-color), 5%);
+  --icon-link-active-color: hsl(
+    from var(--global-color) h s calc(l - 5)
+  ); // instead of: darken(var(--global-color), 5%);
   --icon-button-size: 36px;
   --icon-button-background: transparent;
-  --icon-button-hover-background: hsl(from var(--icon-button-background) h s calc(l - 5));          // instead of: darken(var(--icon-button-background), 5%);
-  --icon-button-active-background: hsl(from var(--icon-button-background) h s calc(l - 10));        // instead of: darken(var(--icon-button-background), 10%);
-  --icon-favourite-color-tertiary: hsl(from var(--global-icon-favourite-color) h s calc(l - 40));   // instead of: darken(var(--global-icon-favourite-color), 40%);
+  --icon-button-hover-background: hsl(
+    from var(--icon-button-background) h s calc(l - 5)
+  ); // instead of: darken(var(--icon-button-background), 5%);
+  --icon-button-active-background: hsl(
+    from var(--icon-button-background) h s calc(l - 10)
+  ); // instead of: darken(var(--icon-button-background), 10%);
+  --icon-favourite-color-tertiary: hsl(
+    from var(--global-icon-favourite-color) h s calc(l - 40)
+  ); // instead of: darken(var(--global-icon-favourite-color), 40%);
   --icon-iconoir-stroke: var(--global-icon-primary-color);
   --icon-iconoir-stroke-width: 1.5;
   --icon-iconoir-stroke-linecap: round;
@@ -554,32 +683,34 @@
   --label-text-transform: uppercase;
 
   // Lightbox
-  --lightbox-z-index: calc(var(--global-z-index) + 10);             // instead of: var(--global-z-index) + 10;
+  --lightbox-z-index: calc(var(--global-z-index) + 10); // instead of: var(--global-z-index) + 10;
   --lightbox-background: #000;
   --lightbox-color-mode: light;
-  --lightbox-focus-outline: rgba(255,255,255,0.7);
+  --lightbox-focus-outline: rgba(255, 255, 255, 0.7);
   --lightbox-item-max-width: 100vw;
   --lightbox-item-max-height: 100vh;
   --lightbox-thumbnav-vertical-width: 100px;
   --lightbox-thumbnav-height: 100px;
   --lightbox-caption-padding-vertical: 10px;
   --lightbox-caption-padding-horizontal: 10px;
-  --lightbox-caption-background: rgba(0,0,0,0.3);
-  --lightbox-caption-color: rgba(255,255,255,0.7);
+  --lightbox-caption-background: rgba(0, 0, 0, 0.3);
+  --lightbox-caption-color: rgba(255, 255, 255, 0.7);
 
   // Link
   --link-heading-hover-text-decoration: none;
 
   // List
   --list-padding-left: 30px;
-  --list-marker-height: calc(var(--global-line-height) * 1em); // instead of: (var(--global-line-height) * 1em);
+  --list-marker-height: calc(
+    var(--global-line-height) * 1em
+  ); // instead of: (var(--global-line-height) * 1em);
 
   // Marker
   --marker-padding: 5px;
 
   // Modal
   --modal-z-index: calc(var(--global-z-index) + 10); // instead of: var(--global-z-index) + 10;
-  --modal-background: rgba(0,0,0,0.6);
+  --modal-background: rgba(0, 0, 0, 0.6);
   --modal-padding-horizontal: 15px;
   --modal-padding-vertical-s: 50px;
   --modal-dialog-width: 600px;
@@ -587,18 +718,28 @@
   --modal-body-padding-horizontal: 20px;
   --modal-body-padding-vertical: 20px;
   --modal-header-padding-horizontal: 20px;
-  --modal-header-padding-vertical: calc(var(--modal-header-padding-horizontal) / 2);        // instead of: (var(--modal-header-padding-horizontal) / 2);
+  --modal-header-padding-vertical: calc(
+    var(--modal-header-padding-horizontal) / 2
+  ); // instead of: (var(--modal-header-padding-horizontal) / 2);
   --modal-header-padding-horizontal-s: var(--global-gutter);
-  --modal-header-padding-vertical-s: calc(var(--modal-header-padding-horizontal-s) / 2);    // instead of: (var(--modal-header-padding-horizontal-s) / 2);
+  --modal-header-padding-vertical-s: calc(
+    var(--modal-header-padding-horizontal-s) / 2
+  ); // instead of: (var(--modal-header-padding-horizontal-s) / 2);
   --modal-footer-padding-horizontal: 20px;
-  --modal-footer-padding-vertical: calc(var(--modal-footer-padding-horizontal) / 2);        // instead of: (var(--modal-footer-padding-horizontal) / 2);
+  --modal-footer-padding-vertical: calc(
+    var(--modal-footer-padding-horizontal) / 2
+  ); // instead of: (var(--modal-footer-padding-horizontal) / 2);
   --modal-footer-padding-horizontal-s: var(--global-gutter);
-  --modal-footer-padding-vertical-s: calc(var(--modal-footer-padding-horizontal-s) / 2);    // instead of: (var(--modal-footer-padding-horizontal-s) / 2);
+  --modal-footer-padding-vertical-s: calc(
+    var(--modal-footer-padding-horizontal-s) / 2
+  ); // instead of: (var(--modal-footer-padding-horizontal-s) / 2);
   --modal-title-line-height: 1.3;
   --modal-close-padding: 5px;
   --modal-close-outside-position: 0;
   --modal-close-outside-translate: 100%;
-  --modal-close-outside-color: hsl(from var(--global-inverse-color) h s ~'calc(l + 20)');      // instead of: lighten(var(--global-inverse-color), 20%);
+  --modal-close-outside-color: hsl(
+    from var(--global-inverse-color) h s ~'calc(l + 20)'
+  ); // instead of: lighten(var(--global-inverse-color), 20%);
   --modal-close-full-padding: 10px;
 
   // Nav
@@ -613,17 +754,23 @@
   --nav-divider-margin-vertical: 5px;
   --nav-divider-margin-horizontal: 0;
   --nav-medium-line-height: 1;
-  --nav-medium-font-size: calc(var(--nav-medium-font-size-m) * 0.825);        // 40px 0.714 | instead of: var(--nav-medium-font-size-m) * 0.825
-  --nav-medium-font-size-m: calc(var(--nav-medium-font-size-l) * 0.875);      // 3.5rem / 56px | instead of: var(--nav-medium-font-size-l) * 0.875
-  --nav-medium-font-size-l: 4rem;                                             // 64px
+  --nav-medium-font-size: calc(
+    var(--nav-medium-font-size-m) * 0.825
+  ); // 40px 0.714 | instead of: var(--nav-medium-font-size-m) * 0.825
+  --nav-medium-font-size-m: calc(
+    var(--nav-medium-font-size-l) * 0.875
+  ); // 3.5rem / 56px | instead of: var(--nav-medium-font-size-l) * 0.875
+  --nav-medium-font-size-l: 4rem; // 64px
   --nav-large-line-height: 1;
-  --nav-large-font-size: calc(var(--nav-large-font-size-m) * 0.85);           // 50px 0.78 | instead of: var(--nav-large-font-size-m) * 0.85
-  --nav-large-font-size-m: 4rem;                                              // 64px
-  --nav-large-font-size-l: 6rem;                                              // 96px
+  --nav-large-font-size: calc(
+    var(--nav-large-font-size-m) * 0.85
+  ); // 50px 0.78 | instead of: var(--nav-large-font-size-m) * 0.85
+  --nav-large-font-size-m: 4rem; // 64px
+  --nav-large-font-size-l: 6rem; // 96px
   --nav-xlarge-line-height: 1;
-  --nav-xlarge-font-size: 4rem;                                               // 64px
-  --nav-xlarge-font-size-m: 6rem;                                             // 96px
-  --nav-xlarge-font-size-l: 8rem;                                             // 128px
+  --nav-xlarge-font-size: 4rem; // 64px
+  --nav-xlarge-font-size-m: 6rem; // 96px
+  --nav-xlarge-font-size-l: 8rem; // 128px
   --nav-dividers-margin-top: 5px;
   --nav-default-subtitle-font-size: 12px;
   --nav-background-margin-top: 0;
@@ -652,16 +799,20 @@
   --navbar-gap-m: 30px;
   --navbar-nav-gap-m: 30px;
   --navbar-nav-item-text-transform: uppercase;
-  --navbar-dropdown-box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  --navbar-dropdown-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 
   // Notification
   --notification-message-padding: var(--global-small-gutter);
   --notification-position: 10px;
-  --notification-z-index: calc(var(--global-z-index) + 40);                   // instead of: var(--global-z-index) + 40;
+  --notification-z-index: calc(
+    var(--global-z-index) + 40
+  ); // instead of: var(--global-z-index) + 40;
   --notification-width: 350px;
   --notification-message-margin-top: 10px;
   --notification-message-line-height: 1.4;
-  --notification-close-top: calc(var(--notification-message-padding) + 5px);  // instead of: var(--notification-message-padding) + 5px;
+  --notification-close-top: calc(
+    var(--notification-message-padding) + 5px
+  ); // instead of: var(--notification-message-padding) + 5px;
 
   // Off-canvas
   --offcanvas-bar-width: 270px;
@@ -671,11 +822,15 @@
   --offcanvas-close-position: 5px;
   --offcanvas-close-padding: 5px;
   --offcanvas-close-position-s: 10px;
-  --offcanvas-overlay-background: rgba(0,0,0,0.1);
+  --offcanvas-overlay-background: rgba(0, 0, 0, 0.1);
 
   // Overlay
-  --overlay-default-background: rgb(from var(--global-background) r g b / 0.8);             // instead of: fade(var(--global-background), 80%);
-  --overlay-primary-background: rgb(from var(--global-secondary-background) r g b / 0.8);   // instead of: fade(var(--global-secondary-background), 80%);
+  --overlay-default-background: rgb(
+    from var(--global-background) r g b / 0.8
+  ); // instead of: fade(var(--global-background), 80%);
+  --overlay-primary-background: rgb(
+    from var(--global-secondary-background) r g b / 0.8
+  ); // instead of: fade(var(--global-secondary-background), 80%);
 
   // Pagination
   --pagination-margin-horizontal: 0;
@@ -696,7 +851,9 @@
   // Search
   --search-default-width: 240px;
   --search-default-padding-horizontal: 10px;
-  --search-default-focus-background: hsl(from var(--search-default-background) h s calc(l - 2)); // instead of: darken(var(--search-default-background), 2%);
+  --search-default-focus-background: hsl(
+    from var(--search-default-background) h s calc(l - 2)
+  ); // instead of: darken(var(--search-default-background), 2%);
   --search-default-icon-padding: 0;
   --search-navbar-width: 240px;
   --search-navbar-padding-horizontal: 10px;
@@ -714,14 +871,22 @@
   --search-default-background: transparent;
 
   // Section
-  --section-xlarge-padding-vertical-m: calc(var(--global-large-margin) + var(--global-xlarge-margin)); // instead of: (var(--global-large-margin) + var(--global-xlarge-margin));
+  --section-xlarge-padding-vertical-m: calc(
+    var(--global-large-margin) + var(--global-xlarge-margin)
+  ); // instead of: (var(--global-large-margin) + var(--global-xlarge-margin));
 
   // Slidenav
   --slidenav-padding-vertical: 5px;
   --slidenav-padding-horizontal: 10px;
-  --slidenav-color: rgb(from var(--global-color) r g b / 0.5);          // instead of: fade(var(--global-color), 50%);
-  --slidenav-hover-color: rgb(from var(--global-color) r g b / 0.9);    // instead of: fade(var(--global-color), 90%);
-  --slidenav-active-color: rgb(from var(--global-color) r g b / 0.5);   // instead of: fade(var(--global-color), 50%);
+  --slidenav-color: rgb(
+    from var(--global-color) r g b / 0.5
+  ); // instead of: fade(var(--global-color), 50%);
+  --slidenav-hover-color: rgb(
+    from var(--global-color) r g b / 0.9
+  ); // instead of: fade(var(--global-color), 90%);
+  --slidenav-active-color: rgb(
+    from var(--global-color) r g b / 0.5
+  ); // instead of: fade(var(--global-color), 50%);
   --slidenav-large-padding-vertical: 10px;
 
   // Slider
@@ -731,7 +896,9 @@
   --slider-container-margin-right: -25px;
 
   // Sortable
-  --sortable-dragged-z-index: calc(var(--global-z-index) + 50);   // instead of: var(--global-z-index) + 50;
+  --sortable-dragged-z-index: calc(
+    var(--global-z-index) + 50
+  ); // instead of: var(--global-z-index) + 50;
   --sortable-placeholder-opacity: 0;
   --sortable-empty-height: 50px;
 
@@ -739,20 +906,28 @@
   --spinner-size: 30px;
   --spinner-stroke-width: 1;
   --spinner-radius: ~'round(down, calc((var(--spinner-size) - var(--spinner-stroke-width)) / 2), 1px)'; // Minus stroke width to prevent overflow clipping | instead of: floor(((var(--spinner-size) - var(--spinner-stroke-width)) / 2))
-  --spinner-circumference: ~'round(up, calc(2 * 3.141 * var(--spinner-radius)), 1px)';                  // instead of: round(2 * 3.141 * var(--spinner-radius));
+  --spinner-circumference: ~'round(up, calc(2 * 3.141 * var(--spinner-radius)), 1px)'; // instead of: round(2 * 3.141 * var(--spinner-radius));
   --spinner-duration: 1.4s;
-  --pr-spinner-line-gutter: calc(var(--global-xxsmall-gutter) - 1px);                                   // instead of: var(--global-xxsmall-gutter) - 1px;
-  --pr-spinner-line-width: calc(var(--global-spinner-width - var(--pr-spinner-line-gutter)));           // instead of: var(--global-spinner-width - var(--pr-spinner-line-gutter));
+  --pr-spinner-line-gutter: calc(
+    var(--global-xxsmall-gutter) - 1px
+  ); // instead of: var(--global-xxsmall-gutter) - 1px;
+  --pr-spinner-line-width: calc(
+    var(--global-spinner-width - var(--pr-spinner-line-gutter))
+  ); // instead of: var(--global-spinner-width - var(--pr-spinner-line-gutter));
   --pr-spinner-line-item-height: 100%;
   --pr-spinner-circle-item-width: 3px;
-  --pr-spinner-line-color: hsl(from var(--global-white-color) h s calc(l - 5));                         // instead of: darken(var(--global-white-color), 5%);
+  --pr-spinner-line-color: hsl(
+    from var(--global-white-color) h s calc(l - 5)
+  ); // instead of: darken(var(--global-white-color), 5%);
   --pr-spinner-circle-color: var(--global-white-color);
-  --pr-spinner-circle-color-fade: rgb(from var(--pr-spinner-circle-color) r g b / 0.6);                 // instead of: fade(var(--pr-spinner-circle-color), 60%);
+  --pr-spinner-circle-color-fade: rgb(
+    from var(--pr-spinner-circle-color) r g b / 0.6
+  ); // instead of: fade(var(--pr-spinner-circle-color), 60%);
   --pr-spinner-line-item-border-radius: 4px;
   --pr-spinner-line-animation-duration: 0.6s;
 
   // Sticky
-  --sticky-z-index: calc(var(--global-z-index) - 20);                                                   // instead of: var(--global-z-index) - 20;
+  --sticky-z-index: calc(var(--global-z-index) - 20); // instead of: var(--global-z-index) - 20;
   --sticky-animation-duration: 0.2s;
   --sticky-reverse-animation-duration: 0.2s;
 
@@ -791,16 +966,22 @@
 
   // Thumbnav
   --thumbnav-margin-horizontal: 15px;
-  --thumbnav-item-gradient: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.4));
+  --thumbnav-item-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.4)
+  );
   --thumbnav-item-hover-opacity: 0;
   --thumbnav-item-active-opacity: 0;
 
   // Tile
   --tile-padding-horizontal: 15px;
-  --tile-xlarge-padding-vertical-m: calc(var(--global-large-margin) + var(--global-xlarge-margin));   // instead of: (var(--global-large-margin) + var(--global-xlarge-margin));
+  --tile-xlarge-padding-vertical-m: calc(
+    var(--global-large-margin) + var(--global-xlarge-margin)
+  ); // instead of: (var(--global-large-margin) + var(--global-xlarge-margin));
 
   // Tooltip
-  --tooltip-z-index: calc(var(--global-z-index) + 30);                                                // instead of: var(--global-z-index) + 30;
+  --tooltip-z-index: calc(var(--global-z-index) + 30); // instead of: var(--global-z-index) + 30;
   --tooltip-margin: 10px;
   --tooltip-max-width: 200px;
   --tooltip-padding-vertical: 3px;
@@ -825,13 +1006,17 @@
   --border-rounded-border-radius: 5px;
   --box-shadow-duration: 0.1s;
   --box-shadow-bottom-height: 30px;
-  --box-shadow-bottom-bottom: calc(var(--box-shadow-bottom-height) * -1);     // instead of: -(var(--box-shadow-bottom-height));
+  --box-shadow-bottom-bottom: calc(
+    var(--box-shadow-bottom-height) * -1
+  ); // instead of: -(var(--box-shadow-bottom-height));
   --box-shadow-bottom-border-radius: 100%;
   --box-shadow-bottom-background: #444;
   --box-shadow-bottom-blur: 20px;
   --dropcap-margin-right: 10px;
-  --dropcap-font-size: calc((var(--global-line-height) * 3) * 1em);           // instead of: ((var(--global-line-height) * 3) * 1em);
-  --dragover-box-shadow: 0 0 20px rgba(100,100,100,0.3);
+  --dropcap-font-size: calc(
+    (var(--global-line-height) * 3) * 1em
+  ); // instead of: ((var(--global-line-height) * 3) * 1em);
+  --dragover-box-shadow: 0 0 20px rgba(100, 100, 100, 0.3);
 
   // Width
   --width-small-width: 150px;

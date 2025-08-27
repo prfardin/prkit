@@ -23,28 +23,27 @@ import UIkitStickyOptions = UIkit.UIkitStickyOptions
 import UIkitAccordionOptions = UIkit.UIkitAccordionOptions
 import UIkitNotificationOptions = UIkit.UIkitNotificationOptions
 
-
 interface FormData {
-    busy: boolean
-    data: any
+  busy: boolean
+  data: any
 }
 
 export {
-    UIkitGridOptions,
-    UIkitIconOptions,
-    UIkitHeightViewportOptions,
-    UIkitNavOptions,
-    UIkitNavbarOptions,
-    UIkitDropOptions,
-    UIkitOffcanvasOptions,
-    UIkitToggleOptions,
-    UIkitModalOptions,
-    UIkitSwiterOptions,
-    UIkitSwitcherOptions,
-    UIkitTooltipOptions,
-    UIkitTabOptions,
-    FormData,
-    UIkitStickyOptions,
-    UIkitAccordionOptions,
-    UIkitNotificationOptions
+  UIkitGridOptions,
+  UIkitIconOptions,
+  UIkitHeightViewportOptions,
+  UIkitNavOptions,
+  UIkitNavbarOptions,
+  UIkitDropOptions,
+  UIkitOffcanvasOptions,
+  UIkitToggleOptions,
+  UIkitModalOptions,
+  UIkitSwiterOptions,
+  UIkitSwitcherOptions,
+  UIkitTooltipOptions,
+  UIkitTabOptions,
+  FormData,
+  UIkitStickyOptions,
+  UIkitAccordionOptions,
+  UIkitNotificationOptions,
 }

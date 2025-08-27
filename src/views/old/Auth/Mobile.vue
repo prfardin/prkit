@@ -29,8 +29,6 @@ function clicked() {
   loader.value = true
   router.push({ path: '/register/verify' })
 }
-
-
 </script>
 
 <template>
@@ -97,6 +95,4 @@ function clicked() {
   </form>
 </template>
 
-<style lang="less">
-
-</style>
+<style lang="less"></style>

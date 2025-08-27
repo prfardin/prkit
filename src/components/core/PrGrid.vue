@@ -24,7 +24,7 @@ onMounted(() => {
     margin: props.margin,
     'first-column': props.firstColumn,
     masonry: props.masonry,
-    parallax: props.parallax
+    parallax: props.parallax,
   })
 })
 </script>

@@ -5,7 +5,7 @@ import { computed, ref, onMounted } from 'vue'
 import PrIcon from '@c/core/PrIcon.vue'
 
 const props = withDefaults(defineProps<TextareaPropsType>(), {
-  type: 'text'
+  type: 'text',
 })
 
 // define textarea classes from defined props
@@ -34,7 +34,7 @@ const bindProps = {
   class: textareaClass.value,
   ariaLabel: props.ariaLabel,
   disabled: props.disabled,
-  rows: props.rows
+  rows: props.rows,
 }
 
 // for autofocus
@@ -43,7 +43,6 @@ onMounted(() => {
     textarea.value?.focus()
   }
 })
-
 </script>
 
 <template>

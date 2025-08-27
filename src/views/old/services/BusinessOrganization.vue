@@ -9,8 +9,6 @@ import PrLink from '@c/core/PrLink.vue'
 import PrLabel from '@c/core/form/PrLabel.vue'
 import PrInput from '@c/core/form/PrInput.vue'
 
-
-
 interface Form {
   data: {
     first_name: string
@@ -23,7 +21,7 @@ interface Form {
 const form = formData({}) as unknown as Form
 
 const router = useRouter()
-function submitForm(){
+function submitForm() {
   router.push({ name: 'personalDetails' })
 }
 </script>
@@ -34,9 +32,7 @@ function submitForm(){
       <div>
         <pr-grid class="uk-child-width-1-1 uk-child-width-1-2@s" medium>
           <div>
-            <pr-label
-              for="first_name"
-            >first name</pr-label>
+            <pr-label for="first_name">first name</pr-label>
             <pr-input
               id="first_name"
               name="first_name"
@@ -47,9 +43,7 @@ function submitForm(){
             />
           </div>
           <div>
-            <pr-label
-              for="last_name"
-            >last name</pr-label>
+            <pr-label for="last_name">last name</pr-label>
             <pr-input
               id="last_name"
               name="last_name"
@@ -64,16 +58,26 @@ function submitForm(){
     <div class="uk-margin-medium-top">
       <pr-grid class="uk-child-width-1-1 uk-child-width-auto@s uk-flex-middle uk-flex-between@s">
         <div>
-          <pr-link class="pr-auth-button" muted square small :to="{name: 'businessDetails'}">previous</pr-link>
+          <pr-link class="pr-auth-button" muted square small :to="{ name: 'businessDetails' }"
+            >previous</pr-link
+          >
         </div>
         <div>
-          <pr-button class="pr-auth-button-primary" primary small square icon="line-arrow-right" icon-class="uk-flex-last" tag="a" @click="submitForm">test</pr-button>
+          <pr-button
+            class="pr-auth-button-primary"
+            primary
+            small
+            square
+            icon="line-arrow-right"
+            icon-class="uk-flex-last"
+            tag="a"
+            @click="submitForm"
+            >test</pr-button
+          >
         </div>
       </pr-grid>
     </div>
   </form>
 </template>
 
-<style scoped lang="less">
-
-</style>
+<style scoped lang="less"></style>

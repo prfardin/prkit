@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<SelectBoxPropsType>(), {
   node: 'title',
   id: 'id',
   type: 'text',
-  searchable: false
+  searchable: false,
 })
 
 let dGet = true
@@ -24,7 +24,7 @@ const model = defineModel({
       dGet = false
       return props.d
     }
-    return v;
+    return v
   },
 })
 const el = ref<RefElement>(null)
@@ -45,11 +45,11 @@ onMounted(() => {
   // need fix types and fix in util in util.ts
   // when we insert more features for this component we use this more and we insert more options
   // @ts-ignore
-  UIkit.util.on(el.value, 'beforeshow', (e) =>  {
+  UIkit.util.on(el.value, 'beforeshow', (e) => {
     isOpen.value = true
   })
   // @ts-ignore
-  UIkit.util.on(el.value, 'beforehide', (e) =>  {
+  UIkit.util.on(el.value, 'beforehide', (e) => {
     isOpen.value = false
   })
 
@@ -67,7 +67,7 @@ function clicked(list: any) {
 const inputProps = {
   type: props.type,
   name: props.name,
-  id: props.name
+  id: props.name,
 }
 
 const inputRef = ref<any>(null)
@@ -75,23 +75,23 @@ const selectRef = ref<any>(null)
 
 onMounted(() => {
   if (props.searchable) {
-    selectRef.value.addEventListener("click", (e: any) => {
+    selectRef.value.addEventListener('click', (e: any) => {
       inputRef.value.focus()
     })
   }
 })
-
 </script>
 
 <template>
   <div class="uk-position-relative">
-    <div class="pr-select" style="height: 23px!important;" :class="{ 'pr-searchable': searchable }" ref="selectRef">
-      <div class="pr-select-item" :class="{ 'open': isOpen }">
-        <input class="pr-select-input"
-               v-bind="inputProps"
-               v-model="model"
-               ref="inputRef"
-        />
+    <div
+      class="pr-select"
+      style="height: 23px !important"
+      :class="{ 'pr-searchable': searchable }"
+      ref="selectRef"
+    >
+      <div class="pr-select-item" :class="{ open: isOpen }">
+        <input class="pr-select-input" v-bind="inputProps" v-model="model" ref="inputRef" />
         <span class="pr-select-input-chevron" :class="{ divider: props.divider }">
           <pr-icon icon="line-angle-down" />
         </span>
@@ -101,7 +101,9 @@ onMounted(() => {
       <div class="scrollbar">
         <ul class="uk-nav uk-dropdown-nav">
           <li v-for="(list, index) in lists" :key="index">
-            <a class="pr-option" @click="clicked(list)" :class="{'uk-active': list === model}">{{ list[node] }}</a>
+            <a class="pr-option" @click="clicked(list)" :class="{ 'uk-active': list === model }">{{
+              list[node]
+            }}</a>
           </li>
           <li class="uk-text-center" v-if="!lists?.length">هیچ داده ای پیدا نشد</li>
         </ul>
@@ -110,9 +112,4 @@ onMounted(() => {
   </div>
 </template>
 
-
-<style scoped>
-
-
-
-</style>
+<style scoped></style>

@@ -3,17 +3,15 @@ import { RefElement, switcher } from '@u/util'
 import { SwitcherPropsType } from '@u/props'
 import { onMounted, ref } from 'vue'
 
-
 const el = ref<RefElement>(null)
 const isSwitcher = ref<any>(null)
 const marginInlineStart = ref<number>(0)
 
 const props = withDefaults(defineProps<SwitcherPropsType>(), {
-  toggle: ".pr-switcher > button"
+  toggle: '.pr-switcher > button',
 })
 
 const setWidth = ref<number>(props.list.length)
-
 
 function setSwitcher() {
   return switcher(el.value, {
@@ -28,7 +26,7 @@ function setSwitcher() {
   })
 }
 
-onMounted( () => {
+onMounted(() => {
   isSwitcher.value = setSwitcher()
 })
 
@@ -37,14 +35,21 @@ onMounted( () => {
 // then We calculate the correct margin-inline-start value.
 
 function isSelect(key: number) {
-  marginInlineStart.value = 100 / setWidth.value * key
+  marginInlineStart.value = (100 / setWidth.value) * key
 }
-
 </script>
 
 <template>
   <div class="pr-switcher" ref="el">
-    <button v-for="(item, index) in list" :key="index" type="button" @click="isSelect(index)">{{ item.name }}</button>
-    <div class="pr-switcher-cover" :style="{ 'margin-inline-start': marginInlineStart + '%', width: `calc( 100% / ${setWidth})` }"></div>
+    <button v-for="(item, index) in list" :key="index" type="button" @click="isSelect(index)">
+      {{ item.name }}
+    </button>
+    <div
+      class="pr-switcher-cover"
+      :style="{
+        'margin-inline-start': marginInlineStart + '%',
+        width: `calc( 100% / ${setWidth})`,
+      }"
+    ></div>
   </div>
 </template>

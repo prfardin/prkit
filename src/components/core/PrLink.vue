@@ -13,7 +13,7 @@ import PrIcon from '@c/core/PrIcon.vue'
  */
 
 const props = withDefaults(defineProps<LinkPropsType>(), {
-  tag: 'router-link'
+  tag: 'router-link',
 })
 
 // get slots: we check if there is no default slots defined

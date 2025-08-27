@@ -3,140 +3,144 @@
 //
 // ========================================================================
 
-
 // Variables
 // ========================================================================
 
-@modal-z-index:                                 var(--modal-z-index);
-@modal-background:                              var(--modal-background);
+@modal-z-index: var(--modal-z-index);
+@modal-background: var(--modal-background);
 
-@modal-padding-horizontal:                      var(--modal-padding-horizontal);
-@modal-padding-horizontal-s:                    @global-gutter;
-@modal-padding-horizontal-m:                    @global-medium-gutter;
-@modal-padding-vertical:                        @modal-padding-horizontal;
-@modal-padding-vertical-s:                      var(--modal-padding-vertical-s);
+@modal-padding-horizontal: var(--modal-padding-horizontal);
+@modal-padding-horizontal-s: @global-gutter;
+@modal-padding-horizontal-m: @global-medium-gutter;
+@modal-padding-vertical: @modal-padding-horizontal;
+@modal-padding-vertical-s: var(--modal-padding-vertical-s);
 
-@modal-dialog-width:                            var(--modal-dialog-width);
-@modal-dialog-background:                       @global-background;
+@modal-dialog-width: var(--modal-dialog-width);
+@modal-dialog-background: @global-background;
 
-@modal-container-width:                         var(--modal-container-width);
+@modal-container-width: var(--modal-container-width);
 
-@modal-body-padding-horizontal:                 var(--modal-body-padding-horizontal);
-@modal-body-padding-vertical:                   var(--modal-body-padding-vertical);
-@modal-body-padding-horizontal-s:               @global-gutter;
-@modal-body-padding-vertical-s:                 @global-gutter;
+@modal-body-padding-horizontal: var(--modal-body-padding-horizontal);
+@modal-body-padding-vertical: var(--modal-body-padding-vertical);
+@modal-body-padding-horizontal-s: @global-gutter;
+@modal-body-padding-vertical-s: @global-gutter;
 
-@modal-header-padding-horizontal:               var(--modal-header-padding-horizontal);
-@modal-header-padding-vertical:                 var(--modal-header-padding-vertical);
-@modal-header-padding-horizontal-s:             var(--modal-header-padding-horizontal-s);
-@modal-header-padding-vertical-s:               var(--modal-header-padding-vertical-s);
+@modal-header-padding-horizontal: var(--modal-header-padding-horizontal);
+@modal-header-padding-vertical: var(--modal-header-padding-vertical);
+@modal-header-padding-horizontal-s: var(--modal-header-padding-horizontal-s);
+@modal-header-padding-vertical-s: var(--modal-header-padding-vertical-s);
 
-@modal-footer-padding-horizontal:               var(--modal-footer-padding-horizontal);
-@modal-footer-padding-vertical:                 var(--modal-footer-padding-vertical);
-@modal-footer-padding-horizontal-s:             var(--modal-footer-padding-horizontal-s);
-@modal-footer-padding-vertical-s:               var(--modal-footer-padding-vertical-s);
+@modal-footer-padding-horizontal: var(--modal-footer-padding-horizontal);
+@modal-footer-padding-vertical: var(--modal-footer-padding-vertical);
+@modal-footer-padding-horizontal-s: var(--modal-footer-padding-horizontal-s);
+@modal-footer-padding-vertical-s: var(--modal-footer-padding-vertical-s);
 
-@modal-title-font-size:                         @global-xlarge-font-size;
-@modal-title-line-height:                       var(--modal-title-line-height);
+@modal-title-font-size: @global-xlarge-font-size;
+@modal-title-line-height: var(--modal-title-line-height);
 
-@modal-close-position:                          @global-small-margin;
-@modal-close-padding:                           var(--modal-close-padding);
+@modal-close-position: @global-small-margin;
+@modal-close-padding: var(--modal-close-padding);
 
-@modal-close-outside-position:                  var(--modal-close-outside-position);
-@modal-close-outside-translate:                 var(--modal-close-outside-translate);
-@modal-close-outside-color:                     var(--modal-close-outside-color);
-@modal-close-outside-hover-color:               @global-inverse-color;
+@modal-close-outside-position: var(--modal-close-outside-position);
+@modal-close-outside-translate: var(--modal-close-outside-translate);
+@modal-close-outside-color: var(--modal-close-outside-color);
+@modal-close-outside-hover-color: @global-inverse-color;
 
-@modal-header-background:                       @modal-dialog-background;
-@modal-footer-background:                       @modal-dialog-background;
+@modal-header-background: @modal-dialog-background;
+@modal-footer-background: @modal-dialog-background;
 
 //
 // New
 //
 
-@modal-header-border-width:                    @global-border-width;
-@modal-header-border:                          @global-border;
+@modal-header-border-width: @global-border-width;
+@modal-header-border: @global-border;
 
-@modal-footer-border-width:                    @global-border-width;
-@modal-footer-border:                          @global-border;
+@modal-footer-border-width: @global-border-width;
+@modal-footer-border: @global-border;
 
-@modal-close-full-padding:                     var(--modal-close-full-padding);
-@modal-close-full-background:                  @modal-dialog-background;
+@modal-close-full-padding: var(--modal-close-full-padding);
+@modal-close-full-background: @modal-dialog-background;
 
-@modal-close-full-padding-m:                   @global-margin;
-
+@modal-close-full-padding-m: @global-margin;
 
 // Component
 // ========================================================================
 
-.hook-modal() {}
-
+.hook-modal() {
+}
 
 // Dialog
 // ========================================================================
 
-.hook-modal-dialog() {}
-
+.hook-modal-dialog() {
+}
 
 // Full
 // ========================================================================
 
-.hook-modal-full() {}
-
+.hook-modal-full() {
+}
 
 // Sections
 // ========================================================================
 
-.hook-modal-header() { border-bottom: @modal-header-border-width solid @modal-header-border; }
+.hook-modal-header() {
+  border-bottom: @modal-header-border-width solid @modal-header-border;
+}
 
-.hook-modal-body() {}
+.hook-modal-body() {
+}
 
-.hook-modal-footer() { border-top: @modal-footer-border-width solid @modal-footer-border; }
-
+.hook-modal-footer() {
+  border-top: @modal-footer-border-width solid @modal-footer-border;
+}
 
 // Title
 // ========================================================================
 
-.hook-modal-title() {}
-
+.hook-modal-title() {
+}
 
 // Close
 // ========================================================================
 
-.hook-modal-close() {}
-
-.hook-modal-close-hover() {}
-
-.hook-modal-close-default() {}
-
-.hook-modal-close-default-hover() {}
-
-.hook-modal-close-outside() {}
-
-.hook-modal-close-outside-hover() {}
-
-.hook-modal-close-full() {
-    top: 0;
-    right: 0;
-    padding: @modal-close-full-padding;
-    background: @modal-close-full-background;
+.hook-modal-close() {
 }
 
-.hook-modal-close-full-hover() {}
+.hook-modal-close-hover() {
+}
 
+.hook-modal-close-default() {
+}
+
+.hook-modal-close-default-hover() {
+}
+
+.hook-modal-close-outside() {
+}
+
+.hook-modal-close-outside-hover() {
+}
+
+.hook-modal-close-full() {
+  top: 0;
+  right: 0;
+  padding: @modal-close-full-padding;
+  background: @modal-close-full-background;
+}
+
+.hook-modal-close-full-hover() {
+}
 
 // Miscellaneous
 // ========================================================================
 
 .hook-modal-misc() {
-
-    /* Tablet landscape and bigger */
-    @media (min-width: @breakpoint-medium) {
-
-        .uk-modal-close-full {
-            padding: @modal-close-full-padding-m;
-        }
-
+  /* Tablet landscape and bigger */
+  @media (min-width: @breakpoint-medium) {
+    .uk-modal-close-full {
+      padding: @modal-close-full-padding-m;
     }
-
+  }
 }

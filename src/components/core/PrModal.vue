@@ -5,22 +5,19 @@ import { onMounted, ref } from 'vue'
 
 const el = ref<RefElement>(null)
 
-const props = withDefaults(defineProps<ModalPropsType>(), {
-
-})
+const props = withDefaults(defineProps<ModalPropsType>(), {})
 
 onMounted(() => {
   modal(el.value, {
-    "esc-close": props.escClose,
-    "bg-close": props.bgClose,
+    'esc-close': props.escClose,
+    'bg-close': props.bgClose,
     stack: props.stack,
     container: props.container,
-    "cls-page": props.clsPage,
-    "cls-panel": props.clsPanel,
-    "sel-close": props.selClose,
+    'cls-page': props.clsPage,
+    'cls-panel': props.clsPanel,
+    'sel-close': props.selClose,
   })
 })
-
 </script>
 
 <template>

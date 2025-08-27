@@ -3,74 +3,93 @@
 //
 // ========================================================================
 
-
 // Variables
 // ========================================================================
 
-@dotnav-margin-horizontal:                          var(--dotnav-margin-horizontal);
-@dotnav-margin-vertical:                            @dotnav-margin-horizontal;
+@dotnav-margin-horizontal: var(--dotnav-margin-horizontal);
+@dotnav-margin-vertical: @dotnav-margin-horizontal;
 
-@dotnav-item-width:                                 var(--dotnav-item-width);
-@dotnav-item-height:                                @dotnav-item-width;
-@dotnav-item-border-radius:                         var(--dotnav-item-border-radius);
+@dotnav-item-width: var(--dotnav-item-width);
+@dotnav-item-height: @dotnav-item-width;
+@dotnav-item-border-radius: var(--dotnav-item-border-radius);
 
-@dotnav-item-hover-background:                      var(--dotnav-item-hover-background);
-@dotnav-item-onclick-background:                    var(--dotnav-item-onclick-background);
-@dotnav-item-active-background:                     var(--dotnav-item-active-background);
+@dotnav-item-hover-background: var(--dotnav-item-hover-background);
+@dotnav-item-onclick-background: var(--dotnav-item-onclick-background);
+@dotnav-item-active-background: var(--dotnav-item-active-background);
 
-@dotnav-item-background:                            var(--dotnav-item-background);
+@dotnav-item-background: var(--dotnav-item-background);
 
 //
 // New
 //
 
-@dotnav-item-border-width:                          var(--dotnav-item-border-width);
+@dotnav-item-border-width: var(--dotnav-item-border-width);
 
-@dotnav-item-border:                                var(--dotnav-item-border);
-@dotnav-item-hover-border:                          var(--dotnav-item-hover-border);
-@dotnav-item-onclick-border:                        var(--dotnav-item-onclick-border);
-@dotnav-item-active-border:                         var(--dotnav-item-active-border);
-
+@dotnav-item-border: var(--dotnav-item-border);
+@dotnav-item-hover-border: var(--dotnav-item-hover-border);
+@dotnav-item-onclick-border: var(--dotnav-item-onclick-border);
+@dotnav-item-active-border: var(--dotnav-item-active-border);
 
 // Component
 // ========================================================================
 
-.hook-dotnav() {}
-
-.hook-dotnav-item() {
-    border: @dotnav-item-border-width solid @dotnav-item-border;
-    transition: 0.2s ease-in-out;
-    transition-property: background-color, border-color;
+.hook-dotnav() {
 }
 
-.hook-dotnav-item-hover() { border-color: @dotnav-item-hover-border; }
+.hook-dotnav-item() {
+  border: @dotnav-item-border-width solid @dotnav-item-border;
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, border-color;
+}
 
-.hook-dotnav-item-onclick() { border-color: @dotnav-item-onclick-border; }
+.hook-dotnav-item-hover() {
+  border-color: @dotnav-item-hover-border;
+}
 
-.hook-dotnav-item-active() { border-color: @dotnav-item-active-border; }
+.hook-dotnav-item-onclick() {
+  border-color: @dotnav-item-onclick-border;
+}
 
+.hook-dotnav-item-active() {
+  border-color: @dotnav-item-active-border;
+}
 
 // Miscellaneous
 // ========================================================================
 
-.hook-dotnav-misc() {}
-
+.hook-dotnav-misc() {
+}
 
 // Inverse
 // ========================================================================
 
-@inverse-dotnav-item-hover-background:         rgb(from @inverse-global-color r g b / 0.9);                    // instead of: fade(@inverse-global-color, 90%);
-@inverse-dotnav-item-onclick-background:       rgb(from @inverse-global-color r g b / 0.5);                    // instead of: fade(@inverse-global-color, 50%);
-@inverse-dotnav-item-active-background:        rgb(from @inverse-global-color r g b / 0.9);                    // instead of: fade(@inverse-global-color, 90%);
+@inverse-dotnav-item-hover-background: rgb(
+  from @inverse-global-color r g b / 0.9
+); // instead of: fade(@inverse-global-color, 90%);
+@inverse-dotnav-item-onclick-background: rgb(
+  from @inverse-global-color r g b / 0.5
+); // instead of: fade(@inverse-global-color, 50%);
+@inverse-dotnav-item-active-background: rgb(
+  from @inverse-global-color r g b / 0.9
+); // instead of: fade(@inverse-global-color, 90%);
 
 //
 // New
 //
 
-@inverse-dotnav-item-background:                     transparent;
+@inverse-dotnav-item-background: transparent;
 
-.hook-inverse-dotnav() {}
-.hook-inverse-dotnav-item() { border-color: rgb(from @inverse-global-color r g b / 0.9); }                      // instead of: fade(@inverse-global-color, 90%);
-.hook-inverse-dotnav-item-hover() { border-color: transparent; }
-.hook-inverse-dotnav-item-onclick() { border-color: transparent; }
-.hook-inverse-dotnav-item-active() { border-color: transparent; }
+.hook-inverse-dotnav() {
+}
+.hook-inverse-dotnav-item() {
+  border-color: rgb(from @inverse-global-color r g b / 0.9);
+} // instead of: fade(@inverse-global-color, 90%);
+.hook-inverse-dotnav-item-hover() {
+  border-color: transparent;
+}
+.hook-inverse-dotnav-item-onclick() {
+  border-color: transparent;
+}
+.hook-inverse-dotnav-item-active() {
+  border-color: transparent;
+}

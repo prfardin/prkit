@@ -20,51 +20,42 @@ import PrSticky from '@c/core/prSticky.vue'
 import Wrapper from '@c/sidebar/wrapper.vue'
 import Strip from '@c/sidebar/strip.vue'
 
-
-
-
 // composable
 import { useToggle } from '@sc/Composable/useToggle'
 import UIkit from 'uikit'
-
-
 
 const { value: darkMode, toggle: changeMode } = useToggle()
 
 const elNavbar = ref<any>(null)
 
-onMounted( () => {
+onMounted(() => {
   navbar(elNavbar.value)
 })
 
 const notifications = ref<any>([
-  { href:"/", img: Avatar, name: "saeed bayat", notif: "let a comment", time: "1 hour ago" },
-  { href:"/", img: Avatar, name: "saeed bayat", notif: "let a comment", time: "1 hour ago" },
-  { href:"/", img: Avatar, name: "saeed bayat", notif: "let a comment", time: "1 hour ago" },
+  { href: '/', img: Avatar, name: 'saeed bayat', notif: 'let a comment', time: '1 hour ago' },
+  { href: '/', img: Avatar, name: 'saeed bayat', notif: 'let a comment', time: '1 hour ago' },
+  { href: '/', img: Avatar, name: 'saeed bayat', notif: 'let a comment', time: '1 hour ago' },
 ])
 
 const accounts = ref<any>([
-  { href:"/", img: Avatar, name: "saeed bayat", gmail: "saeedbayat@test.com" },
-  { href:"/", img: Avatar, name: "saeed bayat", gmail: "saeedbayat@test.com" },
-  { href:"/", img: Avatar, name: "saeed bayat", gmail: "saeedbayat@test.com" },
+  { href: '/', img: Avatar, name: 'saeed bayat', gmail: 'saeedbayat@test.com' },
+  { href: '/', img: Avatar, name: 'saeed bayat', gmail: 'saeedbayat@test.com' },
+  { href: '/', img: Avatar, name: 'saeed bayat', gmail: 'saeedbayat@test.com' },
 ])
 
-const Activity = ref<any>([
-  { name: "Team" },
-  { name: "Projects" },
-  { name: "Schedule" },
-])
+const Activity = ref<any>([{ name: 'Team' }, { name: 'Projects' }, { name: 'Schedule' }])
 
 const sideBarOpened = reactive({
-  maxWidth: "calc(100% - 300px)",
-  marginInlineStart: "300px"
+  maxWidth: 'calc(100% - 300px)',
+  marginInlineStart: '300px',
 })
 
 const stripBodyItem = ref<any>([
-  { icon: "create-dashboard", title: "title1" },
-  { icon: "folder-minus", title: "title2" },
-  { icon: "compass", title: "title3" },
-  { icon: "bell", title: "title4" }
+  { icon: 'create-dashboard', title: 'title1' },
+  { icon: 'folder-minus', title: 'title2' },
+  { icon: 'compass', title: 'title3' },
+  { icon: 'bell', title: 'title4' },
 ])
 
 // sidebar
@@ -77,63 +68,64 @@ const isActive = ref<number>(0)
 function toggleWrapper(i: number) {
   value.value = true
   isActive.value = i
-  if(value.value) {
-    UIkit.offcanvas("#wrapper").show()
+  if (value.value) {
+    UIkit.offcanvas('#wrapper').show()
   }
 }
 
 onMounted(() => {
-  UIkit.util.on('#pr-sticky-nav', 'inactive',  function () {
+  UIkit.util.on('#pr-sticky-nav', 'inactive', function () {
     stickyValue.value = false
   })
 })
-
-
 </script>
 
 <template>
   <div class="uk-background-muted">
     <div class="pr-sidebar">
       <strip :strip-body-item="stripBodyItem" @open-sidebar="(i) => toggleWrapper(i)" />
-      <wrapper id="wrapper" :is-active="isActive"/>
+      <wrapper id="wrapper" :is-active="isActive" />
     </div>
     <main class="view-wrapper" :style="[value ? sideBarOpened : '']">
       <pr-section class="uk-padding-remove-top" muted default>
         <pr-sticky id="pr-sticky-nav" start="60" animation="uk-animation-slide-top-medium">
           <div class="pr-sticky-nav" :class="{ 'is-open': stickyValue }">
-            <div class="pr-sticky-nav-parent" @click="changeStickyStatus()" >
-              <div class="pr-sticky-nav-button" :class="{ 'pr-sticky-nav-button-close': stickyValue }">
+            <div class="pr-sticky-nav-parent" @click="changeStickyStatus()">
+              <div
+                class="pr-sticky-nav-button"
+                :class="{ 'pr-sticky-nav-button-close': stickyValue }"
+              >
                 <span class="pr-sticky-nav-button-line-1"></span>
-                <span class="pr-sticky-nav-button-line-2" ></span>
+                <span class="pr-sticky-nav-button-line-2"></span>
                 <span class="pr-sticky-nav-button-line-3"></span>
               </div>
             </div>
             <div>
-              <div class="pr-sticky-nav-item" :class="{ 'one': stickyValue }">
+              <div class="pr-sticky-nav-item" :class="{ one: stickyValue }">
                 <a @click="changeMode()">
                   <pr-avatar small circle>
-                    <pr-icon :icon="darkMode ? 'icon-mono-sun' : 'icon-mono-moon' " ratio="1.1" />
+                    <pr-icon :icon="darkMode ? 'icon-mono-sun' : 'icon-mono-moon'" ratio="1.1" />
                   </pr-avatar>
                 </a>
               </div>
-              <div class="pr-sticky-nav-item" :class="{ 'two': stickyValue }">
+              <div class="pr-sticky-nav-item" :class="{ two: stickyValue }">
                 <pr-toggle target="#notification">
                   <pr-avatar small circle class="pr-primary-darktest-b-c">
                     <pr-icon icon="icon-mono-bell" />
                   </pr-avatar>
                 </pr-toggle>
               </div>
-              <div class="pr-sticky-nav-item" :class="{ 'three': stickyValue }">
+              <div class="pr-sticky-nav-item" :class="{ three: stickyValue }">
                 <pr-toggle target="#my-id">
                   <pr-avatar small circle class="pr-primary-darktest-b-c">
                     <pr-icon icon="icon-mono-create-dashboard" ratio=".8" />
                   </pr-avatar>
                 </pr-toggle>
               </div>
-              <div class="pr-sticky-nav-item" :class="{ 'four': stickyValue }">
+              <div class="pr-sticky-nav-item" :class="{ four: stickyValue }">
                 <pr-toggle target="#profile">
                   <pr-avatar small circle class="pr-cream-b-c pr-avatar-hover-primary">
-                    <img :src="Avatar" alt="" class="uk-object-cover">
+                    <img :src="Avatar" alt="" class="uk-object-cover" />
                   </pr-avatar>
                 </pr-toggle>
               </div>
@@ -150,7 +142,10 @@ onMounted(() => {
                       <div>
                         <pr-toggle target="#wrapper" @click="changeWrapperStatus">
                           <pr-avatar tag="div" class="tm-muted-b-c">
-                            <div class="pr-sidebar-button" :class="{ 'pr-sidebar-button-close': value }" >
+                            <div
+                              class="pr-sidebar-button"
+                              :class="{ 'pr-sidebar-button-close': value }"
+                            >
                               <span class="pr-sidebar-button-line-1"></span>
                               <span class="pr-sidebar-button-line-2"></span>
                               <span class="pr-sidebar-button-line-3"></span>
@@ -169,7 +164,10 @@ onMounted(() => {
                     <li>
                       <a @click="changeMode()">
                         <pr-avatar small circle border>
-                          <pr-icon :icon="darkMode ? 'icon-mono-sun' : 'icon-mono-moon' " ratio="1.1" />
+                          <pr-icon
+                            :icon="darkMode ? 'icon-mono-sun' : 'icon-mono-moon'"
+                            ratio="1.1"
+                          />
                         </pr-avatar>
                       </a>
                     </li>
@@ -190,7 +188,7 @@ onMounted(() => {
                     <li>
                       <pr-toggle target="#profile">
                         <pr-avatar small circle class="pr-cream-b-c pr-avatar-hover-primary" hover>
-                          <img :src="Avatar" alt="" class="uk-object-cover">
+                          <img :src="Avatar" alt="" class="uk-object-cover" />
                         </pr-avatar>
                       </pr-toggle>
                     </li>
@@ -199,7 +197,14 @@ onMounted(() => {
               </nav>
             </pr-container>
           </div>
-          <pr-drop close-on-scroll toggle="" id="notification" pos="bottom-right" mode="click" animate-out>
+          <pr-drop
+            close-on-scroll
+            toggle=""
+            id="notification"
+            pos="bottom-right"
+            mode="click"
+            animate-out
+          >
             <pr-card class="uk-border-rounded" border default>
               <div class="uk-card-header uk-flex uk-flex-middle uk-flex-between pr-padding-16">
                 <h4 class="uk-h4 uk-margin-remove">Notification</h4>
@@ -210,7 +215,7 @@ onMounted(() => {
                   <div class="pr-flex-items">
                     <div>
                       <pr-avatar small circle cls="pr-cream-b-c">
-                        <img :src="n.img" alt="" class="uk-object-cover">
+                        <img :src="n.img" alt="" class="uk-object-cover" />
                       </pr-avatar>
                     </div>
                     <div>
@@ -223,7 +228,15 @@ onMounted(() => {
               </div>
             </pr-card>
           </pr-drop>
-          <pr-drop close-on-scroll toggle="" id="profile" class="pr-width-256" pos="bottom-right" mode="click" animate-out>
+          <pr-drop
+            close-on-scroll
+            toggle=""
+            id="profile"
+            class="pr-width-256"
+            pos="bottom-right"
+            mode="click"
+            animate-out
+          >
             <pr-card class="uk-border-rounded" border default>
               <div class="uk-card-header uk-flex uk-flex-middle uk-flex-column">
                 <div class="uk-margin-bottom">
@@ -244,7 +257,7 @@ onMounted(() => {
                   <div class="pr-flex-items">
                     <div>
                       <pr-avatar small circle cls="pr-cream-b-c">
-                        <img :src="a.img" alt="" class="uk-object-cover">
+                        <img :src="a.img" alt="" class="uk-object-cover" />
                       </pr-avatar>
                     </div>
                     <div>
@@ -265,10 +278,16 @@ onMounted(() => {
             </template>
             <template #content>
               <div>
-                <pr-switcher class="uk-margin-medium-top" :list="Activity"/>
+                <pr-switcher class="uk-margin-medium-top" :list="Activity" />
                 <div class="uk-switcher uk-margin-medium-top">
                   <div>
-                    <pr-card class="uk-border-rounded uk-margin-small-bottom" border body small default>
+                    <pr-card
+                      class="uk-border-rounded uk-margin-small-bottom"
+                      border
+                      body
+                      small
+                      default
+                    >
                       <div class="uk-flex uk-flex-middle uk-flex-between">
                         <div class="pr-flex-items">
                           <pr-avatar small circle class="pr-cream-b-c">
@@ -286,7 +305,13 @@ onMounted(() => {
                         </pr-link>
                       </div>
                     </pr-card>
-                    <pr-card class="uk-border-rounded uk-margin-small-bottom" border body small default>
+                    <pr-card
+                      class="uk-border-rounded uk-margin-small-bottom"
+                      border
+                      body
+                      small
+                      default
+                    >
                       <div class="uk-flex uk-flex-middle uk-flex-between">
                         <div class="pr-flex-items">
                           <pr-avatar small circle class="pr-cream-b-c">
@@ -304,7 +329,13 @@ onMounted(() => {
                         </pr-link>
                       </div>
                     </pr-card>
-                    <pr-card class="uk-border-rounded uk-margin-small-bottom" border body small default>
+                    <pr-card
+                      class="uk-border-rounded uk-margin-small-bottom"
+                      border
+                      body
+                      small
+                      default
+                    >
                       <div class="uk-flex uk-flex-middle uk-flex-between">
                         <div class="pr-flex-items">
                           <pr-avatar small circle class="pr-cream-b-c">
@@ -322,7 +353,13 @@ onMounted(() => {
                         </pr-link>
                       </div>
                     </pr-card>
-                    <pr-card class="uk-border-rounded uk-margin-small-bottom" border body small default>
+                    <pr-card
+                      class="uk-border-rounded uk-margin-small-bottom"
+                      border
+                      body
+                      small
+                      default
+                    >
                       <div class="uk-flex uk-flex-middle uk-flex-between">
                         <div class="pr-flex-items">
                           <pr-avatar small circle class="pr-cream-b-c">
@@ -342,11 +379,17 @@ onMounted(() => {
                     </pr-card>
                   </div>
                   <div>
-                    <pr-card class="uk-border-rounded uk-margin-small-bottom" border body small default>
+                    <pr-card
+                      class="uk-border-rounded uk-margin-small-bottom"
+                      border
+                      body
+                      small
+                      default
+                    >
                       <div class="uk-flex uk-flex-middle uk-flex-between uk-margin-bottom">
                         <div class="pr-flex-items">
                           <pr-avatar small rounded style="background-color: rgb(124 58 237)">
-                            <pr-icon icon="icon-line-dollar-sign"  style="color: white"/>
+                            <pr-icon icon="icon-line-dollar-sign" style="color: white" />
                           </pr-avatar>
                           <div>
                             <div class="uk-text-small uk-text-bold">You</div>
@@ -365,26 +408,76 @@ onMounted(() => {
                       <div class="uk-flex uk-flex-between uk-flex-middle">
                         <span class="uk-text-muted">5/24</span>
                         <div class="uk-flex">
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #9A2DE0; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #9a2de0;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <img :src="Avatar" />
                           </pr-avatar>
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #EDBD43; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #edbd43;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <img :src="Avatar" />
                           </pr-avatar>
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #30C689; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #30c689;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <img :src="Avatar" />
                           </pr-avatar>
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #E2E8F0; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #e2e8f0;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <span class="uk-text-small">+3</span>
                           </pr-avatar>
                         </div>
                       </div>
                     </pr-card>
-                    <pr-card class="uk-border-rounded uk-margin-small-bottom" border body small default>
+                    <pr-card
+                      class="uk-border-rounded uk-margin-small-bottom"
+                      border
+                      body
+                      small
+                      default
+                    >
                       <div class="uk-flex uk-flex-middle uk-flex-between uk-margin-bottom">
                         <div class="pr-flex-items">
                           <pr-avatar small rounded style="background-color: rgb(124 58 237)">
-                            <pr-icon icon="icon-line-dollar-sign"  style="color: white"/>
+                            <pr-icon icon="icon-line-dollar-sign" style="color: white" />
                           </pr-avatar>
                           <div>
                             <div class="uk-text-small uk-text-bold">You</div>
@@ -403,26 +496,76 @@ onMounted(() => {
                       <div class="uk-flex uk-flex-between uk-flex-middle">
                         <span class="uk-text-muted">5/24</span>
                         <div class="uk-flex">
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #9A2DE0; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #9a2de0;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <img :src="Avatar" />
                           </pr-avatar>
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #EDBD43; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #edbd43;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <img :src="Avatar" />
                           </pr-avatar>
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #30C689; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #30c689;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <img :src="Avatar" />
                           </pr-avatar>
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #E2E8F0; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #e2e8f0;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <span class="uk-text-small">+3</span>
                           </pr-avatar>
                         </div>
                       </div>
                     </pr-card>
-                    <pr-card class="uk-border-rounded uk-margin-small-bottom" border body small default>
+                    <pr-card
+                      class="uk-border-rounded uk-margin-small-bottom"
+                      border
+                      body
+                      small
+                      default
+                    >
                       <div class="uk-flex uk-flex-middle uk-flex-between uk-margin-bottom">
                         <div class="pr-flex-items">
                           <pr-avatar small rounded style="background-color: rgb(124 58 237)">
-                            <pr-icon icon="icon-line-dollar-sign"  style="color: white"/>
+                            <pr-icon icon="icon-line-dollar-sign" style="color: white" />
                           </pr-avatar>
                           <div>
                             <div class="uk-text-small uk-text-bold">You</div>
@@ -441,16 +584,60 @@ onMounted(() => {
                       <div class="uk-flex uk-flex-between uk-flex-middle">
                         <span class="uk-text-muted">5/24</span>
                         <div class="uk-flex">
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #9A2DE0; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #9a2de0;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <img :src="Avatar" />
                           </pr-avatar>
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #EDBD43; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #edbd43;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <img :src="Avatar" />
                           </pr-avatar>
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #30C689; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #30c689;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <img :src="Avatar" />
                           </pr-avatar>
-                          <pr-avatar class="uk-flex-inline" x-small circle border style="background-color: #E2E8F0; border-width: 2px; border-color: white;margin-inline-start: -.5rem;">
+                          <pr-avatar
+                            class="uk-flex-inline"
+                            x-small
+                            circle
+                            border
+                            style="
+                              background-color: #e2e8f0;
+                              border-width: 2px;
+                              border-color: white;
+                              margin-inline-start: -0.5rem;
+                            "
+                          >
                             <span class="uk-text-small">+3</span>
                           </pr-avatar>
                         </div>
@@ -459,7 +646,7 @@ onMounted(() => {
                   </div>
                   <div>
                     <div class="pr-schedule">
-                      <div class="pr-avatar-border ">
+                      <div class="pr-avatar-border">
                         <pr-avatar class="uk-box-shadow-small" tag="div" small circle border>
                           <pr-icon icon="icon-line-phone" ratio=".7" />
                         </pr-avatar>
@@ -470,7 +657,7 @@ onMounted(() => {
                       </div>
                     </div>
                     <div class="pr-schedule">
-                      <div class="pr-avatar-border ">
+                      <div class="pr-avatar-border">
                         <pr-avatar class="uk-box-shadow-small" tag="div" small circle border>
                           <pr-icon icon="icon-line-phone" ratio=".7" />
                         </pr-avatar>
@@ -481,7 +668,7 @@ onMounted(() => {
                       </div>
                     </div>
                     <div class="pr-schedule">
-                      <div class="pr-avatar-border ">
+                      <div class="pr-avatar-border">
                         <pr-avatar class="uk-box-shadow-small" tag="div" small circle border>
                           <pr-icon icon="icon-line-phone" ratio=".7" />
                         </pr-avatar>
@@ -492,7 +679,7 @@ onMounted(() => {
                       </div>
                     </div>
                     <div class="pr-schedule">
-                      <div class="pr-avatar-border ">
+                      <div class="pr-avatar-border">
                         <pr-avatar class="uk-box-shadow-small" tag="div" small circle border>
                           <pr-icon icon="icon-line-phone" ratio=".7" />
                         </pr-avatar>
@@ -503,7 +690,7 @@ onMounted(() => {
                       </div>
                     </div>
                     <div class="pr-schedule">
-                      <div class="pr-avatar-border ">
+                      <div class="pr-avatar-border">
                         <pr-avatar class="uk-box-shadow-small" tag="div" small circle border>
                           <pr-icon icon="icon-line-phone" ratio=".7" />
                         </pr-avatar>
@@ -514,7 +701,7 @@ onMounted(() => {
                       </div>
                     </div>
                     <div class="pr-schedule">
-                      <div class="pr-avatar-border ">
+                      <div class="pr-avatar-border">
                         <pr-avatar class="uk-box-shadow-small" tag="div" small circle border>
                           <pr-icon icon="icon-line-phone" ratio=".7" />
                         </pr-avatar>
@@ -539,8 +726,6 @@ onMounted(() => {
 </template>
 
 <style>
-
-
 .uk-text-small {
   line-height: 1.25rem;
 }
@@ -556,7 +741,7 @@ onMounted(() => {
 }
 
 .pr-schedule::after {
-  content: "";
+  content: '';
   box-sizing: border-box;
   position: absolute;
   border: 0 solid #e5e7eb;
@@ -573,7 +758,7 @@ onMounted(() => {
 
 .pr-avatar-border::after {
   box-sizing: border-box;
-  content: "";
+  content: '';
   border: 0 solid #e5e7eb;
   border-top-width: 1px;
   width: 1.25rem;
@@ -610,7 +795,7 @@ a:hover {
   gap: 8px;
   background-color: transparent;
   border-radius: 5px;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
 
 a {
@@ -621,7 +806,6 @@ a {
     background-color: #f0f4f7;
   }
 }
-
 
 .pr-navbar-item {
   border-radius: 999px;
@@ -640,14 +824,13 @@ a {
 }
 
 .uk-navbar-nav {
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
-
 
 .is-pushed {
   margin-left: 340px;
@@ -670,7 +853,7 @@ a {
   animation: shine-avatar 1.6s infinite linear;
 }
 
-.post{
+.post {
   .line {
     float: right;
     width: 140px;

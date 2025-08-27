@@ -10,9 +10,7 @@ interface Props {
   isActive: number
 }
 
-const props = withDefaults(defineProps<Props>(), {
-
-})
+const props = withDefaults(defineProps<Props>(), {})
 
 // data
 // We preferred to use the nav items inside the component because it is easier to manage it here
@@ -25,51 +23,51 @@ const navItem1 = ref<any>({
       subItems: [
         { title: 'products', href: '/' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'Shop',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'Production',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'test',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'test1',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'test3',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
   ],
-  divider: 2
+  divider: 2,
 })
 
 const navItem2 = ref<any>({
@@ -80,26 +78,26 @@ const navItem2 = ref<any>({
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'Shop',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'test3',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
-  ]
+  ],
 })
 
 const navItem3 = ref<any>({
@@ -110,51 +108,51 @@ const navItem3 = ref<any>({
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'Shop',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'Production',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'test',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'test1',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'test3',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
   ],
-  divider: 3
+  divider: 3,
 })
 
 const navItem4 = ref<any>({
@@ -165,51 +163,51 @@ const navItem4 = ref<any>({
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'Shop',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'Production',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'test',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'test1',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
     {
       parentTitle: 'test3',
       subItems: [
         { title: 'products', href: '/wares' },
         { title: 'products', href: '/wares' },
-        { title: 'products', href: '/wares' }
-      ]
+        { title: 'products', href: '/wares' },
+      ],
     },
   ],
-  divider: 5
+  divider: 5,
 })
 
 const navItems = ref([navItem1, navItem2, navItem3, navItem4])
@@ -221,13 +219,17 @@ const data = computed(() => {
 
 const findLastIndex = computed(() => {
   return data.value?.body.length - 1
-});
-
-
+})
 </script>
 
 <template>
-  <pr-offcanvas class="pr-sidebar-wrapper" :close-button="false" :id="id" :bg-close="false" :esc-close="false">
+  <pr-offcanvas
+    class="pr-sidebar-wrapper"
+    :close-button="false"
+    :id="id"
+    :bg-close="false"
+    :esc-close="false"
+  >
     <template #title>
       <h3 class="uk-margin-small-bottom uk-h3">{{ data?.title }}</h3>
     </template>
@@ -250,7 +252,11 @@ const findLastIndex = computed(() => {
               </li>
             </ul>
           </li>
-          <li v-if="(index + 1) % data.divider === 0 && index !== findLastIndex" class="uk-nav-divider" role="presentation"></li>
+          <li
+            v-if="(index + 1) % data.divider === 0 && index !== findLastIndex"
+            class="uk-nav-divider"
+            role="presentation"
+          ></li>
         </template>
       </pr-nav>
     </template>
@@ -258,15 +264,13 @@ const findLastIndex = computed(() => {
 </template>
 
 <style>
-
 .uk-parent {
   .pr-nav-parent {
     margin-left: auto;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   &.uk-open a .pr-nav-parent {
     transform: rotate(180deg);
   }
 }
-
 </style>

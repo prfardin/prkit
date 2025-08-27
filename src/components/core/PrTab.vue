@@ -5,15 +5,14 @@ import { onMounted, ref } from 'vue'
 import { Tab } from '@u/props'
 import PrLink from '@c/core/PrLink.vue'
 
-
 const el = ref<RefElement>(null)
 
 const props = withDefaults(defineProps<Tab>(), {
-  toggle:  "selector	> *",
+  toggle: 'selector	> *',
   active: 0,
   duration: 200,
   swiping: true,
-  media: 960
+  media: 960,
 })
 
 onMounted(() => {
@@ -27,13 +26,12 @@ onMounted(() => {
     media: props.media,
   })
 })
-
 </script>
 
 <template>
   <ul class="uk-tab-left uk-tab" ref="el">
-      <li v-for="(d, index) in tabs" :key="index">
-        <pr-link class="" :to="d.href">{{ d.title }}</pr-link>
-      </li>
+    <li v-for="(d, index) in tabs" :key="index">
+      <pr-link class="" :to="d.href">{{ d.title }}</pr-link>
+    </li>
   </ul>
 </template>

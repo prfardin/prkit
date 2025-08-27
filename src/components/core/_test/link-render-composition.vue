@@ -7,55 +7,55 @@ export default defineComponent({
   props: {
     tag: {
       type: String,
-      default: 'a'
+      default: 'a',
     },
     to: {
       type: String,
-      required: true
+      required: true,
     },
     href: {
-      type: String
+      type: String,
     },
     default: {
-      type: Boolean
+      type: Boolean,
     },
     primary: {
-      type: Boolean
+      type: Boolean,
     },
     secondary: {
-      type: Boolean
+      type: Boolean,
     },
     muted: {
-      type: Boolean
+      type: Boolean,
     },
     xSmall: {
-      type: Boolean
+      type: Boolean,
     },
     rounded: {
-      type: Boolean
+      type: Boolean,
     },
     circle: {
-      type: Boolean
+      type: Boolean,
     },
     collapse: {
-      type: Boolean
+      type: Boolean,
     },
     icon: {
-      type: String
+      type: String,
     },
     ratio: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   setup(props, { slots }) {
     return () =>
       h(
         props.tag,
         {
-          class: buttonCls(props)
+          class: buttonCls(props),
         },
-        [slots.default()]
+        [slots.default()],
       )
-  }
+  },
 })
 </script>

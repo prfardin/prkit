@@ -3,64 +3,75 @@
 //
 // ========================================================================
 
-
 // Variables
 // ========================================================================
 
-@slidenav-padding-vertical:                     var(--slidenav-padding-vertical);
-@slidenav-padding-horizontal:                   var(--slidenav-padding-horizontal);
+@slidenav-padding-vertical: var(--slidenav-padding-vertical);
+@slidenav-padding-horizontal: var(--slidenav-padding-horizontal);
 
-@slidenav-color:                                var(--slidenav-color);
-@slidenav-hover-color:                          var(--slidenav-hover-color);
-@slidenav-active-color:                         var(--slidenav-active-color);
+@slidenav-color: var(--slidenav-color);
+@slidenav-hover-color: var(--slidenav-hover-color);
+@slidenav-active-color: var(--slidenav-active-color);
 
-@slidenav-large-padding-vertical:               var(--slidenav-large-padding-vertical);
-@slidenav-large-padding-horizontal:             @slidenav-large-padding-vertical;
-
+@slidenav-large-padding-vertical: var(--slidenav-large-padding-vertical);
+@slidenav-large-padding-horizontal: @slidenav-large-padding-vertical;
 
 // Component
 // ========================================================================
 
-.hook-slidenav() { transition: color 0.1s ease-in-out; }
+.hook-slidenav() {
+  transition: color 0.1s ease-in-out;
+}
 
-.hook-slidenav-hover() {}
+.hook-slidenav-hover() {
+}
 
-.hook-slidenav-active() {}
-
+.hook-slidenav-active() {
+}
 
 // Icon modifier
 // ========================================================================
 
-.hook-slidenav-previous() {}
+.hook-slidenav-previous() {
+}
 
-.hook-slidenav-next() {}
-
+.hook-slidenav-next() {
+}
 
 // Size modifier
 // ========================================================================
 
-.hook-slidenav-large() {}
-
+.hook-slidenav-large() {
+}
 
 // Container
 // ========================================================================
 
-.hook-slidenav-container() {}
-
+.hook-slidenav-container() {
+}
 
 // Miscellaneous
 // ========================================================================
 
-.hook-slidenav-misc() {}
-
+.hook-slidenav-misc() {
+}
 
 // Inverse
 // ========================================================================
 
-@inverse-slidenav-color:                       rgb(from @inverse-global-color r g b / 0.7);                     // instead of: fade(@inverse-global-color, 70%);
-@inverse-slidenav-hover-color:                 rgb(from @inverse-global-color r g b / 0.95);                    // instead of: fade(@inverse-global-color, 95%);
-@inverse-slidenav-active-color:                rgb(from @inverse-global-color r g b / 0.7);                     // instead of: fade(@inverse-global-color, 70%);
+@inverse-slidenav-color: rgb(
+  from @inverse-global-color r g b / 0.7
+); // instead of: fade(@inverse-global-color, 70%);
+@inverse-slidenav-hover-color: rgb(
+  from @inverse-global-color r g b / 0.95
+); // instead of: fade(@inverse-global-color, 95%);
+@inverse-slidenav-active-color: rgb(
+  from @inverse-global-color r g b / 0.7
+); // instead of: fade(@inverse-global-color, 70%);
 
-.hook-inverse-slidenav() {}
-.hook-inverse-slidenav-hover() {}
-.hook-inverse-slidenav-active() {}
+.hook-inverse-slidenav() {
+}
+.hook-inverse-slidenav-hover() {
+}
+.hook-inverse-slidenav-active() {
+}

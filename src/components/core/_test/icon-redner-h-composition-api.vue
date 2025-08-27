@@ -8,8 +8,8 @@ export default {
       { id: 'foo', class: 'bar' }, // props
       [
         /* children */
-      ]
+      ],
     )
-  }
+  },
 }
 </script>

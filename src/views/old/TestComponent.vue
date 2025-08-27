@@ -8,12 +8,11 @@ import PrInput from '@c/core/form/PrInput.vue'
 const url = ref(`/`)
 
 const data = ref<any>([
-  {title: 'ttt', content: 'ttt'},
-  {title: 'tttt', content: 'tttt'},
-  {title: 'ttttt', content: 'ttttt'},
-  {title: 'tttttt', content: 'tttttt'}
+  { title: 'ttt', content: 'ttt' },
+  { title: 'tttt', content: 'tttt' },
+  { title: 'ttttt', content: 'ttttt' },
+  { title: 'tttttt', content: 'tttttt' },
 ])
-
 </script>
 
 <template>
@@ -21,7 +20,7 @@ const data = ref<any>([
     <pr-container small>
       <pr-select-box name="test" v-model="data.content" :lists="data" searchable />
 
-      <pr-input name="test"  disabled/>
+      <pr-input name="test" disabled />
     </pr-container>
   </pr-section>
 </template>
@@ -30,5 +29,4 @@ const data = ref<any>([
 .pr-overflow-x-auto {
   overflow-x: auto;
 }
-
 </style>

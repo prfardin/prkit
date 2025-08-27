@@ -5,25 +5,25 @@
  * so we will use this props as export props for components with future release of vue
  */
 import {
-    GridClassType,
-    ButtonClassType,
-    LinkClassType,
-    ListClassType,
-    ContainerClassType,
-    SectionClassType,
-    TileClassType,
-    InputClassType,
-    TextareaClassType,
-    LabelClassType,
-    SpinnerClassType,
-    AvatarClassType,
-    CardClassType,
-    RadioClassType,
-    CheckboxClassType,
-    ChipClassType,
-    AccordionClassType,
-    TableClassType,
-    PaginationClassType
+  GridClassType,
+  ButtonClassType,
+  LinkClassType,
+  ListClassType,
+  ContainerClassType,
+  SectionClassType,
+  TileClassType,
+  InputClassType,
+  TextareaClassType,
+  LabelClassType,
+  SpinnerClassType,
+  AvatarClassType,
+  CardClassType,
+  RadioClassType,
+  CheckboxClassType,
+  ChipClassType,
+  AccordionClassType,
+  TableClassType,
+  PaginationClassType,
 } from './classes'
 
 import { RouteLocationRaw } from 'vue-router'
@@ -32,21 +32,21 @@ import { RouteLocationRaw } from 'vue-router'
  * Section Props Types
  */
 export interface SectionPropsType extends SectionClassType {
-    //
+  //
 }
 
 /**
  * Container Props Types
  */
 export interface ContainerPropsType extends ContainerClassType {
-    //
+  //
 }
 
 /**
  * Tile Props Types
  */
 export interface TilePropsType extends TileClassType {
-    //
+  //
 }
 
 /**
@@ -55,7 +55,7 @@ export interface TilePropsType extends TileClassType {
  * cause all list classes define as props
  */
 export interface ListPropsType extends ListClassType {
-    tag?: 'ul' | 'div' | string
+  tag?: 'ul' | 'div' | string
 }
 
 /**
@@ -64,10 +64,10 @@ export interface ListPropsType extends ListClassType {
  * cause all grid classes define as props
  */
 export interface GridPropsType extends GridClassType {
-    margin?: string
-    firstColumn?: string
-    masonry?: boolean
-    parallax?: number
+  margin?: string
+  firstColumn?: string
+  masonry?: boolean
+  parallax?: number
 }
 
 /**
@@ -76,18 +76,18 @@ export interface GridPropsType extends GridClassType {
  * cause all button classes define as props
  */
 export interface ButtonPropsType extends ButtonClassType {
-    tag?: 'router-link' | 'a' | 'button'
-    to?: string
-    href?: string
-    slotClass?: string
-    ripple?: boolean
-    spinner?: boolean
-    spinnerMod?: 'line' | 'circle'
-    icon?: string
-    ratio?: string
-    iconClass?: string
-    spinnerClass?: string
-    disabled?: boolean
+  tag?: 'router-link' | 'a' | 'button'
+  to?: string
+  href?: string
+  slotClass?: string
+  ripple?: boolean
+  spinner?: boolean
+  spinnerMod?: 'line' | 'circle'
+  icon?: string
+  ratio?: string
+  iconClass?: string
+  spinnerClass?: string
+  disabled?: boolean
 }
 
 /**
@@ -96,99 +96,99 @@ export interface ButtonPropsType extends ButtonClassType {
  * cause all link classes define as props
  */
 export interface LinkPropsType extends LinkClassType {
-    tag?: 'router-link' | 'a'
-    to?: RouteLocationRaw
-    href?: string
-    slotClass?: string
-    iconClass?: string
-    ratio?: string
+  tag?: 'router-link' | 'a'
+  to?: RouteLocationRaw
+  href?: string
+  slotClass?: string
+  iconClass?: string
+  ratio?: string
 }
 
 /**
  * Icon Props Types
  */
 export interface IconPropsType {
-    tag?: 'span' | string
-    icon?: string
-    ratio?: string | number
+  tag?: 'span' | string
+  icon?: string
+  ratio?: string | number
 }
 
 /**
  * Nav Props Types
  */
 export interface NavPropsType {
-    hasNavTag?: boolean
-    targets?: string
-    toggle?: string
-    content?: string
-    collapsible?: boolean
-    multiple?: boolean
-    transition?: string
-    animation?: string | boolean
-    duration?: number
+  hasNavTag?: boolean
+  targets?: string
+  toggle?: string
+  content?: string
+  collapsible?: boolean
+  multiple?: boolean
+  transition?: string
+  animation?: string | boolean
+  duration?: number
 }
 
 /**
  * Nav Props Types
  */
 export interface NavBar {
-    prContainer?: string
-    align?: string,
-    dropbar?: boolean,
-    dropbarAnchor?: string | boolean,
-    dropbarTransparentMode?: string | boolean,
-    stretch?: string | boolean,
-    mode?: string,
-    delayShow?: number,
-    delayHide?: number,
-    boundary?: string | boolean,
-    target?: string | boolean,
-    targetX?: string | boolean,
-    targetY?: string | boolean,
-    offset?: number,
-    animation?: string,
-    animateOut?: boolean,
-    bgScroll?: boolean,
-    closeOnScroll?: boolean,
-    duration?: number,
-    container?: boolean
+  prContainer?: string
+  align?: string
+  dropbar?: boolean
+  dropbarAnchor?: string | boolean
+  dropbarTransparentMode?: string | boolean
+  stretch?: string | boolean
+  mode?: string
+  delayShow?: number
+  delayHide?: number
+  boundary?: string | boolean
+  target?: string | boolean
+  targetX?: string | boolean
+  targetY?: string | boolean
+  offset?: number
+  animation?: string
+  animateOut?: boolean
+  bgScroll?: boolean
+  closeOnScroll?: boolean
+  duration?: number
+  container?: boolean
 }
 
 /**
  * Input Props Types
  */
 export interface InputPropsType extends InputClassType {
-    type?: 'text' | string
-    name: string
-    id?: string
-    label?: string
-    ariaLabel?: string
-    autofocus?: boolean
-    icon?: string
-    ratio?: number
-    iconClass?: string
-    iconFlip?: boolean
+  type?: 'text' | string
+  name: string
+  id?: string
+  label?: string
+  ariaLabel?: string
+  autofocus?: boolean
+  icon?: string
+  ratio?: number
+  iconClass?: string
+  iconFlip?: boolean
 }
 
 /**
  * Input Props Types
  */
 export interface SelectBoxPropsType {
-    type?: 'text' | string
-    name: string
-    id?: string
-    label?: string
-    ariaLabel?: string
-    icon?: string
-    ratio?: number
-    iconClass?: string
-    iconFlip?: boolean
-    mode?: string
-    lists?: string[] | undefined
-    node?: any
-    d?: string | null | string[]
-    searchable?: boolean
-    divider?: boolean
+  type?: 'text' | string
+  name: string
+  id?: string
+  label?: string
+  ariaLabel?: string
+  icon?: string
+  ratio?: number
+  iconClass?: string
+  iconFlip?: boolean
+  mode?: string
+  lists?: string[] | undefined
+  node?: any
+  d?: string | null | string[]
+  searchable?: boolean
+  divider?: boolean
 }
 
 /**
@@ -196,35 +196,35 @@ export interface SelectBoxPropsType {
  */
 
 export interface TextareaPropsType extends TextareaClassType {
-    type?: 'text' | string
-    name: string
-    id?: string
-    label?: string
-    ariaLabel?: string
-    autofocus?: boolean
-    icon?: string
-    ratio?: number
-    iconClass?: string
-    iconFlip?: boolean
-    rows?: number
+  type?: 'text' | string
+  name: string
+  id?: string
+  label?: string
+  ariaLabel?: string
+  autofocus?: boolean
+  icon?: string
+  ratio?: number
+  iconClass?: string
+  iconFlip?: boolean
+  rows?: number
 }
 
 /**
  * Label Props Types
  */
 export interface LabelPropsType extends LabelClassType {
-    for: string
-    icon?: string
-    ratio?: number
-    iconClass?: string
+  for: string
+  icon?: string
+  ratio?: number
+  iconClass?: string
 }
 
 /**
  * Spinner Props Types
  */
 export interface SpinnerPropsType extends SpinnerClassType {
-    tag?: 'span' | string
-    mode?: 'line' | 'circle'
+  tag?: 'span' | string
+  mode?: 'line' | 'circle'
 }
 
 /**
@@ -232,40 +232,36 @@ export interface SpinnerPropsType extends SpinnerClassType {
  */
 
 export interface AvatarPropsType extends AvatarClassType {
-    tag?: string
-    cls?: string
+  tag?: string
+  cls?: string
 }
 
 /**
  * Card Props Types
  */
 
-export interface CardPropsType extends CardClassType {
-
-}
+export interface CardPropsType extends CardClassType {}
 
 /**
  * Card Props Types
  */
 
-export interface ChipPropsType extends ChipClassType {
-
-}
+export interface ChipPropsType extends ChipClassType {}
 
 /**
  * Offcanvas Props Types
  */
 
 export interface OffcanvasPropsType {
-    mode?: 'slide' | 'reveal' | 'push' | 'none'
-    flip?: boolean | undefined
-    overlay?: boolean | undefined
-    escClose?: boolean | undefined
-    bgClose?: boolean | undefined
-    container?: string | boolean | undefined
-    id: string
-    closeButton?: boolean
-    notNav?: boolean
+  mode?: 'slide' | 'reveal' | 'push' | 'none'
+  flip?: boolean | undefined
+  overlay?: boolean | undefined
+  escClose?: boolean | undefined
+  bgClose?: boolean | undefined
+  container?: string | boolean | undefined
+  id: string
+  closeButton?: boolean
+  notNav?: boolean
 }
 
 /**
@@ -273,64 +269,62 @@ export interface OffcanvasPropsType {
  */
 
 export interface ModalPropsType {
-    escClose?: boolean | undefined
-    bgClose?: boolean | undefined
-    stack?: boolean | undefined
-    container?: string | boolean | undefined
-    clsPage?: string | undefined
-    clsPanel?: string | undefined
-    selClose?: string | undefined
-    id: string
-    cls?: string
+  escClose?: boolean | undefined
+  bgClose?: boolean | undefined
+  stack?: boolean | undefined
+  container?: string | boolean | undefined
+  clsPage?: string | undefined
+  clsPanel?: string | undefined
+  selClose?: string | undefined
+  id: string
+  cls?: string
 }
-
 
 export interface StickyPropsType {
-    position?: 'top' | 'bottom'
-    start?: number | string
-    end?: boolean | number | string
-    offset?: number | string
-    overflowFlip?: boolean
-    animation?: string | boolean
-    clsActive?: string
-    clsInactive?: string
-    widthElement?: string | boolean
-    showOnUp?: boolean
-    media?: number | string | boolean
-    targetOffset?: boolean | number
+  position?: 'top' | 'bottom'
+  start?: number | string
+  end?: boolean | number | string
+  offset?: number | string
+  overflowFlip?: boolean
+  animation?: string | boolean
+  clsActive?: string
+  clsInactive?: string
+  widthElement?: string | boolean
+  showOnUp?: boolean
+  media?: number | string | boolean
+  targetOffset?: boolean | number
 }
-
 
 /**
  * Drop Props Types
  */
 
 export interface DropPropsType {
-    toggle?: string | boolean
-    pos?: string
-    stretch?: 'x' | 'y' | boolean | string
-    mode?: 'click' | 'hover' | string
-    delayShow?: number
-    delayHide?: number
-    autoUpdate?: boolean
-    display?: 'dynamic' | 'static'
-    boundary?: string
-    boundaryX?: string
-    boundaryY?: string
-    boundaryAlign?: boolean
-    target?: string | boolean
-    targetX?: string | boolean
-    targetY?: string | boolean
-    inset?: boolean
-    flip?: boolean | string
-    shift?: boolean
-    offset?: number
-    animation?: string
-    animateOut?: boolean
-    bgScroll?: boolean
-    closeOnScroll?: boolean
-    duration?: number
-    container?: boolean
+  toggle?: string | boolean
+  pos?: string
+  stretch?: 'x' | 'y' | boolean | string
+  mode?: 'click' | 'hover' | string
+  delayShow?: number
+  delayHide?: number
+  autoUpdate?: boolean
+  display?: 'dynamic' | 'static'
+  boundary?: string
+  boundaryX?: string
+  boundaryY?: string
+  boundaryAlign?: boolean
+  target?: string | boolean
+  targetX?: string | boolean
+  targetY?: string | boolean
+  inset?: boolean
+  flip?: boolean | string
+  shift?: boolean
+  offset?: number
+  animation?: string
+  animateOut?: boolean
+  bgScroll?: boolean
+  closeOnScroll?: boolean
+  duration?: number
+  container?: boolean
 }
 
 /**
@@ -338,20 +332,19 @@ export interface DropPropsType {
  */
 
 export interface RadioPropsType extends RadioClassType {
-    value: any
-    name: string
-    id?: string
+  value: any
+  name: string
+  id?: string
 }
-
 
 /**
  * Checkbox Props Types
  */
 
 export interface CheckboxPropsType extends CheckboxClassType {
-    name: string
-    id?: string
-    value?: string | number | undefined
+  name: string
+  id?: string
+  value?: string | number | undefined
 }
 
 /**
@@ -359,28 +352,29 @@ export interface CheckboxPropsType extends CheckboxClassType {
  */
 
 export interface SwitcherPropsType {
-    connect?: string
-    toggle?: string
-    itemNav?: string
-    active?: number
-    animation?: string
-    duration?: number
-    swiping?: boolean
-    followFocus?: boolean
-    list: [{
-        name: string
-    }]
+  connect?: string
+  toggle?: string
+  itemNav?: string
+  active?: number
+  animation?: string
+  duration?: number
+  swiping?: boolean
+  followFocus?: boolean
+  list: [
+    {
+      name: string
+    },
+  ]
 }
-
 
 /**
  * Progress Props Types
  */
 
 export interface ProgressPropsType {
-    value: string | number
-    max?: string | number
-    id?: string
+  value: string | number
+  max?: string | number
+  id?: string
 }
 
 /**
@@ -388,17 +382,19 @@ export interface ProgressPropsType {
  */
 
 export interface Tab {
-    connect?: string
-    toggle?: string
-    active?: number
-    animation?: string
-    duration?: number
-    swiping?: boolean
-    media?: number | string
-    tabs: [{
-        title: string
-        href: string
-    }]
+  connect?: string
+  toggle?: string
+  active?: number
+  animation?: string
+  duration?: number
+  swiping?: boolean
+  media?: number | string
+  tabs: [
+    {
+      title: string
+      href: string
+    },
+  ]
 }
 
 /**
@@ -406,11 +402,11 @@ export interface Tab {
  */
 
 export interface SearchPropsType {
-    label?: string
-    placeholder?: string
-    labelCls?: string
-    id: string
-    autofocus?: boolean
+  label?: string
+  placeholder?: string
+  labelCls?: string
+  id: string
+  autofocus?: boolean
 }
 
 /**
@@ -418,42 +414,40 @@ export interface SearchPropsType {
  */
 
 export interface AccordionPropsType extends AccordionClassType {
-    items: [{ title: string, content: string }]
-    active?: number
-    animation?: boolean
-    collapsible?: boolean
-    content?: string
-    duration?: number
-    multiple?: boolean
-    targets?: string
-    toggle?: string
-    transition?: string
-    offset?: number
+  items: [{ title: string; content: string }]
+  active?: number
+  animation?: boolean
+  collapsible?: boolean
+  content?: string
+  duration?: number
+  multiple?: boolean
+  targets?: string
+  toggle?: string
+  transition?: string
+  offset?: number
 }
-
 
 /**
  * table Props Types
  */
 
-export interface TablePropsType extends TableClassType {
-}
+export interface TablePropsType extends TableClassType {}
 
 /**
  * pagination Props Types
  */
 
 export interface PaginationPropsType extends PaginationClassType {
-    modelValue: string | null
-    table: string
-    baseUrl?: string | null
-    paginate: {
-        current: number
-        total: number
-        totalPages: number
-        loader: boolean
-        perPage: number
-        from: number
-        to: number
-    }
+  modelValue: string | null
+  table: string
+  baseUrl?: string | null
+  paginate: {
+    current: number
+    total: number
+    totalPages: number
+    loader: boolean
+    perPage: number
+    from: number
+    to: number
+  }
 }

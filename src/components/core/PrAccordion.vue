@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<AccordionPropsType>(), {
   targets: '> *',
   toggle: '> .uk-accordion-title',
   transition: 'cubic-bezier(.4,0,.2,1)',
-  offset: 0
+  offset: 0,
 })
 
 const el = ref<RefElement>(null)
@@ -33,12 +33,11 @@ onMounted(() => {
     targets: props.targets,
     toggle: props.toggle,
     transition: props.transition,
-    offset: props.offset
+    offset: props.offset,
   })
 })
 
 const AccordionClass = computed(() => AccordionClassObject(props))
-
 </script>
 
 <template>

@@ -5,10 +5,10 @@ import { onMounted, ref } from 'vue'
 import UIkit from 'uikit'
 
 const props = withDefaults(defineProps<DropPropsType>(), {
-  toggle: "- *",
-  pos: "bottom-left",
+  toggle: '- *',
+  pos: 'bottom-left',
   stretch: false,
-  mode: "click, hover",
+  mode: 'click, hover',
   delayShow: 0,
   delayHide: 800,
   autoUpdate: true,
@@ -22,12 +22,12 @@ const props = withDefaults(defineProps<DropPropsType>(), {
   flip: true,
   shift: true,
   offset: 0,
-  animation: "uk-animation-fade",
+  animation: 'uk-animation-fade',
   animateOut: false,
   bgScroll: true,
   closeOnScroll: false,
   duration: 200,
-  container: false
+  container: false,
 })
 
 const el = ref<RefElement>(null)
@@ -61,13 +61,10 @@ onMounted(() => {
       bgScroll: props.bgScroll,
       closeOnScroll: props.closeOnScroll,
       duration: props.duration,
-      container: props.container
-    })
+      container: props.container,
+    }),
   )
 })
-
-
-
 </script>
 
 <template>

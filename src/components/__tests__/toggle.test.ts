@@ -11,6 +11,5 @@ describe('toggle test', () => {
 
     toggle()
     expect(value.value).toBe(true)
-
   })
 })

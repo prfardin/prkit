@@ -8,18 +8,15 @@
 @uikit-less: 'uikit/src/less/components';
 @font-path: '/back-office/src/fonts';
 
-
 //
 // Less Variables
 //
 // ========================================================================
 
-
 // Load deprecated components
 // ========================================================================
 
-@deprecated:                                   false;
-
+@deprecated: false;
 
 // Breakpoints
 // ========================================================================
@@ -30,16 +27,15 @@
 // Tablet Landscape: iPad (1024x768), iPad Pro (1024x1366),
 // Desktop:          Galaxy Tab (1280x800), iPad Pro (1366x1024)
 
-@breakpoint-small:                             640px;  // Phone landscape
-@breakpoint-medium:                            960px;  // Tablet Landscape
-@breakpoint-large:                             1200px; // Desktop
-@breakpoint-xlarge:                            1600px; // Large Screens
+@breakpoint-small: 640px; // Phone landscape
+@breakpoint-medium: 960px; // Tablet Landscape
+@breakpoint-large: 1200px; // Desktop
+@breakpoint-xlarge: 1600px; // Large Screens
 
-@breakpoint-xsmall-max:                        (@breakpoint-small - 1);
-@breakpoint-small-max:                         (@breakpoint-medium - 1);
-@breakpoint-medium-max:                        (@breakpoint-large - 1);
-@breakpoint-large-max:                         (@breakpoint-xlarge - 1);
-
+@breakpoint-xsmall-max: (@breakpoint-small - 1);
+@breakpoint-small-max: (@breakpoint-medium - 1);
+@breakpoint-medium-max: (@breakpoint-large - 1);
+@breakpoint-large-max: (@breakpoint-xlarge - 1);
 
 // UIKit Global variables
 // ========================================================================
@@ -196,7 +192,6 @@
 @global-rounded-radius: var(--global-rounded-radius);
 @global-middle-transform-top: var(--global-middle-transform-top);
 @global-middle-transform: var(--global-middle-transform);
-
 
 // PRKit Global variables
 // ========================================================================

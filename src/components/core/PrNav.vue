@@ -3,7 +3,6 @@ import { NavPropsType } from '@u/props'
 import { nav, RefElement } from '@u/util'
 import { ref, onMounted } from 'vue'
 
-
 // must change
 const props = withDefaults(defineProps<NavPropsType>(), {
   hasNavTag: true,
@@ -14,7 +13,7 @@ const props = withDefaults(defineProps<NavPropsType>(), {
   multiple: false,
   transition: 'ease',
   animation: true,
-  duration: 200
+  duration: 200,
 })
 
 // define template ref
@@ -34,10 +33,9 @@ function setNav() {
     multiple: props.multiple,
     transition: props.transition,
     animation: props.animation,
-    duration: props.duration
+    duration: props.duration,
   })
 }
-
 
 onMounted(() => {
   setNav()

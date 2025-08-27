@@ -3,7 +3,5 @@
 import { RouteRecordRaw } from 'vue-router'
 
 export default function devRoutes(): RouteRecordRaw[] {
-    return [
-        { path: '/docs', component: () => import('@vd/index-docs.vue') },
-    ]
+  return [{ path: '/docs', component: () => import('@vd/index-docs.vue') }]
 }

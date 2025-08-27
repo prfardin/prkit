@@ -4,21 +4,24 @@ import PrIcon from '@c/core/PrIcon.vue'
 
 interface Props {
   title: string
-  forms: [{
-    label: string,
-    input: string,
-    icon: string
-  }]
+  forms: [
+    {
+      label: string
+      input: string
+      icon: string
+    },
+  ]
 }
 
-
-const porps = withDefaults(defineProps<Props>(), {
-
-})
+const porps = withDefaults(defineProps<Props>(), {})
 </script>
 
 <template>
-  <h3 class="uk-text-small uk-text-bold uk-margin-remove pr-padding-1-left pr-padding-1-right pr-padding-1-bottom">{{ title }}</h3>
+  <h3
+    class="uk-text-small uk-text-bold uk-margin-remove pr-padding-1-left pr-padding-1-right pr-padding-1-bottom"
+  >
+    {{ title }}
+  </h3>
   <div class="flex uk-flex-column">
     <div class="group" v-for="(form, index) in forms" :key="index">
       <pr-grid small class="uk-flex-middle">
@@ -27,7 +30,7 @@ const porps = withDefaults(defineProps<Props>(), {
           <div>{{ form.input }}</div>
         </div>
         <div class="uk-width-expand uk-text-right">
-          <pr-icon class="uk-width-1-1" :icon="form.icon" ratio=".7"/>
+          <pr-icon class="uk-width-1-1" :icon="form.icon" ratio=".7" />
         </div>
         <div class="uk-width-auto">
           <span class="uk-text-primary uk-text-small edit uk-text-bold">Edit</span>
@@ -38,7 +41,6 @@ const porps = withDefaults(defineProps<Props>(), {
 </template>
 
 <style scoped>
-
 .pr-padding-1-top {
   padding-top: 1rem;
 }
@@ -64,14 +66,14 @@ const porps = withDefaults(defineProps<Props>(), {
 }
 
 .group::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
 }
 
 .edit {
   opacity: 0;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .group:hover {
@@ -81,5 +83,4 @@ const porps = withDefaults(defineProps<Props>(), {
 .group:hover .edit {
   opacity: 1;
 }
-
 </style>

@@ -30,14 +30,14 @@ export const vueI18nVite = vueI18n({
   // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
   // compositionOnly: false,
 
-  include: 'lang/**.json'
+  include: 'lang/**.json',
 })
 
 // we use dynamicIcon plugin to watch added icons in the vue files
 // that is not necessary in the build mode
 export function pluginsFunc(
   icons: any = defaultIcons(),
-  plugins?: Plugin | PluginOption[]
+  plugins?: Plugin | PluginOption[],
 ): PluginOption[] {
   const p = [vueVite, vueJsx(), vueDevTools(), vueI18nVite, icons, plugins]
   isDev() && p.push(dynamicIcon())
@@ -58,12 +58,12 @@ export default function viteConfig({ rtl, command = 'serve' }: ViteConfig): User
     plugins: vitePlugins,
     css: {
       postcss: {
-        plugins: postCssPlugins
-      }
+        plugins: postCssPlugins,
+      },
     },
     resolve: {
-      alias
-    }
+      alias,
+    },
   }
 }
 
@@ -80,5 +80,5 @@ export const alias: AliasOptions = {
   '@s': '/src/stores', // stores,
   '@sc': '/src/scripts', // scripts,
   '@u': '/src/scripts/util', // utils,
-  '@l': '/lang' // locales
+  '@l': '/lang', // locales
 }

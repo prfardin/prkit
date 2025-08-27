@@ -6,29 +6,29 @@
 // Variables
 // ========================================================================
 
-@spinner-size:                            var(--spinner-size);
-@spinner-stroke-width:                    var(--spinner-stroke-width);
-@spinner-radius:                          var(--spinner-radius);
-@spinner-circumference:                   var(--spinner-circumference);
-@spinner-duration:                        var(--spinner-duration);
+@spinner-size: var(--spinner-size);
+@spinner-stroke-width: var(--spinner-stroke-width);
+@spinner-radius: var(--spinner-radius);
+@spinner-circumference: var(--spinner-circumference);
+@spinner-duration: var(--spinner-duration);
 
-@pr-spinner-line-gutter:                  var(--pr-spinner-line-gutter);
-@pr-spinner-line-width:                   var(--pr-spinner-line-width);
-@pr-spinner-line-height:                  @pr-spinner-line-width;
-@pr-spinner-line-item-height:             var(--pr-spinner-line-item-height);
-@pr-spinner-line-item-width:              @pr-spinner-line-gutter;
-@pr-spinner-circle-height:                @global-spinner-height;
-@pr-spinner-circle-width:                 @global-spinner-width;
-@pr-spinner-circle-item-width:            var(--pr-spinner-circle-item-width);
+@pr-spinner-line-gutter: var(--pr-spinner-line-gutter);
+@pr-spinner-line-width: var(--pr-spinner-line-width);
+@pr-spinner-line-height: @pr-spinner-line-width;
+@pr-spinner-line-item-height: var(--pr-spinner-line-item-height);
+@pr-spinner-line-item-width: @pr-spinner-line-gutter;
+@pr-spinner-circle-height: @global-spinner-height;
+@pr-spinner-circle-width: @global-spinner-width;
+@pr-spinner-circle-item-width: var(--pr-spinner-circle-item-width);
 
-@pr-spinner-line-color:                   var(--pr-spinner-line-color);
-@pr-spinner-circle-color:                 var(--pr-spinner-circle-color);
-@pr-spinner-circle-color-fade:            var(--pr-spinner-circle-color-fade);
+@pr-spinner-line-color: var(--pr-spinner-line-color);
+@pr-spinner-circle-color: var(--pr-spinner-circle-color);
+@pr-spinner-circle-color-fade: var(--pr-spinner-circle-color-fade);
 
-@pr-spinner-line-item-border-radius:      var(--pr-spinner-line-item-border-radius);
+@pr-spinner-line-item-border-radius: var(--pr-spinner-line-item-border-radius);
 
-@pr-spinner-line-animation-duration:      var(--pr-spinner-line-animation-duration);
-@pr-spinner-circle-animation-duration:    @pr-spinner-line-animation-duration;
+@pr-spinner-line-animation-duration: var(--pr-spinner-line-animation-duration);
+@pr-spinner-circle-animation-duration: @pr-spinner-line-animation-duration;
 
 // Miscellaneous
 // ========================================================================
@@ -106,7 +106,8 @@
 
   .pr-spinner-circle::before {
     border-left-color: @pr-spinner-circle-color-fade;
-    animation: pr-auth-button-rotate calc(@pr-spinner-line-animation-duration - 0.1s) infinite linear;
+    animation: pr-auth-button-rotate calc(@pr-spinner-line-animation-duration - 0.1s) infinite
+      linear;
   }
 
   .pr-spinner-circle::after {

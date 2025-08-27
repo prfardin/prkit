@@ -7,11 +7,11 @@ import { ref } from 'vue'
 // and `Store` (e.g. `useUserStore`, `useCartStore`, `useProductStore`)
 // the first argument is a unique id of the store across your application
 export const useDirectionStore = defineStore('direction', () => {
-    const direction = ref(i18nGlobal.locale === 'fa' ? 'right' : 'left')
+  const direction = ref(i18nGlobal.locale === 'fa' ? 'right' : 'left')
 
-    function change() {
-        direction.value = 'right'
-    }
+  function change() {
+    direction.value = 'right'
+  }
 
-    return { direction, change }
+  return { direction, change }
 })

@@ -1,27 +1,25 @@
 <script setup lang="ts">
 import { RadioPropsType } from '@u/props'
 import { radioClassObject } from '@u/classes'
-import { computed, ref, watch } from "vue";
-
+import { computed, ref, watch } from 'vue'
 
 const props = withDefaults(defineProps<RadioPropsType>(), {
-  mode: 'circle'
+  mode: 'circle',
 })
 
 const model = defineModel()
 
 const isSelected = computed(() => {
-  return  model.value === props.value
+  return model.value === props.value
 })
 
 const radioClass = computed(() => radioClassObject(props))
-
 </script>
 
 <template>
-  <div class="pr-radio-content" :class="{'pr-radio-active': isSelected}">
+  <div class="pr-radio-content" :class="{ 'pr-radio-active': isSelected }">
     <div :class="radioClass">
-      <input type="radio" :name="name" :id="id" v-model="model" :value="value" >
+      <input type="radio" :name="name" :id="id" v-model="model" :value="value" />
       <span class="pr-radio-effect">
         <span class="pr-radio-effect-icon"></span>
         <span class="pr-radio-effect-loading"></span>
@@ -31,7 +29,6 @@ const radioClass = computed(() => radioClassObject(props))
 </template>
 
 <style scoped>
-
 .pr-radio-content {
   position: relative;
   display: -webkit-box;
@@ -77,8 +74,8 @@ const radioClass = computed(() => radioClassObject(props))
 
 .pr-radio-effect,
 .pr-radio-effect-icon {
-  -webkit-transition: all .25s ease;
-  transition: all .25s ease;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 .pr-radio-effect {
   position: absolute;
@@ -103,15 +100,15 @@ const radioClass = computed(() => radioClassObject(props))
 
 .pr-radio-content.pr-radio-active .pr-radio-effect-icon {
   opacity: 0;
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
 }
 
-.pr-radio input:active~.pr-radio-effect:after {
-  -webkit-transform: scale(.9);
-  transform: scale(.9);
+.pr-radio input:active ~ .pr-radio-effect:after {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .pr-radio-content.pr-radio-active .pr-radio-effect:after {
@@ -119,7 +116,7 @@ const radioClass = computed(() => radioClassObject(props))
 }
 
 .pr-radio-effect:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -127,10 +124,8 @@ const radioClass = computed(() => radioClassObject(props))
   border: 1px solid #e5e5e5;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
   display: block;
 }
-
-
 </style>
