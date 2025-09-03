@@ -33,8 +33,7 @@ This WHITE PAPER is still a work in progress.
 we are making all project (css framework and vue components and starter kit) in one project and will separate them to our vision at last. 
 
 ## Visions
-- PrKit: UI css framework Based on Uikit 3
-- PrKIt Vue: Ui css framework with components based on PrKit
+- PrKIt and Vue: Ui css framework with components based on PrKit
 - Nuxt Starter based on PrKit Vue and have everything for start a front project
 - we need also document p age for PrKit and PrKit Vue and Nuxt `Starter Kit`
 
@@ -42,8 +41,7 @@ we are making all project (css framework and vue components and starter kit) in 
 
 - [ ] create all vue component from `uikit`
 - [ ] create all vue component from `shurikenui`
-- [ ] create document hub for `PrKit`
-- [ ] create document hub for `PrKit Vue`
+- [ ] create document hub for `PrKit` and `Vue`
 - [ ] create page layouts and sidebar examples (`Theme`)
 - [ ] create document hub for `Theme`
 - [ ] create starter kit for `Nuxt`
