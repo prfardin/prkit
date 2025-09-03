@@ -4,8 +4,8 @@ import PrIcon from '@c/core/PrIcon.vue'
 
 <template>
   <div class="uk-background-default">
-    <h1></h1>
     <pr-icon icon="icon-isocons-solidsharptop-123" ratio="1" />
     <pr-icon icon="icon-huge-bulk-user" ratio="1" />
+    <pr-icon icon="icon-solar-duotoneso-upload" ratio="1" />
   </div>
 </template>

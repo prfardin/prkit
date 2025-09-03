@@ -27,6 +27,7 @@ import {
 } from './classes'
 
 import { RouteLocationRaw } from 'vue-router'
+import { InferDefaults } from 'vue'
 
 /**
  * Section Props Types
@@ -425,6 +426,24 @@ export interface AccordionPropsType extends AccordionClassType {
   toggle?: string
   transition?: string
   offset?: number
+}
+
+export const AccordionDefaults: InferDefaults = {
+  rounded: 'none',
+  titleMode: 'dot',
+  animation: true,
+  collapsible: true,
+  content: '> .uk-accordion-content',
+  duration: 300,
+  multiple: false,
+  targets: '> *',
+  toggle: '> .uk-accordion-title',
+  transition: 'cubic-bezier(.4,0,.2,1)',
+  offset: 0,
+}
+
+export const IconDefaults: InferDefaults = {
+  tag: 'span',
 }
 
 /**

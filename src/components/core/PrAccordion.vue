@@ -1,24 +1,11 @@
 <script setup lang="ts">
-import { AccordionPropsType } from '@u/props'
-import { accordion, RefElement } from '@u/util'
 import { computed, onMounted, ref } from 'vue'
+import { accordion, RefElement } from '@u/util'
+import { AccordionDefaults, AccordionPropsType } from '@u/props'
 import { AccordionClassObject } from '@u/classes'
 import PrIcon from '@c/core/PrIcon.vue'
 
-const props = withDefaults(defineProps<AccordionPropsType>(), {
-  /*active: false,*/
-  rounded: 'none',
-  titleMode: 'dot',
-  animation: true,
-  collapsible: true,
-  content: '> .uk-accordion-content',
-  duration: 300,
-  multiple: false,
-  targets: '> *',
-  toggle: '> .uk-accordion-title',
-  transition: 'cubic-bezier(.4,0,.2,1)',
-  offset: 0,
-})
+const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
 
 const el = ref<RefElement>(null)
 

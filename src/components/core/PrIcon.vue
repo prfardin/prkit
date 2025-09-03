@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { IconPropsType } from '@u/props'
+import { IconDefaults, IconPropsType } from '@u/props'
 import { icon, RefElement } from '@u/util'
 import { ref, onMounted, watchEffect } from 'vue'
 
-const props = withDefaults(defineProps<IconPropsType>(), {
-  tag: 'span',
-})
+const props = withDefaults(defineProps<IconPropsType>(), IconDefaults)
 
 // define template ref
 const el = ref<RefElement>(null)

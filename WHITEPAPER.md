@@ -45,3 +45,8 @@ we are making all project (css framework and vue components and starter kit) in 
 - [ ] create page layouts and sidebar examples (`Theme`)
 - [ ] create document hub for `Theme`
 - [ ] create starter kit for `Nuxt`
+
+## Notes
+- we define all Uikit components in vue, but in documents if a document can be defined as css component we must mark down the code as a css also. (vue and css together) 
+- add default icons to project, when it adds we can change all icon set with changing the default icon name attribute
+- add Solar-Icon-Set outline to icons set: the different between regular set is outline wrote as path fillable and outline is wrote as a path line with ability to change line-stroke
