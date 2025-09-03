@@ -27,7 +27,6 @@ import {
 } from './classes'
 
 import { RouteLocationRaw } from 'vue-router'
-import { InferDefaults } from 'vue'
 
 /**
  * Section Props Types
@@ -112,6 +111,10 @@ export interface IconPropsType {
   tag?: 'span' | string
   icon?: string
   ratio?: string | number
+}
+
+export const IconDefaults: Partial<IconPropsType> = {
+  tag: 'span',
 }
 
 /**
@@ -428,7 +431,7 @@ export interface AccordionPropsType extends AccordionClassType {
   offset?: number
 }
 
-export const AccordionDefaults: InferDefaults = {
+export const AccordionDefaults: Partial<AccordionPropsType> = {
   rounded: 'none',
   titleMode: 'dot',
   animation: true,
@@ -440,10 +443,6 @@ export const AccordionDefaults: InferDefaults = {
   toggle: '> .uk-accordion-title',
   transition: 'cubic-bezier(.4,0,.2,1)',
   offset: 0,
-}
-
-export const IconDefaults: InferDefaults = {
-  tag: 'span',
 }
 
 /**

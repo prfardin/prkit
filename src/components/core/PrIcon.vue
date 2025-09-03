@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IconDefaults, IconPropsType } from '@u/props'
+import { IconPropsType, IconDefaults } from '@u/props'
 import { icon, RefElement } from '@u/util'
 import { ref, onMounted, watchEffect } from 'vue'
 
@@ -16,7 +16,7 @@ const el = ref<RefElement>(null)
  * maybe need change to Composable icon in future
  */
 function setIcon() {
-  return icon(el.value, { icon: props.icon, ratio: props.ratio as number })
+  return icon(el.value, props)
 }
 
 /**

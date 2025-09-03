@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { accordion, RefElement } from '@u/util'
-import { AccordionDefaults, AccordionPropsType } from '@u/props'
+import { AccordionPropsType, AccordionDefaults } from '@u/props'
 import { AccordionClassObject } from '@u/classes'
 import PrIcon from '@c/core/PrIcon.vue'
 

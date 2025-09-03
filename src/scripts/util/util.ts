@@ -18,6 +18,7 @@ import {
   UIkitAccordionOptions,
   UIkitNotificationOptions,
 } from './types'
+import { IconPropsType } from '@u/props'
 
 // Types: Define Types for UIkit or HTML elements
 // ========================================================================
@@ -47,8 +48,8 @@ export function grid(el: Element, options?: UIkitGridOptions) {
 }
 
 // set icon
-export function icon(el: Element, options?: UIkitIconOptions) {
-  return UIkit.icon(el, options)
+export function icon(el: Element, options: IconPropsType) {
+  return UIkit.icon(el, { icon: options.icon, ratio: options.ratio as number })
 }
 
 // set height viewport
