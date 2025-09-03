@@ -14,12 +14,7 @@ This WHITE PAPER is still a work in progress.
 
 # important notes and must change
 
-## icons
-* huge icons: ***duotone*** need to define class for making it colorable
-* huge icons: ***twotone*** need to define class for making it colorable
-
-
-# Tasklists
+## Tasklists
 - [ ] we need make this project separate to 4 npm libraries:
   - icons libraries: *placed at __src/images/core__*
   - core theme components: *placed at __src/components/__ or __src/components/core__* (the ui framework)
@@ -27,6 +22,28 @@ This WHITE PAPER is still a work in progress.
   - starter kit: *ready-to-use pages: including all pre-build pages and layouts, vite build, vite build scripts and etc*
 - [ ] design it for **Nuxt** (starter kit)
 
-# Notes
+### icons
+- [ ] huge icons: ***duotone*** need to define class for making it colorable
+- [ ] huge icons: ***twotone*** need to define class for making it colorable
 
-- we run prettier to all ***/src*** files
+# Vision
+
+## what we are doing now?
+
+we are making all project (css framework and vue components and starter kit) in one project and will separate them to our vision at last. 
+
+## Visions
+- PrKit: UI css framework Based on Uikit 3
+- PrKIt Vue: Ui css framework with components based on PrKit
+- Nuxt Starter based on PrKit Vue and have everything for start a front project
+- we need also document p age for PrKit and PrKit Vue and Nuxt `Starter Kit`
+
+# Roadmap
+
+- [ ] create all vue component from `uikit`
+- [ ] create all vue component from `shurikenui`
+- [ ] create document hub for `PrKit`
+- [ ] create document hub for `PrKit Vue`
+- [ ] create page layouts and sidebar examples (`Theme`)
+- [ ] create document hub for `Theme`
+- [ ] create starter kit for `Nuxt`
