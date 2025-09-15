@@ -14,14 +14,6 @@ This WHITE PAPER is still a work in progress.
 
 # important notes and must change
 
-## Tasklists
-- [ ] we need make this project separate to 4 npm libraries:
-  - icons libraries: *placed at __src/images/core__*
-  - core theme components: *placed at __src/components/__ or __src/components/core__* (the ui framework)
-  - documents: *placed at __src/views/docs__*
-  - starter kit: *ready-to-use pages: including all pre-build pages and layouts, vite build, vite build scripts and etc*
-- [ ] design it for **Nuxt** (starter kit)
-
 ### icons
 - [ ] huge icons: ***duotone*** need to define class for making it colorable
 - [ ] huge icons: ***twotone*** need to define class for making it colorable
@@ -46,7 +38,18 @@ we are making all project (css framework and vue components and starter kit) in 
 - [ ] create document hub for `Theme`
 - [ ] create starter kit for `Nuxt`
 
+## Tasklists (sub roadmap)
+- [ ] we need make this project separate to 4 npm libraries:
+  - icons libraries: *placed at __src/images/core__*
+  - core theme components: *placed at __src/components/__ or __src/components/core__* (the ui framework)
+  - documents: *placed at __src/views/docs__*
+  - starter kit: *ready-to-use pages: including all pre-build pages and layouts, vite build, vite build scripts and etc*
+- [ ] design it for **Nuxt** (starter kit)
+- [ ] we need add a setting.css file for customizing the style of the main css like: changing global and main colors, changing fonts and changing default icons
+
 ## Notes
 - we define all Uikit components in vue, but in documents if a document can be defined as css component we must mark down the code as a css also. (vue and css together) 
 - add default icons to project, when it adds we can change all icon set with changing the default icon name attribute
 - add Solar-Icon-Set outline to icons set: the different between regular set is outline wrote as path fillable and outline is wrote as a path line with ability to change line-stroke
+- check aria-label html attribute and read the docs
+- add uk-overflow-auto to utils and commit the type

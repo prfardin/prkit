@@ -1,24 +1,9 @@
 import UIkit from 'uikit'
 import { Ref } from 'vue'
 import {
-  UIkitGridOptions,
-  UIkitIconOptions,
-  UIkitHeightViewportOptions,
-  UIkitNavOptions,
-  UIkitNavbarOptions,
-  UIkitDropOptions,
-  UIkitOffcanvasOptions,
-  UIkitToggleOptions,
-  UIkitModalOptions,
-  UIkitSwiterOptions,
-  UIkitSwitcherOptions,
-  UIkitTooltipOptions,
-  UIkitTabOptions,
-  UIkitStickyOptions,
-  UIkitAccordionOptions,
-  UIkitNotificationOptions,
-} from './types'
-import { IconPropsType } from '@u/props'
+  AccordionPropsType,
+  IconPropsType
+} from '@u/props'
 
 // Types: Define Types for UIkit or HTML elements
 // ========================================================================
@@ -34,6 +19,7 @@ export type InputElement = object | Ref | HTMLInputElement | string
 // ========================================================================
 
 // check if app is in develop mode
+// maybe need to change it in the future: move it from here
 export function isDev() {
   return process.env.NODE_ENV === 'development'
 }
@@ -41,6 +27,38 @@ export function isDev() {
 //
 // UIKit Functions
 //
+
+// set accordion
+export function accordion(el: Element, options: AccordionPropsType) {
+  return UIkit.accordion(el, {
+    active: options.active,
+    animation: options.animation,
+    collapsible: options.collapsible,
+    content: options.content,
+    duration: options.duration,
+    multiple: options.multiple,
+    targets: options.targets,
+    toggle: options.toggle,
+    transition: options.transition,
+    offset: options.offset,
+  })
+}
+
+// set alert
+export function alert(el: Element, options: AlertPropsType) {
+  return UIkit.accordion(el, {
+    active: options.active,
+    animation: options.animation,
+    collapsible: options.collapsible,
+    content: options.content,
+    duration: options.duration,
+    multiple: options.multiple,
+    targets: options.targets,
+    toggle: options.toggle,
+    transition: options.transition,
+    offset: options.offset,
+  })
+}
 
 // set grid
 export function grid(el: Element, options?: UIkitGridOptions) {
@@ -50,78 +68,6 @@ export function grid(el: Element, options?: UIkitGridOptions) {
 // set icon
 export function icon(el: Element, options: IconPropsType) {
   return UIkit.icon(el, { icon: options.icon, ratio: options.ratio as number })
-}
-
-// set height viewport
-export function heightViewport(el: Element, options?: UIkitHeightViewportOptions) {
-  return UIkit.heightViewport(el, options)
-}
-
-// set nav
-export function nav(el: Element, options?: UIkitNavOptions) {
-  return UIkit.nav(el, options)
-}
-
-// set navbar
-export function navbar(el: Element, options?: UIkitNavbarOptions) {
-  return UIkit.navbar(el, options)
-}
-
-// set drop
-export function drop(el: Element, options?: UIkitDropOptions) {
-  return UIkit.drop(el, options)
-}
-
-// set offcanvas
-export function offcanvas(el: Element, options?: UIkitOffcanvasOptions) {
-  return UIkit.offcanvas(el, options)
-}
-
-// set toggle
-export function toggle(el: Element, options?: UIkitToggleOptions) {
-  return UIkit.toggle(el, options)
-}
-
-// set modal
-export function modal(el: Element, options?: UIkitModalOptions) {
-  return UIkit.modal(el, options)
-}
-
-// set switcher
-export function switcher(el: Element, options?: UIkitSwitcherOptions | UIkitSwiterOptions) {
-  return UIkit.switcher(el, options)
-}
-
-// set toggle
-export function tooltip(el: Element, options?: UIkitTooltipOptions) {
-  return UIkit.tooltip(el, options)
-}
-
-// set tab
-export function tab(el: Element, options?: UIkitTabOptions) {
-  return UIkit.tab(el, options)
-}
-
-// set sticky
-export function sticky(el: Element, options?: UIkitStickyOptions) {
-  return UIkit.sticky(el, options)
-}
-
-// set accordion
-export function accordion(el: Element, options?: UIkitAccordionOptions) {
-  return UIkit.accordion(el, options)
-}
-
-// show notification
-export function notify(
-  messageOrOptions: UIkitNotificationOptions | string,
-  optionsOrStatus?: UIkitNotificationOptions | string,
-) {
-  if (typeof messageOrOptions === 'string') {
-    return UIkit.notification(messageOrOptions, optionsOrStatus)
-  } else {
-    return UIkit.notification(messageOrOptions)
-  }
 }
 
 // set util

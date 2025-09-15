@@ -1,45 +1,25 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-import { accordion, RefElement } from '@u/util'
 import { AccordionPropsType, AccordionDefaults } from '@u/props'
-import { AccordionClassObject } from '@u/classes'
-import PrIcon from '@c/core/PrIcon.vue'
+import { accordion, RefElement } from '@u/util'
+import { ref, onMounted } from 'vue'
 
 const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
 
+// define template ref
 const el = ref<RefElement>(null)
 
+/**
+ * we define all available options as props and
+ * send it to accordion function of UIkit.
+ * it also sends undefined props to grid function.
+ * we must check it in future if it reduces effectivity
+ * it must be prevented and reworked
+ */
 onMounted(() => {
-  accordion(el.value, {
-    active: props.active,
-    animation: props.animation,
-    collapsible: props.collapsible,
-    content: props.content,
-    duration: props.duration,
-    multiple: props.multiple,
-    targets: props.targets,
-    toggle: props.toggle,
-    transition: props.transition,
-    offset: props.offset,
-  })
+  accordion(el.value, props)
 })
-
-const AccordionClass = computed(() => AccordionClassObject(props))
 </script>
 
 <template>
-  <ul ref="el" :class="AccordionClass">
-    <li v-for="(data, index) in props.items" :key="index">
-      <a class="uk-accordion-title" href="">
-        <span>{{ data.title }}</span>
-        <span class="pr-accordion-title-mode">
-          <pr-icon v-if="props.titleMode === 'plus'" icon="line-plus" ratio=".67" />
-          <pr-icon v-if="props.titleMode === 'chevron'" icon="line-angle-down" ratio=".8" />
-        </span>
-      </a>
-      <div class="uk-accordion-content">
-        {{ data.content }}
-      </div>
-    </li>
-  </ul>
+  <component :is="tag" ref="el"></component>
 </template>
