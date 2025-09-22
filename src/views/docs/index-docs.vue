@@ -12,7 +12,7 @@ const accordionList = [
   <!-- Accordion -->
   <div class="uk-background-default">
     <div class="uk-section uk-section-default">
-      <div class="uk-container uk-container-large">
+      <div class="uk-container uk-container-small">
         <h1 class="uk-text-center">Accordion</h1>
         <div>
           <!-- With List -->
@@ -60,7 +60,7 @@ const accordionList = [
   <!-- Icon -->
   <div class="uk-background-default">
     <div class="uk-section uk-section-default">
-      <div class="uk-container uk-container-large">
+      <div class="uk-container uk-container-small">
         <h1 class="uk-text-center">Icon</h1>
         <div class="uk-text-center">
           <pr-icon icon="icon-isocons-solidsharptop-123" :ratio="3" />
