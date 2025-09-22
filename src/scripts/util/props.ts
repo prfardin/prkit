@@ -1,36 +1,88 @@
 /**
  * we use type-based declaration for most components
- * this file also created for this reason but
- * vue not support export type-based declaration at this time,
- * so we will use this props as export props for components with future release of vue
+ * this file also created for this reason
+ * vue support export type-based declaration,
+ * so we will use this props as export props for components
+ * accordion to https://vuejs.org/guide/typescript/composition-api#typing-component-props
  */
-import {
-  GridClassType,
-  ButtonClassType,
-  LinkClassType,
-  SpinnerClassType,
-} from './classes'
-
 import {
   UIkitAccordionOptions,
+  UIkitAlertOptions,
+  UIkitCountdownOptions,
+  UIkitCoverOptions,
+  UIkitDropOptions,
+  UIkitDropdownOptions,
+  UIkitDropnavOptions,
+  UIkitFilterOptions,
+  UIkitFormOptions,
+  UIkitGridOptions,
+  UIkitHeightViewportOptions,
+  UIkitHeightMatchOptions,
   UIkitIconOptions,
+  UIkitImageOptions,
+  UIkitInverseOptions,
+  UIkitLeaderOptions,
+  UIkitLightboxOptions,
+  UIkitMarginOptions,
+  UIkitModalOptions,
+  UIkitNavOptions,
+  UIkitNavbarOptions,
+  UIkitNotificationOptions,
+  UIkitOffcanvasOptions,
+  UIkitParallaxOptions,
+  UIkitScrollOptions,
+  UIkitScrollspyOptions,
+  UIkitScrollspyNavOptions,
+  UIkitSliderOptions,
+  UIkitSlideshowOptions,
+  UIkitSortableOptions,
+  UIkitStickyOptions,
+  UIkitSvgOptions,
+  UIkitSwitcherOptions,
+  UIkitTabOptions,
+  UIkitToggleOptions,
+  UIkitTooltipOptions,
+  UIkitUploadOptions,
+  UIkitVideoOptions,
 } from './types'
 
-import { RouteLocationRaw } from 'vue-router'
+/**
+ * Some of the components contains class like flex
+ * and need we define the flex classes as props
+ * so we defined them in the classes as type, and
+ * we extend and combine them here with Type Options
+ */
+import { GridClassType, ButtonClassType, LinkClassType, SpinnerClassType } from './classes'
 
 /**
- * Button Props Types
- * extended from ------
- * cause all button classes -----
+ * We import custom types here
  */
-export interface AccordionPropsType extends UIkitAccordionOptions {
-  //
+import { RouteLocationRaw } from 'vue-router'
+
+
+/**
+ * Accordion Props Types
+ * extended from UIkit Accordion Options
+ * cause all UIkit Accordion Options as props
+ * has child component: accordion-title and accordion-content
+ */
+
+// Accordion Item Type
+export interface AccordionItemType {
+  title: string
+  content: string
 }
 
+// Accordion Props Types
+export interface AccordionPropsType extends /* @vue-ignore */ UIkitAccordionOptions {
+  tag?: 'ul' | 'div'
+  list?: AccordionItemType[]
+}
 
-
-
-
+// Accordion Defaults
+export const AccordionDefaults: Partial<AccordionPropsType> = {
+  tag: 'ul',
+}
 
 
 /**
@@ -68,7 +120,7 @@ export interface GridPropsType extends GridClassType {
 /**
  * Icon Props Types
  */
-export interface IconPropsType extends UIkitIconOptions {
+export interface IconPropsType extends /* @vue-ignore */ UIkitIconOptions {
   tag?: 'span' | string
 }
 

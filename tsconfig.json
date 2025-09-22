@@ -13,7 +13,7 @@
   ],
   "compilerOptions": {
     "verbatimModuleSyntax": false,
-    "module": "NodeNext",
+    "module": "ESNext",
     "target": "ESNext",
     "strict": true,
     "sourceMap": true,

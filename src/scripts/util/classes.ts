@@ -44,9 +44,8 @@ function backgroundCls(cls: string, props: { [key: string]: any }) {
   ]
 }
 
-/**
- * Grid Classes
- */
+// Grid Classes
+
 export interface GridClassType {
   small?: boolean
   medium?: boolean

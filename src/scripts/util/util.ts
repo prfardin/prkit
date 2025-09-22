@@ -1,9 +1,6 @@
 import UIkit from 'uikit'
 import { Ref } from 'vue'
-import {
-  AccordionPropsType,
-  IconPropsType
-} from '@u/props'
+import { AccordionPropsType, IconPropsType } from '@u/props'
 
 // Types: Define Types for UIkit or HTML elements
 // ========================================================================
@@ -30,18 +27,7 @@ export function isDev() {
 
 // set accordion
 export function accordion(el: Element, options: AccordionPropsType) {
-  return UIkit.accordion(el, {
-    active: options.active,
-    animation: options.animation,
-    collapsible: options.collapsible,
-    content: options.content,
-    duration: options.duration,
-    multiple: options.multiple,
-    targets: options.targets,
-    toggle: options.toggle,
-    transition: options.transition,
-    offset: options.offset,
-  })
+  return UIkit.accordion(el, options)
 }
 
 // set alert
@@ -67,7 +53,7 @@ export function grid(el: Element, options?: UIkitGridOptions) {
 
 // set icon
 export function icon(el: Element, options: IconPropsType) {
-  return UIkit.icon(el, { icon: options.icon, ratio: options.ratio as number })
+  return UIkit.icon(el, { icon: options.icon, ratio: options.ratio})
 }
 
 // set util
