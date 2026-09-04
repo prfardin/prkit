@@ -74,7 +74,7 @@ export interface AccordionItemType {
 }
 
 // Accordion Props Types
-export interface AccordionPropsType extends /* @vue-ignore */ UIkitAccordionOptions {
+export interface AccordionPropsType extends UIkitAccordionOptions {
   tag?: 'ul' | 'div'
   list?: AccordionItemType[]
 }
@@ -120,7 +120,7 @@ export interface GridPropsType extends GridClassType {
 /**
  * Icon Props Types
  */
-export interface IconPropsType extends /* @vue-ignore */ UIkitIconOptions {
+export interface IconPropsType extends UIkitIconOptions {
   tag?: 'span' | string
 }
 
