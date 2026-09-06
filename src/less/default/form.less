@@ -8,7 +8,8 @@
 
 @form-height: var(--form-height);
 @form-padding-horizontal: var(--form-padding-horizontal);
-@form-padding-vertical: var(--form-padding-vertical);
+@form-multi-line-padding-horizontal: var(--form-multi-line-padding-horizontal);
+@form-multi-line-padding-vertical: var(--form-multi-line-padding-vertical);
 
 @form-color: @global-color;
 
@@ -19,15 +20,19 @@
 
 @form-placeholder-color: @global-muted-color;
 
+@form-small-font-size: @global-small-font-size;
 @form-small-height: var(--form-small-height);
 @form-small-padding-horizontal: var(--form-small-padding-horizontal);
-@form-small-padding-vertical: var(--form-small-padding-vertical);
-@form-small-font-size: @global-small-font-size;
+@form-small-multi-line-padding-horizontal: var(--form-small-multi-line-padding-horizontal);
+@form-small-multi-line-padding-vertical: var(--form-small-multi-line-padding-vertical);
+@form-small-radio-size: var(--form-small-radio-size);
 
+@form-large-font-size: @global-medium-font-size;
 @form-large-height: @global-control-large-height;
 @form-large-padding-horizontal: var(--form-large-padding-horizontal);
-@form-large-padding-vertical: var(--form-large-padding-vertical);
-@form-large-font-size: @global-medium-font-size;
+@form-large-multi-line-padding-horizontal: var(--form-large-multi-line-padding-horizontal);
+@form-large-multi-line-padding-vertical: var(--form-large-multi-line-padding-vertical);
+@form-large-radio-size: var(--form-large-radio-size);
 
 @form-danger-color: @global-danger-background;
 @form-success-color: @global-success-background;
@@ -76,6 +81,10 @@
 @internal-form-checkbox-image: '../../images/backgrounds/form-checkbox.svg';
 @internal-form-checkbox-indeterminate-image: '../../images/backgrounds/form-checkbox-indeterminate.svg';
 
+//
+// New
+//
+
 @form-line-height: var(--form-line-height);
 
 @form-background: @global-background;
@@ -87,10 +96,6 @@
 @form-radio-background: var(--form-radio-background);
 
 @form-stacked-margin-bottom: var(--form-stacked-margin-bottom);
-
-//
-// New
-//
 
 @form-border-width: var(--form-border-width);
 @form-border: @global-border;

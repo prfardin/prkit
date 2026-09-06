@@ -6,93 +6,78 @@
 // Variables
 // ========================================================================
 
-@accordion-item-margin-top: @global-margin;
+@accordion-default-item-margin-top: @global-margin;
 
-@accordion-title-font-size: @global-medium-font-size;
-@accordion-title-line-height: var(--accordion-line-height);
-@accordion-title-color: @global-emphasis-color;
-@accordion-title-hover-color: @global-color;
+@accordion-default-title-gap:                   var(--accordion-default-title-gap);
+@accordion-default-title-font-size:             @global-medium-font-size;
+@accordion-default-title-line-height:           var(--accordion--default-line-height);
+@accordion-default-title-color:                 @global-emphasis-color;
+@accordion-default-title-hover-color:           @global-color;
 
-@accordion-content-margin-top: @global-margin;
+@accordion-default-content-margin-top:          @global-margin;
 
 //
 // New
 //
 
-@accordion-icon-margin-left: var(--accordion-icon-margin-left);
-@accordion-icon-color: @global-color;
-@internal-accordion-open-image: 'src/images/core/fa/duotoneli/icons/minus.svg';
-@internal-accordion-close-image: 'src/images/core/fa/duotoneli/icons/plus.svg';
+@accordion-default-icon-color: @global-color;
 
 // Component
 // ========================================================================
 
-.hook-accordion() {
-}
+.hook-accordion() {}
 
-// Item
-// ========================================================================
 
-.hook-accordion-item() {
-}
+/* Default modifier
+ ========================================================================== */
 
-// Title
-// ========================================================================
+/*
+ * Item
+ */
 
-.hook-accordion-title() {
-  overflow: hidden;
+.hook-accordion-default-item() {}
 
-  &::before {
-    content: '';
-    width: calc(@accordion-title-line-height * 1em);
-    height: calc(@accordion-title-line-height * 1em);
-    margin-left: @accordion-icon-margin-left;
-    float: right;
-    .svg-fill(@internal-accordion-close-image, '#000', @accordion-icon-color);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-  }
+.hook-accordion-default-item-active() {}
 
-  .uk-open > &::before {
-    .svg-fill(@internal-accordion-open-image, '#000', @accordion-icon-color);
-  }
-}
+/*
+ * Title
+ */
 
-.hook-accordion-title-hover() {
-}
+.hook-accordion-default-title() {}
 
-// Content
-// ========================================================================
+.hook-accordion-default-title-hover() {}
 
-.hook-accordion-content() {
-}
+.hook-accordion-default-title-active() {}
+
+/*
+ * Icon
+ */
+
+.hook-accordion-default-icon() { color: @accordion-default-icon-color; }
+
+/*
+ * Content
+ */
+
+.hook-accordion-default-content() {}
+
 
 // Miscellaneous
 // ========================================================================
 
-.hook-accordion-misc() {
-}
+.hook-accordion-misc() {}
+
 
 // Inverse
 // ========================================================================
 
-@inverse-accordion-title-color: @inverse-global-emphasis-color;
-@inverse-accordion-title-hover-color: @inverse-global-color;
+@inverse-accordion-default-icon-color:         @inverse-global-color;
 
-.hook-inverse-accordion-item() {
-}
+.hook-inverse-accordion-default-item() {}
+.hook-inverse-accordion-default-item-active() {}
 
-.hook-inverse-accordion-title() {
-}
-.hook-inverse-accordion-title-hover() {
-}
-
-.hook-inverse() {
-  .uk-accordion-title::before {
-    .svg-fill(@internal-accordion-close-image, '#000', @inverse-global-color);
-  }
-
-  .uk-open > .uk-accordion-title::before {
-    .svg-fill(@internal-accordion-open-image, '#000', @inverse-global-color);
-  }
-}
+.hook-inverse-accordion-default-title() {}
+.hook-inverse-accordion-default-title-hover() {}
+.hook-inverse-accordion-default-title-active() {}
+.hook-inverse-accordion-default-icon() { color: @inverse-accordion-default-icon-color; }
+.hook-inverse-accordion-default-content() {}

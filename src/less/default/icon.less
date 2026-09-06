@@ -23,6 +23,9 @@
 @icon-button-active-background: var(--icon-button-active-background);
 @icon-button-active-color: @global-color;
 
+@icon-overlay-color: var(--icon-overlay-color);
+@icon-overlay-hover-color: @global-emphasis-color;
+
 //
 // New
 //
@@ -275,6 +278,18 @@
 .hook-icon-button-active() {
 }
 
+//
+// Overlay
+//
+
+.hook-icon-overlay() {
+  transition: 0.1s ease-in-out;
+  transition-property: color;
+}
+
+.hook-icon-overlay-hover() {}
+
+
 // Miscellaneous
 // ========================================================================
 
@@ -358,3 +373,6 @@
 }
 .hook-inverse-icon-button-active() {
 }
+
+.hook-inverse-icon-overlay() {}
+.hook-inverse-icon-overlay-hover() {}

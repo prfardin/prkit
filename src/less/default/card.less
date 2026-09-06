@@ -35,19 +35,31 @@
 @card-badge-color: @global-inverse-color;
 @card-badge-font-size: @global-small-font-size;
 
+@card-hover-background: @global-muted-background;
+
+@card-default-background: var(--card-default-background);
 @card-default-color: @global-color;
 @card-default-title-color: @global-emphasis-color;
+@card-default-hover-background: var(--card-default-hover-background);;
 @card-default-color-mode: dark;
 
-@card-primary-background: @global-primary-background;
+@card-primary-background: var(--card-primary-background);
 @card-primary-color: @global-inverse-color;
 @card-primary-title-color: @card-primary-color;
+@card-primary-hover-background: var(--card-primary-hover-background);
 @card-primary-color-mode: light;
 
-@card-secondary-background: @global-secondary-background;
+@card-secondary-background: var(--card-secondary-background);
 @card-secondary-color: @global-inverse-color;
 @card-secondary-title-color: @card-secondary-color;
+@card-secondary-hover-background: var(--card-secondary-hover-background);
 @card-secondary-color-mode: light;
+
+@card-overlay-background: var(--card-overlay-background);
+@card-overlay-color: @global-color;
+@card-overlay-title-color: @global-emphasis-color;
+@card-overlay-hover-background: var(--card-overlay-hover-background);
+@card-overlay-color-mode: dark;
 
 @card-small-body-padding-horizontal: @global-margin;
 @card-small-body-padding-vertical: @global-margin;
@@ -63,14 +75,6 @@
 @card-large-footer-padding-horizontal-l: @global-large-gutter;
 @card-large-footer-padding-vertical-l: var(--card-large-footer-padding-vertical-l);
 
-@card-hover-background: @global-background;
-
-@card-default-background: @global-background;
-@card-default-hover-background: @card-default-background;
-
-@card-primary-hover-background: @card-primary-background;
-
-@card-secondary-hover-background: @card-secondary-background;
 
 //
 // New
@@ -95,6 +99,9 @@
 
 @card-secondary-box-shadow: @global-medium-box-shadow;
 @card-secondary-hover-box-shadow: @global-large-box-shadow;
+
+@card-overlay-box-shadow: @global-medium-box-shadow;
+@card-overlay-hover-box-shadow: @global-large-box-shadow;
 
 // Component
 // ========================================================================
@@ -205,6 +212,16 @@
 .hook-card-secondary-hover() {
   box-shadow: @card-secondary-hover-box-shadow;
 }
+
+//
+// Overlay
+//
+
+.hook-card-overlay() { box-shadow: @card-overlay-box-shadow; }
+
+.hook-card-overlay-title() {}
+
+.hook-card-overlay-hover() { box-shadow: @card-overlay-hover-box-shadow; }
 
 // Miscellaneous
 // ========================================================================
