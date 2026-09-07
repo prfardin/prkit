@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import PrInput from '../core/form/PrInput.vue'
+import PrInput from '../core/PrIcon.vue'
 import { expect, test } from 'vitest'
 
 test('sets the value', async () => {

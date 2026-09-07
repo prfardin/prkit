@@ -80,9 +80,9 @@ export interface AccordionPropsType extends /* @vue-ignore */ UIkitAccordionOpti
 }
 
 // Accordion Defaults
-export const AccordionDefaults: Partial<AccordionPropsType> = {
+export const AccordionDefaults = {
   tag: 'ul',
-}
+} satisfies Partial<AccordionPropsType>
 
 
 /**

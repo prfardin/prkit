@@ -17,7 +17,7 @@ const classes = {
   'uk-button-secondary': props.secondary,
 }
 
-function handleClick(e: EventTarget) {
+function handleClick(e: PointerEvent) {
   if (props.to) {
     router.push(props.to)
   } else if (props.href) {

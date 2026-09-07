@@ -26,7 +26,7 @@ onMounted(() => {
   <component :is="tag" ref="el">
     <template v-if="list">
       <component :is="listItemRenderTag" v-for="(item, index) in list" :key="index">
-        <a class="uk-accordion-title" href>{{ item.title }}</a>
+        <a class="uk-accordion-title" href="">{{ item.title }}</a>
         <div class="uk-accordion-content">{{ item.content }}</div>
       </component>
     </template>
