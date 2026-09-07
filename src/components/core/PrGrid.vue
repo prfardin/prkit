@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { GridPropsType } from '@u/props'
+import { type GridPropsType } from '@u/props'
 import { gridClassObject } from '@u/classes'
-import { grid, RefElement } from '@u/util'
+import { type RefElement, grid } from '@u/util'
 import { ref, computed, onMounted } from 'vue'
 
 const props = defineProps<GridPropsType>()

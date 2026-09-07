@@ -5,7 +5,7 @@
  * so we will use this props as export props for components
  * accordion to https://vuejs.org/guide/typescript/composition-api#typing-component-props
  */
-import {
+import type {
   UIkitAccordionOptions,
   UIkitAlertOptions,
   UIkitCountdownOptions,
@@ -44,7 +44,7 @@ import {
   UIkitTooltipOptions,
   UIkitUploadOptions,
   UIkitVideoOptions,
-} from './types'
+} from 'uikit'
 
 /**
  * Some of the components contains class like flex
@@ -52,12 +52,12 @@ import {
  * so we defined them in the classes as type, and
  * we extend and combine them here with Type Options
  */
-import { GridClassType, ButtonClassType, LinkClassType, SpinnerClassType } from './classes'
+import type { GridClassType, ButtonClassType, LinkClassType, SpinnerClassType } from './classes'
 
 /**
  * We import custom types here
  */
-import { RouteLocationRaw } from 'vue-router'
+import type { RouteLocationRaw } from 'vue-router'
 
 
 /**
@@ -74,7 +74,7 @@ export interface AccordionItemType {
 }
 
 // Accordion Props Types
-export interface AccordionPropsType extends UIkitAccordionOptions {
+export interface AccordionPropsType extends /* @vue-ignore */ UIkitAccordionOptions {
   tag?: 'ul' | 'div'
   list?: AccordionItemType[]
 }
@@ -120,7 +120,7 @@ export interface GridPropsType extends GridClassType {
 /**
  * Icon Props Types
  */
-export interface IconPropsType extends UIkitIconOptions {
+export interface IconPropsType extends /* @vue-ignore */ UIkitIconOptions {
   tag?: 'span' | string
 }
 

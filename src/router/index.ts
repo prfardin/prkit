@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, Router, RouteRecordRaw } from 'vue-router'
+import { type Router, type RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
 import { isDev } from '@u/util'
 import devRoutes from '@/router/dev-routes'
 

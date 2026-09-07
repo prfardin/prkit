@@ -1,4 +1,4 @@
-import { UserConfig, PluginOption, AliasOptions, Plugin } from 'vite'
+import type { UserConfig, PluginOption, AliasOptions, Plugin } from 'vite'
 import rtlcss from 'rtlcss'
 import { rtlcssConfig, rtlPlugin } from './rtlcss'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite'
@@ -46,8 +46,8 @@ export function pluginsFunc(
 
 // if user start with "npm run dev:rtl" we add rtlcss config
 // to process and rtl less file will be used in dev mode.
-// if user run build command we use our rtlPlugin to create seperated
-// css file.
+// if user run build command we use our rtlPlugin to create separated
+// CSS file.
 export default function viteConfig({ rtl, command = 'serve' }: ViteConfig): UserConfig {
   const vitePlugins = pluginsFunc()
   const postCssPlugins = []
@@ -68,17 +68,17 @@ export default function viteConfig({ rtl, command = 'serve' }: ViteConfig): User
 }
 
 // we use alias for preventing to write full path in our app
-// each alias must add to the tsconfig file
+// each alias must add to the tsconfig.path file
 export const alias: AliasOptions = {
   '@': '/src',
-  '@t': '/src/.temp', // .temp folder
-  '@c': '/src/components', // components
-  '@v': '/src/views', // views
-  '@vd': '/src/views/docs', // views/documentation
-  '@f': '/src/fonts', // fonts,
-  '@i': '/src/images', // images,
-  '@s': '/src/stores', // stores,
-  '@sc': '/src/scripts', // scripts,
-  '@u': '/src/scripts/util', // utils,
-  '@l': '/lang', // locales
+  '@t': '/src/.temp',                     // .temp folder
+  '@c': '/src/components',                // components
+  '@v': '/src/views',                     // views
+  '@vd': '/src/views/docs',               // views/documentation
+  '@f': '/src/fonts',                     // fonts,
+  '@i': '/src/images',                    // images,
+  '@s': '/src/stores',                    // stores,
+  '@sc': '/src/scripts',                  // scripts,
+  '@u': '/src/scripts/util',              // utils,
+  '@l': '/lang',                          // locales
 }

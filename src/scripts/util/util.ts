@@ -1,6 +1,6 @@
 import UIkit from 'uikit'
-import { Ref } from 'vue'
-import { AccordionPropsType, IconPropsType } from '@u/props'
+import type { Ref } from 'vue'
+import type { AccordionPropsType, IconPropsType } from '@u/props'
 
 // Types: Define Types for UIkit or HTML elements
 // ========================================================================

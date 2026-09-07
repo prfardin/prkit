@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LinkPropsType } from '@u/props'
+import type { LinkPropsType } from '@u/props'
 import { linkClassObject } from '@u/classes'
 import { useSlots, computed } from 'vue'
 import PrIcon from '@c/core/PrIcon.vue'

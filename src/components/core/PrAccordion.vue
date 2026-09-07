@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { AccordionPropsType, AccordionDefaults } from '@u/props'
-import { accordion, RefElement } from '@u/util'
+import { type AccordionPropsType, AccordionDefaults } from '@u/props'
+import { type RefElement, accordion } from '@u/util'
 import { ref, onMounted } from 'vue'
 
 const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)

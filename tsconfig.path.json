@@ -1,0 +1,19 @@
+// Path mapping for cleaner imports.
+// Usage in: tsconfig.app, tsconfig.node.tsconfig.vitest
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@t/*": ["./src/.temp/*"],                  // .temp folder
+      "@c/*": ["./src/components/*"],             // components
+      "@v/*": ["./src/views/*"],                  // views
+      "@vd/*": ["./src/views/docs/*"],            // views/documentation
+      "@f/*": ["./src/fonts/*"],                  // fonts,
+      "@i/*": ["./src/images/*"],                 // images,
+      "@s/*": ["./src/stores/*"],                 // stores,
+      "@sc/*": ["./src/scripts/*"],               // scripts,
+      "@u/*": ["./src/scripts/util/*"],           // utils,
+      "@l/*": ["./lang/*"]                        // locales
+    }
+  }
+}

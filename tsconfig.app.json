@@ -1,33 +1,16 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/.temp/**/*"],
+  "extends": [
+    "@vue/tsconfig/tsconfig.dom.json",
+    "./tsconfig.path.json" // Path mapping for cleaner imports.
+  ],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
-    "verbatimModuleSyntax": false,
-    "module": "ESNext",
-    "target": "ESNext",
-    "strict": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "composite": true,
-    "noEmit": true,
-    "lib": ["ESNext", "DOM"],
-    "types": ["node", "jsdom", "vite/client", "@intlify/unplugin-vue-i18n/messages"],
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@t/*": ["./src/.temp/*"],
-      "@c/*": ["./src/components/*"],
-      "@v/*": ["./src/views/*"],
-      "@vd/*": ["./src/views/docs/*"],
-      "@f/*": ["./src/fonts/*"],
-      "@i/*": ["./src/images/*"],
-      "@s/*": ["./src/stores/*"],
-      "@sc/*": ["./src/scripts/*"],
-      "@u/*": ["./src/scripts/util/*"],
-      "@l/*": ["./lang/*"],
-    }
+    // Extra safety for array and object lookups, but may have false positives.
+    "noUncheckedIndexedAccess": true,
+
+    // `vue-tsc --build` produces a .tsbuildinfo file for incremental type-checking.
+    // Specified here to keep it out of the root directory.
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo"
   }
 }

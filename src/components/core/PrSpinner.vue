@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SpinnerPropsType } from '@u/props'
+import type { SpinnerPropsType } from '@u/props'
 import { spinnerClassObject } from '@u/classes'
 import { computed } from 'vue'
 

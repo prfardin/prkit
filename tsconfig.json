@@ -10,31 +10,5 @@
     {
       "path": "./tsconfig.vitest.json"
     }
-  ],
-  "compilerOptions": {
-    "verbatimModuleSyntax": false,
-    "module": "ESNext",
-    "target": "ESNext",
-    "strict": true,
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
-    "types": ["node", "jsdom", "vite/client", "@intlify/unplugin-vue-i18n/messages"],
-    "tsBuildInfoFile": "src/.temp/tsconfig.tsbuildinfo",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@t/*": ["./src/.temp/*"],
-      "@c/*": ["./src/components/*"],
-      "@v/*": ["./src/views/*"],
-      "@vd/*": ["./src/views/docs/*"],
-      "@f/*": ["./src/fonts/*"],
-      "@i/*": ["./src/images/*"],
-      "@s/*": ["./src/stores/*"],
-      "@sc/*": ["./src/scripts/*"],
-      "@u/*": ["./src/scripts/util/*"],
-      "@l/*": ["./lang/*"],
-    }
-  }
+  ]
 }

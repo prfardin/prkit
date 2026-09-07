@@ -6,7 +6,7 @@
  * with no span tag, in future we most prevent from creating additional tag
  * when there is no default slots defined
  */
-import { ButtonPropsType } from '@u/props'
+import type { ButtonPropsType } from '@u/props'
 import { buttonClassObject } from '@u/classes'
 import { useSlots, computed } from 'vue'
 import PrIcon from '@c/core/PrIcon.vue'

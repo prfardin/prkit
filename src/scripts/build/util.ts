@@ -1,7 +1,7 @@
 import { glob } from 'glob'
 import fs, { type PathLike } from 'fs-extra'
 import pLimit from 'p-limit'
-import { InputOptions, OutputOptions, RollupBuild } from 'rollup'
+import type { InputOptions, OutputOptions, RollupBuild } from 'rollup'
 import { rollup } from 'rollup'
 import replace from '@rollup/plugin-replace'
 

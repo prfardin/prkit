@@ -1,5 +1,5 @@
 import { compile, findIcons, read } from './util'
-import { Config, optimize } from 'svgo'
+import { type Config, optimize } from 'svgo'
 import fs from 'fs-extra'
 
 export interface Icons {

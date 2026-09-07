@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import postcss from 'postcss'
-import rtlcss, { ConfigureOptions } from 'rtlcss'
+import rtlcss, { type ConfigureOptions } from 'rtlcss'
 import less from 'less'
 
 // config of rtlcss and export to use in other methods
