@@ -13,6 +13,15 @@ const router: Router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   linkActiveClass: 'uk-active',
   linkExactActiveClass: 'uk-active',
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        top: 40,
+        behavior: 'smooth',
+      }
+    }
+  },
   routes,
 })
 
