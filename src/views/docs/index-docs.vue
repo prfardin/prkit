@@ -29,7 +29,10 @@ const accordionList = [
     style="border-right: 1px solid #e7e7e1"
   >
     <div class="uk-padding">
-      <ul class="uk-nav uk-nav-primary">
+      <ul class="uk-nav uk-nav-default">
+        <li class="uk-nav-header"><h3>Documentation</h3></li>
+        <li>Components</li>
+        <li class="uk-nav-divider"></li>
         <RouterLink
           v-for="(link, index) in DocLinks"
           :to="{ hash: '#' + link.toLowerCase() }"
