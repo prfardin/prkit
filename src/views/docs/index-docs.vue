@@ -1,10 +1,19 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 function checkActiveRoute(id: string) {
   return route.hash === '#' + id ? 'uk-active' : ''
 }
 const DocLinks = ['Accordion', 'Icon']
+
+const lightMode = ref('uk-light')
+
+function changeMode() {
+  if (lightMode.value === 'uk-light') {
+    lightMode.value = 'uk-dark'
+  } else lightMode.value = 'uk-light'
+}
 
 import PrIcon from '@c/core/PrIcon.vue'
 import PrAccordion from '@c/core/PrAccordion.vue'
@@ -30,13 +39,22 @@ const accordionList = [
 </script>
 
 <template>
+  <!-- Just For Docs - will remove in future and move to docs project -->
   <div
     class="uk-width-medium uk-position-fixed uk-position-left uk-overflow-auto uk-height-viewport"
     style="border-right: 1px solid #e7e7e1"
   >
-    <div class="uk-padding">
+    <div class="uk-padding" :class="lightMode === 'uk-dark' && 'uk-light'">
       <ul class="uk-nav uk-nav-default">
-        <li class="uk-nav-header"><h3>Documentation</h3></li>
+        <li class="uk-nav-header">
+          <h3>
+            Documentation
+            <a class="uk-link uk-link-text" @click="changeMode">
+              <span uk-icon="icon-huge-sharp-sun-01" v-if="lightMode === 'uk-light'"></span>
+              <span uk-icon="icon-huge-sharp-moon" v-if="lightMode === 'uk-dark'"></span>
+            </a>
+          </h3>
+        </li>
         <li>Components</li>
         <li class="uk-nav-divider"></li>
         <RouterLink
@@ -55,7 +73,10 @@ const accordionList = [
     </div>
   </div>
 
-  <div class="uk-section uk-section-default">
+  <div
+    class="uk-section"
+    :class="lightMode === 'uk-dark' ? 'uk-section-secondary' : 'uk-section-default'"
+  >
     <div class="uk-container uk-container-xsmall">
       <!-- Accordion -->
       <h1 id="accordion" class="uk-text-center">Accordion</h1>
@@ -116,6 +137,7 @@ const accordionList = [
       <div class="uk-text-center">
         <pr-icon icon="icon-isocons-solidsharptop-123" ratio="5" />
         <pr-icon icon="icon-huge-bulk-user" ratio="3" />
+        <pr-icon icon="icon-huge-sharp-moon" ratio="3" />
         <pr-icon icon="icon-huge-duotone-3rd-bracket-square" ratio="3" />
         <pr-icon icon="icon-solar-duotoneso-upload" ratio="3" />
         <pr-icon icon="icon-solar-broken-home-smile" ratio="3" />
