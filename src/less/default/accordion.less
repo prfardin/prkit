@@ -6,11 +6,11 @@
 // Variables
 // ========================================================================
 
-@accordion-default-item-margin-top: @global-margin;
+@accordion-default-item-margin-top:             @global-margin;
 
 @accordion-default-title-gap:                   var(--accordion-default-title-gap);
 @accordion-default-title-font-size:             @global-medium-font-size;
-@accordion-default-title-line-height:           var(--accordion--default-line-height);
+@accordion-default-title-line-height:           var(--accordion-default-line-height);
 @accordion-default-title-color:                 @global-emphasis-color;
 @accordion-default-title-hover-color:           @global-color;
 
@@ -20,7 +20,28 @@
 // New
 //
 
-@accordion-default-icon-color: @global-color;
+@accordion-default-icon-color:                  @global-color;
+
+@accordion-base-title-gap:                      var(--accordion-base-title-gap);
+@accordion-base-title-font-size:                @global-medium-font-size;
+@accordion-base-title-line-height:              var(--accordion-base-line-height);
+@accordion-base-title-color:                    @global-emphasis-color;
+
+@accordion-hover-title-line-height:             var(--accordion-hover-line-height);
+@accordion-hover-title-background-color:        var(--accordion-hover-title-background-color);
+@accordion-hover-title-hover-background-color:  var(--accordion-hover-title-hover-background-color);
+
+@accordion-hover-title-border-radius:           var(--accordion-hover-title-border-radius);
+@accordion-hover-title-padding-vertical:        @global-xsmall-gutter;
+@accordion-hover-title-padding-horizontal:      @global-small-gutter;
+@accordion-hover-content-margin-top:            @global-xsmall-gutter;
+@accordion-hover-content-padding:               @global-small-gutter;
+
+@accordion-line-title-line-height:              var(--accordion-line-line-height);
+@accordion-line-border-color:                   @global-border;
+
+@accordion-line-content-padding:                @global-xsmall-gutter;
+
 
 // Component
 // ========================================================================
@@ -65,13 +86,133 @@
 // Miscellaneous
 // ========================================================================
 
-.hook-accordion-misc() {}
+.hook-accordion-misc() {
+  // Style modifiers
+  // ========================================================================
+
+  // Base
+  // ========================================================================
+
+  /*
+  * 1. Center content vertically, e.g. an icon
+  * 2. Imitate white space gap when using flexbox
+  * 3. Reset link
+   */
+
+  .pr-accordion-hover .uk-accordion-title,
+  .pr-accordion-line .uk-accordion-title {
+    /* 1 */
+    display: flex;
+    align-items: center;
+    /* 2 */
+    column-gap: @accordion-base-title-gap;
+    /* 3 */
+    font-size: @accordion-base-title-font-size;
+    line-height: @accordion-base-title-line-height;
+    color: @accordion-base-title-color;
+  }
+
+  /*
+   * Icon
+   */
+
+  .pr-accordion-hover .uk-accordion-icon,
+  .pr-accordion-line .uk-accordion-icon {
+    flex: none;
+    margin-left: auto;
+  }
+
+  // Style: Hover
+  // ========================================================================
+
+  /*
+   * Title
+   */
+
+  /* Style */
+  .pr-accordion-hover .uk-accordion-title {
+    line-height: @accordion-hover-title-line-height;
+    padding: @accordion-hover-title-padding-vertical @accordion-hover-title-padding-horizontal;
+    background-color: @accordion-hover-title-background-color;
+    border-radius: @accordion-hover-title-border-radius;
+  }
+
+  /* Hover */
+  .pr-accordion-hover .uk-accordion-title:hover {
+    background-color: @accordion-hover-title-hover-background-color;
+    text-decoration: none;
+  }
+
+  /*
+   * Content
+   */
+
+  .pr-accordion-hover .uk-accordion-content {
+    margin-top: @accordion-hover-content-margin-top;
+    padding: 0 @accordion-hover-content-padding @accordion-hover-content-padding;
+  }
+
+  // Style: Line
+  // ========================================================================
+
+  /*
+   * Item
+   */
+
+  .pr-accordion-line > * {
+    border-bottom: @global-border-width solid transparent;
+  }
+
+  .pr-accordion-line > *:not(:last-child) {
+    border-bottom-color: @accordion-line-border-color;
+  }
+
+  /*
+   * Title
+   */
+
+  /* Style */
+  .pr-accordion-line .uk-accordion-title {
+    line-height: @accordion-line-title-line-height;
+    padding: @accordion-hover-title-padding-horizontal 0;
+  }
+
+  /*
+   * Content
+   */
+
+  .pr-accordion-line .uk-accordion-content {
+    padding-bottom: @accordion-line-content-padding;
+  }
+}
 
 
 // Inverse
 // ========================================================================
 
-@inverse-accordion-default-icon-color:         @inverse-global-color;
+@inverse-accordion-default-icon-color:                    @inverse-global-color;
+
+@inverse-accordion-hover-title-color:                     @inverse-global-emphasis-color;
+@inverse-accordion-hover-title-background-color:          var(--inverse-accordion-hover-title-background-color);
+@inverse-accordion-hover-title-hover-background-color:    var(--inverse-accordion-hover-title-hover-background-color);
+@inverse-accordion-line-border-color:                     @inverse-global-border;
+
+.hook-inverse() {
+
+  .pr-accordion-hover .uk-accordion-title {
+    color: @inverse-accordion-hover-title-color;
+    background-color: @inverse-accordion-hover-title-background-color;
+  }
+
+  .pr-accordion-hover .uk-accordion-title:hover {
+    background-color: @inverse-accordion-hover-title-hover-background-color;
+  }
+
+  .pr-accordion-line > *:not(:last-child) {
+    border-bottom-color: @inverse-accordion-line-border-color;
+  }
+
+}
 
 .hook-inverse-accordion-default-item() {}
 .hook-inverse-accordion-default-item-active() {}

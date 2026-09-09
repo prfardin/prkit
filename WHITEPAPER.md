@@ -29,6 +29,7 @@ we are making all project (css framework and vue components and starter kit) in 
 - [ ] create page layouts and sidebar examples (`Theme`)
 - [ ] create document hub for `Theme`
 - [ ] create starter kit for `Nuxt`
+- [ ] migrate to modern CSS rgb
 
 ## Tasklists (sub roadmap)
 - [ ] we need make this project separate to 4 npm libraries:

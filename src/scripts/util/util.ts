@@ -26,9 +26,26 @@ export function isDev() {
 //
 
 // set accordion
-export function accordion(el: Element, options: AccordionPropsType) {
-  return UIkit.accordion(el, options)
+export function accordion(el: RefElement, options: AccordionPropsType) {
+  return UIkit.accordion(el as Element, options)
 }
+
+
+
+
+
+// set icon
+export function icon(el: RefElement, options: IconPropsType) {
+  return UIkit.icon(el as Element, { icon: options.icon, ratio: options.ratio })
+}
+
+
+
+
+
+
+
+
 
 // set alert
 export function alert(el: Element, options: AlertPropsType) {
@@ -49,11 +66,6 @@ export function alert(el: Element, options: AlertPropsType) {
 // set grid
 export function grid(el: Element, options?: UIkitGridOptions) {
   return UIkit.grid(el, options)
-}
-
-// set icon
-export function icon(el: Element, options: IconPropsType) {
-  return UIkit.icon(el, { icon: options.icon, ratio: options.ratio})
 }
 
 // set util

@@ -7,6 +7,40 @@
  * we also define interface for each component classes
  * we will improve this way with future release of vue (type-based declaration export)
  */
+import type { AccordionClassType } from '@u/props'
+
+
+/**
+ * accordion class generator
+ * get accordion props and return all available CSS classes
+ */
+
+export const defaultAccordionCls = 'uk-accordion'
+export const defaultPrAccordionCls = 'pr-accordion'
+
+export function accordionClassObject(
+  props: AccordionClassType,
+  accordionCls: string = defaultAccordionCls,
+  prAccordionCls: string = defaultPrAccordionCls,
+) {
+  return [
+    {
+      [`${accordionCls}-default`]: props.default || (!props.hover && !props.line),
+      [`${prAccordionCls}-hover`]: props.hover,
+      [`${prAccordionCls}-line`]: props.line
+    },
+  ]
+}
+
+
+
+
+
+
+
+
+
+
 
 /**
  * const still not assigned to their classObject's
@@ -15,6 +49,8 @@ export const defaultIconCls = 'uk-icon'
 
 export const defaultClsRtl = 'pr-direction-rtl'
 export const defaultClsLtr = 'pr-direction-ltr'
+
+
 
 /**
  * define background types, we use our main colors in

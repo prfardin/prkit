@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { type AccordionPropsType, AccordionDefaults } from '@u/props'
-import { type RefElement, accordion, icon } from '@u/util'
-import { onMounted, computed, useTemplateRef } from 'vue'
+import { type RefElement, accordion } from '@u/util'
+import { ref, onMounted, computed } from 'vue'
 import { accordionClassObject } from '@u/classes.ts'
 
 const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
 
-// define template and child ref
-const el = useTemplateRef<RefElement>(`el`)
-const accordionIcon = useTemplateRef<RefElement>(`icon`)
+// define template ref
+const el = ref<RefElement>(null)
 
 // define button classes from defined props
 const accordionClass = computed(() => accordionClassObject(props))
@@ -24,7 +23,6 @@ const listItemRenderTag: string = props.tag === 'ul' ? 'li' : 'div'
  */
 onMounted(() => {
   accordion(el.value, props)
-  icon(accordionIcon.value, { icon: 'accordion-icon' })
 })
 </script>
 
@@ -34,7 +32,7 @@ onMounted(() => {
       <component :is="listItemRenderTag" v-for="(item, index) in list" :key="index">
         <a class="uk-accordion-title" href="">
           {{ item.title }}
-          <span class="uk-accordion-icon" ref="icon" />
+          <span uk-accordion-icon></span>
         </a>
         <div class="uk-accordion-content">{{ item.content }}</div>
       </component>

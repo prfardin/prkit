@@ -55,33 +55,40 @@ import type {
 import type { GridClassType, ButtonClassType, LinkClassType, SpinnerClassType } from './classes'
 
 /**
- * We import custom types here
+ * we import custom types here
  */
 import type { RouteLocationRaw } from 'vue-router'
 
 
 /**
- * Accordion Props Types
- * extended from UIkit Accordion Options
- * cause all UIkit Accordion Options as props
+ * accordion props types
+ * extended from UIkit accordion options
+ * cause all UIkit accordion options is props
  * has child component: accordion-title and accordion-content
  */
 
-// Accordion Item Type
+// accordion item types
 export interface AccordionItemType {
   title: string
   content: string
 }
 
-// Accordion Props Types
-export interface AccordionPropsType extends /* @vue-ignore */ UIkitAccordionOptions {
+// accordion class type
+export interface AccordionClassType {
+  default?: boolean
+  hover?: boolean
+  line?: boolean
+}
+
+// accordion prop types
+export interface AccordionPropsType extends /* @vue-ignore */ UIkitAccordionOptions, AccordionClassType {
   tag?: 'ul' | 'div'
   list?: AccordionItemType[]
 }
 
-// Accordion Defaults
+// accordion defaults
 export const AccordionDefaults = {
-  tag: 'ul',
+  tag: 'ul'
 } satisfies Partial<AccordionPropsType>
 
 

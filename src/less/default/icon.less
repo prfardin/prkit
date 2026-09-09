@@ -329,13 +329,9 @@
 @inverse-icon-link-active-color: @inverse-global-color;
 @inverse-icon-button-background: @inverse-global-muted-background;
 @inverse-icon-button-color: @inverse-global-muted-color;
-@inverse-icon-button-hover-background: rgb(
-  from @inverse-icon-button-background r g b / ~'calc(alpha + 0.05)'
-); // instead of: fadein(@inverse-icon-button-background, 5%);
+@inverse-icon-button-hover-background: rgb(from @inverse-icon-button-background r g b / ~'calc(alpha + 0.05)');   // instead of: fadein(@inverse-icon-button-background, 5%);
 @inverse-icon-button-hover-color: @inverse-global-color;
-@inverse-icon-button-active-background: rgb(
-  from @inverse-icon-button-background r g b / ~'calc(alpha + 0.1)'
-); // instead of: fadein(@inverse-icon-button-background, 10%);
+@inverse-icon-button-active-background: rgb(from @inverse-icon-button-background r g b / ~'calc(alpha + 0.1)');   // instead of: fadein(@inverse-icon-button-background, 10%);
 @inverse-icon-button-active-color: @inverse-global-color;
 
 //
