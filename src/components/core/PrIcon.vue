@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type IconPropsType, IconDefaults } from '@u/props'
-import { type RefElement, icon } from '@u/util'
+import { type RefElement, setIcon } from '@u/util'
 import { ref, onMounted, watchEffect } from 'vue'
 
 const props = withDefaults(defineProps<IconPropsType>(), IconDefaults)
@@ -15,8 +15,8 @@ const el = ref<RefElement>(null)
  * for now watchEffect used cause its clean
  * maybe need change to Composable icon in future
  */
-function setIcon() {
-  return icon(el.value, props)
+function setIconAgain() {
+  return setIcon(el.value, props)
 }
 
 /**
@@ -24,7 +24,7 @@ function setIcon() {
  * we need watchEffect just in dev mode, that because we are changing icons
  */
 onMounted(() => {
-  watchEffect(setIcon)
+  watchEffect(setIconAgain)
 })
 </script>
 

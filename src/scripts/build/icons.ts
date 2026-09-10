@@ -27,6 +27,7 @@ export async function icons(iconPath: string, prefix: string = ''): Promise<stri
             mergePaths: false,
             removeUnknownsAndDefaults: false,
             removeUselessStrokeAndFill: false,
+            minifyStyles: false
           },
         },
       },
@@ -38,14 +39,14 @@ export async function icons(iconPath: string, prefix: string = ''): Promise<stri
   return ''
 }
 
-export async function mapIcons(compiledIcons: Icons, usedIcons: Set<string>) {
+export async function mapIcons(compiledIcons: Icons, usedIcons: Set<string>, defaultIcon: string) {
   await Promise.all(
     [...usedIcons].map(async (iconName) => {
-      const name = iconName.match(/^icon-([^-\s]+)-([^-\s]+)-(.+)$/)
-
+      const normalizedName = iconName.replace(/^(icon|component)-default-/, `$1-${defaultIcon}-`)
+      const name = normalizedName.match(/^(icon|component)-([^-\s]+)-([^-\s]+)-(.+)$/)
       if (name && name.length > 3) {
-        const [, category, subcategory, icon] = name
-        const iconPath = `./src/images/core/${category}/${subcategory}/icons/${icon}.svg`
+        const [, base, category, subcategory, icon] = name
+        const iconPath = `./src/images/core/${category}/${subcategory}/${base}s/${icon}.svg`
 
         const compiledIcon = await icons(iconPath)
         compiledIcon && (compiledIcons[iconName] = compiledIcon)
@@ -59,15 +60,15 @@ export function stringify(icons: Icons) {
 }
 
 // find all used icons in project and compile them
-export default async function compileIcons(findDir: string) {
-  const usedIcons: Set<string> = await findIcons(findDir)
+export default async function compileIcons(findDir: string, defaultIcons: string) {
+  const usedIcons: Set<string> = await findIcons(findDir, defaultIcons)
 
   const compiledIcons: Icons = {}
-  await mapIcons(compiledIcons, usedIcons)
+  await mapIcons(compiledIcons, usedIcons, defaultIcons)
 
   return await compile('src/scripts/build/wrapper/icons.ts', 'src/.temp/uikit-icons', {
     replaces: {
       ICONS: stringify(compiledIcons),
-    },
+    }
   })
 }

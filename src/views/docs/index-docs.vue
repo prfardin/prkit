@@ -83,7 +83,7 @@ const accordionList = [
       <div>
         <!-- Styles -->
         <h2>Default Style - UIKit</h2>
-        <pr-accordion :list="accordionList" />
+        <pr-accordion :list="accordionList" icon="chevron" :iconRatio="0.7" />
         <h2>Line Style</h2>
         <pr-accordion :list="accordionList" line />
         <h2>Hover Style</h2>
@@ -137,6 +137,7 @@ const accordionList = [
       <div class="uk-text-center">
         <pr-icon icon="icon-isocons-solidsharptop-123" ratio="5" />
         <pr-icon icon="icon-huge-bulk-user" ratio="3" />
+        <pr-icon icon="icon-default-sun-01" ratio="3" />
         <pr-icon icon="icon-huge-sharp-moon" ratio="3" />
         <pr-icon icon="icon-huge-duotone-3rd-bracket-square" ratio="3" />
         <pr-icon icon="icon-solar-duotoneso-upload" ratio="3" />
@@ -144,6 +145,8 @@ const accordionList = [
         <pr-icon icon="icon-solar-duotoneso-home-smile" ratio="3" />
         <pr-icon icon="icon-solar-duotone-home-smile" ratio="3" />
         <pr-icon icon="icon-uni-mono-0-plus" ratio="3" />
+        <pr-icon icon="icon-default-sun-02" ratio="3" />
+        <pr-icon icon="icon-default-sun-03" ratio="3" />
       </div>
       <pr-button tag="a" color="danger">Hi</pr-button>
 

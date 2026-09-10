@@ -2,6 +2,7 @@ import type { Plugin } from 'vite'
 import fs from 'fs'
 import path from 'path'
 import { type Icons, mapIcons, stringify } from './icons'
+import { defaultIconStyle } from '../util/util'
 
 const cachedIcons = new Set<string>()
 
@@ -21,7 +22,7 @@ export function dynamicIcon(): Plugin {
           (icon) => !cachedIcons.has(icon) && cachedIcons.add(icon) && newIcon.add(icon),
         )
 
-        newIcon.size > 0 && (await appendIcons(newIcon, outputPath))
+        newIcon.size > 0 && (await appendIcons(newIcon, outputPath, defaultIconStyle))
       }
     },
   }
@@ -49,11 +50,11 @@ function findIcons(file: string): Set<string> {
 
 // Append new icons to the old .temp/icons.ts file
 // Matches the last </svg> before the closing braces
-async function appendIcons(newIcons: Set<string>, filePath: string) {
+async function appendIcons(newIcons: Set<string>, filePath: string, defaultIcons: string) {
   const lastSvgRegex = /<\/svg>"\s*,?\s*(?=}\s*})/
 
   const compiledIcons: Icons = {}
-  await mapIcons(compiledIcons, newIcons)
+  await mapIcons(compiledIcons, newIcons, defaultIcons)
 
   if (Object.keys(compiledIcons).length) {
     const newIconsContent = stringify(compiledIcons).slice(1, -1)

@@ -7,7 +7,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import compileIcons from '../build/icons'
 import { dynamicIcon } from './dynamic-icons-plugin'
-import { isDev } from '../util/util'
+import { defaultIconStyle, isDev } from '../util/util'
 
 // types
 interface ViteConfig {
@@ -18,8 +18,8 @@ interface ViteConfig {
 // all files in publicDir path will be copied to build path as the same they are
 export const publicDir: string = 'src/public'
 
-export function defaultIcons() {
-  return Promise.resolve(compileIcons('src'))
+export function setIcons(defaultIcons: string) {
+  return Promise.resolve(compileIcons('src', defaultIcons))
 }
 
 // vue vite js plugin
@@ -36,7 +36,7 @@ export const vueI18nVite = vueI18n({
 // we use dynamicIcon plugin to watch added icons in the vue files
 // that is not necessary in the build mode
 export function pluginsFunc(
-  icons: any = defaultIcons(),
+  icons: any = setIcons(defaultIconStyle),
   plugins?: Plugin | PluginOption[],
 ): PluginOption[] {
   const p = [vueVite, vueJsx(), vueDevTools(), vueI18nVite, icons, plugins]

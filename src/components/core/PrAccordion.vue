@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { type AccordionPropsType, AccordionDefaults } from '@u/props'
-import { type RefElement, accordion, icon } from '@u/util'
+import { type RefElement, setAccordion, setIcon, getAccordionIconName } from '@u/util'
 import { onMounted, computed, useTemplateRef } from 'vue'
-import { accordionClassObject } from '@u/classes.ts'
+import { accordionClassObject } from '@u/classes'
 
 const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
 
-// define template and child ref
-const el = useTemplateRef<RefElement>(`el`)
-const accordionIcon = useTemplateRef<RefElement>(`icon`)
+// define template and icon ref
+const el = useTemplateRef<RefElement>('el')
+const accordionIcon = useTemplateRef<RefElement>('icon')
 
 // define button classes from defined props
 const accordionClass = computed(() => accordionClassObject(props))
@@ -23,8 +23,8 @@ const listItemRenderTag: string = props.tag === 'ul' ? 'li' : 'div'
  * must be prevented and reworked
  */
 onMounted(() => {
-  accordion(el.value, props)
-  icon(accordionIcon.value, { icon: 'accordion-icon' })
+  setAccordion(el.value, props)
+  setIcon(accordionIcon.value, { icon: getAccordionIconName(props.icon), ratio: props.iconRatio })
 })
 </script>
 
