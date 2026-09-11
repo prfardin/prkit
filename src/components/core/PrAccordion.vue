@@ -1,17 +1,23 @@
 <script setup lang="ts">
 import { type AccordionPropsType, AccordionDefaults } from '@u/props'
-import { type RefElement, setAccordion, setIcon, getAccordionIconName } from '@u/util'
+import {
+  type RefElement,
+  setAccordion,
+  setIcon,
+  checkAccordionIcon,
+  getAccordionIconName,
+} from '@u/util'
 import { onMounted, computed, useTemplateRef } from 'vue'
 import { accordionClassObject } from '@u/classes'
 
 const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
 
-// define template and icon ref
 const el = useTemplateRef<RefElement>('el')
 const accordionIcon = useTemplateRef<RefElement>('icon')
 
-// define button classes from defined props
 const accordionClass = computed(() => accordionClassObject(props))
+
+const hasIcon = checkAccordionIcon(props.icon)
 
 const listItemRenderTag: string = props.tag === 'ul' ? 'li' : 'div'
 
@@ -19,12 +25,15 @@ const listItemRenderTag: string = props.tag === 'ul' ? 'li' : 'div'
  * we define all available options as props and
  * send it to accordion function of UIkit.
  * it also sends undefined props to accordion function.
- * we must check it in future if it reduces effectivity it
- * must be prevented and reworked
+ * TODO: Check if it reduces effectivity it must be prevented and reworked
  */
 onMounted(() => {
   setAccordion(el.value, props)
-  setIcon(accordionIcon.value, { icon: getAccordionIconName(props.icon), ratio: props.iconRatio })
+  hasIcon &&
+    setIcon(accordionIcon.value, {
+      icon: getAccordionIconName(props.icon),
+      ratio: props.iconRatio,
+    })
 })
 </script>
 
@@ -34,7 +43,7 @@ onMounted(() => {
       <component :is="listItemRenderTag" v-for="(item, index) in list" :key="index">
         <a class="uk-accordion-title" href="">
           {{ item.title }}
-          <span class="uk-accordion-icon" ref="icon" />
+          <span v-if="hasIcon" class="uk-accordion-icon" ref="icon" />
         </a>
         <div class="uk-accordion-content">{{ item.content }}</div>
       </component>

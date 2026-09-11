@@ -1,6 +1,6 @@
 import UIkit from 'uikit'
 import type { Ref } from 'vue'
-import type { AccordionPropsType, IconPropsType } from '@u/props'
+import { AccordionIconType, AccordionPropsType, IconPropsType } from '@u/props'
 
 // Types: Define Types for UIkit or HTML elements
 // ========================================================================
@@ -9,24 +9,16 @@ export type Element = object | Ref | HTMLElement | string
 
 export type RefElement = Element | null
 
-// define type for HTML input elements
 export type InputElement = object | Ref | HTMLInputElement | string
 
-// Utils: Define Usable Functions
+// Configuration
 // ========================================================================
 
-// check if app is in develop mode
-// maybe need to change it in the future: move it from here
-export function isDev() {
-  return process.env.NODE_ENV === 'development'
-}
-
-// dynamic icon names and component icon names must enter here
-// because the way our define the icons it's not support dynamic icon name, why?
-// cause we just want to import entered icon names not all icons
-// we do it in build process with dynamic-icon-plugin
-// must move with icon library, we want to separate the icon library then import
-// it as npm library, we also define all component library for all icon library
+// Icons used by components or referenced dynamically must be registered here.
+// The build plugin uses these lists to import only the required icons instead
+// of bundling the entire icon library.
+//
+// TODO: Move icon definitions into a separate icon library package.
 export type IconStyles =
   | 'fa-duotone'
   | 'fa-duotoneli'
@@ -108,29 +100,42 @@ export type IconStyles =
   | 'uni-mono'
   | 'uni-regular'
   | 'uni-solid'
+
 export const defaultIconStyle: IconStyles = 'huge-bulk'
+
 export const defaultIconComponentPrefix = 'component'
+
 export const componentIcons = [
   'default-chevron'
 ]
-export const dynamicIcons = [
-  //
-]
+
+export const dynamicIcons = []
+
+
+// Utilities
+// ========================================================================
+
+// TODO: maybe need to change it in the future: move it from here
+export function isDev() {
+  return process.env.NODE_ENV === 'development'
+}
 
 export function getIconName(iconName: string, prefix: string) {
-  return `${defaultIconComponentPrefix}-default-${iconName}`
+  return `${defaultIconComponentPrefix}-default-${prefix}-${iconName}`
 }
 
 export function getAccordionIconName(iconName: string) {
   return getIconName(iconName, 'accordion')
 }
 
-//
-// UIKit Functions
-//
+export function checkAccordionIcon(icon: AccordionIconType) {
+  return icon !== 'none'
+}
 
 
-// set accordion
+// UIkit Helpers
+// ========================================================================
+
 export function setAccordion(el: RefElement, options: AccordionPropsType) {
   return UIkit.accordion(el as Element, { ...options })
 }
