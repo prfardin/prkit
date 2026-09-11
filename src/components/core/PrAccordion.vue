@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import { type AccordionPropsType, AccordionDefaults } from '@u/props'
-import {
-  type RefElement,
-  setAccordion,
-  setIcon,
-  checkAccordionIcon,
-  getAccordionIconName,
-} from '@u/util'
+import { type RefElement, setAccordion, setIcon, getAccordionIconName } from '@u/util'
 import { onMounted, computed, useTemplateRef } from 'vue'
 import { accordionClassObject } from '@u/classes'
 
@@ -17,7 +11,7 @@ const accordionIcon = useTemplateRef<RefElement>('icon')
 
 const accordionClass = computed(() => accordionClassObject(props))
 
-const hasIcon = checkAccordionIcon(props.icon)
+const iconName = getAccordionIconName(props.icon)
 
 const listItemRenderTag: string = props.tag === 'ul' ? 'li' : 'div'
 
@@ -29,9 +23,9 @@ const listItemRenderTag: string = props.tag === 'ul' ? 'li' : 'div'
  */
 onMounted(() => {
   setAccordion(el.value, props)
-  hasIcon &&
+  iconName &&
     setIcon(accordionIcon.value, {
-      icon: getAccordionIconName(props.icon),
+      icon: iconName,
       ratio: props.iconRatio,
     })
 })
@@ -43,7 +37,7 @@ onMounted(() => {
       <component :is="listItemRenderTag" v-for="(item, index) in list" :key="index">
         <a class="uk-accordion-title" href="">
           {{ item.title }}
-          <span v-if="hasIcon" class="uk-accordion-icon" ref="icon" />
+          <span v-if="iconName" class="uk-accordion-icon" ref="icon" />
         </a>
         <div class="uk-accordion-content">{{ item.content }}</div>
       </component>

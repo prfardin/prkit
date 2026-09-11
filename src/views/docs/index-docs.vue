@@ -83,7 +83,7 @@ const accordionList = [
       <div>
         <!-- Styles -->
         <h2>Default Style - UIKit</h2>
-        <pr-accordion :list="accordionList" icon="chevron" :iconRatio="0.7" />
+        <pr-accordion :list="accordionList" icon="icon-huge-duotone-sun-01" :iconRatio="0.7" />
         <h2>Line Style</h2>
         <pr-accordion :list="accordionList" line />
         <h2>Hover Style</h2>

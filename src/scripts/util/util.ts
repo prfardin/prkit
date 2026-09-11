@@ -1,6 +1,6 @@
 import UIkit from 'uikit'
 import type { Ref } from 'vue'
-import { AccordionIconType, AccordionPropsType, IconPropsType } from '@u/props'
+import type { AccordionIconType, AccordionPropsType, IconPropsType } from '@u/props'
 
 // Types: Define Types for UIkit or HTML elements
 // ========================================================================
@@ -106,10 +106,12 @@ export const defaultIconStyle: IconStyles = 'huge-bulk'
 export const defaultIconComponentPrefix = 'component'
 
 export const componentIcons = [
-  'default-chevron'
+  'default-accordion-chevron'
 ]
 
 export const dynamicIcons = []
+
+export const accordionIconType = ['default', 'plus', 'chevron', 'circle']
 
 
 // Utilities
@@ -124,12 +126,16 @@ export function getIconName(iconName: string, prefix: string) {
   return `${defaultIconComponentPrefix}-default-${prefix}-${iconName}`
 }
 
-export function getAccordionIconName(iconName: string) {
-  return getIconName(iconName, 'accordion')
-}
+export function getAccordionIconName(iconName: AccordionIconType) {
+  if (iconName === 'none') {
+    return false
+  }
 
-export function checkAccordionIcon(icon: AccordionIconType) {
-  return icon !== 'none'
+  if (accordionIconType.includes(iconName)) {
+    return getIconName(iconName, 'accordion')
+  }
+
+  return iconName
 }
 
 
