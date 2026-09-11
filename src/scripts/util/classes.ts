@@ -23,13 +23,11 @@ export function accordionClassObject(
   accordionCls: string = defaultAccordionCls,
   prAccordionCls: string = defaultPrAccordionCls,
 ) {
-  return [
-    {
-      [`${accordionCls}-default`]: props.default || (!props.hover && !props.line),
-      [`${prAccordionCls}-hover`]: props.hover,
-      [`${prAccordionCls}-line`]: props.line
-    },
-  ]
+  return {
+    [`${accordionCls}-default`]: props.default || (!props.hover && !props.line),
+    [`${prAccordionCls}-hover`]: props.hover,
+    [`${prAccordionCls}-line`]: props.line,
+  }
 }
 
 

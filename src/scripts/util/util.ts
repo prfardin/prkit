@@ -117,11 +117,6 @@ export const accordionIconType = ['default', 'plus', 'chevron', 'circle']
 // Utilities
 // ========================================================================
 
-// TODO: maybe need to change it in the future: move it from here
-export function isDev() {
-  return process.env.NODE_ENV === 'development'
-}
-
 export function getIconName(iconName: string, prefix: string) {
   return `${defaultIconComponentPrefix}-default-${prefix}-${iconName}`
 }
@@ -164,7 +159,7 @@ export function setIcon(el: RefElement, options: IconPropsType) {
 
 
 // set alert
-export function alert(el: Element, options: AlertPropsType) {
+export function alert(el: Element, options: any) {
   return UIkit.accordion(el, {
     active: options.active,
     animation: options.animation,
@@ -180,7 +175,7 @@ export function alert(el: Element, options: AlertPropsType) {
 }
 
 // set grid
-export function grid(el: Element, options?: UIkitGridOptions) {
+export function grid(el: Element, options?: any) {
   return UIkit.grid(el, options)
 }
 

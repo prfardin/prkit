@@ -1,40 +1,44 @@
 <script setup lang="ts">
+import { isDev } from '@u/env.ts'
 import { type AccordionPropsType, AccordionDefaults } from '@u/props'
 import { type RefElement, setAccordion, setIcon, getAccordionIconName } from '@u/util'
-import { onMounted, computed, useTemplateRef } from 'vue'
+import { onMounted, computed, useTemplateRef, watchEffect } from 'vue'
 import { accordionClassObject } from '@u/classes'
 
 const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
 
 const el = useTemplateRef<RefElement>('el')
-const accordionIcon = useTemplateRef<RefElement>('icon')
+const icon = useTemplateRef<RefElement>('icon')
 
 const accordionClass = computed(() => accordionClassObject(props))
 
-const iconName = getAccordionIconName(props.icon)
+const iconName = computed(() => getAccordionIconName(props.icon))
 
-const listItemRenderTag: string = props.tag === 'ul' ? 'li' : 'div'
+const itemTag: string = props.tag === 'ul' ? 'li' : 'div'
 
-/**
- * we define all available options as props and
- * send it to accordion function of UIkit.
- * it also sends undefined props to accordion function.
- * TODO: Check if it reduces effectivity it must be prevented and reworked
- */
-onMounted(() => {
-  setAccordion(el.value, props)
-  iconName &&
-    setIcon(accordionIcon.value, {
-      icon: iconName,
+function updateIcon() {
+  iconName.value &&
+    setIcon(icon.value, {
+      icon: iconName.value,
       ratio: props.iconRatio,
     })
+}
+
+onMounted(() => {
+  setAccordion(el.value, props)
+  updateIcon()
+
+  isDev && watchEffect(() => {
+    setAccordion(el.value, props)
+    updateIcon()
+  })
 })
 </script>
 
 <template>
   <component :class="accordionClass" :is="tag" ref="el">
     <template v-if="list">
-      <component :is="listItemRenderTag" v-for="(item, index) in list" :key="index">
+      <component :is="itemTag" v-for="(item, index) in list" :key="index">
         <a class="uk-accordion-title" href="">
           {{ item.title }}
           <span v-if="iconName" class="uk-accordion-icon" ref="icon" />

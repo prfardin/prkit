@@ -757,7 +757,7 @@
   --spinner-circumference: ~'round(up, calc(2 * 3.141 * var(--spinner-radius)), 1px)';          // instead of: round(2 * 3.141 * var(--spinner-radius));
   --spinner-duration: 1.4s;
   --pr-spinner-line-gutter: calc(var(--global-xxsmall-gutter) - 1px);                           // instead of: var(--global-xxsmall-gutter) - 1px;
-  --pr-spinner-line-width: calc(var(--global-spinner-width - var(--pr-spinner-line-gutter)));   // instead of: var(--global-spinner-width - var(--pr-spinner-line-gutter));
+  --pr-spinner-line-width: calc(var(--global-spinner-width) - var(--pr-spinner-line-gutter));   // instead of: var(--global-spinner-width - var(--pr-spinner-line-gutter));
   --pr-spinner-line-item-height: 100%;
   --pr-spinner-circle-item-width: 3px;
   --pr-spinner-line-color: hsl(from var(--global-white-color) h s calc(l - 5));                 // instead of: darken(var(--global-white-color), 5%);

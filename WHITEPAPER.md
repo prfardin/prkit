@@ -21,6 +21,21 @@ we are making all project (css framework and vue components and starter kit) in 
 # Roadmap
 
 ### icons
+### icon libraries and version: 
+- [Font Awesome (fa) - 6.7.2](https://fontawesome.com)
+- [Hugeicons (huge) - 4375](https://hugeicons.com)
+- [Iconoir (iconoir) - 7.12.1](https://iconoir.com)
+- [Ionicons (ion) - 8.0.13](https://ionic.io/ionicons)
+- [Isocons (isocons) - 2.1](https://isocons.app)
+- [Lucide (lucide) - 1538](https://lucide.dev)
+- [Magicoon (magi) - 1.3](https://magicoon.com)
+- [Material Design (md) - --](http://google.github.io/material-design-icons)
+- [Mingcute (ming) - 2.97](https://www.mingcute.com)
+- [Phosphoricons (ph) - 2.1.0](https://phosphoricons.com)
+- [Solar Icons (solar) - 1193](https://solar-icons.vercel.app)
+- [Unicons (uni) - without version](https://iconscout.com/unicons)
+
+### TODO
 - [ ] add mx-icons to project
 - [ ] add icon versions to icon-libraries
 

@@ -1,5 +1,5 @@
+import { isDev } from '@u/env.ts'
 import { type Router, type RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
-import { isDev } from '@u/util'
 import devRoutes from '@/router/dev-routes'
 
 // we use dynamic import
@@ -7,7 +7,7 @@ import devRoutes from '@/router/dev-routes'
 const routes: RouteRecordRaw[] = []
 
 // Prevent rendering of documentation routes and components in production mode.
-isDev() && routes.push(...devRoutes())
+isDev && routes.push(...devRoutes())
 
 const router: Router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

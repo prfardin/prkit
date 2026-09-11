@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type AccordionPropsType, AccordionDefaults } from '@u/props'
-import { type RefElement, accordion } from '@u/util'
+import { type RefElement, setAccordion } from '@u/util'
 import { ref, onMounted, computed } from 'vue'
 import { accordionClassObject } from '@u/classes.ts'
 
@@ -22,7 +22,7 @@ const listItemRenderTag: string = props.tag === 'ul' ? 'li' : 'div'
  * must be prevented and reworked
  */
 onMounted(() => {
-  accordion(el.value, props)
+  setAccordion(el.value, props)
 })
 </script>
 

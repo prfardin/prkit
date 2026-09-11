@@ -9,7 +9,7 @@ const DocLinks = ['Accordion', 'Icon']
 
 const lightMode = ref('uk-light')
 
-function changeMode() {
+function changeLightMode() {
   if (lightMode.value === 'uk-light') {
     lightMode.value = 'uk-dark'
   } else lightMode.value = 'uk-light'
@@ -49,7 +49,7 @@ const accordionList = [
         <li class="uk-nav-header">
           <h3>
             Documentation
-            <a class="uk-link uk-link-text" @click="changeMode">
+            <a class="uk-link uk-link-text" @click="changeLightMode">
               <span uk-icon="icon-huge-sharp-sun-01" v-if="lightMode === 'uk-light'"></span>
               <span uk-icon="icon-huge-sharp-moon" v-if="lightMode === 'uk-dark'"></span>
             </a>
@@ -83,7 +83,7 @@ const accordionList = [
       <div>
         <!-- Styles -->
         <h2>Default Style - UIKit</h2>
-        <pr-accordion :list="accordionList" icon="icon-huge-duotone-sun-01" :iconRatio="0.7" />
+        <pr-accordion :list="accordionList" icon="icon-huge-duotone-sun-03" :icon-ratio="2.7" />
         <h2>Line Style</h2>
         <pr-accordion :list="accordionList" line />
         <h2>Hover Style</h2>

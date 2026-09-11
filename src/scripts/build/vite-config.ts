@@ -7,7 +7,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import compileIcons from '../build/icons'
 import { dynamicIcon } from './dynamic-icons-plugin'
-import { defaultIconStyle, isDev } from '../util/util'
+import { defaultIconStyle } from '../util/util'
 
 // types
 interface ViteConfig {
@@ -36,11 +36,12 @@ export const vueI18nVite = vueI18n({
 // we use dynamicIcon plugin to watch added icons in the vue files
 // that is not necessary in the build mode
 export function pluginsFunc(
+  command: 'serve' | 'build',
   icons: any = setIcons(defaultIconStyle),
   plugins?: Plugin | PluginOption[],
 ): PluginOption[] {
   const p = [vueVite, vueJsx(), vueDevTools(), vueI18nVite, icons, plugins]
-  isDev() && p.push(dynamicIcon())
+  command === 'serve' && p.push(dynamicIcon())
   return p
 }
 
@@ -49,7 +50,7 @@ export function pluginsFunc(
 // if user run build command we use our rtlPlugin to create separated
 // CSS file.
 export default function viteConfig({ rtl, command = 'serve' }: ViteConfig): UserConfig {
-  const vitePlugins = pluginsFunc()
+  const vitePlugins = pluginsFunc(command)
   const postCssPlugins = []
   rtl && postCssPlugins.push(rtlcss.configure(rtlcssConfig))
   command === 'build' && vitePlugins.push(rtlPlugin())
