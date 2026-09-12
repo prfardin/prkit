@@ -28,7 +28,7 @@ onMounted(() => {
   setAccordion(el.value, props)
   updateIcon()
 
-  isDev && watchEffect(() => {
+  watchEffect(() => {
     setAccordion(el.value, props)
     updateIcon()
   })
