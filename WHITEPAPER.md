@@ -22,8 +22,8 @@ we are making all project (css framework and vue components and starter kit) in 
 
 ### icons
 ### icon libraries and version: 
-- [Font Awesome (fa) - 6.7.2](https://fontawesome.com)
-- [Hugeicons (huge) - 4375](https://hugeicons.com)
+- [Font Awesome (fa) - 6.7.2](https://fontawesome.com) should update to last version
+- [Hugeicons (huge) - 4375](https://hugeicons.com) should update to last version
 - [Iconoir (iconoir) - 7.12.1](https://iconoir.com)
 - [Ionicons (ion) - 8.0.13](https://ionic.io/ionicons)
 - [Isocons (isocons) - 2.1](https://isocons.app)

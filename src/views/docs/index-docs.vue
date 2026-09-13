@@ -83,11 +83,11 @@ const accordionList = [
       <div>
         <!-- Styles -->
         <h2>Default Style - UIKit</h2>
-        <pr-accordion :list="accordionList" icon="icon-huge-duotone-sun-03" />
+        <pr-accordion :list="accordionList" />
         <h2>Line Style</h2>
-        <pr-accordion :list="accordionList" line />
+        <pr-accordion :list="accordionList" variant="line" />
         <h2>Hover Style</h2>
-        <pr-accordion :list="accordionList" hover />
+        <pr-accordion :list="accordionList" variant="hover" />
 
         <!-- With Array List -->
         <h2>With List Array</h2>

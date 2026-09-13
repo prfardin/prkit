@@ -3,14 +3,14 @@ import { isDev, devComputed } from '@u/env.ts'
 import { type AccordionPropsType, AccordionDefaults } from '@u/props'
 import { type RefElement, setAccordion, setIcon, getAccordionIconName } from '@u/util'
 import { onMounted, unref, useTemplateRef, watchEffect } from 'vue'
-import { accordionClassObject } from '@u/classes'
+import { accordionClasses } from '@u/classes'
 
 const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
 
 const el = useTemplateRef<RefElement>('el')
 const icon = useTemplateRef<RefElement>('icon')
 
-const accordionClass = devComputed(() => accordionClassObject(props))
+const accordionClass = devComputed(() => accordionClasses(props))
 
 const iconName = devComputed(() => getAccordionIconName(props.icon))
 
@@ -27,14 +27,14 @@ function updateIcon() {
 }
 
 onMounted(() => {
-  setAccordion(el.value, props)
-  updateIcon()
-
   if (isDev) {
     watchEffect(() => {
       setAccordion(el.value, props)
       updateIcon()
     })
+  } else {
+    setAccordion(el.value, props)
+    updateIcon()
   }
 })
 </script>
@@ -45,7 +45,7 @@ onMounted(() => {
       <component :is="itemTag" v-for="(item, index) in list" :key="index">
         <a class="uk-accordion-title" href="">
           {{ item.title }}
-          <span v-if="iconName" class="uk-accordion-icon" ref="icon" />
+          <span v-if="iconName" class="pr-accordion-icon uk-accordion-icon" ref="icon" />
         </a>
         <div class="uk-accordion-content">{{ item.content }}</div>
       </component>

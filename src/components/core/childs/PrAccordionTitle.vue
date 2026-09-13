@@ -2,7 +2,7 @@
 import { type AccordionPropsType, AccordionDefaults } from '@u/props'
 import { type RefElement, setAccordion } from '@u/util'
 import { ref, onMounted, computed } from 'vue'
-import { accordionClassObject } from '@u/classes.ts'
+import { accordionClasses } from '@u/classes.ts'
 
 const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
 
@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
 const el = ref<RefElement>(null)
 
 // define button classes from defined props
-const accordionClass = computed(() => accordionClassObject(props))
+const accordionClass = computed(() => accordionClasses(props))
 
 const listItemRenderTag: string = props.tag === 'ul' ? 'li' : 'div'
 

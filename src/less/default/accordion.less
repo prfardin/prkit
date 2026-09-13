@@ -20,13 +20,17 @@
 // New
 //
 
-@accordion-default-icon-color:                  @global-color;
+@accordion-base-icon-color:                     @global-color;
+
+@accordion-default-icon-color:                  @accordion-base-icon-color;
+@accordion-icon-circle-active-color:            @global-primary-background;
 
 @accordion-base-title-gap:                      var(--accordion-base-title-gap);
 @accordion-base-title-font-size:                @global-medium-font-size;
 @accordion-base-title-line-height:              var(--accordion-base-line-height);
 @accordion-base-title-color:                    @global-emphasis-color;
 
+@accordion-hover-icon-color:                    @accordion-base-icon-color;
 @accordion-hover-title-line-height:             var(--accordion-hover-line-height);
 @accordion-hover-title-background-color:        var(--accordion-hover-title-background-color);
 @accordion-hover-title-hover-background-color:  var(--accordion-hover-title-hover-background-color);
@@ -37,6 +41,7 @@
 @accordion-hover-content-margin-top:            @global-xsmall-gutter;
 @accordion-hover-content-padding:               @global-small-gutter;
 
+@accordion-line-icon-color:                     @accordion-base-icon-color;
 @accordion-line-title-line-height:              var(--accordion-line-line-height);
 @accordion-line-border-color:                   @global-border;
 
@@ -122,6 +127,14 @@
     margin-left: auto;
   }
 
+  .pr-accordion-hover .uk-accordion-icon {
+    color: @accordion-hover-icon-color
+  }
+
+  .pr-accordion-line .uk-accordion-icon {
+    color: @accordion-line-icon-color
+  }
+
   // Style: Hover
   // ========================================================================
 
@@ -183,6 +196,53 @@
 
   .pr-accordion-line .uk-accordion-content {
     padding-bottom: @accordion-line-content-padding;
+  }
+
+  // Icon Style modifiers
+  // ========================================================================
+
+  // Base
+  // ========================================================================
+
+  .pr-accordion-icon svg > [class] {
+    transition: 0.2s ease-out;
+    transition-property: color, transform, opacity;
+    transform-origin: center;
+  }
+
+  // Style: Default
+  // ========================================================================
+
+  [aria-expanded="true"] .pr-accordion-icon svg > .line-1 {
+    transform: rotate(-45deg);
+    opacity: 0;
+  }
+
+  [aria-expanded="true"] .pr-accordion-icon svg > .line-2 {
+    transform: rotate(90deg);
+  }
+
+  // Style: Plus
+  // ========================================================================
+
+  [aria-expanded="true"] .pr-accordion-icon svg > .plus {
+    transform: rotate(45deg);
+  }
+
+  // Style: Chevron
+  // ========================================================================
+
+  [aria-expanded="true"] .uk-accordion-icon svg > .chevron {
+    transform: rotate(180deg);
+  }
+
+  [aria-expanded="true"] .uk-accordion-icon svg > .line-2 { transform: rotate(90deg); }
+
+  // Style: Circle
+  // ========================================================================
+
+  [aria-expanded="true"] .uk-accordion-icon svg > .circle {
+    color: @accordion-icon-circle-active-color;
   }
 }
 

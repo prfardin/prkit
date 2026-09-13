@@ -74,13 +74,11 @@ export interface AccordionItemType {
 }
 
 // accordion icon types
-export type AccordionIconType = string | 'none' | 'default' | 'plus' | 'chevron' | 'circle'
+export type AccordionIconType = 'none' | 'default' | 'plus' | 'chevron' | 'circle' | (string & {})
 
 // accordion class type
 export interface AccordionClassType {
-  default?: boolean
-  hover?: boolean
-  line?: boolean
+  variant?: 'default' | 'hover' | 'line'
 }
 
 // accordion prop types
@@ -94,8 +92,9 @@ export interface AccordionPropsType extends /* @vue-ignore */ UIkitAccordionOpti
 // accordion defaults
 export const AccordionDefaults = {
   tag: 'ul',
+  variant: 'default',
   icon: 'default',
-  iconRatio: 0.8
+  iconRatio: 0.7,
 } satisfies Partial<AccordionPropsType>
 
 
