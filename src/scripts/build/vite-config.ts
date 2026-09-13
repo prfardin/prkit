@@ -15,10 +15,7 @@ interface ViteConfig {
 }
 
 // TODO: must remove, process.env.NODE_ENV its no a real vite command
-export const isDev = process.env.NODE_ENV === 'development'
-
-// all files in publicDir path will be copied to build path as the same they are
-export const publicDir: string = 'src/public'
+const isDev = process.env.NODE_ENV === 'development'
 
 export function setIcons(defaultIcons: string) {
   return Promise.resolve(compileIcons('src', defaultIcons))
