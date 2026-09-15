@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import prIcon from '@c/core/PrIcon.vue'
+import prIcon from '@c/PrIcon.vue'
 import { buttonClassObject } from '@u/classes'
 import { useSlots, computed } from 'vue'
 import type { ButtonPropsType } from '@u/props.ts'

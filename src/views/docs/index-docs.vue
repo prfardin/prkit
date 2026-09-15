@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, useTemplateRef } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 function checkActiveRoute(id: string) {
@@ -15,27 +15,39 @@ function changeLightMode() {
   } else lightMode.value = 'uk-light'
 }
 
-import PrIcon from '@c/core/PrIcon.vue'
-import PrAccordion from '@c/core/PrAccordion.vue'
-import PrButton from '@c/core/PrButton.vue'
+import PrIcon from '@c/PrIcon.vue'
+import PrAccordion from '@c/PrAccordion.vue'
+import PrButton from '@c/PrButton.vue'
+import { accordionToggle, type RefElement } from '@u/util.ts'
+
+const selected = ref<RefElement>(12)
 
 const accordionList = [
   {
+    value: 11,
     title: 'Accordion Item 1',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
   {
+    value: 12,
     title: 'Accordion Item 2',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
   {
+    value: 13,
     title: 'Accordion Item 3',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
 ]
+
+const refElement = ref()
+function toggle() {
+  // accordionToggle(testRef.value?.$el, 1, false)
+  accordionToggle(refElement.value, 1, true)
+}
 </script>
 
 <template>
@@ -82,8 +94,14 @@ const accordionList = [
       <h1 id="accordion" class="uk-text-center">Accordion</h1>
       <div>
         <!-- Styles -->
-        <h2>Default Style - UIKit</h2>
-        <pr-accordion :list="accordionList" />
+        <h2>Default Style - UIKit {{ selected }}</h2>
+        <a @click="selected++">Plus</a>
+        <a class="uk-margin-left" @click="toggle()">Toggle</a>
+        <pr-accordion
+          :ref-element="refElement"
+          :list="accordionList"
+          @beforehide="(event) => console.log(event)"
+        />
         <h2>Line Style</h2>
         <pr-accordion :list="accordionList" variant="line" />
         <h2>Hover Style</h2>

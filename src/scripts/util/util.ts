@@ -1,118 +1,18 @@
-import type { Ref } from 'vue'
+import type { MaybeRef, Ref } from 'vue'
 import UIkit from 'uikit'
 import type { AccordionIconType, AccordionPropsType, IconPropsType } from '@u/props'
 
 // Types: Define Types for UIkit or HTML elements
 // ========================================================================
 
-export type Element = object | Ref | HTMLElement | string
-
-export type RefElement = Element | null
+export type RefElement = MaybeRef
 
 export type InputElement = object | Ref | HTMLInputElement | string
 
 // Configuration
 // ========================================================================
 
-// Icons used by components or referenced dynamically must be registered here.
-// The build plugin uses these lists to import only the required icons instead
-// of bundling the entire icon library.
-//
-// TODO: Move icon definitions into a separate icon library package.
-export type IconStyles =
-  | 'fa-duotone'
-  | 'fa-duotoneli'
-  | 'fa-duotoneso'
-  | 'fa-duotoneth'
-  | 'fa-light'
-  | 'fa-regular'
-  | 'fa-sharp'
-  | 'fa-sharpduotone'
-  | 'fa-sharpduotoneli'
-  | 'fa-sharpduotoneso'
-  | 'fa-sharpduotoneth'
-  | 'fa-sharpli'
-  | 'fa-sharpso'
-  | 'fa-sharpth'
-  | 'fa-solid'
-  | 'fa-thin'
-  | 'huge-bulk'
-  | 'huge-duotone'
-  | 'huge-regular'
-  | 'huge-rounded'
-  | 'huge-sharp'
-  | 'huge-solid'
-  | 'huge-solidsh'
-  | 'huge-twotone'
-  | 'iconoir-regular'
-  | 'iconoir-solid'
-  | 'ion-outline'
-  | 'ion-sharp'
-  | 'isocons-left'
-  | 'isocons-right'
-  | 'isocons-top'
-  | 'isocons-duotoneleft'
-  | 'isocons-duotoneright'
-  | 'isocons-duotonetop'
-  | 'isocons-duotonesharpleft'
-  | 'isocons-duotonesharpright'
-  | 'isocons-duotonesharptop'
-  | 'isocons-sharpleft'
-  | 'isocons-sharpright'
-  | 'isocons-sharptop'
-  | 'isocons-solidleft'
-  | 'isocons-solidright'
-  | 'isocons-solidtop'
-  | 'isocons-solidsharpleft'
-  | 'isocons-solidsharpright'
-  | 'isocons-solidsharptop'
-  | 'lucide-regular'
-  | 'magi-duotone'
-  | 'magi-light'
-  | 'magi-regular'
-  | 'magi-solid'
-  | 'md-outlined'
-  | 'md-round'
-  | 'md-sharp'
-  | 'md-solid'
-  | 'md-twotone'
-  | 'ming-cute'
-  | 'ming-cutefi'
-  | 'ming-cuteli'
-  | 'ming-duotone'
-  | 'ming-light'
-  | 'ming-regular'
-  | 'ming-sharp'
-  | 'ming-solid'
-  | 'ming-twotone'
-  | 'ph-bold'
-  | 'ph-duotone'
-  | 'ph-light'
-  | 'ph-regular'
-  | 'ph-solid'
-  | 'ph-thin'
-  | 'solar-broken'
-  | 'solar-duotone'
-  | 'solar-duotoneso'
-  | 'solar-regular'
-  | 'solar-solid'
-  | 'uni-light'
-  | 'uni-mono'
-  | 'uni-regular'
-  | 'uni-solid'
-
-export const defaultIconStyle: IconStyles = 'huge-bulk'
-
 export const defaultIconComponentPrefix = 'component'
-
-export const componentIcons = [
-  'default-accordion-default',
-  'default-accordion-plus',
-  'default-accordion-chevron',
-  'default-accordion-circle'
-]
-
-export const dynamicIcons = []
 
 export const accordionIconType = ['default', 'plus', 'chevron', 'circle']
 
@@ -125,6 +25,7 @@ export function getIconName(iconName: string, prefix: string) {
 }
 
 export function getAccordionIconName(iconName: AccordionIconType) {
+
   if (iconName === 'none') {
     return false
   }
@@ -140,8 +41,12 @@ export function getAccordionIconName(iconName: AccordionIconType) {
 // UIkit Helpers
 // ========================================================================
 
-export function setAccordion(el: RefElement, options: AccordionPropsType) {
-  return UIkit.accordion(el as Element, { ...options })
+export function setAccordion(el: RefElement, options: AccordionPropsType, active?: number) {
+  return UIkit.accordion(el, { ...options, active })
+}
+
+export function accordionToggle(el: RefElement, index: number, animate?: boolean) {
+  return UIkit.accordion(el).toggle(index, animate)
 }
 
 
@@ -150,7 +55,7 @@ export function setAccordion(el: RefElement, options: AccordionPropsType) {
 
 // set icon
 export function setIcon(el: RefElement, options: IconPropsType) {
-  return UIkit.icon(el as Element, { ...options })
+  return UIkit.icon(el, { ...options })
 }
 
 
@@ -162,7 +67,7 @@ export function setIcon(el: RefElement, options: IconPropsType) {
 
 
 // set alert
-export function alert(el: Element, options: any) {
+export function alert(el: RefElement, options: any) {
   return UIkit.accordion(el, {
     active: options.active,
     animation: options.animation,
@@ -178,7 +83,7 @@ export function alert(el: Element, options: any) {
 }
 
 // set grid
-export function grid(el: Element, options?: any) {
+export function grid(el: RefElement, options?: any) {
   return UIkit.grid(el, options)
 }
 

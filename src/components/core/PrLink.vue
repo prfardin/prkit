@@ -2,7 +2,7 @@
 import type { LinkPropsType } from '@u/props'
 import { linkClassObject } from '@u/classes'
 import { useSlots, computed } from 'vue'
-import PrIcon from '@c/core/PrIcon.vue'
+import PrIcon from '@c/PrIcon.vue'
 
 /**
  * for compile icons we use PrIcon components, and

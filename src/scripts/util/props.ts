@@ -5,6 +5,7 @@
  * so we will use this props as export props for components
  * accordion to https://vuejs.org/guide/typescript/composition-api#typing-component-props
  */
+
 import type {
   UIkitAccordionOptions,
   UIkitAlertOptions,
@@ -58,6 +59,7 @@ import type { GridClassType, ButtonClassType, LinkClassType, SpinnerClassType } 
  * we import custom types here
  */
 import type { RouteLocationRaw } from 'vue-router'
+import type { RefElement } from '@u/util.ts'
 
 
 /**
@@ -67,29 +69,31 @@ import type { RouteLocationRaw } from 'vue-router'
  * has child component: accordion-title and accordion-content
  */
 
-// accordion item types
 export interface AccordionItemType {
+  value?: unknown
   title: string
   content: string
 }
 
-// accordion icon types
 export type AccordionIconType = 'none' | 'default' | 'plus' | 'chevron' | 'circle' | (string & {})
 
-// accordion class type
 export interface AccordionClassType {
   variant?: 'default' | 'hover' | 'line'
 }
 
-// accordion prop types
+/**
+ * Accordion Props Types
+ * extended from Accordion Class Type
+ * cause all button classes define as props
+ */
 export interface AccordionPropsType extends /* @vue-ignore */ UIkitAccordionOptions, AccordionClassType {
+  refElement?: RefElement
   tag?: 'ul' | 'div'
   list?: AccordionItemType[]
   icon?: AccordionIconType
   iconRatio?: number
 }
 
-// accordion defaults
 export const AccordionDefaults = {
   tag: 'ul',
   variant: 'default',

@@ -4,7 +4,7 @@ import pLimit from 'p-limit'
 import type { InputOptions, OutputOptions, RollupBuild } from 'rollup'
 import { rollup } from 'rollup'
 import replace from '@rollup/plugin-replace'
-import { componentIcons, dynamicIcons } from '../util/util'
+import { componentIcons, dynamicIcons } from '../util/config'
 
 const limit = pLimit(Number(process.env.cpus || 2))
 

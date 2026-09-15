@@ -9,8 +9,8 @@
 import type { ButtonPropsType } from '@u/props'
 import { buttonClassObject } from '@u/classes'
 import { useSlots, computed } from 'vue'
-import PrIcon from '@c/core/PrIcon.vue'
-import PrSpinner from '@c/core/PrSpinner.vue'
+import PrIcon from '@c/PrIcon.vue'
+import PrSpinner from '@c/PrSpinner.vue'
 
 // we must redesign ripple util and then use it. it's just for test
 import { useRipple } from '@u/ripple'

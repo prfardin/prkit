@@ -2,7 +2,7 @@ import type { Plugin } from 'vite'
 import fs from 'fs'
 import path from 'path'
 import { type Icons, mapIcons, stringify } from './icons'
-import { defaultIconStyle } from '../util/util'
+import { defaultIconStyle } from '../util/config'
 
 const cachedIcons = new Set<string>()
 
