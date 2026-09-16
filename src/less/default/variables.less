@@ -27,15 +27,15 @@
 // Tablet Landscape: iPad (1024x768), iPad Pro (1024x1366),
 // Desktop:          Galaxy Tab (1280x800), iPad Pro (1366x1024)
 
-@breakpoint-small: 640px;                                 // Phone landscape
-@breakpoint-medium: 960px;                                // Tablet Landscape
-@breakpoint-large: 1200px;                                // Desktop
-@breakpoint-xlarge: 1600px;                               // Large Screens
+@breakpoint-small:                  640px;      // Phone landscape
+@breakpoint-medium:                 960px;      // Tablet Landscape
+@breakpoint-large:                  1200px;     // Desktop
+@breakpoint-xlarge:                 1600px;     // Large Screens
 
-@breakpoint-xsmall-max: (@breakpoint-small - 1);
-@breakpoint-small-max: (@breakpoint-medium - 1);
-@breakpoint-medium-max: (@breakpoint-large - 1);
-@breakpoint-large-max: (@breakpoint-xlarge - 1);
+@breakpoint-xsmall-max:             (@breakpoint-small - 1);
+@breakpoint-small-max:              (@breakpoint-medium - 1);
+@breakpoint-medium-max:             (@breakpoint-large - 1);
+@breakpoint-large-max:              (@breakpoint-xlarge - 1);
 
 // UIKit Global variables
 // ========================================================================
@@ -58,137 +58,137 @@
   'Segoe UI Emoji',
   'Segoe UI Symbol',
   'Noto Color Emoji';
-@global-font-size: var(--global-font-size);
-@global-line-height: var(--global-line-height);
+@global-font-size:                              var(--global-font-size);
+@global-line-height:                            var(--global-line-height);
 
-@global-2xlarge-font-size: var(--global-2xlarge-font-size);
-@global-xlarge-font-size: var(--global-xlarge-font-size);
-@global-large-font-size: var(--global-large-font-size);
-@global-medium-font-size: var(--global-medium-font-size);
-@global-small-font-size: var(--global-small-font-size);
-@global-xsmall-font-size: var(--global-xsmall-font-size);
-@global-xxsmall-font-size: var(--global-xxsmall-font-size);
+@global-2xlarge-font-size:                      var(--global-2xlarge-font-size);
+@global-xlarge-font-size:                       var(--global-xlarge-font-size);
+@global-large-font-size:                        var(--global-large-font-size);
+@global-medium-font-size:                       var(--global-medium-font-size);
+@global-small-font-size:                        var(--global-small-font-size);
+@global-xsmall-font-size:                       var(--global-xsmall-font-size);
+@global-xxsmall-font-size:                      var(--global-xxsmall-font-size);
 
 //
 // Colors
 //
 
-@global-color: var(--global-color);
-@global-emphasis-color: var(--global-emphasis-color);
-@global-muted-color: var(--global-muted-color);
-@global-white-color: var(--global-white-color);
+@global-color:                                  var(--global-color);
+@global-emphasis-color:                         var(--global-emphasis-color);
+@global-muted-color:                            var(--global-muted-color);
+@global-white-color:                            var(--global-white-color);
 
-@global-link-color: var(--global-link-color);
-@global-link-hover-color: var(--global-link-hover-color);
+@global-link-color:                             var(--global-link-color);
+@global-link-hover-color:                       var(--global-link-hover-color);
 
-@global-inverse-color: var(--global-inverse-color);
-@global-muted-inverse-color: var(--global-muted-inverse-color);
+@global-inverse-color:                          var(--global-inverse-color);
+@global-muted-inverse-color:                    var(--global-muted-inverse-color);
 
-@global-icon-primary-color: var(--global-icon-primary-color);
-@global-icon-secondary-color: var(--global-icon-secondary-color);
-@global-icon-tertiary-color: var(--global-icon-tertiary-color);
-@global-icon-quaternary-color: var(--global-icon-quaternary-color);
+@global-icon-primary-color:                     var(--global-icon-primary-color);
+@global-icon-secondary-color:                   var(--global-icon-secondary-color);
+@global-icon-tertiary-color:                    var(--global-icon-tertiary-color);
+@global-icon-quaternary-color:                  var(--global-icon-quaternary-color);
 
-@global-icon-duotone-primary-color: var(--global-icon-duotone-primary-color);
-@global-icon-duotone-secondary-color: var(--global-icon-duotone-secondary-color);
-@global-icon-duotone-secondary-opacity: var(--global-icon-duotone-secondary-opacity);
+@global-icon-duotone-primary-color:             var(--global-icon-duotone-primary-color);
+@global-icon-duotone-secondary-color:           var(--global-icon-duotone-secondary-color);
+@global-icon-duotone-secondary-opacity:         var(--global-icon-duotone-secondary-opacity);
 
-@global-icon-twotone-primary-color: var(--global-icon-twotone-primary-color);
-@global-icon-twotone-secondary-color: var(--global-icon-twotone-secondary-color);
-@global-icon-twotone-secondary-opacity: var(--global-icon-twotone-secondary-opacity);
+@global-icon-twotone-primary-color:             var(--global-icon-twotone-primary-color);
+@global-icon-twotone-secondary-color:           var(--global-icon-twotone-secondary-color);
+@global-icon-twotone-secondary-opacity:         var(--global-icon-twotone-secondary-opacity);
 
-@global-icon-bulk-primary-color: var(--global-icon-bulk-primary-color);
-@global-icon-bulk-secondary-color: var(--global-icon-bulk-secondary-color);
-@global-icon-bulk-secondary-opacity: var(--global-icon-bulk-secondary-opacity);
+@global-icon-bulk-primary-color:                var(--global-icon-bulk-primary-color);
+@global-icon-bulk-secondary-color:              var(--global-icon-bulk-secondary-color);
+@global-icon-bulk-secondary-opacity:            var(--global-icon-bulk-secondary-opacity);
 
-@global-icon-iso-solid-stroke-color: var(--global-icon-iso-solid-stroke-color);
+@global-icon-iso-solid-stroke-color:            var(--global-icon-iso-solid-stroke-color);
 
-@global-icon-iso-primary-color: var(--global-icon-iso-primary-color);
-@global-icon-iso-secondary-color: var(--global-icon-iso-secondary-color);
-@global-icon-iso-tertiary-color: var(--global-icon-iso-tertiary-color);
-@global-icon-iso-quaternary-color: var(--global-icon-iso-quaternary-color);
+@global-icon-iso-primary-color:                 var(--global-icon-iso-primary-color);
+@global-icon-iso-secondary-color:               var(--global-icon-iso-secondary-color);
+@global-icon-iso-tertiary-color:                var(--global-icon-iso-tertiary-color);
+@global-icon-iso-quaternary-color:              var(--global-icon-iso-quaternary-color);
 
-@global-icon-iso-duotone-primary-color: var(--global-icon-iso-duotone-primary-color);
-@global-icon-iso-duotone-secondary-color: var(--global-icon-iso-duotone-secondary-color);
-@global-icon-iso-duotone-tertiary-color: var(--global-icon-iso-duotone-tertiary-color);
-@global-icon-iso-duotone-quaternary-color: var(--global-icon-iso-duotone-quaternary-color);
+@global-icon-iso-duotone-primary-color:         var(--global-icon-iso-duotone-primary-color);
+@global-icon-iso-duotone-secondary-color:       var(--global-icon-iso-duotone-secondary-color);
+@global-icon-iso-duotone-tertiary-color:        var(--global-icon-iso-duotone-tertiary-color);
+@global-icon-iso-duotone-quaternary-color:      var(--global-icon-iso-duotone-quaternary-color);
 
-@global-icon-favourite-color: var(--global-icon-favourite-color);
+@global-icon-favourite-color:                   var(--global-icon-favourite-color);
 
 //
 // Backgrounds
 //
 
-@global-background: var(--global-white-color);
+@global-background:                             var(--global-white-color);
 
-@global-muted-background: var(--global-muted-background);
-@global-primary-background: var(--global-primary-background);
-@global-secondary-background: var(--global-secondary-background);
+@global-muted-background:                       var(--global-muted-background);
+@global-primary-background:                     var(--global-primary-background);
+@global-secondary-background:                   var(--global-secondary-background);
 
-@global-success-background: var(--global-success-background);
-@global-warning-background: var(--global-warning-background);
-@global-danger-background: var(--global-danger-background);
+@global-success-background:                     var(--global-success-background);
+@global-warning-background:                     var(--global-warning-background);
+@global-danger-background:                      var(--global-danger-background);
 
 //
 // Borders
 //
 
-@global-border-width: var(--global-border-width);
-@global-border: var(--global-border);
-@global-border-radius: var(--global-border-radius);
+@global-border-width:                           var(--global-border-width);
+@global-border:                                 var(--global-border);
+@global-border-radius:                          var(--global-border-radius);
 
 //
 // Box-Shadows
 //
 
-@global-small-box-shadow: var(--global-small-box-shadow);
-@global-medium-box-shadow: var(--global-medium-box-shadow);
-@global-large-box-shadow: var(--global-large-box-shadow);
-@global-xlarge-box-shadow: var(--global-xlarge-box-shadow);
+@global-small-box-shadow:                       var(--global-small-box-shadow);
+@global-medium-box-shadow:                      var(--global-medium-box-shadow);
+@global-large-box-shadow:                       var(--global-large-box-shadow);
+@global-xlarge-box-shadow:                      var(--global-xlarge-box-shadow);
 
 //
 // Spacings
 //
 
 // Used in margin, section, list
-@global-margin: var(--global-margin);
-@global-xsmall-margin: var(--global-xsmall-margin);
-@global-small-margin: var(--global-small-margin);
-@global-medium-margin: var(--global-medium-margin);
-@global-large-margin: var(--global-large-margin);
-@global-xlarge-margin: var(--global-xlarge-margin);
+@global-margin:                                 var(--global-margin);
+@global-xsmall-margin:                          var(--global-xsmall-margin);
+@global-small-margin:                           var(--global-small-margin);
+@global-medium-margin:                          var(--global-medium-margin);
+@global-large-margin:                           var(--global-large-margin);
+@global-xlarge-margin:                          var(--global-xlarge-margin);
 
 // Used in grid, column, container, align, card, padding
-@global-gutter: var(--global-gutter);
-@global-xxsmall-gutter: var(--global-xxsmall-gutter);
-@global-xsmall-gutter: var(--global-xsmall-gutter);
-@global-small-gutter: var(--global-small-gutter);
-@global-medium-gutter: var(--global-medium-gutter);
-@global-large-gutter: var(--global-large-gutter);
+@global-gutter:                                 var(--global-gutter);
+@global-xxsmall-gutter:                         var(--global-xxsmall-gutter);
+@global-xsmall-gutter:                          var(--global-xsmall-gutter);
+@global-small-gutter:                           var(--global-small-gutter);
+@global-medium-gutter:                          var(--global-medium-gutter);
+@global-large-gutter:                           var(--global-large-gutter);
 
 //
 // Controls
 //
 
-@global-control-xsmall-height: var(--global-control-xsmall-height);
+@global-control-xsmall-height:                  var(--global-control-xsmall-height);
 
-@global-control-height: var(--global-control-height);
-@global-control-small-height: var(--global-control-small-height);
-@global-control-large-height: var(--global-control-large-height);
+@global-control-height:                         var(--global-control-height);
+@global-control-small-height:                   var(--global-control-small-height);
+@global-control-large-height:                   var(--global-control-large-height);
 
 //
 // Z-index
 //
 
-@global-z-index: var(--global-z-index);
+@global-z-index:                                var(--global-z-index);
 
 //
 // Miscellaneous
 //
 
-@global-rounded-radius: var(--global-rounded-radius);
-@global-middle-transform-top: var(--global-middle-transform-top);
-@global-middle-transform: var(--global-middle-transform);
+@global-rounded-radius:                         var(--global-rounded-radius);
+@global-middle-transform-top:                   var(--global-middle-transform-top);
+@global-middle-transform:                       var(--global-middle-transform);
 
 // PRKit Global variables
 // ========================================================================
@@ -197,12 +197,12 @@
 // Sidebar
 //
 
-@global-sidebar-width: var(--global-sidebar-width);
-@global-sidebar-height: var(--global-sidebar-height);
+@global-sidebar-width:                          var(--global-sidebar-width);
+@global-sidebar-height:                         var(--global-sidebar-height);
 
 //
 // Spinners
 //
 
-@global-spinner-width: var(--global-spinner-width);
-@global-spinner-height: var(--global-spinner-height);
+@global-spinner-width:                          var(--global-spinner-width);
+@global-spinner-height:                         var(--global-spinner-height);

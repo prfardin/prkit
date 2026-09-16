@@ -6,43 +6,43 @@
 // Variables
 // ========================================================================
 
-@table-margin-vertical: @global-margin;
+@table-margin-vertical:                           @global-margin;
 
-@table-cell-padding-vertical: var(--table-cell-padding-vertical);
-@table-cell-padding-horizontal: var(--table-cell-padding-horizontal);
+@table-cell-padding-vertical:                     var(--table-cell-padding-vertical);
+@table-cell-padding-horizontal:                   var(--table-cell-padding-horizontal);
 
-@table-footer-font-size: @global-small-font-size;
+@table-footer-font-size:                          @global-small-font-size;
 
-@table-caption-font-size: @global-small-font-size;
-@table-caption-color: @global-muted-color;
+@table-caption-font-size:                         @global-small-font-size;
+@table-caption-color:                             @global-muted-color;
 
-@table-row-active-background: var(--table-row-active-background);
+@table-row-active-background:                     var(--table-row-active-background);
 
-@table-divider-border-width: @global-border-width;
-@table-divider-border: @global-border;
+@table-divider-border-width:                      @global-border-width;
+@table-divider-border:                            @global-border;
 
-@table-striped-row-background: @global-muted-background;
+@table-striped-row-background:                    @global-muted-background;
 
-@table-hover-row-background: @table-row-active-background;
+@table-hover-row-background:                      @table-row-active-background;
 
-@table-small-cell-padding-vertical: var(--table-small-cell-padding-vertical);
-@table-small-cell-padding-horizontal: var(--table-small-cell-padding-horizontal);
+@table-small-cell-padding-vertical:               var(--table-small-cell-padding-vertical);
+@table-small-cell-padding-horizontal:             var(--table-small-cell-padding-horizontal);
 
-@table-large-cell-padding-vertical: var(--table-large-cell-padding-vertical);
-@table-large-cell-padding-horizontal: var(--table-large-cell-padding-horizontal);
+@table-large-cell-padding-vertical:               var(--table-large-cell-padding-vertical);
+@table-large-cell-padding-horizontal:             var(--table-large-cell-padding-horizontal);
 
-@table-expand-min-width: var(--table-expand-min-width);
+@table-expand-min-width:                          var(--table-expand-min-width);
 
-@table-header-cell-font-size: @global-small-font-size;
-@table-header-cell-font-weight: var(--table-header-cell-font-weight);
-@table-header-cell-color: @global-muted-color;
+@table-header-cell-font-size:                     @global-small-font-size;
+@table-header-cell-font-weight:                   var(--table-header-cell-font-weight);
+@table-header-cell-color:                         @global-muted-color;
 
 //
 // New
 //
 
-@table-striped-border-width: @global-border-width;
-@table-striped-border: @global-border;
+@table-striped-border-width:                      @global-border-width;
+@table-striped-border:                            @global-border;
 
 // Component
 // ========================================================================
@@ -103,14 +103,12 @@
 // Inverse
 // ========================================================================
 
-@inverse-table-header-cell-color: @inverse-global-color;
-@inverse-table-caption-color: @inverse-global-muted-color;
-@inverse-table-row-active-background: rgb(
-  from @inverse-global-muted-background r g b / calc(alpha - 0.02)
-); // instead of: fadeout(@inverse-global-muted-background, 2%);
-@inverse-table-divider-border: @inverse-global-border;
-@inverse-table-striped-row-background: @inverse-global-muted-background;
-@inverse-table-hover-row-background: @inverse-table-row-active-background;
+@inverse-table-header-cell-color:             @inverse-global-color;
+@inverse-table-caption-color:                 @inverse-global-muted-color;
+@inverse-table-row-active-background:         rgb(from @inverse-global-muted-background r g b / calc(alpha - 0.02)); // instead of: fadeout(@inverse-global-muted-background, 2%);
+@inverse-table-divider-border:                @inverse-global-border;
+@inverse-table-striped-row-background:        @inverse-global-muted-background;
+@inverse-table-hover-row-background:          @inverse-table-row-active-background;
 
 .hook-inverse-table-header-cell() {
 }

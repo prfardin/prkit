@@ -6,15 +6,15 @@
 // Variables
 // ========================================================================
 
-@slidenav-padding-vertical: var(--slidenav-padding-vertical);
-@slidenav-padding-horizontal: var(--slidenav-padding-horizontal);
+@slidenav-padding-vertical:                   var(--slidenav-padding-vertical);
+@slidenav-padding-horizontal:                 var(--slidenav-padding-horizontal);
 
-@slidenav-color: var(--slidenav-color);
-@slidenav-hover-color: var(--slidenav-hover-color);
-@slidenav-active-color: var(--slidenav-active-color);
+@slidenav-color:                              var(--slidenav-color);
+@slidenav-hover-color:                        var(--slidenav-hover-color);
+@slidenav-active-color:                       var(--slidenav-active-color);
 
-@slidenav-large-padding-vertical: var(--slidenav-large-padding-vertical);
-@slidenav-large-padding-horizontal: @slidenav-large-padding-vertical;
+@slidenav-large-padding-vertical:             var(--slidenav-large-padding-vertical);
+@slidenav-large-padding-horizontal:           @slidenav-large-padding-vertical;
 
 // Component
 // ========================================================================
@@ -59,15 +59,9 @@
 // Inverse
 // ========================================================================
 
-@inverse-slidenav-color: rgb(
-  from @inverse-global-color r g b / 0.7
-); // instead of: fade(@inverse-global-color, 70%);
-@inverse-slidenav-hover-color: rgb(
-  from @inverse-global-color r g b / 0.95
-); // instead of: fade(@inverse-global-color, 95%);
-@inverse-slidenav-active-color: rgb(
-  from @inverse-global-color r g b / 0.7
-); // instead of: fade(@inverse-global-color, 70%);
+@inverse-slidenav-color:                rgb(from @inverse-global-color r g b / 0.7);           // instead of: fade(@inverse-global-color, 70%);
+@inverse-slidenav-hover-color:          rgb(from @inverse-global-color r g b / 0.95);    // instead of: fade(@inverse-global-color, 95%);
+@inverse-slidenav-active-color:         rgb(from @inverse-global-color r g b / 0.7);    // instead of: fade(@inverse-global-color, 70%);
 
 .hook-inverse-slidenav() {
 }
