@@ -5,7 +5,7 @@ import { addComponentEmit, removeComponentEmit } from '@u/emits.ts'
 export function useComponentEmit(
   el: Readonly<RefElement>,
   handler: EventListener,
-  componentEmits: readonly string[]
+  componentEmits: readonly string[],
 ) {
   onMounted(() => {
     addComponentEmit(el.value, handler, componentEmits)

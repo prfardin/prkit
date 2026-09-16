@@ -27,7 +27,7 @@ export async function icons(iconPath: string, prefix: string = ''): Promise<stri
             mergePaths: false,
             removeUnknownsAndDefaults: false,
             removeUselessStrokeAndFill: false,
-            minifyStyles: false
+            minifyStyles: false,
           },
         },
       },
@@ -69,6 +69,6 @@ export default async function compileIcons(findDir: string, defaultIcons: string
   return await compile('src/scripts/build/wrapper/icons.ts', 'src/.temp/uikit-icons', {
     replaces: {
       ICONS: stringify(compiledIcons),
-    }
+    },
   })
 }

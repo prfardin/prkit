@@ -6,7 +6,14 @@
  */
 import type { RefElement } from '@u/util.ts'
 
-export const accordionEmits = ['beforeshow', 'show', 'shown', 'beforehide', 'hide', 'hidden'] as const
+export const accordionEmits = [
+  'beforeshow',
+  'show',
+  'shown',
+  'beforehide',
+  'hide',
+  'hidden',
+] as const
 
 export interface AccordionEmitsType {
   (e: 'beforeshow', event: Event, value: unknown): void

@@ -16,7 +16,6 @@ export const defaultIconComponentPrefix = 'component'
 
 export const accordionIconType = ['default', 'plus', 'chevron', 'circle']
 
-
 // Utilities
 // ========================================================================
 
@@ -26,8 +25,8 @@ export function devPropsWatch(
   exclude: readonly string[] = [],
 ) {
   const sources = Object.keys(props)
-    .filter(key => !exclude.includes(key))
-    .map(key => () => props[key])
+    .filter((key) => !exclude.includes(key))
+    .map((key) => () => props[key])
 
   return watch(sources, callback)
 }
@@ -51,7 +50,6 @@ export function getIconName(iconName: string, prefix: string) {
 }
 
 export function getAccordionIconName(iconName: AccordionIconType) {
-
   if (iconName === 'none') {
     return false
   }
@@ -62,7 +60,6 @@ export function getAccordionIconName(iconName: AccordionIconType) {
 
   return iconName
 }
-
 
 // UIkit Helpers
 // ========================================================================
@@ -75,22 +72,10 @@ export function accordionToggle(el: RefElement, index: number, animate?: boolean
   return UIkit.accordion(el).toggle(index, animate)
 }
 
-
-
-
-
 // set icon
 export function setIcon(el: RefElement, options: IconPropsType) {
   return UIkit.icon(el, { ...options })
 }
-
-
-
-
-
-
-
-
 
 // set alert
 export function alert(el: RefElement, options: any) {

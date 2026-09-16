@@ -9,7 +9,6 @@
  */
 import type { AccordionClassType } from '@u/props'
 
-
 /**
  * accordion class generator
  * get accordion props and return all available CSS classes
@@ -18,25 +17,12 @@ import type { AccordionClassType } from '@u/props'
 const accordionClassMap = {
   default: 'uk-accordion-default',
   hover: 'pr-accordion-hover',
-  line: 'pr-accordion-line'
+  line: 'pr-accordion-line',
 } as const
 
-
-export function accordionClasses(
-  props: AccordionClassType
-) {
+export function accordionClasses(props: AccordionClassType) {
   return accordionClassMap[props.variant!]
 }
-
-
-
-
-
-
-
-
-
-
 
 /**
  * const still not assigned to their classObject's
@@ -45,8 +31,6 @@ export const defaultIconCls = 'uk-icon'
 
 export const defaultClsRtl = 'pr-direction-rtl'
 export const defaultClsLtr = 'pr-direction-ltr'
-
-
 
 /**
  * define background types, we use our main colors in

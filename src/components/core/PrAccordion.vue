@@ -42,9 +42,9 @@ function updateIcon() {
 }
 
 function getActive() {
-    return selected.value != null && props.list
-      ? props.list.findIndex((item) => item.value == selected.value)
-      : props.active
+  return selected.value != null && props.list
+    ? props.list.findIndex((item) => item.value == selected.value)
+    : props.active
 }
 
 const handler = (event: Event) => {

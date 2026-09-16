@@ -61,7 +61,6 @@ import type { RouteLocationRaw } from 'vue-router'
 import type { RefElement } from '@u/util.ts'
 import type { UIkitAccordionOptions } from '@u/types.ts'
 
-
 /**
  * accordion props types
  * extended from UIkit accordion options
@@ -98,9 +97,8 @@ export const accordionDefaults = {
   tag: 'ul',
   variant: 'default',
   icon: 'default',
-  iconRatio: 0.7
+  iconRatio: 0.7,
 } satisfies Partial<AccordionPropsType>
-
 
 /**
  * Button Props Types

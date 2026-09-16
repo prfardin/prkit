@@ -70,16 +70,16 @@ export default function viteConfig({ rtl, command = 'serve' }: ViteConfig): User
 // each alias must add to the tsconfig.path file
 export const alias: AliasOptions = {
   '@': '/src',
-  '@t': '/src/.temp',                           // .temp folder
-  '@c': '/src/components/core',                 // components
-  '@cc': '/src/components/core/composables',    // component composables
-  '@cch': '/src/components',                    // component children
-  '@v': '/src/views',                           // views
-  '@vd': '/src/views/docs',                     // views/documentation
-  '@f': '/src/fonts',                           // fonts,
-  '@i': '/src/images',                          // images,
-  '@s': '/src/stores',                          // stores,
-  '@sc': '/src/scripts',                        // scripts,
-  '@u': '/src/scripts/util',                    // utils,
-  '@l': '/lang',                                // locales
+  '@t': '/src/.temp', // .temp folder
+  '@c': '/src/components/core', // components
+  '@cc': '/src/components/core/composables', // component composables
+  '@cch': '/src/components', // component children
+  '@v': '/src/views', // views
+  '@vd': '/src/views/docs', // views/documentation
+  '@f': '/src/fonts', // fonts,
+  '@i': '/src/images', // images,
+  '@s': '/src/stores', // stores,
+  '@sc': '/src/scripts', // scripts,
+  '@u': '/src/scripts/util', // utils,
+  '@l': '/lang', // locales
 }
