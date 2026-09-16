@@ -24,12 +24,6 @@ export interface AccordionEmitsType {
   (e: 'hidden', event: Event, value: unknown): void
 }
 
-export function emitHandler(emit: (...args: any[]) => void) {
-  return (event: Event) => {
-    emit(event.type, event)
-  }
-}
-
 export function addComponentEmit(
   el: RefElement,
   handler: EventListener,

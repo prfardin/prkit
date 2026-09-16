@@ -5,45 +5,9 @@
  * so we will use this props as export props for components
  * accordion to https://vuejs.org/guide/typescript/composition-api#typing-component-props
  */
-
+import type { UIkitAccordionOptions } from '@u/types.ts'
 import type {
-  UIkitAlertOptions,
-  UIkitCountdownOptions,
-  UIkitCoverOptions,
-  UIkitDropOptions,
-  UIkitDropdownOptions,
-  UIkitDropnavOptions,
-  UIkitFilterOptions,
-  UIkitFormOptions,
-  UIkitGridOptions,
-  UIkitHeightViewportOptions,
-  UIkitHeightMatchOptions,
   UIkitIconOptions,
-  UIkitImageOptions,
-  UIkitInverseOptions,
-  UIkitLeaderOptions,
-  UIkitLightboxOptions,
-  UIkitMarginOptions,
-  UIkitModalOptions,
-  UIkitNavOptions,
-  UIkitNavbarOptions,
-  UIkitNotificationOptions,
-  UIkitOffcanvasOptions,
-  UIkitParallaxOptions,
-  UIkitScrollOptions,
-  UIkitScrollspyOptions,
-  UIkitScrollspyNavOptions,
-  UIkitSliderOptions,
-  UIkitSlideshowOptions,
-  UIkitSortableOptions,
-  UIkitStickyOptions,
-  UIkitSvgOptions,
-  UIkitSwitcherOptions,
-  UIkitTabOptions,
-  UIkitToggleOptions,
-  UIkitTooltipOptions,
-  UIkitUploadOptions,
-  UIkitVideoOptions,
 } from 'uikit'
 
 /**
@@ -59,7 +23,6 @@ import type { GridClassType, ButtonClassType, LinkClassType, SpinnerClassType } 
  */
 import type { RouteLocationRaw } from 'vue-router'
 import type { RefElement } from '@u/util.ts'
-import type { UIkitAccordionOptions } from '@u/types.ts'
 
 /**
  * accordion props types
