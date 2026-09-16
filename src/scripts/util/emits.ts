@@ -23,23 +23,3 @@ export interface AccordionEmitsType {
   (e: 'hide', event: Event, value: unknown): void
   (e: 'hidden', event: Event, value: unknown): void
 }
-
-export function addComponentEmit(
-  el: RefElement,
-  handler: EventListener,
-  componentEmits: readonly string[],
-) {
-  componentEmits.forEach((eventName) => {
-    el.addEventListener(eventName, handler)
-  })
-}
-
-export function removeComponentEmit(
-  el: RefElement,
-  componentEmits: readonly string[],
-  handler: EventListener,
-) {
-  componentEmits.forEach((eventName) => {
-    el.removeEventListener(eventName, handler)
-  })
-}

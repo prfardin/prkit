@@ -22,7 +22,7 @@ import type { GridClassType, ButtonClassType, LinkClassType, SpinnerClassType } 
  * we import custom types here
  */
 import type { RouteLocationRaw } from 'vue-router'
-import type { RefElement } from '@u/util.ts'
+import type { RefElement, RefElementCallback } from '@u/util.ts'
 
 /**
  * accordion props types
@@ -49,7 +49,7 @@ export interface AccordionClassType {
  * cause all button classes define as props
  */
 export interface AccordionPropsType extends UIkitAccordionOptions, AccordionClassType {
-  refElement?: RefElement
+  refElement?: RefElementCallback
   tag?: 'ul' | 'div'
   list?: AccordionItemType[]
   icon?: AccordionIconType

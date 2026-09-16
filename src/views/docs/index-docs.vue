@@ -20,7 +20,7 @@ import PrAccordion from '@c/PrAccordion.vue'
 import PrButton from '@c/PrButton.vue'
 import { accordionToggle, type RefElement } from '@u/util.ts'
 
-const selected = ref<RefElement>(13)
+const selected = ref(13)
 
 const accordionList = [
   {

@@ -5,7 +5,8 @@ import type { AccordionIconType, AccordionPropsType, IconPropsType } from '@u/pr
 // Types: Define Types for UIkit or HTML elements
 // ========================================================================
 
-export type RefElement = MaybeRef
+export type RefElement = HTMLElement | null
+export type RefElementCallback = (el: RefElement) => void
 
 export type InputElement = object | Ref | HTMLInputElement | string
 
@@ -65,21 +66,21 @@ export function getAccordionIconName(iconName: AccordionIconType) {
 // ========================================================================
 
 export function setAccordion(el: RefElement, options: AccordionPropsType, active?: number) {
-  return UIkit.accordion(el, { ...omitUndefined(options), active })
+  return UIkit.accordion(el!, { ...omitUndefined(options), active })
 }
 
 export function accordionToggle(el: RefElement, index: number, animate?: boolean) {
-  return UIkit.accordion(el).toggle(index, animate)
+  return UIkit.accordion(el!).toggle(index, animate)
 }
 
 // set icon
 export function setIcon(el: RefElement, options: IconPropsType) {
-  return UIkit.icon(el, { ...options })
+  return UIkit.icon(el!, { ...options })
 }
 
 // set alert
 export function alert(el: RefElement, options: any) {
-  return UIkit.accordion(el, {
+  return UIkit.accordion(el!, {
     active: options.active,
     animation: options.animation,
     collapsible: options.collapsible,
@@ -95,7 +96,7 @@ export function alert(el: RefElement, options: any) {
 
 // set grid
 export function grid(el: RefElement, options?: any) {
-  return UIkit.grid(el, options)
+  return UIkit.grid(el!, options)
 }
 
 // set util

@@ -1,17 +1,20 @@
 import type { RefElement } from '@u/util.ts'
-import { onBeforeUnmount, onMounted } from 'vue'
-import { addComponentEmit, removeComponentEmit } from '@u/emits.ts'
+import { onBeforeUnmount, onMounted, type Ref } from 'vue'
 
 export function useComponentEmit(
-  el: Readonly<RefElement>,
+  el: Readonly<Ref<RefElement>>,
   handler: EventListener,
   componentEmits: readonly string[],
 ) {
   onMounted(() => {
-    addComponentEmit(el.value, handler, componentEmits)
+    componentEmits.forEach((eventName) => {
+      el.value!.addEventListener(eventName, handler)
+    })
   })
 
   onBeforeUnmount(() => {
-    removeComponentEmit(el.value, componentEmits, handler)
+    componentEmits.forEach((eventName) => {
+      el.value!.removeEventListener(eventName, handler)
+    })
   })
 }

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted, ref, unref, useTemplateRef } from 'vue'
 import { isDev, devComputed } from '@u/env.ts'
-import { useComponentEmit } from '@cc/useComponentEmit.ts'
 import { type AccordionPropsType, accordionDefaults } from '@u/props'
 import { type AccordionEmitsType, accordionEmits } from '@u/emits.ts'
+import { useComponentEmit } from '@cc/useComponentEmit.ts'
 import {
   type RefElement,
   setAccordion,
@@ -24,23 +24,12 @@ function setElement(value: RefElement) {
 }
 
 const icon = useTemplateRef<RefElement>('icon')
-const selected = defineModel<unknown>()
-
-const accordionClass = devComputed(() => accordionClasses(props))
 const iconName = devComputed(() => getAccordionIconName(props.icon))
 
 const itemTag = props.tag === 'ul' ? 'li' : 'div'
+const accordionClass = devComputed(() => accordionClasses(props))
 
-function updateIcon() {
-  const name = unref(iconName)
-
-  name &&
-    setIcon(icon.value, {
-      icon: name,
-      ratio: props.iconRatio,
-    })
-}
-
+const selected = defineModel<unknown>()
 function getActive() {
   return selected.value != null && props.list
     ? props.list.findIndex((item) => item.value == selected.value)
@@ -49,6 +38,15 @@ function getActive() {
 
 const handler = (event: Event) => {
   emit(event.type as any, event, selected.value)
+}
+function updateIcon() {
+  const name = unref(iconName)
+
+  name &&
+  setIcon(icon.value, {
+    icon: name,
+    ratio: props.iconRatio,
+  })
 }
 
 onMounted(() => {
