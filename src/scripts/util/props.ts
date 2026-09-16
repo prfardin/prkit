@@ -7,7 +7,6 @@
  */
 
 import type {
-  UIkitAccordionOptions,
   UIkitAlertOptions,
   UIkitCountdownOptions,
   UIkitCoverOptions,
@@ -60,6 +59,7 @@ import type { GridClassType, ButtonClassType, LinkClassType, SpinnerClassType } 
  */
 import type { RouteLocationRaw } from 'vue-router'
 import type { RefElement } from '@u/util.ts'
+import type { UIkitAccordionOptions } from '@u/types.ts'
 
 
 /**
@@ -86,7 +86,7 @@ export interface AccordionClassType {
  * extended from Accordion Class Type
  * cause all button classes define as props
  */
-export interface AccordionPropsType extends /* @vue-ignore */ UIkitAccordionOptions, AccordionClassType {
+export interface AccordionPropsType extends UIkitAccordionOptions, AccordionClassType {
   refElement?: RefElement
   tag?: 'ul' | 'div'
   list?: AccordionItemType[]
@@ -94,11 +94,11 @@ export interface AccordionPropsType extends /* @vue-ignore */ UIkitAccordionOpti
   iconRatio?: number
 }
 
-export const AccordionDefaults = {
+export const accordionDefaults = {
   tag: 'ul',
   variant: 'default',
   icon: 'default',
-  iconRatio: 0.7,
+  iconRatio: 0.7
 } satisfies Partial<AccordionPropsType>
 
 

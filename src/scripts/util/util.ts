@@ -1,4 +1,4 @@
-import type { MaybeRef, Ref } from 'vue'
+import { type MaybeRef, type Reactive, type Ref, watch } from 'vue'
 import UIkit from 'uikit'
 import type { AccordionIconType, AccordionPropsType, IconPropsType } from '@u/props'
 
@@ -19,6 +19,32 @@ export const accordionIconType = ['default', 'plus', 'chevron', 'circle']
 
 // Utilities
 // ========================================================================
+
+export function devPropsWatch(
+  props: Reactive<Record<string, unknown>>,
+  callback: () => void,
+  exclude: readonly string[] = [],
+) {
+  const sources = Object.keys(props)
+    .filter(key => !exclude.includes(key))
+    .map(key => () => props[key])
+
+  return watch(sources, callback)
+}
+
+export function omitUndefined<T extends object>(object: T) {
+  const result = {} as Partial<T>
+
+  for (const key in object) {
+    const value = object[key]
+
+    if (value !== undefined) {
+      result[key] = value
+    }
+  }
+
+  return result
+}
 
 export function getIconName(iconName: string, prefix: string) {
   return `${defaultIconComponentPrefix}-default-${prefix}-${iconName}`
@@ -42,7 +68,7 @@ export function getAccordionIconName(iconName: AccordionIconType) {
 // ========================================================================
 
 export function setAccordion(el: RefElement, options: AccordionPropsType, active?: number) {
-  return UIkit.accordion(el, { ...options, active })
+  return UIkit.accordion(el, { ...omitUndefined(options), active })
 }
 
 export function accordionToggle(el: RefElement, index: number, animate?: boolean) {

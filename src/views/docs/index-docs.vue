@@ -20,7 +20,7 @@ import PrAccordion from '@c/PrAccordion.vue'
 import PrButton from '@c/PrButton.vue'
 import { accordionToggle, type RefElement } from '@u/util.ts'
 
-const selected = ref<RefElement>(12)
+const selected = ref<RefElement>(13)
 
 const accordionList = [
   {
@@ -43,10 +43,14 @@ const accordionList = [
   },
 ]
 
-const refElement = ref()
+const refElement = ref<RefElement>(null)
+const setRefElement = (el: RefElement) => {
+  refElement.value = el
+}
+
 function toggle() {
   // accordionToggle(testRef.value?.$el, 1, false)
-  accordionToggle(refElement.value, 1, true)
+  accordionToggle(refElement.value, 2, true)
 }
 </script>
 
@@ -98,9 +102,12 @@ function toggle() {
         <a @click="selected++">Plus</a>
         <a class="uk-margin-left" @click="toggle()">Toggle</a>
         <pr-accordion
-          :ref-element="refElement"
+          v-model="selected"
+          :ref-element="setRefElement"
           :list="accordionList"
           @beforehide="(event) => console.log(event)"
+          icon="default"
+          :active="0"
         />
         <h2>Line Style</h2>
         <pr-accordion :list="accordionList" variant="line" />

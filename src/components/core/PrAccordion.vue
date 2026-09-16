@@ -1,24 +1,32 @@
 <script setup lang="ts">
-import { onMounted, unref, useTemplateRef, watch } from 'vue'
+import { onMounted, ref, unref, useTemplateRef } from 'vue'
 import { isDev, devComputed } from '@u/env.ts'
 import { useComponentEmit } from '@cc/useComponentEmit.ts'
-import { useRefElement } from '@cc/useRefElement.ts'
-
-import { type AccordionPropsType, AccordionDefaults } from '@u/props'
-import { type AccordionEmitsType, accordionEmits, } from '@u/emits.ts'
-import { type RefElement, setAccordion, setIcon, getAccordionIconName } from '@u/util'
+import { type AccordionPropsType, accordionDefaults } from '@u/props'
+import { type AccordionEmitsType, accordionEmits } from '@u/emits.ts'
+import {
+  type RefElement,
+  setAccordion,
+  setIcon,
+  getAccordionIconName,
+  devPropsWatch,
+} from '@u/util'
 import { accordionClasses } from '@u/classes'
 
-const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
+const props = withDefaults(defineProps<AccordionPropsType>(), accordionDefaults)
 
 const emit = defineEmits<AccordionEmitsType>()
 
-const el = useTemplateRef<RefElement>('el')
+const el = ref<RefElement>(null)
+function setElement(value: RefElement) {
+  el.value = value
+  props.refElement?.(value)
+}
+
 const icon = useTemplateRef<RefElement>('icon')
 const selected = defineModel<unknown>()
 
 const accordionClass = devComputed(() => accordionClasses(props))
-
 const iconName = devComputed(() => getAccordionIconName(props.icon))
 
 const itemTag = props.tag === 'ul' ? 'li' : 'div'
@@ -33,35 +41,33 @@ function updateIcon() {
     })
 }
 
+function getActive() {
+    return selected.value != null && props.list
+      ? props.list.findIndex((item) => item.value == selected.value)
+      : props.active
+}
+
 const handler = (event: Event) => {
   emit(event.type as any, event, selected.value)
 }
 
 onMounted(() => {
-  const active =
-    selected.value != null && props.list
-      ? props.list.findIndex((item) => item.value === selected.value)
-      : props.active
-
-  setAccordion(el.value, props, active)
+  setAccordion(el.value, props, getActive())
   updateIcon()
 
   if (isDev) {
-    watch([() => props.icon, () => props.iconRatio], () => {
+    devPropsWatch(props, () => {
+      setAccordion(el.value, props, getActive())
       updateIcon()
-    })
+    }, ['modelValue', 'refElement'])
   }
 })
 
 useComponentEmit(el, handler, accordionEmits)
-
-if (props.refElement) {
-  useRefElement(el, props.refElement)
-}
 </script>
 
 <template>
-  <component :class="accordionClass" :is="tag" ref="el">
+  <component :class="accordionClass" :is="tag" :ref="setElement">
     <template v-if="list">
       <component :is="itemTag" v-for="(item, index) in list" :key="index">
         <a
