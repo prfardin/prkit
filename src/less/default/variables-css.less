@@ -156,8 +156,6 @@
   --global-large-margin: 70px;
   --global-xlarge-margin: 140px;
 
-  --global-pr-margin-medium: calc(var(--global-margin) + 5px);        // instead of: var(--global-margin) + 5px;
-
   // Used in grid, column, container, align, card, padding
   --global-gutter: 30px;
   --global-xxsmall-gutter: 5px;
@@ -756,15 +754,6 @@
   --spinner-radius: ~'round(down, calc((var(--spinner-size) - var(--spinner-stroke-width)) / 2), 1px)'; // Minus stroke width to prevent overflow clipping | instead of: floor(((var(--spinner-size) - var(--spinner-stroke-width)) / 2))
   --spinner-circumference: ~'round(up, calc(2 * 3.141 * var(--spinner-radius)), 1px)';          // instead of: round(2 * 3.141 * var(--spinner-radius));
   --spinner-duration: 1.4s;
-  --pr-spinner-line-gutter: calc(var(--global-xxsmall-gutter) - 1px);                           // instead of: var(--global-xxsmall-gutter) - 1px;
-  --pr-spinner-line-width: calc(var(--global-spinner-width) - var(--pr-spinner-line-gutter));   // instead of: var(--global-spinner-width - var(--pr-spinner-line-gutter));
-  --pr-spinner-line-item-height: 100%;
-  --pr-spinner-circle-item-width: 3px;
-  --pr-spinner-line-color: hsl(from var(--global-white-color) h s calc(l - 5));                 // instead of: darken(var(--global-white-color), 5%);
-  --pr-spinner-circle-color: var(--global-white-color);
-  --pr-spinner-circle-color-fade: rgb(from var(--pr-spinner-circle-color) r g b / 0.6);         // instead of: fade(var(--pr-spinner-circle-color), 60%);
-  --pr-spinner-line-item-border-radius: 4px;
-  --pr-spinner-line-animation-duration: 0.6s;
 
   // Sticky
   --sticky-z-index: calc(var(--global-z-index) - 20);               // instead of: var(--global-z-index) - 20;

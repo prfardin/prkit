@@ -8,6 +8,8 @@
 
 @margin-margin: @global-margin;
 
+@margin-xsmall-margin: @global-xsmall-margin;
+
 @margin-small-margin: @global-small-margin;
 
 @margin-medium-margin: @global-medium-margin;
@@ -18,60 +20,8 @@
 @margin-xlarge-margin: @global-large-margin;
 @margin-xlarge-margin-l: @global-xlarge-margin;
 
-@margin-xsmall-margin: @global-xsmall-margin;
-@margin-pr-medium-margin: @global-pr-margin-medium;
 
 // Miscellaneous
 // ========================================================================
 
-.hook-margin-misc() {
-  /* ========================================================================
-       Component: Margin
-     ========================================================================== */
-
-  /* xSmall
-     ========================================================================== */
-
-  .pr-margin-xsmall {
-    margin-bottom: @margin-xsmall-margin;
-  }
-  * + .pr-margin-xsmall {
-    margin-top: @margin-xsmall-margin !important;
-  }
-
-  .pr-margin-xsmall-top {
-    margin-top: @margin-xsmall-margin !important;
-  }
-  .pr-margin-xsmall-bottom {
-    margin-bottom: @margin-xsmall-margin !important;
-  }
-  .pr-margin-xsmall-left {
-    margin-left: @margin-xsmall-margin !important;
-  }
-  .pr-margin-xsmall-right {
-    margin-right: @margin-xsmall-margin !important;
-  }
-
-  /* Pr medium margin
-     ========================================================================== */
-
-  .pr-margin-medium {
-    margin-bottom: @global-pr-margin-medium;
-  }
-  * + .pr-margin-medium {
-    margin-top: @global-pr-margin-medium !important;
-  }
-
-  .pr-margin-medium-top {
-    margin-top: @global-pr-margin-medium !important;
-  }
-  .pr-margin-medium-bottom {
-    margin-bottom: @global-pr-margin-medium !important;
-  }
-  .pr-margin-medium-left {
-    margin-left: @global-pr-margin-medium !important;
-  }
-  .pr-margin-medium-right {
-    margin-right: @global-pr-margin-medium !important;
-  }
-}
+.hook-margin-misc() {}

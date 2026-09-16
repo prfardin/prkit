@@ -4,7 +4,6 @@
  * vue support export type-based emit,
  * so we will use this types as exported emits types for components
  */
-import type { RefElement } from '@u/util.ts'
 
 export const accordionEmits = [
   'beforeshow',

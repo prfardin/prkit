@@ -5,24 +5,27 @@
  * so we will use this props as export props for components
  * accordion to https://vuejs.org/guide/typescript/composition-api#typing-component-props
  */
-import type { UIkitAccordionOptions } from '@u/types.ts'
+import type {
+  UIkitAccordionOptions,
+} from '@u/types.ts'
 import type {
   UIkitIconOptions,
 } from 'uikit'
 
 /**
- * Some of the components contains class like flex
- * and need we define the flex classes as props
+ * Some of the components contains class like grid
+ * and need we define the grid classes as props
  * so we defined them in the classes as type, and
  * we extend and combine them here with Type Options
  */
-import type { GridClassType, ButtonClassType, LinkClassType, SpinnerClassType } from './classes'
+import type {
+  AccordionClassType,
+} from './classes'
 
 /**
  * we import custom types here
  */
-import type { RouteLocationRaw } from 'vue-router'
-import type { RefElement, RefElementCallback } from '@u/util.ts'
+import type { RefElementCallback } from '@u/util.ts'
 
 /**
  * accordion props types
@@ -39,15 +42,6 @@ export interface AccordionItemType {
 
 export type AccordionIconType = 'none' | 'default' | 'plus' | 'chevron' | 'circle' | (string & {})
 
-export interface AccordionClassType {
-  variant?: 'default' | 'hover' | 'line'
-}
-
-/**
- * Accordion Props Types
- * extended from Accordion Class Type
- * cause all button classes define as props
- */
 export interface AccordionPropsType extends UIkitAccordionOptions, AccordionClassType {
   refElement?: RefElementCallback
   tag?: 'ul' | 'div'
@@ -64,38 +58,6 @@ export const accordionDefaults = {
 } satisfies Partial<AccordionPropsType>
 
 /**
- * Button Props Types
- * extended from Button Class Type
- * cause all button classes define as props
- */
-export interface ButtonPropsType extends ButtonClassType {
-  tag?: 'router-link' | 'a' | 'button'
-  to?: string
-  href?: string
-  slotClass?: string
-  ripple?: boolean
-  spinner?: boolean
-  spinnerMod?: 'line' | 'circle'
-  icon?: string
-  ratio?: string
-  iconClass?: string
-  spinnerClass?: string
-  disabled?: boolean
-}
-
-/**
- * Grid Props Types
- * extended from Grid Class Type
- * cause all grid classes define as props
- */
-export interface GridPropsType extends GridClassType {
-  margin?: string
-  firstColumn?: string
-  masonry?: boolean
-  parallax?: number
-}
-
-/**
  * Icon Props Types
  */
 export interface IconPropsType extends /* @vue-ignore */ UIkitIconOptions {
@@ -104,26 +66,4 @@ export interface IconPropsType extends /* @vue-ignore */ UIkitIconOptions {
 
 export const IconDefaults: Partial<IconPropsType> = {
   tag: 'span',
-}
-
-/**
- * Link Props Types
- * extended from Link Class Type
- * cause all link classes define as props
- */
-export interface LinkPropsType extends LinkClassType {
-  tag?: 'router-link' | 'a'
-  to?: RouteLocationRaw
-  href?: string
-  slotClass?: string
-  iconClass?: string
-  ratio?: string
-}
-
-/**
- * Spinner Props Types
- */
-export interface SpinnerPropsType extends SpinnerClassType {
-  tag?: 'span' | string
-  mode?: 'line' | 'circle'
 }

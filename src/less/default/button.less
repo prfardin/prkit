@@ -71,7 +71,6 @@
 @button-text-transform: var(--button-text-transform);
 
 @button-border-width: var(--button-border-width);
-@button-border-radius: @global-border-radius;
 
 @button-default-border: @global-border;
 @button-default-hover-border: var(--button-default-hover-border);
@@ -82,34 +81,10 @@
 @button-text-border-width: @global-border-width;
 @button-text-border: @button-text-hover-color;
 
-@button-muted-background: @global-muted-background;
-@button-muted-color: @global-color;
-@button-muted-hover-background: var(--button-muted-hover-background);
-@button-muted-hover-color: @global-color;
-@button-muted-active-background: var(--button-muted-active-background);
-@button-muted-active-color: @global-color;
-
-@button-padding-horizontal: @global-gutter;
-@button-has-icon-padding-right: var(--button-has-icon-padding-right);
-@button-has-icon-padding-left: var(--button-has-icon-padding-left);
-@button-small-padding-horizontal: @global-small-gutter;
-@button-small-has-icon-padding-right: var(--button-small-has-icon-padding-right);
-@button-small-has-icon-padding-left: var(--button-small-has-icon-padding-left);
-@button-xsmall-padding-horizontal: @global-xsmall-gutter;
-@button-xsmall-has-icon-padding-right: var(--button-xsmall-has-icon-padding-right);
-@button-xsmall-has-icon-padding-left: var(--button-xsmall-has-icon-padding-left);
-@button-rounded-radius: @global-rounded-radius;
-
-@button-primary-icon-primary-color: @inverse-global-icon-primary-color;
-@button-primary-icon-secondary-color: @inverse-global-icon-secondary-color;
-@button-primary-icon-tertiary-color: @inverse-global-icon-tertiary-color;
-@button-primary-icon-quaternary-color: @inverse-global-icon-quaternary-color;
-
 // Component
 // ========================================================================
 
 .hook-button() {
-  border-radius: @global-border-radius;
   text-transform: @button-text-transform;
   transition: 0.1s ease-in-out;
   transition-property: color, background-color, border-color;
@@ -140,25 +115,7 @@
 // Primary
 //
 
-.hook-button-primary() {
-  border: @button-border-width solid transparent;
-
-  .pr-icon-primary {
-    color: @button-primary-icon-primary-color;
-  }
-
-  .pr-icon-secondary {
-    color: @button-primary-icon-secondary-color;
-  }
-
-  .pr-icon-tertiary {
-    color: @button-primary-icon-tertiary-color;
-  }
-
-  .pr-icon-quaternary {
-    color: @button-primary-icon-quaternary-color;
-  }
-}
+.hook-button-primary() {}
 
 .hook-button-primary-hover() {
 }
@@ -275,123 +232,6 @@
     z-index: 1;
   }
 
-  // PrKit Style modifiers
-  // ========================================================================
-
-  /*
-     * Muted
-     */
-
-  .uk-button-muted {
-    background-color: @button-muted-background;
-    border: 1px solid transparent;
-  }
-
-  /* Hover */
-  .uk-button-muted:hover {
-    background-color: @button-muted-hover-background;
-    color: @button-muted-hover-color;
-  }
-
-  /* OnClick + Active */
-  .uk-button-muted:active,
-  .uk-button-muted.uk-active {
-    background-color: @button-muted-active-background;
-    color: @button-muted-active-color;
-  }
-
-  /* Rounded */
-  .uk-button-rounded {
-    border-radius: @button-rounded-radius;
-  }
-
-  /* Circle */
-  .uk-button-circle {
-    border-radius: 50%;
-  }
-
-  /* Square */
-  .uk-button-square {
-    border-radius: 0;
-  }
-
-  /* Size modifiers
-     ========================================================================== */
-
-  .uk-button-xsmall,
-  .uk-button-collapse {
-    line-height: @button-xsmall-line-height;
-    font-size: @button-xsmall-font-size;
-  }
-
-  .uk-button-xsmall {
-    padding: 0 @button-xsmall-padding-horizontal;
-  }
-
-  /* Button Has Icon
-     ========================================================================== */
-
-  .pr-button-has-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* default */
-
-  .uk-button.pr-button-has-icon:not(.pr-button-icon-flip) > .uk-icon {
-    margin-right: 4px;
-  }
-
-  .uk-button.pr-button-icon-flip > .uk-icon {
-    margin-left: 4px;
-    order: 999;
-  }
-
-  /* small */
-  .uk-button-small.pr-button-has-icon {
-    padding: 0 @button-small-padding-horizontal;
-    padding-right: @button-small-has-icon-padding-right;
-    min-height: 26px;
-    min-width: 26px;
-  }
-
-  /* xsmall */
-  .uk-button-xsmall.pr-button-has-icon {
-    padding: 0 @button-xsmall-padding-horizontal;
-    padding-right: @button-xsmall-has-icon-padding-right;
-    min-height: 26px;
-    min-width: 26px;
-  }
-
-  /* Collapsed */
-  .uk-button-collapse {
-    padding: 0 !important;
-    line-height: inherit;
-  }
-
-  .uk-button-collapse.pr-button-has-icon > .uk-icon {
-    margin-right: 0;
-  }
-
-  .uk-button-collapse.pr-button-icon-flip > .uk-icon {
-    margin-left: 0;
-  }
-
-  // PrKit Spinner modifiers
-  // ========================================================================
-
-  .pr-button-has-spinner {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-  }
-
-  .pr-button-has-spinner > *:not(.pr-spinner) {
-    opacity: 0.1;
-  }
 }
 
 // Inverse
@@ -399,13 +239,9 @@
 
 @inverse-button-secondary-background: @inverse-global-primary-background;
 @inverse-button-secondary-color: @inverse-global-inverse-color;
-@inverse-button-secondary-hover-background: hsl(
-  from @inverse-button-secondary-background h s calc(l - 5)
-); // instead of: darken(@inverse-button-secondary-background, 5%);
+@inverse-button-secondary-hover-background: hsl(from @inverse-button-secondary-background h s calc(l - 5)); // instead of: darken(@inverse-button-secondary-background, 5%);
 @inverse-button-secondary-hover-color: @inverse-global-inverse-color;
-@inverse-button-secondary-active-background: hsl(
-  from @inverse-button-secondary-background h s calc(l - 10)
-); // instead of: darken(@inverse-button-secondary-background, 10%);
+@inverse-button-secondary-active-background: hsl(from @inverse-button-secondary-background h s calc(l - 10)); // instead of: darken(@inverse-button-secondary-background, 10%);
 @inverse-button-secondary-active-color: @inverse-global-inverse-color;
 
 @inverse-button-text-color: @inverse-global-emphasis-color;
@@ -428,29 +264,6 @@
 
 @inverse-button-text-hover-color: @inverse-global-emphasis-color;
 
-@inverse-button-primary-background: @global-primary-background;
-@inverse-button-primary-color: @button-primary-color;
-@inverse-button-primary-hover-background: @button-primary-hover-background;
-@inverse-button-primary-hover-color: @button-primary-hover-color;
-@inverse-button-primary-active-background: @button-primary-active-background;
-@inverse-button-primary-active-color: @button-primary-active-color;
-
-@inverse-button-muted-background: @inverse-global-muted-background;
-@inverse-button-muted-color: @global-muted-inverse-color;
-@inverse-button-muted-hover-background: rgb(
-  from @inverse-button-muted-background r g b / 0.2
-); // instead of: fade(@inverse-button-muted-background, 20%);
-@inverse-button-muted-hover-color: @global-muted-inverse-color;
-@inverse-button-muted-active-background: rgb(
-  from @inverse-button-muted-background r g b / 0.3
-); // instead of: fade(@inverse-button-muted-background, 30%);
-@inverse-button-muted-active-color: @global-muted-inverse-color;
-
-@inverse-button-primary-icon-primary-color: @global-icon-primary-color;
-@inverse-button-primary-icon-secondary-color: @global-icon-secondary-color;
-@inverse-button-primary-icon-tertiary-color: @global-icon-tertiary-color;
-@inverse-button-primary-icon-quaternary-color: @global-icon-quaternary-color;
-
 .hook-inverse-button-default() {
   border-color: @inverse-global-color;
 }
@@ -461,25 +274,7 @@
   border-color: @inverse-global-emphasis-color;
 }
 
-.hook-inverse-button-primary() {
-  border: @button-border-width solid transparent;
-
-  .pr-icon-primary {
-    color: @inverse-button-primary-icon-primary-color;
-  }
-
-  .pr-icon-secondary {
-    color: @inverse-button-primary-icon-secondary-color;
-  }
-
-  .pr-icon-tertiary {
-    color: @inverse-button-primary-icon-tertiary-color;
-  }
-
-  .pr-icon-quaternary {
-    color: @inverse-button-primary-icon-quaternary-color;
-  }
-}
+.hook-inverse-button-primary() {}
 
 .hook-inverse-button-secondary() {
 }
@@ -493,32 +288,7 @@
     border-bottom-color: @inverse-global-emphasis-color;
   }
 }
-.hook-inverse-button-text-hover() {
-}
-.hook-inverse-button-text-disabled() {
-}
+.hook-inverse-button-text-hover() {}
+.hook-inverse-button-text-disabled() {}
 
-.hook-inverse-button-link() {
-}
-
-.hook-inverse() {
-  //
-  // Muted
-  //
-
-  .uk-button-muted {
-    background-color: @inverse-button-muted-background;
-    color: @inverse-button-muted-color;
-  }
-
-  .uk-button-muted:hover {
-    background-color: @inverse-button-muted-hover-background;
-    color: @inverse-button-muted-hover-color;
-  }
-
-  .uk-button-muted:active,
-  .uk-button-muted.uk-active {
-    background-color: @inverse-button-muted-active-background;
-    color: @inverse-button-muted-active-color;
-  }
-}
+.hook-inverse-button-link() {}

@@ -17,7 +17,6 @@ function changeLightMode() {
 
 import PrIcon from '@c/PrIcon.vue'
 import PrAccordion from '@c/PrAccordion.vue'
-import PrButton from '@c/PrButton.vue'
 import { accordionToggle, type RefElement } from '@u/util.ts'
 
 const selected = ref(13)
@@ -173,7 +172,6 @@ function toggle() {
         <pr-icon icon="icon-default-sun-02" ratio="3" />
         <pr-icon icon="icon-default-sun-03" ratio="3" />
       </div>
-      <pr-button tag="a" color="danger">Hi</pr-button>
 
       <!-- End -->
       <div class="uk-height-viewport"></div>

@@ -8,8 +8,6 @@ import type { AccordionIconType, AccordionPropsType, IconPropsType } from '@u/pr
 export type RefElement = HTMLElement | null
 export type RefElementCallback = (el: RefElement) => void
 
-export type InputElement = object | Ref | HTMLInputElement | string
-
 // Configuration
 // ========================================================================
 
@@ -73,34 +71,6 @@ export function accordionToggle(el: RefElement, index: number, animate?: boolean
   return UIkit.accordion(el!).toggle(index, animate)
 }
 
-// set icon
 export function setIcon(el: RefElement, options: IconPropsType) {
   return UIkit.icon(el!, { ...options })
 }
-
-// set alert
-export function alert(el: RefElement, options: any) {
-  return UIkit.accordion(el!, {
-    active: options.active,
-    animation: options.animation,
-    collapsible: options.collapsible,
-    content: options.content,
-    duration: options.duration,
-    multiple: options.multiple,
-    targets: options.targets,
-    toggle: options.toggle,
-    transition: options.transition,
-    offset: options.offset,
-  })
-}
-
-// set grid
-export function grid(el: RefElement, options?: any) {
-  return UIkit.grid(el!, options)
-}
-
-// set util
-// need import
-// export function util() {
-//   return UIkit.util()
-// }
