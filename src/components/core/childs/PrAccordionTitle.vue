@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { type AccordionPropsType, AccordionDefaults } from '@u/props'
+import { type AccordionPropsType } from '@u/props'
 import { type RefElement, setAccordion } from '@u/util'
 import { ref, onMounted, computed } from 'vue'
 import { accordionClasses } from '@u/classes.ts'
 
-const props = withDefaults(defineProps<AccordionPropsType>(), AccordionDefaults)
+const props = defineProps<AccordionPropsType>()
 
 // define template ref
 const el = ref<RefElement>(null)

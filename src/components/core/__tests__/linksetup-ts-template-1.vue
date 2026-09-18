@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts">/*
 import prIcon from '@c/PrIcon.vue'
 import { buttonClassObject } from '@u/classes'
 import { useSlots, computed } from 'vue'
@@ -24,10 +24,10 @@ const emit = defineEmits(['click'])
 function handleClick(e: PointerEvent) {
   emit('click', e)
 }
-</script>
+*/</script>
 
 <template>
-  <router-link v-if="to" :to="to" @click="handleClick" :class="buttonClass">
+<!--  <router-link v-if="to" :to="to" @click="handleClick" :class="buttonClass">
     <pr-icon v-if="icon" :icon="icon" :ratio="ratio" />
     <span v-if="icon"><slot /></span>
     <slot v-else />
@@ -36,5 +36,5 @@ function handleClick(e: PointerEvent) {
     <pr-icon v-if="icon" :icon="icon" :ratio="ratio" />
     <span v-if="icon"><slot /></span>
     <slot v-else />
-  </a>
+  </a>-->
 </template>

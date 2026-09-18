@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import { onMounted, ref, unref, useTemplateRef } from 'vue'
-import { isDev, devComputed } from '@u/env.ts'
+import { isDev, devComputed, devPropsWatch } from '@u/env.ts'
+import type { RefElement } from '@u/types.ts'
 import { type AccordionPropsType, accordionDefaults } from '@u/props'
 import { type AccordionEmitsType, accordionEmits } from '@u/emits.ts'
+import { setAccordion, setIcon, getAccordionIconName } from '@u/util'
 import { useComponentEmit } from '@cc/useComponentEmit.ts'
-import {
-  type RefElement,
-  setAccordion,
-  setIcon,
-  getAccordionIconName,
-  devPropsWatch,
-} from '@u/util'
 import { accordionClasses } from '@u/classes'
 
 const props = withDefaults(defineProps<AccordionPropsType>(), accordionDefaults)
@@ -42,11 +37,12 @@ const handler = (event: Event) => {
 function updateIcon() {
   const name = unref(iconName)
 
-  name &&
-  setIcon(icon.value, {
-    icon: name,
-    ratio: props.iconRatio,
-  })
+  if (name) {
+    setIcon(icon.value, {
+      icon: name,
+      ratio: props.iconRatio,
+    })
+  }
 }
 
 onMounted(() => {

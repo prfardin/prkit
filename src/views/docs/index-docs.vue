@@ -17,7 +17,8 @@ function changeLightMode() {
 
 import PrIcon from '@c/PrIcon.vue'
 import PrAccordion from '@c/PrAccordion.vue'
-import { accordionToggle, type RefElement } from '@u/util.ts'
+import { accordionToggle } from '@u/util.ts'
+import type { RefElement } from '@u/types.ts'
 
 const selected = ref(13)
 

@@ -1,6 +1,6 @@
 # why we create this ui library?
 
-Since all developers need some tools to speed up their work, we came up with the idea of creating a framework based on UIkit that is structured in Vue, making it easier to implement the UI of our projects. in future we will also use ai to use this template to create ui.
+Since all developers need some tools to speed up their work, we came up with the idea of creating a framework based on UIkit that is structured in Vue, making it easier to implement the UI of our projects. in future, we will also use AI to use this template to create ui.
 
 For the core, we used the UIkit CSS framework because, unlike modern libraries, it offers many additional features like Slideshow, Parallax, and more.
 
@@ -8,13 +8,16 @@ Our goal is for this library to be a collection of Vue components and a set of r
 This WHITE PAPER is still a work in progress.
 
 # Vision
+refer to this page: https://vuejs.org/guide/best-practices/performance.html we are trying our best to get best optimize for PrKit components library and PrKit Starter Kit.
+
+We will prevent to use components in components for exmaple a main compnent that's contains child component like: accordion has accordion-title and accordion-content we will create the child components but we will not use child component in structre of main component, we just create them to get used in component slot, and we notice that instead of using compnents in a v-for use it with pure CSS and Methods that's avaible in project refer to https://vuejs.org/guide/best-practices/performance.html#avoid-unnecessary-component-abstractions. we will make document guide for 3 mode of using component: 1. component itself that's accept content and option with props, 2. compnent with child compnent that is useable for main component for costom slot etc. 3. component just with avaiable methods and CSS stlye. we are trying to get the best performance for or compnents.
 
 ## what we are doing now?
 
-we are making all project (css framework and vue components and starter kit) in one project and will separate them to our vision at last. 
+we are making all project (CSS framework and vue components and starter kit) in one project and will separate them to our vision at last. 
 
 ## Visions
-- PrKIt and Vue: Ui css framework with components based on PrKit
+- PrKIt and Vue: Ui CSS framework with components based on PrKit
 - Nuxt Starter based on PrKit Vue and have everything for start a front project
 - we need also document pages for PrKit and PrKit Vue and Nuxt `Starter Kit`
 

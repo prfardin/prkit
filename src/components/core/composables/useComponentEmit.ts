@@ -1,4 +1,4 @@
-import type { RefElement } from '@u/util.ts'
+import type { RefElement } from '@u/types.ts'
 import { onBeforeUnmount, onMounted, type Ref } from 'vue'
 
 export function useComponentEmit(
