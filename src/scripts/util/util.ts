@@ -56,8 +56,8 @@ import type { RefElement } from '@u/types.ts'
 import type {
   AccordionIconType,
   AccordionPropsType,
-  IconPropsType } from '@u/props'
-
+  IconPropsType
+} from '@u/props'
 
 /**
  * Miscellaneous functions and configs

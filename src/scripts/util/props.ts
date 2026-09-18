@@ -43,7 +43,7 @@ import type {
 } from '@u/types.ts'
 
 import type {
-  AccordionClassType,
+  AccordionClassType
 } from './classes'
 
 

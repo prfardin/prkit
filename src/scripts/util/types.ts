@@ -101,7 +101,7 @@ interface UIkitAccordionOptions {
 
 interface UIkitAlertOptions {
   /** Fade out or hide directly. */
-  animation?: boolean | string
+  animation?: UIkitBoolean | string
   /** Animation duration in milliseconds. */
   duration?: number
   /** The close trigger element. */
@@ -110,7 +110,7 @@ interface UIkitAlertOptions {
 
 interface UIkitCountdownOptions {
   /** Any string parsable by Date.parse. */
-  date?: string | Date | boolean | number
+  date?: string | Date | UIkitBoolean | number
   /** Reload page after countdown expires. Initially expired countdowns won't reload the page. */
   reload?: UIkitBoolean
 }
@@ -146,15 +146,15 @@ interface UIkitDropOptionsBase {
   /** The area on the y-axis the drop can't exceed causing it to flip and shift. */
   boundaryY?: UIkitCssSelector
   /** The element the drop is positioned to (true for window). */
-  target?: boolean | UIkitCssSelector
+  target?: UIkitBoolean | UIkitCssSelector
   /** The element's X axis the drop is positioned to (true for window). */
-  targetX?: boolean | UIkitCssSelector
+  targetX?: UIkitBoolean | UIkitCssSelector
   /** The element's Y axis the drop is positioned to (true for window). */
-  targetY?: boolean | UIkitCssSelector
+  targetY?: UIkitBoolean | UIkitCssSelector
   /** Position inside its target. */
   inset?: UIkitBoolean
   /** Flip the drop along the main axis if it overflows the boundary. */
-  flip?: boolean | string
+  flip?: UIkitBoolean | string
   /** Shift the drop along the cross-axis if it overflows the boundary. */
   shift?: UIkitBoolean
   /** The drop offset. */
@@ -170,9 +170,9 @@ interface UIkitDropOptionsBase {
   /** The animation duration. */
   duration?: number
   /** Define a target container via a selector to specify where the drop should be appended in the DOM. */
-  container?: UIkitElement | boolean
+  container?: UIkitElement | UIkitBoolean
   /** Undocumented. */
-  "boundary-align"?: boolean | undefined
+  'boundary-align'?: UIkitBoolean | undefined
 }
 
 type UIkitDropOptions = UIkitDropOptionsBase
@@ -184,7 +184,7 @@ interface UIkitDropElement extends UIkitElementBase {
    * Hides the drop.
    * @param delay Delay hiding the drop.
    */
-  hide(delay?: boolean): void
+  hide(delay?: UIkitBoolean): void
 }
 
 type UIkitDropdownOptions = UIkitDropOptionsBase
@@ -196,29 +196,27 @@ interface UIkitDropdownElement extends UIkitElementBase {
    * Hides the dropdown.
    * @param delay Delay hiding the Dropdown.
    */
-  hide(delay?: boolean): void
+  hide(delay?: UIkitBoolean): void
 }
 
-interface UIkitDropnavOptions extends
-  Pick<
-    UIkitDropOptionsBase,
-    | "stretch"
-    | "mode"
-    | "delayShow"
-    | "delayHide"
-    | "boundary"
-    | "target"
-    | "targetX"
-    | "targetY"
-    | "offset"
-    | "animation"
-    | "animateOut"
-    | "bgScroll"
-    | "closeOnScroll"
-    | "duration"
-    | "container"
-  >
-{
+interface UIkitDropnavOptions extends Pick<
+  UIkitDropOptionsBase,
+  | 'stretch'
+  | 'mode'
+  | 'delayShow'
+  | 'delayHide'
+  | 'boundary'
+  | 'target'
+  | 'targetX'
+  | 'targetY'
+  | 'offset'
+  | 'animation'
+  | 'animateOut'
+  | 'bgScroll'
+  | 'closeOnScroll'
+  | 'duration'
+  | 'container'
+> {
   /** Dropdown alignment (left, right, center). */
   align?: UIkitAlign
   /**	Enable or disable dropbar behavior. */
@@ -231,16 +229,16 @@ interface UIkitFilterOptions {
   /** The targeted list on which to apply the filter to. */
   target?: string
   /** A selector for the initially active filter controls. */
-  selActive?: string | boolean
+  selActive?: string | UIkitBoolean
   /** Animation mode (slide, fade, delayed-fade or false). */
-  animation?: "slide" | "fade" | "delayed-fade" | false
+  animation?: 'slide' | 'fade' | 'delayed-fade' | false
   /** Animation duration in milliseconds. */
   duration?: number
 }
 
 interface UIkitFormOptions {
   /** Value display target. */
-  target?: UIkitCssSelector | boolean
+  target?: UIkitCssSelector | UIkitBoolean
 }
 
 interface UIkitGridOptions {
@@ -249,7 +247,7 @@ interface UIkitGridOptions {
   /** This class is added to the first element in each row. */
   firstcolumn?: string
   /** Enables masonry layout for this grid. */
-  masonry?: string | boolean
+  masonry?: string | UIkitBoolean
   /** Parallax translation value. The value can be in vh, % and px. Falsy disables the parallax effect (default). */
   parallax?: number
   /** Start offset. The value can be in vh, % and px. It supports basic mathematics operands + and -. The default value of 0 means that the grid's top border and viewport's bottom border intersect. */
@@ -262,9 +260,9 @@ interface UIkitGridOptions {
 
 interface UIkitHeightViewportOptions {
   /** Subtracts the element's (true) or given element's (CSS Selector) offset top from its height. */
-  offsetTop?: boolean | UIkitCssSelector
+  offsetTop?: UIkitBoolean | UIkitCssSelector
   /** Subtracts the height (true) of the sibling that immediately follows the element, the given percentage (Number), Pixel (px) value from element's own height or the given element's height. */
-  offsetBottom?: boolean | number | UIkitCssSelector
+  offsetBottom?: UIkitBoolean | number | UIkitCssSelector
   /** Expands the element's height to make a short page fill the viewport. */
   expand?: UIkitBoolean
   /** Sets a minimum height. Useful if all children are positioned absolutely. */
@@ -294,25 +292,25 @@ interface UIkitImageOptions {
   /**	The image's src attribute. */
   dataSrc?: string
   /** Undocumented. */
-  dataSrcset?: string | boolean
+  dataSrcset?: string | UIkitBoolean
   /** The image's sources. This option is used for background images only. The source attributes are passed in key: value; format for a single source. For multiple sources in JSON format. */
   sources?: string
   /** Enable lazy/eager loading. Set to eager for images within the first visible viewport. */
-  loading?: "lazy" | "eager"
+  loading?: 'lazy' | 'eager'
   /** The margin is added to the viewport's bounding box, before computing an intersection with the image. The value must be in px or % units. */
   margin?: string
   /** Undocumented. */
-  sizes?: string | boolean
+  sizes?: string | UIkitBoolean
   /** Undocumented. */
-  width?: string | boolean
+  width?: string | UIkitBoolean
   /** Undocumented. */
-  height?: string | boolean
+  height?: string | UIkitBoolean
   /** Undocumented. */
   offsetTop?: string
   /** Undocumented. */
   offsetLeft?: string | number
   /** A list of targets whose bounding boxes will be used to compute an intersection with the image. Defaults to the image itself. */
-  target?: string | boolean
+  target?: string | UIkitBoolean
 }
 
 interface UIkitInverseOptions {
@@ -326,7 +324,7 @@ interface UIkitLeaderOptions {
   /**	Optional fill character. */
   fill?: string
   /** Condition for the space filling - a width as integer (e.g. 640) or a breakpoint (e.g. @s, @m, @l, @xl) or any valid media query (e.g. (min-width: 900px)). */
-  media?: boolean | number | string
+  media?: UIkitBoolean | number | string
 }
 
 interface UIkitLightboxOptionsBase {
@@ -343,7 +341,7 @@ interface UIkitLightboxOptionsBase {
   /** Lightbox shows counter. */
   counter?: UIkitBoolean
   /** Lightbox navigation (dotnav, thumbnav). */
-  nav?: "dotnav" | "thumbnav" | boolean
+  nav?: 'dotnav' | 'thumbnav' | UIkitBoolean
   /** Lightbox shows slidenav controls. */
   slidenav?: UIkitBoolean
   /** The initial item to show. (zero-based). */
@@ -372,7 +370,7 @@ interface UIkitModalOptions {
   /** Stack modals, when more than one is open. By default, the previous modal will be hidden. */
   stack?: UIkitBoolean
   /** Define a target container via a selector to specify where the modal should be appended in the DOM. Setting it to false will prevent this behavior. */
-  container?: UIkitElement | boolean
+  container?: UIkitElement | UIkitBoolean
   /** Class to add to <html> when modal is active */
   clsPage?: string
   /** Class of the element to be considered the panel of the modal. */
@@ -395,7 +393,7 @@ interface UIkitNavOptions {
   /** The transition to use. */
   transition?: string
   /** Space-separated names of animations. Comma-separated for animation out. */
-  animation?: string | boolean
+  animation?: string | UIkitBoolean
   /** The animation duration in milliseconds. */
   duration?: number
 }
@@ -408,7 +406,7 @@ interface UIkitNavbarOptions {
   /** If set, dropbar will be inserted after the anchor element. */
   dropbarAnchor?: UIkitCssSelector
   /** The dropbar transparent mode (behind, remove). */
-  dropbarTransparentMode?: "behind" | "remove" | boolean
+  dropbarTransparentMode?: 'behind' | 'remove' | UIkitBoolean
   /** Stretch dropdown on both (true) or given axis (x, y). */
   stretch?: UIkitStretch
   /** Comma-separated list of dropdown trigger behavior modes (click, hover). */
@@ -420,11 +418,11 @@ interface UIkitNavbarOptions {
   /** The area the dropdown can't exceed causing it to flip and shift. By default, the nearest scrolling ancestor. */
   boundary?: UIkitCssSelector
   /** The element the dropdown is positioned to (true for window). */
-  target?: UIkitCssSelector | boolean
+  target?: UIkitCssSelector | UIkitBoolean
   /** The element's X axis the drop is positioned to (true for window). */
-  targetX?: boolean | UIkitCssSelector
+  targetX?: UIkitBoolean | UIkitCssSelector
   /** The element's Y axis the drop is positioned to (true for window). */
-  targetY?: boolean | UIkitCssSelector
+  targetY?: UIkitBoolean | UIkitCssSelector
   /** The dropdown offset. */
   offset?: number
   /** Space-separated names of animations. Comma-separated for animation out. */
@@ -438,27 +436,27 @@ interface UIkitNavbarOptions {
   /** The animation duration. */
   duration?: number
   /** Define a target container via a selector to specify where the drop should be appended in the DOM. */
-  container?: UIkitElement | boolean
+  container?: UIkitElement | UIkitBoolean
   /** Undocumented. */
-  "boundary-align"?: UIkitBoolean
+  'boundary-align'?: UIkitBoolean
 }
 
 interface UIkitNotificationOptions {
   /**	Notification message to show. */
   message?: string
   /** Notification status color. */
-  status?: string | "primary" | "success" | "warning" | "danger"
+  status?: string | 'primary' | 'success' | 'warning' | 'danger'
   /** Visibility duration until a notification disappears. If set to 0, notification will not hide automatically. */
   timeout?: number
   /** Useful, if you want to close all notifications in a specific group. */
   group?: string
   /** Display corner. */
-  pos?: "top-left" | "top-center" | "top-right" | "bottom-left" | "bottom-center" | "bottom-right"
+  pos?: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 }
 
 interface UIkitOffcanvasOptions {
   /** Off-canvas animation mode (slide, reveal, push or none). */
-  mode?: "slide" | "reveal" | "push" | "none"
+  mode?: 'slide' | 'reveal' | 'push' | 'none'
   /** Flip off-canvas to the right side. */
   flip?: UIkitBoolean
   /** Display the off-canvas together with an overlay. */
@@ -468,7 +466,7 @@ interface UIkitOffcanvasOptions {
   /** Close the off-canvas when the background is clicked. */
   bgClose?: UIkitBoolean
   /** Define a target container via a selector to specify where the off-canvas should be appended in the DOM. Setting it to false will prevent this behavior. */
-  container?: UIkitElement | boolean
+  container?: UIkitElement | UIkitBoolean
 }
 
 interface UIkitParallaxOptions {
@@ -481,7 +479,7 @@ interface UIkitParallaxOptions {
   /** End offset. The value can be in vh, % and px. It supports basic mathematics operands + and -. The default value of 0 means that the target's bottom border and the viewport's top border intersect. */
   end?: number | string
   /** Condition for the active status - a width as integer (e.g. 640) or a breakpoint (e.g. @s, @m, @l, @xl) or any valid media query (e.g. (min-width: 900px)). */
-  media?: boolean | number | string
+  media?: UIkitBoolean | number | string
 }
 
 interface UIkitScrollOptions {
@@ -493,7 +491,7 @@ interface UIkitScrollspyOptionsBase {
   /** Class to toggle when the element enters/leaves viewport. */
   cls?: string
   /**	Target to apply the scrollspy to. Defaults to the element itself. */
-  target?: boolean | UIkitCssSelector
+  target?: UIkitBoolean | UIkitCssSelector
 }
 
 interface UIkitScrollspyOptions extends UIkitScrollspyOptionsBase {
@@ -506,14 +504,14 @@ interface UIkitScrollspyOptions extends UIkitScrollspyOptionsBase {
   /** Delay time in ms. */
   delay?: number
   /** Undocumented. */
-  "offset-top"?: number
+  'offset-top'?: number
   /** Undocumented. */
-  "offset-left"?: number
+  'offset-left'?: number
 }
 
 interface UIkitScrollspyNavOptions extends UIkitScrollspyOptionsBase {
   /** Target to apply the class to. Defaults to the element itself. */
-  closest?: boolean | UIkitCssSelector
+  closest?: UIkitBoolean | UIkitCssSelector
   /** Adds the Scroll component to its links. */
   scroll?: UIkitBoolean
   /** Offset added to scroll top. */
@@ -549,7 +547,7 @@ interface UIkitSliderOptions {
 
 interface UIkitSlideshowOptions {
   /** Slideshow animation mode (slide, fade, scale, pull or push). */
-  animation?: "slide" | "fade" | "scale" | "pull" | "push"
+  animation?: 'slide' | 'fade' | 'scale' | 'pull' | 'push'
   /** Slideshow autoplays. */
   autoplay?: UIkitBoolean
   /**	The delay between switching slides in autoplay mode. */
@@ -569,16 +567,16 @@ interface UIkitSlideshowOptions {
   /** The ratio. (false prevents height adjustment) */
   ratio?: string | number
   /** The minimum height. */
-  minHeight?: boolean | number
+  minHeight?: UIkitBoolean | number
   /** The maximum height. */
-  maxHeight?: boolean | number
+  maxHeight?: UIkitBoolean | number
 }
 
 interface UIkitSortableOptions {
   /** The group. */
   group?: string
   /** Animation mode (slide, false). */
-  animation?: boolean | string
+  animation?: UIkitBoolean | string
   /** Animation duration in milliseconds. */
   duration?: number
   /** Mouse move threshold before dragging starts. */
@@ -605,7 +603,7 @@ interface UIkitSortableOptions {
 
 interface UIkitStickyOptions {
   /** The position the element should be stuck to. */
-  position?: "top" | "bottom"
+  position?: 'top' | 'bottom'
   /**
    * Start offset. The value can be in vh, % and px. It supports basic mathematics operands + and -.
    * The default value of 0 means that the element's top border and viewport's top border intersect.
@@ -619,7 +617,7 @@ interface UIkitStickyOptions {
    * element's bottom and the element's bottom border. false will make the element stick until the end of the page.
    * true selects the parent element.
    */
-  end?: boolean | number | string
+  end?: UIkitBoolean | number | string
   /**	The offset the Sticky should be fixed to. The value can be in vh, % and px. It supports basic mathematics operands + and -. */
   offset?: number | string
   /** The offset the Sticky should be fixed to if the element overflows the viewport. The value can be in vh, % and px. It supports basic mathematics operands + and -. */
@@ -627,7 +625,7 @@ interface UIkitStickyOptions {
   /** Flip the Sticky's position option if the element overflows the viewport and disable overflow scrolling. */
   overflowFlip?: UIkitBoolean
   /** The animation to use when the element becomes sticky. */
-  animation?: string | boolean
+  animation?: string | UIkitBoolean
   /** The active class. */
   clsActive?: string
   /** The inactive class. */
@@ -635,16 +633,16 @@ interface UIkitStickyOptions {
   /** Only show sticky element when scrolling up. */
   showOnUp?: UIkitBoolean
   /** Condition for the active status - a width as integer (e.g. 640) or a breakpoint (e.g. @s, @m, @l, @xl) or any valid media query (e.g. (min-width: 900px)). */
-  media?: number | string | boolean
+  media?: number | string | UIkitBoolean
   /**
    * Initially make sure that the Sticky element is not over a referenced element via the page's location hash.
    * The offset is defined by how far the element will be above the referenced element. false will disable this behavior.
    */
-  targetOffset?: boolean | number
+  targetOffset?: UIkitBoolean | number
   /** Undocumented. */
-  "show-on-up"?: UIkitBoolean
+  'show-on-up'?: UIkitBoolean
   /** Undocumented. */
-  "width-element"?: string | boolean
+  'width-element'?: string | UIkitBoolean
 }
 
 interface UIkitSvgOptions {
@@ -711,9 +709,10 @@ interface UIkitTooltipOptions {
   /** Tooltip text. */
   title?: string
   /**	Tooltip position. */
-  pos?: "top" | "top-left" | "top-right" | "bottom" | "bottom-left" | "bottom-right" | "left" | "right"
+  pos?:
+    'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right' | 'left' | 'right'
   /** Tooltip offset. */
-  offset?: number | boolean
+  offset?: number | UIkitBoolean
   /**	Space-separated names of animations. Comma-separated for animation out. */
   animation?: string
   /**	The animation duration. */
@@ -736,9 +735,9 @@ interface UIkitUploadOptions {
   /** Additional parameters. */
   params?: object
   /** File name filter. (eg. *.png). */
-  allow?: string | boolean
+  allow?: string | UIkitBoolean
   /** File MIME type filter. (eg. image/*) */
-  mime?: string | boolean
+  mime?: string | UIkitBoolean
   /**	Number of files that will be uploaded simultaneously. */
   concurrent?: number
   /**	The expected response data type (xml, json, script, or html) */
@@ -777,7 +776,7 @@ interface UIkitUploadOptions {
 
 interface UIkitVideoOptions {
   /**	The video automatically plays/pauses as it's visible/hidden on the page. Additionally, the video can play when its in the viewport or hovered with the mouse (inview, hover). */
-  autoplay?: boolean | string
+  autoplay?: UIkitBoolean | string
   /** Automatically mute YouTube or Vimeo videos */
   automute?: UIkitBoolean
 }
@@ -824,5 +823,5 @@ export type {
   UIkitToggleOptions,
   UIkitTooltipOptions,
   UIkitUploadOptions,
-  UIkitVideoOptions
+  UIkitVideoOptions,
 }
