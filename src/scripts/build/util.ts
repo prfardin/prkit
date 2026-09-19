@@ -4,7 +4,6 @@ import pLimit from 'p-limit'
 import type { InputOptions, OutputOptions, RollupBuild } from 'rollup'
 import { rollup } from 'rollup'
 import replace from '@rollup/plugin-replace'
-import { componentIcons } from '../util/config'
 
 const limit = pLimit(Number(process.env.cpus || 2))
 
@@ -59,18 +58,23 @@ export async function compile(
 // this function Scan all Vue files in project and Match icons by a naming pattern: "icon-*"
 // we must replace it with a better function, problem: it will scan all files
 export async function findIcons(findDir: string, defaultIcons: string): Promise<Set<string>> {
-  const files = glob.sync(`${findDir}/**/*.vue`)
+  const files = glob.sync(`${findDir}/**/*.{vue,ts}`)
   const iconSet = new Set<string>()
+
+  const prefixes = ['icon-', 'component-default-']
+
+  const pattern = new RegExp(
+    `(?:${prefixes.join('|')})[a-zA-Z0-9_-]+`,
+    'g',
+  )
 
   for (const file of files) {
     const content = fs.readFileSync(file, 'utf-8')
-    const matches = content.match(/icon-([a-zA-Z0-9_-]+)/g)
+    const matches = content.match(pattern)
     if (matches) {
       matches.forEach((match) => iconSet.add(match))
     }
   }
-
-  componentIcons.forEach((icon) => iconSet.add(`component-${icon}`))
 
   return iconSet
 }

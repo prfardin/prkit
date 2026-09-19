@@ -19,6 +19,9 @@ import PrIcon from '@c/PrIcon.vue'
 import PrAccordion from '@c/PrAccordion.vue'
 import { accordionToggle } from '@u/util.ts'
 import type { RefElement } from '@u/types.ts'
+import PrAccordionContent from '@cch/PrAccordionContent.vue'
+import PrAccordionTitle from '@cch/PrAccordionTitle.vue'
+import PrAccordionItem from '@cch/PrAccordionItem.vue'
 
 const selected = ref(13)
 
@@ -101,7 +104,7 @@ function toggle() {
         <h2>Default Style - UIKit {{ selected }}</h2>
         <a @click="selected++">Plus</a>
         <a class="uk-margin-left" @click="toggle()">Toggle</a>
-        <pr-accordion
+        <PrAccordion
           v-model="selected"
           :ref-element="setRefElement"
           :list="accordionList"
@@ -110,36 +113,36 @@ function toggle() {
           :active="0"
         />
         <h2>Line Style</h2>
-        <pr-accordion :list="accordionList" variant="line" />
+        <PrAccordion :list="accordionList" variant="line" />
         <h2>Hover Style</h2>
-        <pr-accordion :list="accordionList" variant="hover" />
+        <PrAccordion :list="accordionList" variant="hover" />
 
         <!-- With Array List -->
         <h2>With List Array</h2>
-        <pr-accordion :list="accordionList" />
+        <PrAccordion :list="accordionList" />
 
         <!-- With Child Component -->
         <h2>With Child Component</h2>
-        <pr-accordion>
-          <li>
-            <a class="uk-accordion-title">Item 1</a>
-            <div class="uk-accordion-content">
+        <PrAccordion>
+          <PrAccordionItem>
+            <PrAccordionTitle>Item 1</PrAccordionTitle>
+            <PrAccordionContent>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
-            </div>
-          </li>
-          <li class="uk-open">
-            <a class="uk-accordion-title">Item 2</a>
-            <div class="uk-accordion-content">
+            </PrAccordionContent>
+          </PrAccordionItem>
+          <PrAccordionItem>
+            <PrAccordionTitle>Item 2</PrAccordionTitle>
+            <PrAccordionContent>
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
               ea commodo consequat. Duis aute irure dolor reprehenderit.
-            </div>
-          </li>
-        </pr-accordion>
+            </PrAccordionContent>
+          </PrAccordionItem>
+        </PrAccordion>
 
-        <!-- With Slot - Without Child Component (CSS class) -->
+        <!-- With Slot - Without Child Component (Child CSS class) -->
         <h2>With Slot - Without Child Component (CSS class)</h2>
-        <pr-accordion :active="1">
+        <PrAccordion :active="1">
           <li>
             <a class="uk-accordion-title">Item 1</a>
             <div class="uk-accordion-content">
@@ -154,7 +157,7 @@ function toggle() {
               ea commodo consequat. Duis aute irure dolor reprehenderit.
             </div>
           </li>
-        </pr-accordion>
+        </PrAccordion>
       </div>
 
       <!-- Icon -->

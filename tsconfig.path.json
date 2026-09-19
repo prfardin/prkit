@@ -6,8 +6,8 @@
       "@/*": ["./src/*"],
       "@t/*": ["./src/.temp/*"],                            // .temp folder
       "@c/*": ["./src/components/core/*"],                  // components
-      "@cc/*": ["./src/components/core/composables/*"],     // components
-      "@cch/*": ["./src/components/core/childs/*"],         // components
+      "@cc/*": ["./src/components/core/composables/*"],     // composable components
+      "@cch/*": ["./src/components/core/childs/*"],         // child components
       "@v/*": ["./src/views/*"],                            // views
       "@vd/*": ["./src/views/docs/*"],                      // views/documentation
       "@f/*": ["./src/fonts/*"],                            // fonts,

@@ -53,11 +53,22 @@
  */
 
 /**
- * Custom Types
+ * Generic|Custom Types
  * ======================================================================== */
 
 export type RefElement = HTMLElement | null
 export type RefElementCallback = (el: RefElement) => void
+
+
+/** useComponentIcon Types */
+export type IconNameResolver<T extends string = string> = (
+  icon: T,
+) => string | false
+
+export interface ComponentIconProps<T extends string = string> {
+  icon?: T
+  iconRatio?: number
+}
 
 
 /**

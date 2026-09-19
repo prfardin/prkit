@@ -46,12 +46,14 @@ import type {
   AccordionClassType
 } from './classes'
 
+import type { accordionIconMap } from '@u/util.ts'
+
 
 /**
  * Accordion Prop Types
  * Props: active, animation, collapsible, content, duration, multiple, targets,
  * toggle, transition, offset, variant, refElement, tag, list, icon, iconRatio
- * Child Components: accordion-title | accordion-content
+ * Child Components: accordion-item | accordion-title | accordion-content
  * ======================================================================== */
 
 export interface AccordionItemType {
@@ -64,19 +66,40 @@ export interface AccordionItemType {
 }
 
 /** Icon Type of item - each has its own animation when open/close */
-export type AccordionIconType = 'none' | 'default' | 'plus' | 'chevron' | 'circle' | (string & {})
+export type AccordionIconType =
+  | keyof typeof accordionIconMap
+  | 'none'
+  | (string & {})
 
-export interface AccordionPropsType extends UIkitAccordionOptions, AccordionClassType {
+export interface AccordionItemPropsType {
+  /** Render tag of elements */
+  tag?: 'li' | 'div'
+}
+
+export const accordionItemDefaults = {
+  tag: 'li',
+} satisfies Partial<AccordionItemPropsType>
+
+export interface AccordionTitlePropsType {
+  /** Icon type of item */
+  icon?: AccordionIconType
+  /** The icon size */
+  iconRatio?: number
+}
+
+export const accordionTitleDefaults = {
+  icon: 'default',
+  iconRatio: 0.7,
+} satisfies Partial<AccordionTitlePropsType>
+
+export interface AccordionPropsType
+  extends UIkitAccordionOptions, AccordionTitlePropsType, AccordionClassType {
   /** Equal to element ref of component for accessing component element from parent */
   refElement?: RefElementCallback
   /** Render tag of elements: ul-li | div-div */
   tag?: 'ul' | 'div'
   /** List of array to render with default structure */
   list?: AccordionItemType[]
-  /** Icon type of item */
-  icon?: AccordionIconType
-  /** The icon size */
-  iconRatio?: number
 }
 
 export const accordionDefaults = {
@@ -85,7 +108,6 @@ export const accordionDefaults = {
   icon: 'default',
   iconRatio: 0.7,
 } satisfies Partial<AccordionPropsType>
-
 
 /**
  * Icon Prop Types

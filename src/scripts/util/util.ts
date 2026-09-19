@@ -63,8 +63,6 @@ import type {
  * Miscellaneous functions and configs
  * ======================================================================== */
 
-export const defaultIconComponentPrefix = 'component'
-
 export function omitUndefined<T extends object>(object: T) {
   const result = {} as Partial<T>
 
@@ -79,10 +77,6 @@ export function omitUndefined<T extends object>(object: T) {
   return result
 }
 
-export function getIconName(iconName: string, prefix: string) {
-  return `${defaultIconComponentPrefix}-default-${prefix}-${iconName}`
-}
-
 
 // UIkit JavaScript Components and related methods
 // ========================================================================
@@ -95,18 +89,21 @@ export function setAccordion(el: RefElement, options: AccordionPropsType, active
   return UIkit.accordion(el!, { ...omitUndefined(options), active })
 }
 
-export const accordionIconType = ['default', 'plus', 'chevron', 'circle']
+export const accordionIconMap = {
+  default: 'component-default-accordion-default',
+  plus: 'component-default-accordion-plus',
+  chevron: 'component-default-accordion-chevron',
+  circle: 'component-default-accordion-circle'
+} as const
 
-export function getAccordionIconName(iconName: AccordionIconType) {
-  if (iconName === 'none') {
+export function getAccordionIconName(icon: AccordionIconType) {
+  if (icon === 'none') {
     return false
   }
 
-  if (accordionIconType.includes(iconName)) {
-    return getIconName(iconName, 'accordion')
-  }
-
-  return iconName
+  return icon in accordionIconMap
+    ? accordionIconMap[icon as keyof typeof accordionIconMap]
+    : icon
 }
 
 

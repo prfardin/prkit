@@ -23,7 +23,22 @@
  *
  */
 
-import { type MaybeRef, type Reactive, computed, watch } from 'vue'
+import { type MaybeRef, computed, watch } from 'vue'
+
+/** Types */
+
+export type StringKeyOf<T> = Extract<keyof T, string>
+
+type DevPropsWatchKey<T> =
+  | StringKeyOf<T>
+  | 'modelValue'
+
+export type DevPropsWatchOptions<T extends object> =
+  | { only: readonly StringKeyOf<T>[]; exclude?: never }
+  | { only?: never; exclude?: readonly DevPropsWatchKey<T>[] }
+
+
+/** Utils */
 
 export const isDev = import.meta.env.DEV
 export const isProd = import.meta.env.PROD
@@ -36,14 +51,17 @@ export function devComputed<T>(getter: () => T): MaybeRef<T> {
   return getter()
 }
 
-export function devPropsWatch(
-  props: Reactive<Record<string, unknown>>,
+export function devPropsWatch<T extends object>(
+  props: T,
   callback: () => void,
-  exclude: readonly string[] = [],
+  options: DevPropsWatchOptions<T> = {},
 ) {
-  const sources = Object.keys(props)
-    .filter((key) => !exclude.includes(key))
-    .map((key) => () => props[key])
+  const keys =
+    'only' in options && options.only
+      ? options.only
+      : (Object.keys(props) as StringKeyOf<T>[]).filter((key) => !options.exclude?.includes(key))
+
+  const sources = keys.map((key) => () => props[key])
 
   return watch(sources, callback)
 }

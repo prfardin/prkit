@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { type IconPropsType, IconDefaults } from '@u/props'
-import { type RefElement, setIcon } from '@u/util'
+import { setIcon } from '@u/util'
+import type { RefElement } from '@u/types.ts'
 import { ref, onMounted, watchEffect } from 'vue'
 
 const props = withDefaults(defineProps<IconPropsType>(), IconDefaults)

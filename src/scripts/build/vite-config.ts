@@ -73,7 +73,7 @@ export const alias: AliasOptions = {
   '@t': '/src/.temp', // .temp folder
   '@c': '/src/components/core', // components
   '@cc': '/src/components/core/composables', // component composables
-  '@cch': '/src/components', // component children
+  '@cch': '/src/components/core/childs', // component children
   '@v': '/src/views', // views
   '@vd': '/src/views/docs', // views/documentation
   '@f': '/src/fonts', // fonts,

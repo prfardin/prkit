@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { onMounted, ref, unref, useTemplateRef } from 'vue'
+import { onMounted, ref } from 'vue'
 import { isDev, devComputed, devPropsWatch } from '@u/env.ts'
 import type { RefElement } from '@u/types.ts'
 import { type AccordionPropsType, accordionDefaults } from '@u/props'
 import { type AccordionEmitsType, accordionEmits } from '@u/emits.ts'
-import { setAccordion, setIcon, getAccordionIconName } from '@u/util'
+import { setAccordion, getAccordionIconName } from '@u/util'
 import { useComponentEmit } from '@cc/useComponentEmit.ts'
+import { useComponentIcon } from '@cc/useComponentIcon.ts'
 import { accordionClasses } from '@u/classes'
 
 const props = withDefaults(defineProps<AccordionPropsType>(), accordionDefaults)
@@ -18,13 +19,13 @@ function setElement(value: RefElement) {
   props.refElement?.(value)
 }
 
-const icon = useTemplateRef<RefElement>('icon')
-const iconName = devComputed(() => getAccordionIconName(props.icon))
+const { iconName } = useComponentIcon(props, getAccordionIconName)
 
 const itemTag = props.tag === 'ul' ? 'li' : 'div'
 const accordionClass = devComputed(() => accordionClasses(props))
 
 const selected = defineModel<unknown>()
+
 function getActive() {
   return selected.value != null && props.list
     ? props.list.findIndex((item) => item.value == selected.value)
@@ -34,26 +35,14 @@ function getActive() {
 const handler = (event: Event) => {
   emit(event.type as any, event, selected.value)
 }
-function updateIcon() {
-  const name = unref(iconName)
-
-  if (name) {
-    setIcon(icon.value, {
-      icon: name,
-      ratio: props.iconRatio,
-    })
-  }
-}
 
 onMounted(() => {
   setAccordion(el.value, props, getActive())
-  updateIcon()
 
   if (isDev) {
     devPropsWatch(props, () => {
       setAccordion(el.value, props, getActive())
-      updateIcon()
-    }, ['modelValue', 'refElement'])
+    }, { exclude: ['modelValue', 'refElement'] })
   }
 })
 
