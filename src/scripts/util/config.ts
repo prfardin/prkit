@@ -8,26 +8,32 @@
  * 1. default icon style for components must be predefined in component
  * library, so how do this.
  * 2. how compile icon build process will work on the component
- * library, what must be the structure of icon library
+ * library, what must be the structure of icon library and the build process
  *
- * For icons we use structure of UIKit icon library, the build process
+ * For icons we use structure of UIKit icon library, the current build process
  * will create uikit-icons.ts file in .temp folder and search for used
  * icons in all files located in ./src folder and compile them into
  * uikit-icons.ts.
  *
  * We do this cause we dont want to import all svg files and we dont
- * want use something like font-icons, its too lean also.
+ * wont use something like font-icons etc. its too lean also.
  *
  * The example of build process is like this:
- * icon="icon-ICONLIBRARYNAME-ICONLIBRARYSTYLE-ICONNAME" will find the icon from:
- * ./images/core/ICONLIBRARYNAME/ICONLIBRARYSTYLE/icons/ICONNAME.svg
+ * icon="icon-ICONLIBRARYNAME-ICONLIBRARYSTYLE-ICONNAME" or
+ * icon="component-ICONLIBRARYNAME-ICONLIBRARYSTYLE-ICONNAME" will find the icon from:
+ * ./images/core/ICONLIBRARYNAME/ICONLIBRARYSTYLE/icons|components/ICONNAME.svg
  * ex: icon-fa-duotone-user will be:
  * ./images/core/fa/duotone/icons/user.svg
- * and will add it as object in to uikit-icons.ts as 'icon-fa-duotone-user': 'svg'
+ * and will add it as object in to uikit-icons.ts as:
+ * 'icon-fa-duotone-user': 'svg' or 'component-fa-duotone-user'|: 'svg'
  *
- * For changing defual style of component icons we must change the default
- * const defaultIconStyle in this file and we will replace all icon in our
- * compoments that named like this: icon-default-user
+ * For using default icon style we must use icon name like: icon-default-user
+ * so if we change the defaultIconStyle value it will change
+ * all icons to defined style.
+ *
+ * For changing defual style of useages we must change the value of
+ * const defaultIconStyle in this file and build process will replace all icon
+ * in all useages that named like this: icon-default-user
  * ex: if defaultIconStyle = "huge-bulk" then
  * icon-default-user will search for this path:
  * ./images/core/huge/bulk/icons/user.svg
@@ -39,18 +45,36 @@
  * ./images/core/huge/bulk/components/accordion-chevron.svg
  * it will render in uikit-icon.ts like this: 'component-default-accordion-chevron': 'svg'
  *
- * Component icons is dynamic so we must import icons name here
- * ex: default-accordion-cehvron || default-accordion-plus
+ * Main components like accordion wich contains icons intself accepts props icon
+ * so we can use default defined icon type for each component (located in icon-style/icons/components)
+ * or we can use name of icon for changing icon style of component.
+ * components that include icons also accept icon-ratio props: 24px * 24px is default size
+ * so iconRatio * 24 will be the calculated size.
+ * example: <PrAccordion icon="none | chevron | icon-fa-regular-chevron-down" icon-ratio="1.5" />
  *
- * So if we change the defaultIconStyle value it will change
- * all icons to defined style.
+ * For compnents wich includes icons like accordion we define composable component (useComponentIcon)
+ * wich handle process of defualt icons of compnent and custom icons. we are not using PrIcon
+ * compnent inside them cuase its bad for performance refere
+ * to: https://vuejs.org/guide/best-practices/performance.html#avoid-unnecessary-component-abstractions
+ * example (accordion component):
+ * PrAccordion.vue
+ * const { iconName } = useComponentIcon(props, getAccordionIconName)
+ * utils.ts
+ * const accordionIconMap = { default: 'component-default-accordion-default', chevron: 'component-default-accordion-chevron', ...styles } as const
+ * type AccordionIconType = keyof typeof accordionIconMap | 'none' | (string & {})
+ * export function getAccordionIconName(icon: AccordionIconType) {
+ *   // for component without icon style
+ *   if (icon === 'none') {
+ *     return false
+ *   }
  *
- * Main components like accordion that contains icons has icon props
- * that we can define our icon.
+ *   return icon in accordionIconMap ? accordionIconMap[icon as keyof typeof accordionIconMap] : icon
+ * }
+ * at last we defined icon and icon-ratio as props and it will be done.
  *
- * For dynamic process of importing svg files we can't find component icons and
- * dynamic icons that defined like: ${xIcon}-icon so when we use a dynamic icon name
- * we must add the name in dynamicIcons const.
+ * For dynamic process of importing svg files we can't find icon names becuase of build process
+ * so when we use a dynamic icon name we must add the name to dynamicIcons const here.
+ * example: dynamic icons that defined like: ${xIcon}-icon
  */
 
 export type IconStyles =

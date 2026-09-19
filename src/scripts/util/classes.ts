@@ -21,7 +21,7 @@
  * We also define type for each component classes
  *
  * The CSS class its: UIKit CSS classes that defined for
- * compnents + PrKit CSS classes (all defined in ./src/less/default/*.less)
+ * compnents + PrKit CSS classes (all defined in ./src/less/default/COMPONENTNAME|*.less)
  *
  * Structure:
  * interface xClassType { class1: value1 | value2, class2: value1, value2 }

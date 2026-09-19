@@ -35,6 +35,18 @@
  * omitUndefined function will remove the undefined props before
  * its recive to UIKit JavaScript Function
  *
+ * Refere to configs.ts line 48 to 73 components wich contains icons in their template must follow this
+ * structre:
+ * const xIconMap = { style1: 'component-default-x-style1', style2: 'component-default-x-style2', ... } as const
+ * type AccordionIconType = keyof typeof xIconMap | 'none' (if component style include: without icon) | (string & {})
+ * function getXIconName(icon: xIconType) {
+ *   // if component style include: without icon
+ *   if (icon === 'none') {
+ *     return false
+ *   }
+ *   return icon in xIconMap ? xIconMap[icon as keyof typeof xIconMap] : icon
+ * }
+ *
  * Also, most of UIKit JavaScript Components has some methods to change state
  * of component programmatically, so we define thos methods here too, for
  * example: accordionToggle
@@ -53,7 +65,7 @@
 
 import UIkit from 'uikit'
 import type { RefElement } from '@u/types.ts'
-import type { AccordionIconType, AccordionPropsType, IconPropsType } from '@u/props'
+import type { AccordionPropsType, IconPropsType } from '@u/props'
 
 
 /**
@@ -103,6 +115,8 @@ export const accordionIconMap = {
   chevron: 'component-default-accordion-chevron',
   circle: 'component-default-accordion-circle',
 } as const
+
+export type AccordionIconType = keyof typeof accordionIconMap | 'none' | (string & {})
 
 export function getAccordionIconName(icon: AccordionIconType) {
   if (icon === 'none') {

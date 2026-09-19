@@ -14,8 +14,15 @@
  * ex: interface xPropsType extends UIkitXOptions, xClassType { ... }
  *
  * refer to RefElementCallback description in types.ts file (line: 32 to 49) every
- * main prop types (xPropsType) must have props with this define: refElement?: RefElementCallback
+ * main compnent prop types (xPropsType) must have props with this define: refElement?: RefElementCallback
  * so we can use access the component element and use UIKit JavaScript methods of that component
+ * when we define refElement props it can be accessed from parent like this:
+ * <PrAccordion :ref-element="setRefElement" />
+ * const refElement = ref<RefElement>(null)
+ * const setRefElement = (el: RefElement) => { refElement.value = el }
+ *
+ * Component wich contains icons in their template always
+ * has this props: icon: xIconType, iconRatio: number
  *
  * Also, some of component props has default value, so same as props we define them
  * here after defining props and import them when defning component props (the defaultValue
@@ -40,7 +47,7 @@ import type { RefElementCallback, UIkitAccordionOptions, UIkitIconOptions } from
 
 import type { AccordionClassType } from './classes'
 
-import type { accordionIconMap } from '@u/util.ts'
+import type { AccordionIconType } from '@u/util.ts'
 
 
 /**
@@ -59,9 +66,6 @@ export interface AccordionItemType {
   content: string
 }
 
-/** Icon Type of item - each has its own animation when open/close */
-export type AccordionIconType = keyof typeof accordionIconMap | 'none' | (string & {})
-
 export interface AccordionItemPropsType {
   /** Render tag of elements */
   tag?: 'li' | 'div'
@@ -72,7 +76,7 @@ export const accordionItemDefaults = {
 } satisfies Partial<AccordionItemPropsType>
 
 export interface AccordionTitlePropsType {
-  /** Icon type of item */
+  /** Icon Type of item - each has its own animation when open/close */
   icon?: AccordionIconType
   /** The icon size */
   iconRatio?: number

@@ -1,9 +1,8 @@
 /**
  * Env:
- * We still don't have plan for this setting to locate them in another file
- * so we keep them here
- *
  * TODO: need to change the name and move to another directory ( maybe main )
+ * We still don't have plan for this setting to keep it here or
+ * locate these configs in another files, so until that we keep them here
  *
  * Sometimes we need if and some ref just run in computed mod and we dont want
  * them to be reactive or run in production build see we use isDev const and
