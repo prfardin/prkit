@@ -137,11 +137,4 @@ export type IconStyles =
 
 export const defaultIconStyle: IconStyles = 'huge-bulk'
 
-export const componentIcons = [
-  'default-accordion-default',
-  'default-accordion-plus',
-  'default-accordion-chevron',
-  'default-accordion-circle',
-]
-
 export const dynamicIcons = []

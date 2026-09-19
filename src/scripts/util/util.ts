@@ -55,6 +55,7 @@ import UIkit from 'uikit'
 import type { RefElement } from '@u/types.ts'
 import type { AccordionIconType, AccordionPropsType, IconPropsType } from '@u/props'
 
+
 /**
  * Miscellaneous functions and configs
  * ======================================================================== */
@@ -74,16 +75,27 @@ export function omitUndefined<T extends object>(object: T) {
 }
 
 
+// ========================================================================
 // UIkit JavaScript Components and related methods
 // ========================================================================
-
 
 /** Accordion
  * ======================================================================== */
 
+/** Javascript Component */
+
 export function setAccordion(el: RefElement, options: AccordionPropsType, active?: number) {
   return UIkit.accordion(el!, { ...omitUndefined(options), active })
 }
+
+
+/** Methods */
+
+export function accordionToggle(el: RefElement, index: number, animate?: boolean) {
+  return UIkit.accordion(el!).toggle(index, animate)
+}
+
+/** Miscellaneous */
 
 export const accordionIconMap = {
   default: 'component-default-accordion-default',
@@ -101,15 +113,10 @@ export function getAccordionIconName(icon: AccordionIconType) {
 }
 
 
-// methods
-
-export function accordionToggle(el: RefElement, index: number, animate?: boolean) {
-  return UIkit.accordion(el!).toggle(index, animate)
-}
-
-
 /** Icon
  * ======================================================================== */
+
+/** Javascript Component */
 
 export function setIcon(el: RefElement, options: IconPropsType) {
   return UIkit.icon(el!, { ...omitUndefined(options) })
