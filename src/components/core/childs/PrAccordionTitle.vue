@@ -6,7 +6,6 @@ import { getAccordionIconName } from '@u/util.ts'
 const props = withDefaults(defineProps<AccordionTitlePropsType>(), accordionTitleDefaults)
 
 const { iconName } = useComponentIcon(props, getAccordionIconName)
-
 </script>
 
 <template>

@@ -29,9 +29,7 @@ import { type MaybeRef, computed, watch } from 'vue'
 
 export type StringKeyOf<T> = Extract<keyof T, string>
 
-type DevPropsWatchKey<T> =
-  | StringKeyOf<T>
-  | 'modelValue'
+type DevPropsWatchKey<T> = StringKeyOf<T> | 'modelValue'
 
 export type DevPropsWatchOptions<T extends object> =
   | { only: readonly StringKeyOf<T>[]; exclude?: never }

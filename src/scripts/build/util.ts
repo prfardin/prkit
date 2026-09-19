@@ -63,10 +63,7 @@ export async function findIcons(findDir: string, defaultIcons: string): Promise<
 
   const prefixes = ['icon-', 'component-default-']
 
-  const pattern = new RegExp(
-    `(?:${prefixes.join('|')})[a-zA-Z0-9_-]+`,
-    'g',
-  )
+  const pattern = new RegExp(`(?:${prefixes.join('|')})[a-zA-Z0-9_-]+`, 'g')
 
   for (const file of files) {
     const content = fs.readFileSync(file, 'utf-8')

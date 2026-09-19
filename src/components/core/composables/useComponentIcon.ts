@@ -3,7 +3,10 @@ import type { ComponentIconProps, IconNameResolver, RefElement } from '@u/types.
 import { devComputed, devPropsWatch, isDev } from '@u/env.ts'
 import { setIcon } from '@u/util.ts'
 
-export function useComponentIcon<T extends string>(props: ComponentIconProps<T>, resolveIconName?: IconNameResolver<T> ) {
+export function useComponentIcon<T extends string>(
+  props: ComponentIconProps<T>,
+  resolveIconName?: IconNameResolver<T>,
+) {
   const icon = useTemplateRef<RefElement>('icon')
 
   const iconName = devComputed(() =>
@@ -25,9 +28,13 @@ export function useComponentIcon<T extends string>(props: ComponentIconProps<T>,
     updateIcon()
 
     if (isDev) {
-      devPropsWatch(props, () => {
-        updateIcon()
-      }, { only: ['icon', 'iconRatio'] })
+      devPropsWatch(
+        props,
+        () => {
+          updateIcon()
+        },
+        { only: ['icon', 'iconRatio'] },
+      )
     }
   })
 

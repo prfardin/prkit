@@ -53,11 +53,7 @@
 
 import UIkit from 'uikit'
 import type { RefElement } from '@u/types.ts'
-import type {
-  AccordionIconType,
-  AccordionPropsType,
-  IconPropsType
-} from '@u/props'
+import type { AccordionIconType, AccordionPropsType, IconPropsType } from '@u/props'
 
 /**
  * Miscellaneous functions and configs
@@ -93,7 +89,7 @@ export const accordionIconMap = {
   default: 'component-default-accordion-default',
   plus: 'component-default-accordion-plus',
   chevron: 'component-default-accordion-chevron',
-  circle: 'component-default-accordion-circle'
+  circle: 'component-default-accordion-circle',
 } as const
 
 export function getAccordionIconName(icon: AccordionIconType) {
@@ -101,9 +97,7 @@ export function getAccordionIconName(icon: AccordionIconType) {
     return false
   }
 
-  return icon in accordionIconMap
-    ? accordionIconMap[icon as keyof typeof accordionIconMap]
-    : icon
+  return icon in accordionIconMap ? accordionIconMap[icon as keyof typeof accordionIconMap] : icon
 }
 
 

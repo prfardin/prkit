@@ -36,15 +36,9 @@
  *
  */
 
-import type {
-  RefElementCallback,
-  UIkitAccordionOptions,
-  UIkitIconOptions
-} from '@u/types.ts'
+import type { RefElementCallback, UIkitAccordionOptions, UIkitIconOptions } from '@u/types.ts'
 
-import type {
-  AccordionClassType
-} from './classes'
+import type { AccordionClassType } from './classes'
 
 import type { accordionIconMap } from '@u/util.ts'
 
@@ -66,10 +60,7 @@ export interface AccordionItemType {
 }
 
 /** Icon Type of item - each has its own animation when open/close */
-export type AccordionIconType =
-  | keyof typeof accordionIconMap
-  | 'none'
-  | (string & {})
+export type AccordionIconType = keyof typeof accordionIconMap | 'none' | (string & {})
 
 export interface AccordionItemPropsType {
   /** Render tag of elements */
@@ -108,6 +99,7 @@ export const accordionDefaults = {
   icon: 'default',
   iconRatio: 0.7,
 } satisfies Partial<AccordionPropsType>
+
 
 /**
  * Icon Prop Types

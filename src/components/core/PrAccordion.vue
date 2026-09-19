@@ -40,9 +40,13 @@ onMounted(() => {
   setAccordion(el.value, props, getActive())
 
   if (isDev) {
-    devPropsWatch(props, () => {
-      setAccordion(el.value, props, getActive())
-    }, { exclude: ['modelValue', 'refElement'] })
+    devPropsWatch(
+      props,
+      () => {
+        setAccordion(el.value, props, getActive())
+      },
+      { exclude: ['modelValue', 'refElement'] },
+    )
   }
 })
 
