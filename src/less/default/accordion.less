@@ -25,6 +25,9 @@
 @accordion-default-icon-color:                  @accordion-base-icon-color;
 @accordion-icon-circle-active-color:            @global-primary-background;
 
+@accordion-disabled-title-color:                @global-muted-color;
+@accordion-disabled-icon-color:                 @global-muted-color;
+
 @accordion-base-title-gap:                      var(--accordion-base-title-gap);
 @accordion-base-title-font-size:                @global-medium-font-size;
 @accordion-base-title-line-height:              var(--accordion-base-line-height);
@@ -133,6 +136,22 @@
 
   .pr-accordion-line .uk-accordion-icon {
     color: @accordion-line-icon-color
+  }
+
+  /*
+   * Disabled
+   */
+
+  .pr-accordion-item-disabled .uk-accordion-title {
+    pointer-events: none
+  }
+
+  .uk-accordion .pr-accordion-item-disabled .uk-accordion-title {
+    color: @accordion-disabled-title-color
+  }
+
+  .uk-accordion .pr-accordion-item-disabled .uk-accordion-icon {
+    color: @accordion-disabled-icon-color
   }
 
   // Style: Hover
@@ -251,13 +270,22 @@
 // ========================================================================
 
 @inverse-accordion-default-icon-color:                    @inverse-global-color;
-
+@inverse-accordion-base-title-color:                      @inverse-global-emphasis-color;
+@inverse-accordion-disabled-title-color:                  @inverse-global-muted-color;
+@inverse-accordion-disabled-icon-color:                   @inverse-global-muted-color;
 @inverse-accordion-hover-title-color:                     @inverse-global-emphasis-color;
 @inverse-accordion-hover-title-background-color:          var(--inverse-accordion-hover-title-background-color);
 @inverse-accordion-hover-title-hover-background-color:    var(--inverse-accordion-hover-title-hover-background-color);
+@inverse-accordion-line-icon-color:                       @inverse-global-emphasis-color;
+@inverse-accordion-hover-icon-color:                      @inverse-global-emphasis-color;
 @inverse-accordion-line-border-color:                     @inverse-global-border;
 
 .hook-inverse() {
+
+  .pr-accordion-hover .uk-accordion-title,
+  .pr-accordion-line .uk-accordion-title {
+    color: @inverse-accordion-base-title-color;
+  }
 
   .pr-accordion-hover .uk-accordion-title {
     color: @inverse-accordion-hover-title-color;
@@ -268,8 +296,24 @@
     background-color: @inverse-accordion-hover-title-hover-background-color;
   }
 
+  .pr-accordion-hover .uk-accordion-icon {
+    color: @inverse-accordion-hover-icon-color
+  }
+
   .pr-accordion-line > *:not(:last-child) {
     border-bottom-color: @inverse-accordion-line-border-color;
+  }
+
+  .pr-accordion-line .uk-accordion-icon {
+    color: @inverse-accordion-line-icon-color
+  }
+
+  .uk-accordion .pr-accordion-item-disabled .uk-accordion-title {
+    color: @inverse-accordion-disabled-title-color
+  }
+
+  .uk-accordion .pr-accordion-item-disabled .uk-accordion-icon {
+    color: @inverse-accordion-disabled-icon-color
   }
 
 }

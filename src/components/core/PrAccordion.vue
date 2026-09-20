@@ -63,17 +63,19 @@ onMounted(() => {
 <template>
   <component :class="accordionClass" :is="tag" :ref="setElement">
     <template v-if="list">
-      <component :is="itemTag" v-for="(item, index) in list" :key="index">
-        <a
-          class="uk-accordion-title"
-          href=""
-          @click="selected = selected === item.value ? null : item.value"
-        >
-          {{ item.title }}
-          <span v-if="iconName" class="pr-accordion-icon uk-accordion-icon" ref="icon" />
-        </a>
-        <div class="uk-accordion-content">{{ item.content }}</div>
-      </component>
+      <template v-for="item in list">
+        <component :is="itemTag" :class="{'pr-accordion-item-disabled': item.disabled }">
+          <a
+            class="uk-accordion-title"
+            href=""
+            @click="!item.disabled && (selected = selected === item.value ? null : item.value)"
+          >
+            {{ item.title }}
+            <span v-if="iconName" class="pr-accordion-icon uk-accordion-icon" ref="icon" />
+          </a>
+          <div class="uk-accordion-content">{{ item.content }}</div>
+        </component>
+      </template>
     </template>
     <slot v-else />
   </component>
