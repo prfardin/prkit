@@ -1,5 +1,7 @@
 /**
- * Props:
+ * Props
+ * ========================================================================
+ *
  * Vue support exported type-based declaration for props refer to
  * https://vuejs.org/guide/typescript/composition-api#typing-component-props
  * so We use type-based declaration define for props, and it also keeps our

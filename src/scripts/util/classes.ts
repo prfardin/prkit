@@ -1,5 +1,6 @@
 /**
  * The CSS Class Generator for main and child components
+ * ========================================================================
  *
  * We use this file for classes of the main and child components
  * we return main CSS class from xClassObject function to

@@ -1,9 +1,12 @@
 /**
  * Configs and Icon Configs
+ * ========================================================================
+ *
  * the icon library will move into another library in future
  * and we will install with npm and use it.
  *
- * TODO: The way that we want to separate the icon (PrKit-Icons) library
+ * TODO:
+ * The way that we want to separate the icon (PrKit-Icons) library
  * and component library (PrKit) The future plan has some question:
  * 1. default icon style for components must be predefined in component
  * library, so how do this.

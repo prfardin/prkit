@@ -1,10 +1,13 @@
 /**
- * Emits:
+ * Emits
+ * ========================================================================
+ *
  * We are helping from UIKit to create components in vue
  * so for main component that'ts every UI Framework must have
  * we're get help from UIKit to defined them.
  *
- * TODO: We must find a way to use emits name once, but we are duplicating them
+ * TODO:
+ * We must find a way to use emits name once, but we are duplicating them
  * like: accordionEmits = ['beforeshow', 'show', ...]
  * interface AccordionEmitsType {e: 'beforeshow', e: 'show', ....}
  *

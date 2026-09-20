@@ -108,7 +108,7 @@ function toggle() {
           v-model="selected"
           :ref-element="setRefElement"
           :list="accordionList"
-          @beforehide="(event) => console.log(event)"
+          @beforehide="(event) => console.log(event.type)"
           icon="default"
           :active="0"
         />

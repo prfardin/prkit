@@ -1,5 +1,7 @@
 /**
- * Utilities:
+ * Utilities
+ * ========================================================================
+ *
  * We define all UIKit JavaScript Component and related methods
  * and other functions here.
  *

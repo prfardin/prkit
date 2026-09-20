@@ -1,5 +1,6 @@
 /**
  * UIKit JavaScript Components Types
+ * ========================================================================
  *
  * We can't use the main UIKit types: @types/uikit as extends for
  * xPropsType in props.ts, and we don't know why.

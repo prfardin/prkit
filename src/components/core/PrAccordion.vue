@@ -9,6 +9,13 @@ import { useComponentEmit } from '@cc/useComponentEmit.ts'
 import { useComponentIcon } from '@cc/useComponentIcon.ts'
 import { accordionClasses } from '@u/classes'
 
+/**
+ * PrAccordion
+ * ========================================================================
+ * 
+ *
+ * */
+
 const props = withDefaults(defineProps<AccordionPropsType>(), accordionDefaults)
 
 const emit = defineEmits<AccordionEmitsType>()
@@ -32,9 +39,11 @@ function getActive() {
     : props.active
 }
 
-const handler = (event: Event) => {
+const emitHandler = (event: Event) => {
   emit(event.type as any, event, selected.value)
 }
+
+useComponentEmit(el, accordionEmits, emitHandler)
 
 onMounted(() => {
   setAccordion(el.value, props, getActive())
@@ -49,8 +58,6 @@ onMounted(() => {
     )
   }
 })
-
-useComponentEmit(el, handler, accordionEmits)
 </script>
 
 <template>
