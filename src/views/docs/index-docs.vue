@@ -9,10 +9,7 @@ const darkMode = useDarkModeStore()
   <sidebar />
 
   <div class="uk-section" :class="darkMode.sectionMode()">
-
     <router-view />
-
-    <!-- End -->
     <div class="uk-height-viewport"></div>
   </div>
 </template>

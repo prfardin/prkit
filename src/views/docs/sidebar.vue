@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
 import { useRoute } from 'vue-router'
 import { useDarkModeStore } from '@vd/stores/darkMode.ts'
+import { docLinks } from '@vd/doc-configs.ts'
+
 const route = useRoute()
-const DocLinks = ['Accordion', 'Icon']
 
 const darkMode = useDarkModeStore()
 </script>
@@ -28,7 +28,7 @@ const darkMode = useDarkModeStore()
         <li>Components</li>
         <li class="uk-nav-divider"></li>
         <RouterLink
-          v-for="(link, index) in DocLinks"
+          v-for="(link, index) in docLinks"
           :to="`/docs/${link.toLowerCase()}`"
           v-bind="$props"
           v-slot="{ navigate }"

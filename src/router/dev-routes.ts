@@ -1,6 +1,7 @@
 // These routes are defined only in development mode
 // because the components and views in these routes should not be rendered in production mode.
 import type { RouteRecordRaw } from 'vue-router'
+import { docLinks } from '@vd/doc-configs.ts'
 
 export default function devRoutes(): RouteRecordRaw[] {
   return [
@@ -8,10 +9,9 @@ export default function devRoutes(): RouteRecordRaw[] {
       name: 'Docs',
       path: '/docs',
       component: () => import('@vd/index-docs.vue'),
-      children: [
-        { name: 'Accordion', path: '/docs/accordion', component: () => import('@vd/compoents/accordion-doc.vue') },
-        { name: 'Icon', path: '/docs/icon', component: () => import('@vd/compoents/icon-doc.vue') }
-      ]
+      children: docLinks.map(name => {
+        return { name: name, path: `/docs/${name.toLowerCase()}`, component: () => import((`/src/views/docs/compoents/${name.toLowerCase()}-doc.vue`)) }
+      })
     }
   ]
 }
