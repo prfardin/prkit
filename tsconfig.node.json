@@ -12,6 +12,9 @@
     "eslint.config.*"
   ],
   "compilerOptions": {
+    // allow adding ts files with extension for vite config loader
+    "allowImportingTsExtensions": true,
+
     // Most tools use transpilation instead of Node.js's native type-stripping.
     // Bundler mode provides a smoother developer experience.
     "module": "preserve",

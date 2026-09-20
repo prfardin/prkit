@@ -1,4 +1,4 @@
-import { compile, findIcons, read } from './util'
+import { compile, findIcons, read } from './util.ts'
 import { type Config, optimize } from 'svgo'
 import fs from 'fs-extra'
 

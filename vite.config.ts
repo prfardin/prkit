@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import viteConfig from './src/scripts/build/vite-config'
+import viteConfig from './src/scripts/build/vite-config.ts'
 
 // TODO: must change with commented version
 // process.env.npm_command its not a real vite command

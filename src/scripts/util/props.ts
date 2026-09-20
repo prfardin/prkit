@@ -67,6 +67,7 @@ export interface AccordionItemType {
   title: string
   /** Hidden part of item that will show when item opened */
   content: string
+  disabled?: boolean
 }
 
 export interface AccordionItemPropsType {

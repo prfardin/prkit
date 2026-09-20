@@ -1,13 +1,13 @@
 import type { UserConfig, PluginOption, AliasOptions, Plugin } from 'vite'
 import rtlcss from 'rtlcss'
-import { rtlcssConfig, rtlPlugin } from './rtlcss'
+import { rtlcssConfig, rtlPlugin } from './rtlcss.ts'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
-import compileIcons from '../build/icons'
-import { dynamicIcon } from './dynamic-icons-plugin'
-import { defaultIconStyle } from '../util/config'
+import compileIcons from '../build/icons.ts'
+import { dynamicIcon } from './dynamic-icons-plugin.ts'
+import { defaultIconStyle } from '../util/config.ts'
 
 interface ViteConfig {
   command: 'serve' | 'build'

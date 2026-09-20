@@ -19,6 +19,7 @@ const accordionList = [
   },
   {
     value: 12,
+    disabled: true,
     title: 'Accordion Item 2',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -79,7 +80,21 @@ function toggle() {
           </PrAccordionContent>
         </PrAccordionItem>
         <PrAccordionItem>
-          <PrAccordionTitle>Item 2</PrAccordionTitle>
+          <PrAccordionTitle icon="chevron">Item 2</PrAccordionTitle>
+          <PrAccordionContent>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor reprehenderit.
+          </PrAccordionContent>
+        </PrAccordionItem>
+        <PrAccordionItem>
+          <PrAccordionTitle icon="plus">Item 2</PrAccordionTitle>
+          <PrAccordionContent>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor reprehenderit.
+          </PrAccordionContent>
+        </PrAccordionItem>
+        <PrAccordionItem>
+          <PrAccordionTitle icon="circle">Item 2</PrAccordionTitle>
           <PrAccordionContent>
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
             ea commodo consequat. Duis aute irure dolor reprehenderit.
