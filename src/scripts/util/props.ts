@@ -43,6 +43,7 @@
  * useage in compoonent:
  * const props = withDefaults(defineProps<xPropsType>(), xDefaults)
  *
+ * ========================================================================
  */
 
 import type { RefElementCallback, UIkitAccordionOptions, UIkitIconOptions } from '@u/types.ts'

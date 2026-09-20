@@ -39,6 +39,8 @@
  * then we will use it in components like:
  * const emit = defineEmits<xEmitsType>()
  * useComponentEmit(el, handler, xEmits)
+ *
+ * ========================================================================
  */
 
 

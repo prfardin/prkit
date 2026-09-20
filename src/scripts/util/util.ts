@@ -63,7 +63,13 @@
  *   UIkit.componentName(el!).methodName(...args)
  * }
  *
+ * ========================================================================
  */
+
+
+/**
+ * Types
+ * ======================================================================== */
 
 import UIkit from 'uikit'
 import type { RefElement } from '@u/types.ts'

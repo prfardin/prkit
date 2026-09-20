@@ -29,7 +29,8 @@
  * const xClass1Map = { value1: 'CSS class', value2: 'CSS class' }
  * const xClass2Map = { ...value1: 'CSS class', value2: 'CSS class' }
  * function xClasses(props) { return [xClass1Map[props.class], xClass2Map[props.class2]] }
- * .
+ *
+ * ========================================================================
  */
 
 

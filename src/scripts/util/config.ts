@@ -78,6 +78,8 @@
  * For dynamic process of importing svg files we can't find icon names becuase of build process
  * so when we use a dynamic icon name we must add the name to dynamicIcons const here.
  * example: dynamic icons that defined like: ${xIcon}-icon
+ *
+ * ========================================================================
  */
 
 export type IconStyles =

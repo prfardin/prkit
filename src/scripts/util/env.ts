@@ -22,6 +22,7 @@
  * in it.
  * ex: devPropsWatch(props, () => { ... }, ['unneededWatchProps1', 'unneededWatchProps2'])
  *
+ * ========================================================================
  */
 
 import { type MaybeRef, computed, watch } from 'vue'
