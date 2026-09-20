@@ -3,5 +3,15 @@
 import type { RouteRecordRaw } from 'vue-router'
 
 export default function devRoutes(): RouteRecordRaw[] {
-  return [{ path: '/docs', component: () => import('@vd/index-docs.vue') }]
+  return [
+    {
+      name: 'Docs',
+      path: '/docs',
+      component: () => import('@vd/index-docs.vue'),
+      children: [
+        { name: 'Accordion', path: '/docs/accordion', component: () => import('@vd/compoents/accordion-doc.vue') },
+        { name: 'Icon', path: '/docs/icon', component: () => import('@vd/compoents/icon-doc.vue') }
+      ]
+    }
+  ]
 }
