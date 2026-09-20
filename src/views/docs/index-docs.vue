@@ -8,10 +8,7 @@ const darkMode = useDarkModeStore()
 <template>
   <sidebar />
 
-  <div
-    class="uk-section"
-    :class="darkMode.light === 'uk-dark' ? 'uk-section-secondary' : 'uk-section-default'"
-  >
+  <div class="uk-section" :class="darkMode.sectionMode()">
 
     <router-view />
 
