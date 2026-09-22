@@ -164,6 +164,6 @@ export type IconStyles =
   | 'uni-regular'
   | 'uni-solid'
 
-export const defaultIconStyle: IconStyles = 'huge-bulk'
+export const defaultIconStyle: IconStyles = 'huge-duotone'
 
 export const dynamicIcons = []

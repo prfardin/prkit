@@ -68,7 +68,7 @@ onMounted(() => {
           <a
             class="uk-accordion-title"
             href=""
-            @click="!item.disabled && (selected = selected === item.value ? null : item.value)"
+            @click="!item.disabled && (selected = selected === item.value && collapsible ? null : item.value)"
           >
             {{ item.title }}
             <span v-if="iconName" class="pr-accordion-icon uk-accordion-icon" ref="icon" />

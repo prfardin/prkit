@@ -1,5 +1,5 @@
 /**
- * Component Emit Composable
+ * Emit Composable
  * ========================================================================
  *
  * For default UIKit emits we define useComponentEmit composable.
@@ -33,6 +33,7 @@
  * to prevent of calling everytime it in the component (before adding it we need to check
  * production build and preformance)
  *
+ * ========================================================================
  */
 
 import type { RefElement } from '@u/types.ts'

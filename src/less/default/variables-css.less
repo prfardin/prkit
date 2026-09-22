@@ -101,12 +101,12 @@
 
   --global-icon-iso-solid-stroke-color:             var(--global-white-color);
 
-  --global-icon-iso-primary-color:                  var(--global-color);
+  --global-icon-iso-primary-color:                  var(--global-icon-primary-color, currentColor);
   --global-icon-iso-secondary-color:                hsl(from var(--global-icon-iso-primary-color) h s calc(l + 10));
   --global-icon-iso-tertiary-color:                 hsl(from var(--global-icon-iso-primary-color) h s calc(l + 20));
   --global-icon-iso-quaternary-color:               hsl(from var(--global-icon-iso-primary-color) h s calc(l + 30));
 
-  --global-icon-iso-duotone-primary-color:          var(--global-color);
+  --global-icon-iso-duotone-primary-color:          var(--global-icon-primary-color, currentColor);
   --global-icon-iso-duotone-secondary-color:        hsl(from var(--global-icon-iso-duotone-primary-color) h s calc(l + 40));
   --global-icon-iso-duotone-tertiary-color:         hsl(from var(--global-icon-iso-duotone-primary-color) h s calc(l + 30));
   --global-icon-iso-duotone-quaternary-color:       hsl(from var(--global-icon-iso-duotone-primary-color) h s calc(l + 20));

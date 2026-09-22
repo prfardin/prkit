@@ -8,7 +8,7 @@ import PrAccordionContent from '@cch/PrAccordionContent.vue'
 import PrAccordionTitle from '@cch/PrAccordionTitle.vue'
 import PrAccordionItem from '@cch/PrAccordionItem.vue'
 
-const selected = ref(13)
+const selected = ref(null)
 
 const accordionList = [
   {
@@ -50,15 +50,12 @@ function toggle() {
     <div>
       <!-- Styles -->
       <h2>Default Style - UIKit {{ selected }}</h2>
-      <a @click="selected++">Plus</a>
-      <a class="uk-margin-left" @click="toggle()">Toggle</a>
+      <a @click="toggle()">Toggle</a>
       <PrAccordion
         v-model="selected"
         :ref-element="setRefElement"
         :list="accordionList"
         @beforehide="(event) => console.log(event.type)"
-        icon="default"
-        :active="0"
       />
       <h2>Line Style</h2>
       <PrAccordion :list="accordionList" variant="line" />

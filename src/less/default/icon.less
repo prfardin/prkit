@@ -99,52 +99,56 @@
   }
 
   // duotone
-  .pr-icon-duotone-primary:not(.uk-preserve) {
+  .pr-icon-duotone-primary {
     fill: @icon-duotone-primary;
   }
 
-  .pr-icon-duotone-primary-stroke:not(.uk-preserve) {
+  .pr-icon-duotone-primary-stroke {
     stroke: @icon-duotone-primary;
   }
 
-  .pr-icon-duotone-secondary:not(.uk-preserve) {
+  .pr-icon-duotone-primary-stroke[stroke-width] {
+    stroke-width: 1;
+  }
+
+  .pr-icon-duotone-secondary {
     fill: @icon-duotone-secondary;
   }
 
-  .pr-icon-duotone-secondary-stroke:not(.uk-preserve) {
+  .pr-icon-duotone-secondary-stroke {
     stroke: @icon-duotone-secondary;
   }
 
-  .pr-icon-duotone-secondary:not(.uk-preserve, .pr-preserve-opacity),
-  .pr-icon-duotone-secondary-stroke:not(.uk-preserve, .pr-preserve-opacity) {
+  .pr-icon-duotone-secondary:not(.pr-preserve-opacity),
+  .pr-icon-duotone-secondary-stroke:not(.pr-preserve-opacity) {
     opacity: @icon-duotone-secondary-opacity;
   }
 
   // twotone
-  .pr-icon-twotone-primary:not(.uk-preserve) {
+  .pr-icon-twotone-primary {
     fill: @icon-twotone-primary;
   }
 
-  .pr-icon-twotone-primary-stroke:not(.uk-preserve) {
+  .pr-icon-twotone-primary-stroke {
     stroke: @icon-twotone-primary;
   }
 
-  .pr-icon-twotone-secondary:not(.uk-preserve) {
+  .pr-icon-twotone-secondary {
     fill: @icon-twotone-secondary;
     opacity: @icon-twotone-secondary-opacity;
   }
 
-  .pr-icon-twotone-secondary-stroke:not(.uk-preserve) {
+  .pr-icon-twotone-secondary-stroke {
     stroke: @icon-twotone-secondary;
     opacity: @icon-twotone-secondary-opacity;
   }
 
   // bulk
-  .pr-icon-bulk-primary:not(.uk-preserve) {
+  .pr-icon-bulk-primary {
     fill: @icon-bulk-primary;
   }
 
-  .pr-icon-bulk-secondary:not(.uk-preserve) {
+  .pr-icon-bulk-secondary {
     fill: @icon-bulk-secondary;
     opacity: @icon-bulk-secondary-opacity;
   }
@@ -219,7 +223,7 @@
     stroke: @icon-iso-duotone-quaternary;
   }
 
-  // may change
+  // TODO: may change
   .pr-icon-favourite [class*='pr-icon-'] {
     fill: @icon-favourite-color;
   }
