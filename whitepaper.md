@@ -10,7 +10,7 @@ This WHITE PAPER is still a work in progress.
 # Vision
 refer to this page: https://vuejs.org/guide/best-practices/performance.html we are trying our best to get best optimize for PrKit components library and PrKit Starter Kit.
 
-We will prevent to use components in components for exmaple a main compnent that's contains child component like: accordion has accordion-title and accordion-content we will create the child components but we will not use child component in structre of main component, we just create them to get used in component slot, and we notice that instead of using compnents in a v-for use it with pure CSS and Methods that's avaible in project refer to https://vuejs.org/guide/best-practices/performance.html#avoid-unnecessary-component-abstractions. we will make document guide for 3 mode of using component: 1. component itself that's accept content and option with props, 2. compnent with child compnent that is useable for main component for costom slot etc. 3. component just with avaiable methods and CSS stlye. we are trying to get the best performance for or compnents.
+We will prevent to use components in components for exmaple a main compnent that's contains child component like: accordion has accordion-title and accordion-content we will create the child components, but we will not use child component in structre of main component, we just create them to get used in component slot, and we notice that instead of using compnents in a v-for use it with pure CSS and Methods that's avaible in project refer to https://vuejs.org/guide/best-practices/performance.html#avoid-unnecessary-component-abstractions. we will make document guide for 3 mode of using component: 1. component itself that's accept content and option with props, 2. compnent with child compnent that is useable for main component for costom slot etc. 3. component just with avaiable methods and CSS stlye. we are trying to get the best performance for or compnents.
 
 ## what we are doing now?
 
@@ -25,7 +25,7 @@ we are making all project (CSS framework and vue components and starter kit) in 
 
 ### icons
 ### icon libraries and version: 
-- [Font Awesome (fa) - 6.7.2](https://fontawesome.com) should update to last version
+- [Font Awesome (fa) - 7.3.1](https://fontawesome.com) should update to last version
 - [Hugeicons (huge) - 4375](https://hugeicons.com) should update to last version
 - [Iconoir (iconoir) - 7.12.1](https://iconoir.com)
 - [Ionicons (ion) - 8.0.13](https://ionic.io/ionicons)

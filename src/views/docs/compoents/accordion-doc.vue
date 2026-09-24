@@ -56,7 +56,7 @@ function toggle() {
         :ref-element="setRefElement"
         :list="accordionList"
         @beforehide="(event) => console.log(event.type)"
-        icon="chevron"
+        icon="icon-iconoir-regular-accessibility"
       />
       <h2>Line Style</h2>
       <PrAccordion :list="accordionList" variant="line" />

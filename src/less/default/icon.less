@@ -62,12 +62,6 @@
 @icon-favourite-color:                            @global-icon-favourite-color;
 @icon-favourite-color-tertiary:                   var(--icon-favourite-color-tertiary);
 
-@icon-iconoir-fill:                               var(--icon-iconoir-fill);
-@icon-iconoir-stroke:                             var(--icon-iconoir-stroke);
-@icon-iconoir-stroke-width:                       var(--icon-iconoir-stroke-width);
-@icon-iconoir-stroke-linecap:                     var(--icon-iconoir-stroke-linecap);
-@icon-iconoir-stroke-linejoin:                    var(--icon-iconoir-stroke-linejoin);
-
 @icon-lucide-fill:                                var(--icon-lucide-fill);
 @icon-lucide-stroke:                              var(--icon-lucide-stroke);
 @icon-lucide-stroke-width:                        var(--icon-lucide-stroke-width);
@@ -219,7 +213,8 @@
     stroke: @icon-iso-duotone-quaternary;
   }
 
-  // TODO: may change
+  // TODO:
+  //  may change
   .pr-icon-favourite [class*='pr-icon-'] {
     fill: @icon-favourite-color;
   }
@@ -227,16 +222,6 @@
   // Golden Style
   .pr-icon-favourite .pr-icon-tertiary {
     fill: @icon-favourite-color-tertiary;
-  }
-
-  // Iconoir Icon Styles: we can change the stroke-width of icons with css for this set of icons
-  // ========================================================================
-  .pr-icon-iconoir {
-    fill: @icon-iconoir-fill;
-    stroke: @icon-iconoir-stroke;
-    stroke-width: @icon-iconoir-stroke-width;
-    stroke-linecap: @icon-iconoir-stroke-linecap;
-    stroke-linejoin: @icon-iconoir-stroke-linejoin;
   }
 
   // Lucide Icon Styles: we can change the stroke-width of icons with css for this set of icons

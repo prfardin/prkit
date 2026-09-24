@@ -171,6 +171,6 @@ export type IconStyles =
   | 'uni-regular'
   | 'uni-solid'
 
-export const defaultIconStyle: IconStyles = 'huge-twotone'
+export const defaultIconStyle: IconStyles = 'fa-thin'
 
 export const dynamicIcons = []
