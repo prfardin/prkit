@@ -105,6 +105,7 @@ export type IconStyles =
   | 'fa-sharpth'
   | 'fa-solid'
   | 'fa-thin'
+  | 'fa-brand'
   | 'huge-bulk'
   | 'huge-duotone'
   | 'huge-regular'
@@ -171,6 +172,6 @@ export type IconStyles =
   | 'uni-regular'
   | 'uni-solid'
 
-export const defaultIconStyle: IconStyles = 'fa-thin'
+export const defaultIconStyle: IconStyles = 'iconoir-regular'
 
 export const dynamicIcons = []

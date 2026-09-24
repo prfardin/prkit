@@ -18,6 +18,8 @@ import PrIcon from '@c/PrIcon.vue'
       <pr-icon icon="icon-iconoir-solid-dots-grid-3x3" ratio="5" strokeRatio="2" />
       <pr-icon icon="icon-iconoir-regular-accessibility" ratio="10" />
       <pr-icon icon="icon-isocons-duotonetop-123" ratio="5" :stroke-ratio="2" />
+      <pr-icon icon="icon-fa-brand-adn" ratio="5" :stroke-ratio="2" />
+      <pr-icon icon="icon-ion-outline-arrow-up" ratio="5" :stroke-ratio="2" />
     </div>
   </div>
 </template>
