@@ -51,9 +51,14 @@
  * Main components like accordion wich contains icons intself accepts props icon
  * so we can use default defined icon type for each component (located in icon-style/icons/components)
  * or we can use name of icon for changing icon style of component.
- * components that include icons also accept icon-ratio props: 24px * 24px is default size
- * so iconRatio * 24 will be the calculated size.
- * example: <PrAccordion icon="none | chevron | icon-fa-regular-chevron-down" icon-ratio="1.5" />
+ * components that include icons also accept icon-ratio and stroke-ratio props. default size
+ * of icons is: 24px * 24px and icon-ratio will change the calculated size of icon to: iconRatio * 24.
+ * the default size of stroke-width for icon library defined in svg file attribute (if exists). stroke-ratio
+ * will change calculated width of icon to: strokeRatio * stroke-width-attributte.
+ * example: <PrAccordion icon="none | chevron | icon-fa-regular-chevron-down" :icon-ratio="1.5" :stroke-ratio="2" />
+ *
+ * If we want to change all stroke-width of icons we can also define stroke-width value with CSS in icon.less
+ * to ovveride the stroke-width svg attribute
  *
  * For compnents wich includes icons like accordion we define composable component (useComponentIcon)
  * wich handle process of defualt icons of compnent and custom icons. we are not using PrIcon
@@ -83,6 +88,7 @@
  */
 
 export type IconStyles =
+  | 'uikit-'
   | 'fa-duotone'
   | 'fa-duotoneli'
   | 'fa-duotoneso'
@@ -105,6 +111,7 @@ export type IconStyles =
   | 'huge-rounded'
   | 'huge-sharp'
   | 'huge-solid'
+  | 'huge-solidro'
   | 'huge-solidsh'
   | 'huge-twotone'
   | 'iconoir-regular'
@@ -164,6 +171,6 @@ export type IconStyles =
   | 'uni-regular'
   | 'uni-solid'
 
-export const defaultIconStyle: IconStyles = 'huge-duotone'
+export const defaultIconStyle: IconStyles = 'huge-twotone'
 
 export const dynamicIcons = []

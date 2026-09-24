@@ -107,10 +107,6 @@
     stroke: @icon-duotone-primary;
   }
 
-  .pr-icon-duotone-primary-stroke[stroke-width] {
-    stroke-width: 1;
-  }
-
   .pr-icon-duotone-secondary {
     fill: @icon-duotone-secondary;
   }
@@ -119,8 +115,8 @@
     stroke: @icon-duotone-secondary;
   }
 
-  .pr-icon-duotone-secondary:not(.pr-preserve-opacity),
-  .pr-icon-duotone-secondary-stroke:not(.pr-preserve-opacity) {
+  .pr-icon-duotone-secondary:not([opacity]),
+  .pr-icon-duotone-secondary-stroke:not([opacity]) {
     opacity: @icon-duotone-secondary-opacity;
   }
 

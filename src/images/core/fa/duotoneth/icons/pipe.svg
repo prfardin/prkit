@@ -1,3 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 64 512">
-    <path class="pr-icon-duotone-primary" d="M32 0c4.4 0 8 3.6 8 8l0 496c0 4.4-3.6 8-8 8s-8-3.6-8-8L24 8c0-4.4 3.6-8 8-8z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 640 640">
+    <path class="pr-icon-duotone-primary" d="M320 64C324.4 64 328 67.6 328 72L328 568C328 572.4 324.4 576 320 576C315.6 576 312 572.4 312 568L312 72C312 67.6 315.6 64 320 64z"/>
 </svg>

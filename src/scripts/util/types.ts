@@ -68,6 +68,7 @@ export type IconNameResolver<T extends string = string> = (icon: T) => string | 
 export interface ComponentIconProps<T extends string = string> {
   icon?: T
   iconRatio?: number
+  strokeRatio?: number
 }
 
 
@@ -297,6 +298,8 @@ interface UIkitIconOptions {
   icon?: string
   /** The icon size ratio. */
   ratio?: number | string
+  /** The icon stroke size ratio. */
+  strokeRatio?: number | string
 }
 
 interface UIkitImageOptions {

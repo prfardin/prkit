@@ -3,5 +3,5 @@
     <path class="pr-icon-duotone-secondary-stroke" d="M20 20V14M20 14L22 16M20 14L18 16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M15.5 14V20M15.5 20L17.5 18M15.5 20L13.5 18" class="pr-icon-duotone-primary-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     <path class="pr-icon-duotone-secondary-stroke" d="M10 16H6" stroke-width="1.5" stroke-linecap="round"/>
-    <path class="pr-icon-duotone-secondary-stroke pr-preserve-opacity" opacity="0.3" d="M2 10L22 10" stroke-width="1.5" stroke-linecap="round"/>
+    <path class="pr-icon-duotone-secondary-stroke" opacity="0.3" d="M2 10L22 10" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

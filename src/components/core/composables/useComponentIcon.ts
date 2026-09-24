@@ -25,13 +25,15 @@
  *   }
  *   return icon in accordionIconMap ? accordionIconMap[icon as keyof typeof accordionIconMap] : icon
  * }
- * then in component props: interface AccordionPropsType { icon?: AccordionIconType, iconRatio?: number }
+ * then in component props:
+ * interface AccordionPropsType { icon?: AccordionIconType, iconRatio?: number, strokeRatio?: number }
  * at last we need to call useComponentIcon in compnoent:
  * like: const { icon, iconName } = useComponentIcon(props, getAccordionIconName)
  * now we can call icon in props and use specific types:
- * <PrAccordion icon="none | plus | icon-fa-regular-chevron-down" icon-ratio="1.5" />
+ * <PrAccordion icon="none | plus | icon-fa-regular-chevron-down" :icon-ratio="1.5" :stroke-ratio="2" />
  *
  * size of rendered icon is 24 * 24 so icon-ratio value will be Multiplied to it.
+ * stroke-width of rendered icon is defined stroke width in svg files so stroke-ratio value will be Multiplied to it.
  *
  * Structure:
  * Pr-x: <span ref="icon" />
@@ -41,9 +43,9 @@
  *  // ...conditions
  *   return icon in xIconMap ? xIconMap[icon as keyof typeof xIconMap] : icon
  * }
- * props.ts: interface xPropsType { icon?: xIconType, iconRatio?: number }
+ * props.ts: interface xPropsType { icon?: xIconType, iconRatio?: number, strokeRatio?: number }
  * const { icon, iconName } = useComponentIcon(props, getXIconName)
- * <Pr-x icon="icon1|..." icon-ratio="number(* 24)" />
+ * <Pr-x icon="icon1|..." :icon-ratio="number(* 24)" :stroke-ratio="number(* strokeWidthAttr)" />
  *
  * ========================================================================
  */
@@ -70,6 +72,7 @@ export function useComponentIcon<T extends string>(
       setIcon(icon.value, {
         icon: name,
         ratio: props.iconRatio,
+        strokeRatio: props.strokeRatio
       })
     }
   }
@@ -83,7 +86,7 @@ export function useComponentIcon<T extends string>(
         () => {
           updateIcon()
         },
-        { only: ['icon', 'iconRatio'] },
+        { only: ['icon', 'iconRatio', 'strokeRatio'] },
       )
     }
   })

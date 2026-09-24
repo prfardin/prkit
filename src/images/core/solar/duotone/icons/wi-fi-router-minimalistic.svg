@@ -1,7 +1,7 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path class="pr-icon-duotone-secondary-stroke pr-preserve-opacity" opacity="0.3" d="M21.5833 7.39702C20.7574 5.40286 18.7924 4 16.4996 4C14.2069 4 12.2419 5.40286 11.416 7.39702" stroke-width="1.5" stroke-linecap="round"/>
-    <path opacity="0.8" d="M19.3806 8.65811C19.0167 7.41107 17.865 6.5 16.5004 6.5C15.1358 6.5 13.984 7.41107 13.6201 8.65811" class="pr-icon-duotone-secondary-stroke pr-preserve-opacity" stroke-width="1.5" stroke-linecap="round"/>
-    <g class="pr-icon-duotone-secondary pr-preserve-opacity" opacity="0.6">
+    <path class="pr-icon-duotone-secondary-stroke" opacity="0.3" d="M21.5833 7.39702C20.7574 5.40286 18.7924 4 16.4996 4C14.2069 4 12.2419 5.40286 11.416 7.39702" stroke-width="1.5" stroke-linecap="round"/>
+    <path opacity="0.8" d="M19.3806 8.65811C19.0167 7.41107 17.865 6.5 16.5004 6.5C15.1358 6.5 13.984 7.41107 13.6201 8.65811" class="pr-icon-duotone-secondary-stroke" stroke-width="1.5" stroke-linecap="round"/>
+    <g class="pr-icon-duotone-secondary" opacity="0.6">
         <path d="M7 16C7 16.5523 6.55228 17 6 17C5.44772 17 5 16.5523 5 16C5 15.4477 5.44772 15 6 15C6.55228 15 7 15.4477 7 16Z"/>
         <path d="M10 16C10 16.5523 9.55228 17 9 17C8.44772 17 8 16.5523 8 16C8 15.4477 8.44772 15 9 15C9.55228 15 10 15.4477 10 16Z"/>
     </g>

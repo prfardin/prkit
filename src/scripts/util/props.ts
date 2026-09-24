@@ -24,7 +24,7 @@
  * const setRefElement = (el: RefElement) => { refElement.value = el }
  *
  * Component wich contains icons in their template always
- * has this props: icon: xIconType, iconRatio: number
+ * has this props: icon: xIconType, iconRatio: number, strokeWidth: number
  *
  * Also, some of component props has default value, so same as props we define them
  * here after defining props and import them when defning component props (the defaultValue
@@ -84,6 +84,8 @@ export interface AccordionTitlePropsType {
   icon?: AccordionIconType
   /** The icon size */
   iconRatio?: number
+  /** The icon stroke size */
+  strokeRatio?: number
 }
 
 export const accordionTitleDefaults = {

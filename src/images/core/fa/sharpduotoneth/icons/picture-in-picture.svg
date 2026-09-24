@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 640 640">
+    <path class="pr-icon-duotone-secondary" d="M80 112L560 112L560 272L272 272C272 357.4 272 442.7 272 528L80 528L80 112z"/>
+    <path class="pr-icon-duotone-primary" d="M576 272L560 272L560 112L80 112L80 528L272 528L272 544L64 544L64 96L576 96L576 272zM576 544L320 544L320 320L576 320L576 544zM336 528L560 528L560 336L336 336L336 528z"/>
+</svg>
