@@ -30,17 +30,18 @@ we are making all project (CSS framework and vue components and starter kit) in 
 - [Iconoir (iconoir) - 7.12.1](https://iconoir.com)
 - [Ionicons (ion) - 8.0.13](https://ionic.io/ionicons)
 - [Isocons (isocons) - 2.1](https://isocons.app)
-- [Lucide (lucide) - 1538](https://lucide.dev)
+- [Lucide (lucide) - 1.48.0](https://lucide.dev)
 - [Magicoon (magi) - 1.3](https://magicoon.com)
 - [Material Design (md) - --](http://google.github.io/material-design-icons)
 - [Mingcute (ming) - 2.97](https://www.mingcute.com)
 - [Phosphoricons (ph) - 2.1.0](https://phosphoricons.com)
-- [Solar Icons (solar) - 1193](https://solar-icons.vercel.app)
+- [Solar Icons (solar) - 2.3.2](https://solar-icons.vercel.app)
 - [Unicons (uni) - without version](https://iconscout.com/unicons)
 
 ### TODO
 - [ ] add mx-icons to project
 - [ ] add icon versions to icon-libraries
+- [ ] add isocons component icons
 
 - [ ] create all vue component from `uikit` `shurikenui` `shadcn`
 - [ ] create document hub for `PrKit` and `Vue`

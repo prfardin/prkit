@@ -297,9 +297,9 @@ interface UIkitIconOptions {
   /** The icon to display. */
   icon?: string
   /** The icon size ratio. */
-  ratio?: number | string
+  ratio?: number
   /** The icon stroke size ratio. */
-  strokeRatio?: number | string
+  strokeRatio?: number
 }
 
 interface UIkitImageOptions {

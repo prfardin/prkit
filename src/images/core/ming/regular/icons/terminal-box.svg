@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
     <g fill="none">
         <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 2H5v14h14zm-3 9a1 1 0 0 1 .117 1.993L16 16h-2a1 1 0 0 1-.117-1.993L14 14zM9.05 8.465l2.829 2.828a1 1 0 0 1 0 1.414L9.05 15.536a1 1 0 0 1-1.414-1.415l2.121-2.12-2.12-2.122A1 1 0 1 1 9.05 8.465"/>
     </g>

@@ -117,8 +117,10 @@ export type IconStyles =
   | 'huge-twotone'
   | 'iconoir-regular'
   | 'iconoir-solid'
+  | 'ion-regular'
   | 'ion-outline'
   | 'ion-sharp'
+  | 'ion-logo'
   | 'isocons-left'
   | 'isocons-right'
   | 'isocons-top'
@@ -162,16 +164,17 @@ export type IconStyles =
   | 'ph-regular'
   | 'ph-solid'
   | 'ph-thin'
+  | 'solar-bold'
+  | 'solar-bolddu'
   | 'solar-broken'
-  | 'solar-duotone'
-  | 'solar-duotoneso'
-  | 'solar-regular'
-  | 'solar-solid'
+  | 'solar-linear'
+  | 'solar-linedu'
+  | 'solar-outline'
   | 'uni-light'
   | 'uni-mono'
   | 'uni-regular'
   | 'uni-solid'
 
-export const defaultIconStyle: IconStyles = 'iconoir-regular'
+export const defaultIconStyle: IconStyles = 'ph-thin' // ming-solid-twotone
 
 export const dynamicIcons = []

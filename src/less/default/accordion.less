@@ -262,6 +262,10 @@
 
   [aria-expanded="true"] .uk-accordion-icon svg > .circle {
     color: @accordion-icon-circle-active-color;
+  }
+
+  [aria-expanded="true"] .uk-accordion-icon svg[stroke] > .circle,
+  [aria-expanded="true"] .uk-accordion-icon svg > .circle[stroke] {
     stroke: @accordion-icon-circle-active-color;
   }
 }

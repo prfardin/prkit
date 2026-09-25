@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
     <g fill="none">
         <path fill="currentColor" d="M12 3c.768 0 1.47.289 2 .764A2.989 2.989 0 0 1 16 3h1a1 1 0 1 1 0 2h-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h1a1 1 0 1 1 0 2h-1c-.768 0-1.47-.289-2-.764A2.989 2.989 0 0 1 12 21h-1a1 1 0 1 1 0-2h1a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-1a1 1 0 1 1 0-2zm0 4v2H5v6h7v2H5a2 2 0 0 1-1.995-1.85L3 15V9a2 2 0 0 1 1.85-1.995L5 7zm7 0a2 2 0 0 1 1.995 1.85L21 9v6a2 2 0 0 1-1.85 1.995L19 17h-3v-2h3V9h-3V7z"/>
     </g>

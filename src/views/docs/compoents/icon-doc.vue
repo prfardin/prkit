@@ -8,18 +8,20 @@ import PrIcon from '@c/PrIcon.vue'
   <div class="uk-container uk-container-xsmall">
     <h1 id="icon" class="uk-text-center">Icon</h1>
     <div class="uk-text-center">
-      <pr-icon icon="icon-fa-duotone-00" ratio="2" />
-      <pr-icon icon="icon-fa-duotone-abacus" ratio="2" />
-      <pr-icon icon="icon-fa-duotone-user" ratio="2" />
-      <pr-icon icon="icon-fa-duotone-phone" ratio="2" />
-      <pr-icon icon="icon-fa-duotone-add" ratio="2" />
-      <pr-icon icon="icon-fa-duotone-user-circle" ratio="2" />
-      <pr-icon icon="icon-iconoir-solid-align-left-box" ratio="2" />
-      <pr-icon icon="icon-iconoir-solid-dots-grid-3x3" ratio="5" strokeRatio="2" />
-      <pr-icon icon="icon-iconoir-regular-accessibility" ratio="10" />
-      <pr-icon icon="icon-isocons-duotonetop-123" ratio="5" :stroke-ratio="2" />
-      <pr-icon icon="icon-fa-brand-adn" ratio="5" :stroke-ratio="2" />
-      <pr-icon icon="icon-ion-outline-arrow-up" ratio="5" :stroke-ratio="2" />
+      <pr-icon icon="icon-solar-bold-add-circle" :ratio="2" />
+      <pr-icon icon="icon-solar-bold-wineglass" :ratio="2" />
+      <pr-icon icon="icon-solar-bold-add-folder" :ratio="2" />
+      <pr-icon icon="icon-solar-bolddu-black-hole" :ratio="2" />
+      <pr-icon icon="icon-solar-bolddu-airbuds-left" :ratio="2" />
+      <pr-icon icon="icon-solar-bold-add-circle" :ratio="2" />
+      <pr-icon icon="icon-solar-bolddu-add-circle" :ratio="2" />
+      <pr-icon icon="icon-solar-broken-add-circle" :ratio="2" :stroke-ratio="1.5" />
+      <pr-icon icon="icon-solar-linear-add-circle" :ratio="2" :stroke-ratio="1.5" />
+      <pr-icon icon="icon-solar-linedu-add-circle" :ratio="2" :stroke-ratio="1.5" />
+      <pr-icon icon="icon-solar-linedu-black-hole" :ratio="2" :stroke-ratio="1.5" />
+      <pr-icon icon="icon-solar-outline-add-circle" :ratio="2" />
+      <pr-icon icon="icon-solar-outline-black-hole" :ratio="2" />
+      <pr-icon icon="icon-isocons-duotonetop-123" :ratio="5" :stroke-ratio="2" />
     </div>
   </div>
 </template>
