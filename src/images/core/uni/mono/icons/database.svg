@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <path class="pr-icon-quaternary" d="M12,10c-3.97559,0-8-1.37402-8-4v6c0,2.62598,4.02441,4,8,4s8-1.37402,8-4V6C20,8.62598,15.97559,10,12,10z"></path>
+    <path class="pr-icon-quaternary" d="M12,10c-3.97559,0-8-1.37402-8-4v6c0,2.62598,4.02441,4,8,4s8-1.37402,8-4V6C20,8.62598,15.97559,10,12,10z"/>
     <polygon class="pr-icon-quaternary" points="20 5.998 20 6 20 5.999"></polygon>
-    <path class="pr-icon-tertiary" d="M12,16c-3.97559,0-8-1.37402-8-4v6c0,2.62598,4.02441,4,8,4s8-1.37402,8-4v-6C20,14.62598,15.97559,16,12,16z"></path>
+    <path class="pr-icon-tertiary" d="M12,16c-3.97559,0-8-1.37402-8-4v6c0,2.62598,4.02441,4,8,4s8-1.37402,8-4v-6C20,14.62598,15.97559,16,12,16z"/>
     <circle cx="8" cy="18.5" r="1" class="pr-icon-primary"></circle>
     <circle cx="8" cy="12.5" r="1" class="pr-icon-primary"></circle>
-    <path class="pr-icon-tertiary" d="M12,10c-3.97559,0-8-1.374-8-4s4.02441-4,8-4s8,1.374,8,4S15.97559,10,12,10z"></path>
+    <path class="pr-icon-tertiary" d="M12,10c-3.97559,0-8-1.374-8-4s4.02441-4,8-4s8,1.374,8,4S15.97559,10,12,10z"/>
 </svg>

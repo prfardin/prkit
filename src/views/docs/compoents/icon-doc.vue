@@ -21,6 +21,7 @@ import PrIcon from '@c/PrIcon.vue'
       <pr-icon icon="icon-solar-linedu-black-hole" :ratio="2" :stroke-ratio="1.5" />
       <pr-icon icon="icon-solar-outline-add-circle" :ratio="2" />
       <pr-icon icon="icon-solar-outline-black-hole" :ratio="2" />
+      <pr-icon icon="icon-uni-mono-circle-layer" :ratio="2" />
       <pr-icon icon="icon-isocons-duotonetop-123" :ratio="5" :stroke-ratio="2" />
     </div>
   </div>

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <path class="pr-icon-tertiary" d="M18,9H6C4.89543,9,4,8.10457,4,7V5c0-1.10457,0.89543-2,2-2h12c1.10457,0,2,0.89543,2,2v2C20,8.10457,19.10457,9,18,9z"></path>
-    <path class="pr-icon-quaternary" d="M18,15H6c-1.10457,0-2-0.89543-2-2v-2c0-1.10457,0.89543-2,2-2h12c1.10457,0,2,0.89543,2,2v2C20,14.10457,19.10457,15,18,15z"></path>
-    <path class="pr-icon-tertiary" d="M18,21H6c-1.10457,0-2-0.89543-2-2v-2c0-1.10457,0.89543-2,2-2h12c1.10457,0,2,0.89543,2,2v2C20,20.10457,19.10457,21,18,21z"></path>
+    <path class="pr-icon-tertiary" d="M18,9H6C4.89543,9,4,8.10457,4,7V5c0-1.10457,0.89543-2,2-2h12c1.10457,0,2,0.89543,2,2v2C20,8.10457,19.10457,9,18,9z"/>
+    <path class="pr-icon-quaternary" d="M18,15H6c-1.10457,0-2-0.89543-2-2v-2c0-1.10457,0.89543-2,2-2h12c1.10457,0,2,0.89543,2,2v2C20,14.10457,19.10457,15,18,15z"/>
+    <path class="pr-icon-tertiary" d="M18,21H6c-1.10457,0-2-0.89543-2-2v-2c0-1.10457,0.89543-2,2-2h12c1.10457,0,2,0.89543,2,2v2C20,20.10457,19.10457,21,18,21z"/>
     <circle cx="8" cy="6" r="1" class="pr-icon-primary"></circle>
     <circle cx="8" cy="12" r="1" class="pr-icon-primary"></circle>
     <circle cx="8" cy="18" r="1" class="pr-icon-primary"></circle>

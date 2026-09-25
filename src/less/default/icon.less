@@ -32,8 +32,11 @@
 
 @icon-primary-color:                              @global-icon-primary-color;
 @icon-secondary-color:                            @global-icon-secondary-color;
+@icon-secondary-color-opacity:                    @global-icon-secondary-color-opacity;
 @icon-tertiary-color:                             @global-icon-tertiary-color;
+@icon-tertiary-color-opacity:                     @global-icon-tertiary-color-opacity;
 @icon-quaternary-color:                           @global-icon-quaternary-color;
+@icon-quaternary-color-opacity:                   @global-icon-quaternary-color-opacity;
 
 @icon-duotone-primary:                            @global-icon-duotone-primary-color;
 @icon-duotone-secondary:                          @global-icon-duotone-secondary-color;
@@ -66,27 +69,31 @@
 // ========================================================================
 
 .hook-icon-misc() {
-  // Monochrome Icon Styles
+  // Monochrome Icon Styles: usable for icons with +2 colors (ex: unicons-monochrome)
   // ========================================================================
 
-  // main colors: monochrome
   .pr-icon-primary {
     fill: @icon-primary-color;
   }
 
   .pr-icon-secondary {
     fill: @icon-secondary-color;
+    opacity: 0.7;
   }
 
   .pr-icon-tertiary {
     fill: @icon-tertiary-color;
+    opacity: 0.5;
   }
 
   .pr-icon-quaternary {
     fill: @icon-quaternary-color;
+    opacity: 0.25;
   }
 
-  // duotone
+  // Duotone Icon Styles: usable for icons with 2 color (almost fillable | ex: hugeicons-duotone)
+  // ========================================================================
+
   .pr-icon-duotone-primary {
     fill: @icon-duotone-primary;
   }
@@ -108,7 +115,8 @@
     opacity: @icon-duotone-secondary-opacity;
   }
 
-  // twotone
+  // Twotone Icon Styles: usable for icons with 2 color (almost stroke | ex: hugeicons-twotone)
+  // ========================================================================
   .pr-icon-twotone-primary {
     fill: @icon-twotone-primary;
   }
@@ -127,7 +135,8 @@
     opacity: @icon-twotone-secondary-opacity;
   }
 
-  // bulk
+  // Bulk Icon Styles: usable for icons with 2 color (always fillable | ex: hugeicons-bulk)
+  // ========================================================================
   .pr-icon-bulk-primary {
     fill: @icon-bulk-primary;
   }
@@ -137,7 +146,8 @@
     opacity: @icon-bulk-secondary-opacity;
   }
 
-  // iso: for isometric icons
+  // Iso Icon Styles: usable for isometric icons (ex: isocons)
+  // ========================================================================
   .pr-icon-iso-solid-stroke {
     stroke: @icon-iso-solid-stroke;
   }

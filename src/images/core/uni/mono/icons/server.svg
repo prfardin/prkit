@@ -8,5 +8,5 @@
     <circle cx="15" cy="6" r="1" class="pr-icon-primary"></circle>
     <circle cx="15" cy="12" r="1" class="pr-icon-primary"></circle>
     <circle cx="15" cy="18" r="1" class="pr-icon-primary"></circle>
-    <path class="pr-icon-primary" d="M9 7H6A1 1 0 0 1 6 5H9A1 1 0 0 1 9 7zM9 13H6a1 1 0 0 1 0-2H9a1 1 0 0 1 0 2zM9 19H6a1 1 0 0 1 0-2H9a1 1 0 0 1 0 2z"></path>
+    <path class="pr-icon-primary" d="M9 7H6A1 1 0 0 1 6 5H9A1 1 0 0 1 9 7zM9 13H6a1 1 0 0 1 0-2H9a1 1 0 0 1 0 2zM9 19H6a1 1 0 0 1 0-2H9a1 1 0 0 1 0 2z"/>
 </svg>

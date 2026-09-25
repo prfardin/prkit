@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <path class="pr-icon-tertiary" d="M17,16H6a4.00036,4.00036,0,0,1-.94385-7.8877A6.99757,6.99757,0,0,1,18.418,6.21484,4.99453,4.99453,0,0,1,17,16Z"></path>
+    <path class="pr-icon-tertiary" d="M17,16H6a4.00036,4.00036,0,0,1-.94385-7.8877A6.99757,6.99757,0,0,1,18.418,6.21484,4.99453,4.99453,0,0,1,17,16Z"/>
     <circle cx="8" cy="12" r="1" class="pr-icon-primary"></circle>
     <circle cx="8" cy="16" r="1" class="pr-icon-primary"></circle>
     <circle cx="8" cy="20" r="1" class="pr-icon-primary"></circle>

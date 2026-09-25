@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="10" class="pr-icon-tertiary"></circle>
-    <path class="pr-icon-primary" d="M16,16H8a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Z"></path>
-    <path class="pr-icon-primary" d="M12 17a.99974.99974 0 0 1-1-1V14a1 1 0 0 1 2 0v2A.99974.99974 0 0 1 12 17zM15 17a.99974.99974 0 0 1-1-1V14a1 1 0 0 1 2 0v2A.99974.99974 0 0 1 15 17zM9 17a.99974.99974 0 0 1-1-1V14a1 1 0 0 1 2 0v2A.99974.99974 0 0 1 9 17z"></path>
+    <path class="pr-icon-primary" d="M16,16H8a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2Z"/>
+    <path class="pr-icon-primary" d="M12 17a.99974.99974 0 0 1-1-1V14a1 1 0 0 1 2 0v2A.99974.99974 0 0 1 12 17zM15 17a.99974.99974 0 0 1-1-1V14a1 1 0 0 1 2 0v2A.99974.99974 0 0 1 15 17zM9 17a.99974.99974 0 0 1-1-1V14a1 1 0 0 1 2 0v2A.99974.99974 0 0 1 9 17z"/>
     <circle cx="15" cy="10" r="1" class="pr-icon-primary"></circle>
     <circle cx="9" cy="10" r="1" class="pr-icon-primary"></circle>
 </svg>

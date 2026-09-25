@@ -170,11 +170,11 @@ export type IconStyles =
   | 'solar-linear'
   | 'solar-linedu'
   | 'solar-outline'
-  | 'uni-light'
+  | 'uni-line'
   | 'uni-mono'
-  | 'uni-regular'
   | 'uni-solid'
+  | 'uni-thin'
 
-export const defaultIconStyle: IconStyles = 'uikit-regular' // ming-solid-twotone
+export const defaultIconStyle: IconStyles = 'uni-mono' // ming-solid-twotone
 
 export const dynamicIcons = []

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <path class="pr-icon-primary" d="M21,4H20V3a1,1,0,0,0-2,0V4H17a1,1,0,0,0,0,2h1V7a1,1,0,0,0,2,0V6h1a1,1,0,0,0,0-2Z"></path>
+    <path class="pr-icon-primary" d="M21,4H20V3a1,1,0,0,0-2,0V4H17a1,1,0,0,0,0,2h1V7a1,1,0,0,0,2,0V6h1a1,1,0,0,0,0-2Z"/>
     <rect width="6" height="13" x="2" y="9" class="pr-icon-quaternary" rx="1"></rect>
     <rect width="6" height="20" x="8" y="2" class="pr-icon-primary" rx="1"></rect>
     <rect width="6" height="11" x="14" y="11" class="pr-icon-tertiary" rx="1"></rect>

@@ -2,5 +2,5 @@
     <rect width="8" height="8" x="3" y="13" class="pr-icon-primary" rx="1"></rect>
     <rect width="8" height="8" x="3" y="3" class="pr-icon-primary" rx="1"></rect>
     <rect width="8" height="8" x="13" y="3" class="pr-icon-primary" rx="1"></rect>
-    <path class="pr-icon-tertiary" d="M20,16H18V14a1,1,0,0,0-2,0v2H14a1,1,0,0,0,0,2h2v2a1,1,0,0,0,2,0V18h2a1,1,0,0,0,0-2Z"></path>
+    <path class="pr-icon-tertiary" d="M20,16H18V14a1,1,0,0,0-2,0v2H14a1,1,0,0,0,0,2h2v2a1,1,0,0,0,2,0V18h2a1,1,0,0,0,0-2Z"/>
 </svg>
