@@ -88,7 +88,7 @@
  */
 
 export type IconStyles =
-  | 'uikit-'
+  | 'uikit-regular'
   | 'fa-duotone'
   | 'fa-duotoneli'
   | 'fa-duotoneso'
@@ -175,6 +175,6 @@ export type IconStyles =
   | 'uni-regular'
   | 'uni-solid'
 
-export const defaultIconStyle: IconStyles = 'ph-thin' // ming-solid-twotone
+export const defaultIconStyle: IconStyles = 'uikit-regular' // ming-solid-twotone
 
 export const dynamicIcons = []
