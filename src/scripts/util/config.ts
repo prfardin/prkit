@@ -6,12 +6,12 @@
  * and we will install with npm and use it.
  *
  * TODO:
- * The way that we want to separate the icon (PrKit-Icons) library
- * and component library (PrKit) The future plan has some question:
- * 1. default icon style for components must be predefined in component
- * library, so how do this.
- * 2. how compile icon build process will work on the component
- * library, what must be the structure of icon library and the build process
+ *  The way that we want to separate the icon (PrKit-Icons) library
+ *  and component library (PrKit) The future plan has some question:
+ *  1. default icon style for components must be predefined in component
+ *  library, so how do this.
+ *  2. how compile icon build process will work on the component
+ *  library, what must be the structure of icon library and the build process
  *
  * For icons we use structure of UIKit icon library, the current build process
  * will create uikit-icons.ts file in .temp folder and search for used
@@ -175,6 +175,6 @@ export type IconStyles =
   | 'uni-solid'
   | 'uni-thin'
 
-export const defaultIconStyle: IconStyles = 'uni-mono' // ming-solid-twotone
+export const defaultIconStyle: IconStyles = 'ming-twotone' // ming-solid-twotone
 
 export const dynamicIcons = []

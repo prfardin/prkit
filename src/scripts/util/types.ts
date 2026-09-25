@@ -8,7 +8,8 @@
  * xPropsType in props.ts until we fix propblems we define UIKit
  * types here and use them in props.ts as extends for xPropsType.
  *
- * TODO: Fix why we can't use UIKit define props: @types/uikit as extends for xPropsType in props.ts
+ * TODO:
+ *  Fix why we can't use UIKit define props: @types/uikit as extends for xPropsType in props.ts
  *
  * UIKit JavaScript Components also accept some options like:
  * UIKit.accordion(el, { active: number = false, animation: Boolean = true }) so
