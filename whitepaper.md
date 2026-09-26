@@ -43,12 +43,13 @@ we are making all project (CSS framework and vue components and starter kit) in 
 - [ ] add icon versions to icon-libraries
 - [ ] add isocons component icons
 
-- [ ] create all vue component from `uikit` `shurikenui` `shadcn`
-- [ ] create document hub for `PrKit` and `Vue`
-- [ ] create page layouts and sidebar examples (`Theme`)
-- [ ] create document hub for `Theme`
-- [ ] create starter kit for `Nuxt`
-- [ ] migrate to modern CSS rgb
+- [ ] Create all vue component from `uikit` `shurikenui` `shadcn`
+- [ ] Create document hub for `PrKit` and `Vue`
+- [ ] Create page layouts and sidebar examples (`Theme`)
+- [ ] Create document hub for `Theme`
+- [ ] Create starter kit for `Nuxt`
+- [ ] Migrate to modern CSS rgb
+- [ ] Fix accordion-circle icon for line-circle icon styles
 
 ## Tasklists (sub roadmap)
 - [ ] we need make this project separate to 4 npm libraries:
