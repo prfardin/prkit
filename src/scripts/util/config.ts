@@ -175,6 +175,6 @@ export type IconStyles =
   | 'uni-solid'
   | 'uni-thin'
 
-export const defaultIconStyle: IconStyles = 'ming-twotone' // ming-solid-twotone
+export const defaultIconStyle: IconStyles = 'ming-cute' // ming-solid-twotone
 
 export const dynamicIcons = []

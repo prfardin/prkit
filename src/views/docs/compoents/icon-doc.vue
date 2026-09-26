@@ -59,5 +59,27 @@ import PrIcon from '@c/PrIcon.vue'
       <pr-icon icon="icon-ming-solid-add" :ratio="2" :stroke-ratio="2" />
       <pr-icon icon="icon-ming-twotone-add" :ratio="2" :stroke-ratio="2" />
     </div>
+    <div class="uk-text-center">
+      <pr-icon icon="icon-solar-bold-add" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-solar-bolddu-add" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-solar-broken-add" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-solar-linear-add" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-solar-linedu-add" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-solar-outline-add" :ratio="2" :stroke-ratio="2" />
+    </div>
+    <div class="uk-text-center">
+      <pr-icon icon="icon-uni-line-plus" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-uni-mono-plus" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-uni-solid-plus" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-uni-thin-plus" :ratio="2" :stroke-ratio="2" />
+    </div>
+    <div class="uk-text-center">
+      <pr-icon icon="icon-ph-bold-plus" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-ph-duotone-plus" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-ph-light-plus" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-ph-regular-plus" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-ph-solid-plus" :ratio="2" :stroke-ratio="2" />
+      <pr-icon icon="icon-ph-thin-plus" :ratio="2" :stroke-ratio="2" />
+    </div>
   </div>
 </template>
