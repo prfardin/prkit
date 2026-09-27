@@ -81,5 +81,8 @@ import PrIcon from '@c/PrIcon.vue'
       <pr-icon icon="icon-ph-solid-plus" :ratio="2" :stroke-ratio="2" />
       <pr-icon icon="icon-ph-thin-plus" :ratio="2" :stroke-ratio="2" />
     </div>
+    <div class="uk-text-center">
+      <pr-icon icon="icon-isocons-duotonetop-123" :ratio="10" :stroke-ratio="2" />
+    </div>
   </div>
 </template>

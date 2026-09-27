@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref, useTemplateRef } from 'vue'
 
 import PrAccordion from '@c/PrAccordion.vue'
-import { accordionToggle } from '@u/util.ts'
+import { accordionToggle, setAccordion, setIcons } from '@u/util.ts'
 import type { RefElement } from '@u/types.ts'
 import PrAccordionContent from '@cch/PrAccordionContent.vue'
 import PrAccordionTitle from '@cch/PrAccordionTitle.vue'
@@ -41,6 +41,16 @@ function toggle() {
   // accordionToggle(testRef.value?.$el, 1, false)
   accordionToggle(refElement.value, 2, true)
 }
+
+const accordion = useTemplateRef<RefElement>('accordion')
+onMounted(() => {
+  setAccordion(accordion.value)
+  setIcons(accordion.value, '.pr-accordion-icon', {
+    icon: 'component-default-accordion-plus',
+    ratio: 0.9,
+    strokeRatio: 2
+  })
+})
 </script>
 
 <template>
@@ -80,44 +90,50 @@ function toggle() {
         <PrAccordionItem>
           <PrAccordionTitle icon="chevron" :icon-ratio="0.9" :stroke-ratio="3">Item 2</PrAccordionTitle>
           <PrAccordionContent>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor reprehenderit.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor reprehenderit.
           </PrAccordionContent>
         </PrAccordionItem>
         <PrAccordionItem>
           <PrAccordionTitle icon="plus" :icon-ratio="0.9" :stroke-ratio="3">Item 2</PrAccordionTitle>
           <PrAccordionContent>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor reprehenderit.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor reprehenderit.
           </PrAccordionContent>
         </PrAccordionItem>
         <PrAccordionItem>
           <PrAccordionTitle icon="circle" :icon-ratio="0.9" :stroke-ratio="3">Item 2</PrAccordionTitle>
           <PrAccordionContent>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor reprehenderit.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor reprehenderit.
           </PrAccordionContent>
         </PrAccordionItem>
       </PrAccordion>
 
       <!-- With Slot - Without Child Component (Child CSS class) -->
       <h2>With Slot - Without Child Component (CSS class)</h2>
-      <PrAccordion :active="1">
+      <ul class="pr-accordion-hover" ref="accordion">
         <li>
-          <a class="uk-accordion-title">Item 1</a>
+          <a class="uk-accordion-title">
+            Item 1
+            <span class="pr-accordion-icon uk-accordion-icon" />
+          </a>
           <div class="uk-accordion-content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
           </div>
         </li>
         <li>
-          <a class="uk-accordion-title">Item 2</a>
+          <a class="uk-accordion-title">
+            Item 2
+            <span class="pr-accordion-icon uk-accordion-icon" />
+          </a>
           <div class="uk-accordion-content">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor reprehenderit.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor reprehenderit.
           </div>
         </li>
-      </PrAccordion>
+      </ul>
     </div>
   </div>
 </template>

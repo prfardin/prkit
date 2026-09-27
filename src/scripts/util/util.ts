@@ -72,7 +72,7 @@
  * ======================================================================== */
 
 import UIkit from 'uikit'
-import type { RefElement } from '@u/types.ts'
+import type { RefElement, UIkitIconOptions } from '@u/types.ts'
 import type { AccordionPropsType, IconPropsType } from '@u/props'
 
 
@@ -80,7 +80,7 @@ import type { AccordionPropsType, IconPropsType } from '@u/props'
  * Miscellaneous functions and configs
  * ======================================================================== */
 
-export function omitUndefined<T extends object>(object: T) {
+export function omitUndefined<T extends object>(object?: T) {
   const result = {} as Partial<T>
 
   for (const key in object) {
@@ -104,10 +104,9 @@ export function omitUndefined<T extends object>(object: T) {
 
 /** Javascript Component */
 
-export function setAccordion(el: RefElement, options: AccordionPropsType, active?: number) {
+export function setAccordion(el: RefElement, options?: AccordionPropsType, active?: number) {
   return UIkit.accordion(el!, { ...omitUndefined(options), active })
 }
-
 
 /** Methods */
 
@@ -142,4 +141,10 @@ export function getAccordionIconName(icon: AccordionIconType) {
 
 export function setIcon(el: RefElement, options: IconPropsType) {
   return UIkit.icon(el!, { ...omitUndefined(options) })
+}
+
+/** Miscellaneous */
+
+export function setIcons(root: RefElement, selector: string, options: UIkitIconOptions) {
+  root!.querySelectorAll<HTMLElement>(selector).forEach(element => setIcon(element, options))
 }
