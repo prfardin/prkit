@@ -72,7 +72,7 @@ export function useComponentIcon<T extends string>(
       setIcon(icon.value, {
         icon: name,
         ratio: props.iconRatio,
-        strokeRatio: props.strokeRatio
+        strokeRatio: props.strokeRatio,
       })
     }
   }

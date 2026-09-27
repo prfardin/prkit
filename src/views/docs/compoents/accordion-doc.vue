@@ -48,7 +48,7 @@ onMounted(() => {
   setIcons(accordion.value, '.pr-accordion-icon', {
     icon: 'component-default-accordion-plus',
     ratio: 0.9,
-    strokeRatio: 2
+    strokeRatio: 2,
   })
 })
 </script>
@@ -88,21 +88,27 @@ onMounted(() => {
           </PrAccordionContent>
         </PrAccordionItem>
         <PrAccordionItem>
-          <PrAccordionTitle icon="chevron" :icon-ratio="0.9" :stroke-ratio="3">Item 2</PrAccordionTitle>
+          <PrAccordionTitle icon="chevron" :icon-ratio="0.9" :stroke-ratio="3">
+            Item 2
+          </PrAccordionTitle>
           <PrAccordionContent>
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat. Duis aute irure dolor reprehenderit.
           </PrAccordionContent>
         </PrAccordionItem>
         <PrAccordionItem>
-          <PrAccordionTitle icon="plus" :icon-ratio="0.9" :stroke-ratio="3">Item 2</PrAccordionTitle>
+          <PrAccordionTitle icon="plus" :icon-ratio="0.9" :stroke-ratio="3">
+            Item 2
+          </PrAccordionTitle>
           <PrAccordionContent>
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat. Duis aute irure dolor reprehenderit.
           </PrAccordionContent>
         </PrAccordionItem>
         <PrAccordionItem>
-          <PrAccordionTitle icon="circle" :icon-ratio="0.9" :stroke-ratio="3">Item 2</PrAccordionTitle>
+          <PrAccordionTitle icon="circle" :icon-ratio="0.9" :stroke-ratio="3">
+            Item 2
+          </PrAccordionTitle>
           <PrAccordionContent>
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat. Duis aute irure dolor reprehenderit.

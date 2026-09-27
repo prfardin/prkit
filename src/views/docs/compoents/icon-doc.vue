@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import PrIcon from '@c/PrIcon.vue'
-
 </script>
 
 <template>
