@@ -16,6 +16,8 @@ We will prevent to use components in components for exmaple a main compnent that
 
 we are making all project (CSS framework and vue components and starter kit) in one project and will separate them to our vision at last. 
 
+components are collection of UIKit components (with additional property and style) + some usable component that not exists in UIKit library (we can find other usable components name in library like shadcn or shuriken-ui)
+
 ## Visions
 - PrKIt and Vue: Ui CSS framework with components based on PrKit
 - Nuxt Starter based on PrKit Vue and have everything for start a front project

@@ -11,9 +11,9 @@
  * Component props itself has three part:
  * 1. xPropsType: the main props of component (PrKit Props)
  * 2. xClassType: will return CSS class of main component (extended into xPropsType)
- * 3. UIKitXOptions: UIKit JavaScript Component options (just useable for
+ * 3. UIKitxOptions: UIKit JavaScript Component options (just useable for
  * components that has UIKit JavaScript Component - extended into xPropsType)
- * ex: interface xPropsType extends UIkitXOptions, xClassType { ... }
+ * ex: interface xPropsType extends UIkitxOptions, xClassType { ... }
  *
  * refer to RefElementCallback description in types.ts file (line: 32 to 49) every
  * main compnent prop types (xPropsType) must have props with this define: refElement?: RefElementCallback
@@ -38,7 +38,7 @@
  * types and all Component Class Types
  *
  * Structure:
- * interface xPropsType extends UIkitXOptions, xClassType { ... props of stated of component }
+ * interface xPropsType extends UIkitxOptions, xClassType { ... props of stated of component }
  * const xDefaults = { ... props default values } satisfies Partial<xPropsType>
  * useage in compoonent:
  * const props = withDefaults(defineProps<xPropsType>(), xDefaults)
