@@ -67,6 +67,7 @@ onMounted(() => {
         :list="accordionList"
         @beforehide="(event) => console.log(event.type)"
         icon="chevron"
+        :stroke-ratio="1"
       />
       <h2>Line Style</h2>
       <PrAccordion :list="accordionList" variant="line" />

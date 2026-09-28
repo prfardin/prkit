@@ -50,7 +50,7 @@ export const rtlcssConfig: ConfigureOptions = {
 // we write plugin for vite to create rtl file before build process
 // and add it to rollupOptions inputs
 export function rtlPlugin() {
-  const input = ['src/.temp/default-rtl.less', 'index.html']
+  const input = ['src/.temp/default-rtl.css', 'index.html']
 
   async function config() {
     await compile()
@@ -69,10 +69,6 @@ export function rtlPlugin() {
 // we use async function here instead in above export default
 // because default function need to export as PluginOption
 export default async function compile() {
-  // read file and render to less
-  // readFileSync path must change to dynamic path
-  // we have plane to change the PrKit Ui dynamically
-  // that's because we need it to dynamic path
   const lessFile = fs.readFileSync('src/less/default-rtl.less', 'utf8')
 
   // render less and get result, result.css will get the compiled css
@@ -86,8 +82,7 @@ export default async function compile() {
   // and it will compile the theme-rtl.css in public path
   // because limitation of vite (or our knowledge) we use this method
   // it must change in the future, we know there is better way, so help us two improve it
-  postcss()
-    .use(rtlcss.configure(rtlcssConfig))
-    .process(css.css)
-    .then((result: any) => fs.writeFileSync('src/.temp/default-rtl.less', result.css))
+  const result = await postcss().use(rtlcss.configure(rtlcssConfig)).process(css.css)
+
+  await fs.writeFile('src/.temp/default-rtl.css', result.css)
 }

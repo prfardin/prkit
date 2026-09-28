@@ -14,9 +14,6 @@ interface ViteConfig {
   rtl: string | undefined
 }
 
-// TODO: must remove, process.env.NODE_ENV its no a real vite command
-const isDev = process.env.NODE_ENV === 'development'
-
 export function setIcons(defaultIcons: string) {
   return Promise.resolve(compileIcons('src', defaultIcons))
 }
@@ -35,6 +32,7 @@ export const vueI18nVite = vueI18n({
 // we use dynamicIcon plugin to watch added icons in the vue files
 // that is not necessary in the build mode
 export function pluginsFunc(
+  isDev = false,
   icons: any = setIcons(defaultIconStyle),
   plugins?: Plugin | PluginOption[],
 ): PluginOption[] {
@@ -48,7 +46,7 @@ export function pluginsFunc(
 // if user run build command we use our rtlPlugin to create separated
 // CSS file.
 export default function viteConfig({ rtl, command = 'serve' }: ViteConfig): UserConfig {
-  const vitePlugins = pluginsFunc()
+  const vitePlugins = pluginsFunc(command === 'serve')
   const postCssPlugins = []
   rtl && postCssPlugins.push(rtlcss.configure(rtlcssConfig))
   command === 'build' && vitePlugins.push(rtlPlugin())

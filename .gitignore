@@ -40,3 +40,4 @@ __screenshots__/
 
 # Custom
 opencode.json
+/src/.temp/*
