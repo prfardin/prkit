@@ -149,7 +149,7 @@ import { accordionClasses } from '@u/classes'
  * ...(selected = selected === item.value && collapsible ? null : item.value) so we need to
  * define collapse default value in accordionDefaults to access its value in accordion script
  * or template. it will always return undefined if we not define default value and will get
- * default value from UIKit when we want to set the UIKit JavaScript Component with setX (setAccirduib).
+ * default value from UIKit when we want to set the UIKit JavaScript Component with setX (setAccordion).
  *
  * For components that not contains defaults we will not define xDefaults and structre is:
  * const props = defineProps<xPropsType>()
@@ -240,7 +240,7 @@ function setElement(value: RefElement) {
 const emit = defineEmits<AccordionEmitsType>()
 
 const emitHandler = (event: Event) => {
-  emit(event.type as any, event, selected.value)
+  emit(event.type as never, event, selected.value)
 }
 
 useComponentEmit(el, accordionEmits, emitHandler)
@@ -440,7 +440,7 @@ onMounted(() => {
 <template>
   <component :class="accordionClass" :is="tag" :ref="setElement">
     <template v-if="list">
-      <template v-for="item in list">
+      <template v-for="(item, key) in list" :key>
         <component :is="itemTag" :class="{ 'pr-accordion-item-disabled': item.disabled }">
           <a
             class="uk-accordion-title"

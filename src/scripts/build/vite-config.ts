@@ -37,13 +37,18 @@ export const vueI18nVite = vueI18n({
 // we use dynamicIcon plugin to watch added icons in the vue files
 // that is not necessary in the build mode
 // TODO: markdown must move to docs project (another library)
-export function pluginsFunc(
+export async function pluginsFunc(
   isDev = false,
-  icons: any = setIcons(defaultIconStyle),
   plugins?: Plugin | PluginOption[],
-): PluginOption[] {
-  const p = [vueVite, markdown, vueJsx(), vueDevTools(), vueI18nVite, icons, plugins]
-  isDev && p.push(dynamicIcon())
+): Promise<PluginOption[]> {
+  await setIcons(defaultIconStyle)
+
+  const p = [vueVite, markdown, vueJsx(), vueDevTools(), vueI18nVite, plugins]
+
+  if (isDev) {
+    p.push(dynamicIcon())
+  }
+
   return p
 }
 
@@ -51,11 +56,21 @@ export function pluginsFunc(
 // to process and rtl less file will be used in dev mode.
 // if user run build command we use our rtlPlugin to create separated
 // CSS file.
-export default function viteConfig({ rtl, command = 'serve' }: ViteConfig): UserConfig {
-  const vitePlugins = pluginsFunc(command === 'serve')
+export default async function viteConfig({
+  rtl,
+  command = 'serve',
+}: ViteConfig): Promise<UserConfig> {
+  const vitePlugins = await pluginsFunc(command === 'serve')
+
   const postCssPlugins = []
-  rtl && postCssPlugins.push(rtlcss.configure(rtlcssConfig))
-  command === 'build' && vitePlugins.push(rtlPlugin())
+
+  if (rtl) {
+    postCssPlugins.push(rtlcss.configure(rtlcssConfig))
+  }
+
+  if (command === 'build') {
+    vitePlugins.push(rtlPlugin())
+  }
 
   return {
     plugins: vitePlugins,

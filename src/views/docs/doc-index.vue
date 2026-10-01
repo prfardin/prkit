@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useDarkModeStore } from '@vd/stores/darkMode.ts'
-import Sidebar from '@vd/sidebar.vue'
+import Sidebar from '@vd/doc-sidebar.vue'
 import 'highlight.js/styles/github-dark.css'
 
 const darkMode = useDarkModeStore()
