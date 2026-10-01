@@ -38,6 +38,11 @@ export const markdown = Markdown({
           )
         : result.replace('<code class="language-', '<code class="hljs language-')
     }
+
+    md.renderer.rules.table_open = () =>
+      '<div class="uk-overflow-auto"><table class="uk-table uk-table-divider">'
+
+    md.renderer.rules.table_close = () => '</table></div>'
   },
 
   wrapperClasses: 'pr-doc uk-container uk-container-xsmall',

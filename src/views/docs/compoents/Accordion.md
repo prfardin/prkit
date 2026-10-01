@@ -1,3 +1,4 @@
+<!-- language=ts
 <script setup lang="ts">
 import { onMounted, ref, useTemplateRef } from 'vue'
 
@@ -55,6 +56,7 @@ onMounted(() => {
   })
 })
 </script>
+-->
 
 # Accordion
 
@@ -69,29 +71,10 @@ onMounted(() => {
 The Accordion component consists of a parent container with the `uk-accordion` attribute, and a
 title and content part for each accordion item.
 
-<div class="uk-overflow-auto">
-    <table class="uk-table uk-table-divider">
-        <thead>
-            <tr>
-                <th>Class</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>.uk-accordion-title</code></td>
-                <td>
-                    Defines and styles the toggle for each accordion item.
-                    Use <code>&lt;a&gt;</code> elements.
-                </td>
-            </tr>
-            <tr>
-                <td><code>.uk-accordion-content</code></td>
-                <td>Defines the content part for each accordion item.</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+| Class                   | Description                                                                |
+| ----------------------- | -------------------------------------------------------------------------- |
+| `.uk-accordion-title`   | Defines and styles the toggle for each accordion item. Use `<a>` elements. |
+| `.uk-accordion-content` | Defines the content part for each accordion item.                          |
 
 To apply a style to the accordion, add the `.uk-accordion-default` modifier.
 
