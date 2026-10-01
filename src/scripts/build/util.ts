@@ -57,8 +57,9 @@ export async function compile(
 // Find which used icons in project and render just those svg from path
 // this function Scan all Vue files in project and Match icons by a naming pattern: "icon-*"
 // we must replace it with a better function, problem: it will scan all files
+// TODO: .md extension must move to another library (docs project)
 export async function findIcons(findDir: string, defaultIcons: string): Promise<Set<string>> {
-  const files = glob.sync(`${findDir}/**/*.{vue,ts}`)
+  const files = glob.sync(`${findDir}/**/*.{vue,ts,md}`)
   const iconSet = new Set<string>()
 
   const prefixes = ['icon-', 'component-default-']

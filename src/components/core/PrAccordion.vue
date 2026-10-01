@@ -143,6 +143,14 @@ import { accordionClasses } from '@u/classes'
  * duplication when types are shared. for example AccordionPropsType also extend
  * AccordionTitlePropsType becuase it is used by PrAccordionTiyle.vue component props.
  *
+ * For components that use UIKit JavaScript Options in their script or template, for accessing
+ * the default value of UIKit Component Option we need to define it in xDefaults. for
+ * example: accordion need to access collapsible value in the template like:
+ * ...(selected = selected === item.value && collapsible ? null : item.value) so we need to
+ * define collapse default value in accordionDefaults to access its value in accordion script
+ * or template. it will always return undefined if we not define default value and will get
+ * default value from UIKit when we want to set the UIKit JavaScript Component with setX (setAccirduib).
+ *
  * For components that not contains defaults we will not define xDefaults and structre is:
  * const props = defineProps<xPropsType>()
  *

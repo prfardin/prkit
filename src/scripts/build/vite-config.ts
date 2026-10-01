@@ -1,6 +1,8 @@
 import type { UserConfig, PluginOption, AliasOptions, Plugin } from 'vite'
 import rtlcss from 'rtlcss'
 import { rtlcssConfig, rtlPlugin } from './rtlcss.ts'
+// TODO: must change in future
+import { markdown } from './markdown.ts'
 import vueI18n from '@intlify/unplugin-vue-i18n/vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -19,7 +21,10 @@ export function setIcons(defaultIcons: string) {
 }
 
 // vue vite js plugin
-export const vueVite = vue()
+// TODO: .md Must move to docs project (another library)
+export const vueVite = vue({
+  include: [/\.vue$/, /\.md$/],
+})
 
 // vue i18n plugin
 export const vueI18nVite = vueI18n({
@@ -31,12 +36,13 @@ export const vueI18nVite = vueI18n({
 
 // we use dynamicIcon plugin to watch added icons in the vue files
 // that is not necessary in the build mode
+// TODO: markdown must move to docs project (another library)
 export function pluginsFunc(
   isDev = false,
   icons: any = setIcons(defaultIconStyle),
   plugins?: Plugin | PluginOption[],
 ): PluginOption[] {
-  const p = [vueVite, vueJsx(), vueDevTools(), vueI18nVite, icons, plugins]
+  const p = [vueVite, markdown, vueJsx(), vueDevTools(), vueI18nVite, icons, plugins]
   isDev && p.push(dynamicIcon())
   return p
 }

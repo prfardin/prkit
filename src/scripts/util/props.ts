@@ -29,7 +29,7 @@
  * Also, some of component props has default value, so same as props we define them
  * here after defining props and import them when defning component props (the defaultValue
  * type must be: satisfies Partial<xPropsType>)
- * for ex:
+ * for example:
  * const xDefaults = { ... props default values } satisfies Partial<xPropsType>
  * and use it like:
  * const props = withDefaults(defineProps<xPropsType>(), xDefaults) in component
@@ -42,6 +42,14 @@
  * const xDefaults = { ... props default values } satisfies Partial<xPropsType>
  * useage in compoonent:
  * const props = withDefaults(defineProps<xPropsType>(), xDefaults)
+ *
+ * If we want to use one of UIKit Component Options in our component we have not accessed to
+ * default value of UIKit JavaScript Component, so we need to define the default value in xDefaults
+ * for example: in accordion component we need to check the component is collapsible or not in
+ * template: <a @click="selected = collapsible ? null : item.value)"> so for accessing the default
+ * value of UIKit JavaScript Component options we need to define the defualt value of collapsible
+ * if we not define the value will be undfined and will recive the default value when we pass it to
+ * UIKit JavaScript Component (setX).
  *
  * ========================================================================
  */
@@ -108,6 +116,7 @@ export const accordionDefaults = {
   variant: 'default',
   icon: 'default',
   iconRatio: 0.7,
+  collapsible: true
 } satisfies Partial<AccordionPropsType>
 
 
