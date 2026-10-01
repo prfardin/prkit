@@ -13,7 +13,7 @@ export default function devRoutes(): RouteRecordRaw[] {
         return {
           name: name,
           path: `/docs/${name.toLowerCase()}`,
-          component: () => import(`../views/docs/compoents/${name}.md`),
+          component: () => import(`../views/docs/components/${name}.md`),
         }
       }),
     },
