@@ -4,11 +4,11 @@
  *
  * We use this file for classes of the main and child components
  * we return main CSS class from xClassObject function to
- * main component, its recive props and return classes
+ * main component, its receive props and return classes
  *
  * we also define xClassTypes here and extend them with
  * xPropsType in props.ts and define props as pure type annotations
- * refere to: https://vuejs.org/guide/typescript/composition-api.html#typing-component-props
+ * refer to: https://vuejs.org/guide/typescript/composition-api.html#typing-component-props
  *
  * we use xClassMap for each class style
  * The reason for using xClassMap is more lean for production
@@ -22,7 +22,7 @@
  * We also define type for each component classes
  *
  * The CSS class its: UIKit CSS classes that defined for
- * compnents + PrKit CSS classes (all defined in ./src/less/default/COMPONENTNAME|*.less)
+ * components + PrKit CSS classes (all defined in ./src/less/default/ComponentName|*.less)
  *
  * Structure:
  * interface xClassType { class1: value1 | value2, class2: value1, value2 }

@@ -3,6 +3,12 @@ import postcss from 'postcss'
 import rtlcss, { type ConfigureOptions } from 'rtlcss'
 import less from 'less'
 
+export type RtlcssContext = {
+  util: {
+    negate(value: string): string
+  }
+}
+
 // config of rtlcss and export to use in other methods
 // it copied from UIKit rtlcss config with little change
 export const rtlcssConfig: ConfigureOptions = {
@@ -32,7 +38,7 @@ export const rtlcssConfig: ConfigureOptions = {
       processors: [
         {
           expr: ['--uk-position-translate-x', 'stroke-dashoffset'].join('|'),
-          action(prop: any, value: any, context: any) {
+          action(prop: string, value: string, context: RtlcssContext) {
             return { prop, value: context.util.negate(value) }
           },
         },
@@ -40,7 +46,7 @@ export const rtlcssConfig: ConfigureOptions = {
     },
   ],
   hooks: {
-    pre(root: any, postcss: any) {
+    pre(root, postcss) {
       root.prepend(postcss.comment({ text: 'rtl:begin:rename' }))
       root.append(postcss.comment({ text: 'rtl:end:rename' }))
     },

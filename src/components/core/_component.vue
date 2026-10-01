@@ -93,7 +93,7 @@ const accordionClass = devComputed(() => accordionClasses(props))
  */
 
 onMounted(() => {
-  // If there is UIKit JavaScript Componnent
+  // If there is UIKit JavaScript Component
   // setAccordion(el.value, props)
   //
   // if (isDev) {

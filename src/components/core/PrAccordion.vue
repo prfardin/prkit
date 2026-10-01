@@ -21,15 +21,15 @@ import { accordionClasses } from '@u/classes'
  * style/ide from PrKit to make accordion component more usable. we explain the component and styles and
  * other property in the first comment of component.
  *
- * We follow this structture(here as accordion) for most component.
+ * We follow this structure(here as accordion) for most component.
  *
- * If components wich has JavaScript UIKit Component like Accordion:
+ * If components which has JavaScript UIKit Component like Accordion:
  * We define setAccordion(setX) and useComponentEmit(with const accordionEmits in @u/emits).
  *
  * For UIKit JavaScript Component:
  * we need to define RefElement for the main element of component.
  *
- * For component wich contains icon:
+ * For component which contains icon:
  * we define getAccordionIconName(getXIconName) and useComponentIcon.
  *
  * For component that has some of UIKit classes + some of PrKit classes:
@@ -39,7 +39,7 @@ import { accordionClasses } from '@u/classes'
  * we use AccordionPropsType(xPropsType) and accordionDefaults(xDefaults).
  *
  * For just run a code in development mode:
- * we use isDev, it will be treeshaking bye vite and will remove in production build.
+ * we use isDev, it will be treeshaking bye VITE and will remove in production build.
  *
  * For improving the performance in production build:
  * we use devComputed so values are reactive in development but remain non-reactive
@@ -47,7 +47,7 @@ import { accordionClasses } from '@u/classes'
  *
  * For improving development experience and development-time behavior:
  * we use devPropsWatch to watch some props change in development but
- * not in production build. must be sournded with if(isDev).
+ * not in production build. must be surrounded with if(isDev).
  *
  * So final import for components is like:
  * isDev: imported when The component include section of code that will be run just in development
@@ -131,17 +131,17 @@ import { accordionClasses } from '@u/classes'
  * const props = withDefaults(defineProps<xPropsType>(), xDefaults)
  *
  * xPropsType contains:
- * 1. UIKit JavaScript Component Props (if exists). structure: UIKitxOptions
+ * 1. UIKit JavaScript Component Props (if exists). structure: UIKitXOptions
  * 2. CSS Classes of components (UIKit classes and PrKit Classes for that component). structure: xClassType
  * 3. Component-specific props used for conditional rendering and other component logic. structure:
  * interface xPropsType extends
- *   UIkitxOptions, xClassType {
+ *   UIkitXOptions, xClassType {
  *   ...component-specific-props
  * }
  *
- * xPropsType will extend the types from UIKitxOptions and xClassType. It should also avoid type
+ * xPropsType will extend the types from UIKitXOptions and xClassType. It should also avoid type
  * duplication when types are shared. for example AccordionPropsType also extend
- * AccordionTitlePropsType becuase it is used by PrAccordionTiyle.vue component props.
+ * AccordionTitlePropsType because it is used by PrAccordionTitle.vue component props.
  *
  * For components that use UIKit JavaScript Options in their script or template, for accessing
  * the default value of UIKit Component Option we need to define it in xDefaults. for
@@ -151,7 +151,7 @@ import { accordionClasses } from '@u/classes'
  * or template. it will always return undefined if we not define default value and will get
  * default value from UIKit when we want to set the UIKit JavaScript Component with setX (setAccordion).
  *
- * For components that not contains defaults we will not define xDefaults and structre is:
+ * For components that not contains defaults we will not define xDefaults and structure is:
  * const props = defineProps<xPropsType>()
  *
  * ========================================================================
@@ -171,20 +171,20 @@ const props = withDefaults(defineProps<AccordionPropsType>(), accordionDefaults)
  * For first way we use If we want to access the component Element from parent we must define
  * function setElement and its props refElement. most usage is when we have UIKit JavaScript
  * Component, and we want to access the element from parent to use UIKit methods of component.
- * the structre is:
+ * the structure is:
  * const el = ref<RefElement>(null)
  * function setElement(value: RefElement) {
  *   el.value = value
  *   props.refElement?.(value)
  * }
- * <template><div|component :ref="setElement">...</tamplate>
+ * <template><div|component :ref="setElement">...</template>
  *
  * For second way if it's not too important to access the component element from parent we will keep
  * our component clean and more lean, and we will not define prop refElement and function setElement
- * the structre is:
+ * the structure is:
  * import { useTemplateRef } from 'vue'
  * const el = useTemplateRef<RefElement>('el')
- * <template><div|component ref="el"></tamplate>
+ * <template><div|component ref="el"></template>
  *
  * ========================================================================
  */

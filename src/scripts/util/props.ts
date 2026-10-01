@@ -11,23 +11,23 @@
  * Component props itself has three part:
  * 1. xPropsType: the main props of component (PrKit Props)
  * 2. xClassType: will return CSS class of main component (extended into xPropsType)
- * 3. UIKitxOptions: UIKit JavaScript Component options (just useable for
+ * 3. UIKitXOptions: UIKit JavaScript Component options (just useable for
  * components that has UIKit JavaScript Component - extended into xPropsType)
- * ex: interface xPropsType extends UIkitxOptions, xClassType { ... }
+ * ex: interface xPropsType extends UIkitXOptions, xClassType { ... }
  *
  * refer to RefElementCallback description in types.ts file (line: 32 to 49) every
- * main compnent prop types (xPropsType) must have props with this define: refElement?: RefElementCallback
+ * main component prop types (xPropsType) must have props with this define: refElement?: RefElementCallback
  * so we can use access the component element and use UIKit JavaScript methods of that component
  * when we define refElement props it can be accessed from parent like this:
  * <PrAccordion :ref-element="setRefElement" />
  * const refElement = ref<RefElement>(null)
  * const setRefElement = (el: RefElement) => { refElement.value = el }
  *
- * Component wich contains icons in their template always
+ * Component which contains icons in their template always
  * has this props: icon: xIconType, iconRatio: number, strokeWidth: number
  *
  * Also, some of component props has default value, so same as props we define them
- * here after defining props and import them when defning component props (the defaultValue
+ * here after defining props and import them when defining component props (the defaultValue
  * type must be: satisfies Partial<xPropsType>)
  * for example:
  * const xDefaults = { ... props default values } satisfies Partial<xPropsType>
@@ -38,17 +38,17 @@
  * types and all Component Class Types
  *
  * Structure:
- * interface xPropsType extends UIkitxOptions, xClassType { ... props of stated of component }
+ * interface xPropsType extends UIkitXOptions, xClassType { ... props of stated of component }
  * const xDefaults = { ... props default values } satisfies Partial<xPropsType>
- * useage in compoonent:
+ * usage in component:
  * const props = withDefaults(defineProps<xPropsType>(), xDefaults)
  *
  * If we want to use one of UIKit Component Options in our component we have not accessed to
  * default value of UIKit JavaScript Component, so we need to define the default value in xDefaults
  * for example: in accordion component we need to check the component is collapsible or not in
  * template: <a @click="selected = collapsible ? null : item.value)"> so for accessing the default
- * value of UIKit JavaScript Component options we need to define the defualt value of collapsible
- * if we not define the value will be undfined and will recive the default value when we pass it to
+ * value of UIKit JavaScript Component options we need to define the default value of collapsible
+ * if we not define the value will be undefined and will receive the default value when we pass it to
  * UIKit JavaScript Component (setX).
  *
  * ========================================================================

@@ -13,18 +13,18 @@
  *
  * So when we use a component like: accordion (base from UIKit) it has
  * some emits like: show, beforeshow, beforehide, hide and ...
- * so we have base structure for all component (not those just use CSS classes, thos
+ * so we have base structure for all component (not those just use CSS classes, those
  * must define with uk- prefix in HTML element tags like <ul uk-accordion>)
  * and heres the emits help us we define component emits here
- * and import them into porpose component and pass them to
- * compsable component (useComponentEmit) and then we can use
- * emit when Event happend at component action
+ * and import them into propose component and pass them to
+ * composable component (useComponentEmit) and then we can use
+ * emit when Event happened at component action
  *
- * We're using composable component for emits cuase
+ * We're using composable component for emits cause
  * its much more lean for production build, and component will be clean
  *
  * For define emits we declare emitted events using pure type annotations
- * refere to: https://vuejs.org/guide/typescript/composition-api.html#typing-component-emits
+ * refer to: https://vuejs.org/guide/typescript/composition-api.html#typing-component-emits
  *
  * We also define type for each component Emits
  *
@@ -33,7 +33,7 @@
  * interface xEmitsType { (e: UIKitComponentEvents1, event: Event, ...args, e: UIKitComponentEvents2, event: Event, ...args) }
  *
  * ...args: is how many arguments we will define for emits, for example:
- * we will always pass value in emits for accordion components cuase
+ * we will always pass value in emits for accordion components cause
  * component have defineModel
  *
  * then we will use it in components like:

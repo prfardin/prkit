@@ -9,7 +9,7 @@
  * vue suggestion: Avoid Unnecessary Component Abstractions refer to:
  * https://vuejs.org/guide/best-practices/performance.html#avoid-unnecessary-component-abstractions
  *
- * The proccess is we define HTML elemt to icon render insde it.
+ * The process is we define HTML element to icon render inside it.
  * like: <span ref="icon" />
  * then we define component icon names inside util.ts for
  * like: const accordionIconMap = {
@@ -27,7 +27,7 @@
  * }
  * then in component props:
  * interface AccordionPropsType { icon?: AccordionIconType, iconRatio?: number, strokeRatio?: number }
- * at last we need to call useComponentIcon in compnoent:
+ * at last we need to call useComponentIcon in component:
  * like: const { icon, iconName } = useComponentIcon(props, getAccordionIconName)
  * now we can call icon in props and use specific types:
  * <PrAccordion icon="none | plus | icon-fa-regular-chevron-down" :icon-ratio="1.5" :stroke-ratio="2" />

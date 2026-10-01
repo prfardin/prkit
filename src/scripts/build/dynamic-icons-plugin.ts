@@ -22,7 +22,9 @@ export function dynamicIcon(): Plugin {
           (icon) => !cachedIcons.has(icon) && cachedIcons.add(icon) && newIcon.add(icon),
         )
 
-        newIcon.size > 0 && (await appendIcons(newIcon, outputPath, defaultIconStyle))
+        if (newIcon.size > 0) {
+          await appendIcons(newIcon, outputPath, defaultIconStyle)
+        }
       }
     },
   }

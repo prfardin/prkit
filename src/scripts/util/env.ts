@@ -6,9 +6,9 @@
  *  We still don't have plan for this setting to keep it here or
  *  locate these configs in another files, so until that we keep them here
  *
- * Sometimes we need if and some ref just run in computed mod and we dont want
+ * Sometimes we need if and some ref just run in computed mod and we don't want
  * them to be reactive or run in production build see we use isDev const and
- * devComputed to reduce bundle size refere to https://vuejs.org/guide/best-practices/performance.html#bundle-size-and-tree-shaking
+ * devComputed to reduce bundle size refer to https://vuejs.org/guide/best-practices/performance.html#bundle-size-and-tree-shaking
  *
  * For a value be reactive just in dev mode and be simple const in production build we use: devComputed
  * ex: const devReactive = devComputed(() => .....)
@@ -17,7 +17,7 @@
  * ex: if (isDev) { ... }
  *
  * Component that's contains UIKit initialization methods for build need to
- * watch props changes (just in dev mod). wich props? nearly close to all props
+ * watch props changes (just in dev mod). which props? nearly close to all props
  * instead of some. so we use devPropsWatch to pass props for watch and filter unneeded props
  * in it.
  * ex: devPropsWatch(props, () => { ... }, ['unneededWatchProps1', 'unneededWatchProps2'])

@@ -16,7 +16,7 @@ const i18n = createI18n<[MessageSchema], Locales>({
   legacy: false,
   locale: 'en',
   fallbackLocale: 'en',
-  messages: messages as any, // type must change in future
+  messages: messages as never, // type must change in future
 })
 
 export default i18n

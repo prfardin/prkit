@@ -19,26 +19,26 @@
  * like: UIkit.accordion(el!, { ...omitUndefined(options), active })
  *
  * Why we omit undefined options?
- * when we want to use the options as props for our compnent (ex: PrAccordion)
- * it returns some value as vue default value refere to: https://vuejs.org/guide/components/props.html#boolean
+ * when we want to use the options as props for our component (ex: PrAccordion)
+ * it returns some value as vue default value refer to: https://vuejs.org/guide/components/props.html#boolean
  * or some value as undefined value, and it will replace the UIKit JavaScript component value
- * when we're trying to call the UIKit JavaScript function, for example if a component defualt option be like:
+ * when we're trying to call the UIKit JavaScript function, for example if a component default option be like:
  * v-bind = { active = false, animation = true, duration = 200 } it will be replaced with
  * { active = false, animation = false, duration = undefined } and when we calling it with
  * UIKit.accordion(el, props) the UIKit JavaScript component will be broke.
  * for fixing that we need to do 2 thing:
  * 1. define all UIKit boolean function like: boolean extends infer T ? T : never
  * and change all UIKit type option from boolean to UIkitBoolean. vue can't change
- * this boolean to false, and also we don't have propblem when we useing boolean
+ * this boolean to false, and also we don't have problem when we using boolean
  * value at calling component (it will accept just boolean)
- * 2. before we seend them to UIKit JavaScript Function we filter them using
+ * 2. before we send them to UIKit JavaScript Function we filter them using
  * omitUndefined function in the util.ts, it will remove the undefined props before
- * its recive to UIKit JavaScript Function
+ * its receive to UIKit JavaScript Function
  * omitUndefined function will remove the undefined props before
- * its recive to UIKit JavaScript Function
+ * its receive to UIKit JavaScript Function
  *
- * Refere to configs.ts line 48 to 73 components wich contains icons in their template must follow this
- * structre:
+ * Refer to configs.ts line 48 to 73 components which contains icons in their template must follow this
+ * structure:
  * const xIconMap = { style1: 'component-default-x-style1', style2: 'component-default-x-style2', ... } as const
  * type AccordionIconType = keyof typeof xIconMap | 'none' (if component style include: without icon) | (string & {})
  * function getXIconName(icon: xIconType) {
@@ -50,7 +50,7 @@
  * }
  *
  * Also, most of UIKit JavaScript Components has some methods to change state
- * of component programmatically, so we define thos methods here too, for
+ * of component programmatically, so we define those methods here too, for
  * example: accordionToggle
  *
  * Structure:

@@ -7,13 +7,15 @@ import devRoutes from '@/router/dev-routes'
 const routes: RouteRecordRaw[] = []
 
 // Prevent rendering of documentation routes and components in production mode.
-isDev && routes.push(...devRoutes())
+if (isDev) {
+  routes.push(...devRoutes())
+}
 
 const router: Router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   linkActiveClass: 'uk-active',
   linkExactActiveClass: 'uk-active',
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(to) {
     if (to.hash) {
       return {
         el: to.hash,

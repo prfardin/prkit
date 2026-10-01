@@ -5,8 +5,8 @@
  * For default UIKit emits we define useComponentEmit composable.
  * nearly all UIKit JavaScript Component expose events that are emitted when
  * their state changes.
- * for example accordion comopnent includes: beforeshow show, shown,
- * beforehide, hide, hidden. if we want to define these events in compnent itself
+ * for example accordion component includes: beforeshow show, shown,
+ * beforehide, hide, hidden. if we want to define these events in component itself
  * This would create unnecessary duplication and make the component structure harder
  * to maintain. so if we want to prevent duplication and keep our component
  * clean we useComponentEmit.
@@ -21,7 +21,7 @@
  * }
  * then define it in component:
  * const emit = defineEmits<accordionEmitsType>()
- * then add handler in compnent (we add it cuase handler for most of compnents is diffrent):
+ * then add handler in component (we add it cause handler for most of components is different):
  * const handler = (event: Event) => { emit(event.type as any, event, selected.value) }
  * at last call useComponentEmit:
  * useComponentEmit(el, accordionEmits, emitHandler)
@@ -29,9 +29,9 @@
  * TODO:
  * maybe handler structure for most component be like:
  * handler = (event: Event) => { emit(event.type as any, event) } without any extra arguments
- * so After seeing duplication of event handler we need to define defual handler
- * to prevent of calling everytime it in the component (before adding it we need to check
- * production build and preformance)
+ * so After seeing duplication of event handler we need to define default handler
+ * to prevent of calling every time it in the component (before adding it we need to check
+ * production build and performance)
  *
  * ========================================================================
  */

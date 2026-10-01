@@ -49,7 +49,10 @@ export async function mapIcons(compiledIcons: Icons, usedIcons: Set<string>, def
         const iconPath = `./src/images/core/${category}/${subcategory}/${base}s/${icon}.svg`
 
         const compiledIcon = await icons(iconPath)
-        compiledIcon && (compiledIcons[iconName] = compiledIcon)
+
+        if (compiledIcon) {
+          compiledIcons[iconName] = compiledIcon
+        }
       }
     }),
   )
@@ -61,7 +64,7 @@ export function stringify(icons: Icons) {
 
 // find all used icons in project and compile them
 export default async function compileIcons(findDir: string, defaultIcons: string) {
-  const usedIcons: Set<string> = await findIcons(findDir, defaultIcons)
+  const usedIcons: Set<string> = await findIcons(findDir)
 
   const compiledIcons: Icons = {}
   await mapIcons(compiledIcons, usedIcons, defaultIcons)

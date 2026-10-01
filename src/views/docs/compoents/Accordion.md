@@ -4,8 +4,8 @@ import { onMounted, ref, useTemplateRef } from 'vue'
 import PrAccordion from '@c/PrAccordion.vue'
 import { accordionToggle, setAccordion, setIcons } from '@u/util.ts'
 import type { RefElement } from '@u/types.ts'
-import PrAccordionContent from '@cch/PrAccordionContent.vue'
-import PrAccordionTitle from '@cch/PrAccordionTitle.vue'
+import PrAccordionContent from '@/components/core/children/PrAccordionContent.vue'
+import PrAccordionTitle from '@/components/core/children/PrAccordionTitle.vue'
 import PrAccordionItem from '@cch/PrAccordionItem.vue'
 
 const selected = ref(null)

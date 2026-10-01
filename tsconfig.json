@@ -10,5 +10,6 @@
     {
       "path": "./tsconfig.vitest.json"
     }
-  ]
+  ],
+  "exclude": ["src/components/core/_component.vue"]
 }

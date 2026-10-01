@@ -5,7 +5,7 @@
  * We can't use the main UIKit types: @types/uikit as extends for
  * xPropsType in props.ts, and we don't know why.
  * instead we defined them here and use them as extend in
- * xPropsType in props.ts until we fix propblems we define UIKit
+ * xPropsType in props.ts until we fix problems we define UIKit
  * types here and use them in props.ts as extends for xPropsType.
  *
  * TODO:
@@ -13,34 +13,34 @@
  *
  * UIKit JavaScript Components also accept some options like:
  * UIKit.accordion(el, { active: number = false, animation: Boolean = true }) so
- * when we want to use the options as props for our compnent (ex: PrAccordion)
- * it returns some value as vue default value refere to: https://vuejs.org/guide/components/props.html#boolean
+ * when we want to use the options as props for our component (ex: PrAccordion)
+ * it returns some value as vue default value refer to: https://vuejs.org/guide/components/props.html#boolean
  * or some value as undefined value, and it will replace the UIKit JavaScript component value
- * when we're trying to call the UIKit JavaScript function, for example if a component defualt option be like:
+ * when we're trying to call the UIKit JavaScript function, for example if a component default option be like:
  * v-bind = { active = false, animation = true, duration = 200 } it will be replaced with
  * { active = false, animation = false, duration = undefined } and when we calling it with
  * UIKit.accordion(el, props) the UIKit JavaScript component will be broke.
  * for fixing that we need to do 2 thing:
  * 1. define all UIKit boolean function like: boolean extends infer T ? T : never
  * and change all UIKit type option from boolean to UIkitBoolean. vue can't change
- * this boolean to false, and also we don't have propblem when we useing boolean
+ * this boolean to false, and also we don't have problem when we using boolean
  * value at calling component (it will accept just boolean)
- * 2. before we seend them to UIKit JavaScript Function we filter them using
+ * 2. before we send them to UIKit JavaScript Function we filter them using
  * omitUndefined function in the util.ts, it will remove the undefined props before
- * its recive to UIKit JavaScript Function
+ * its receive to UIKit JavaScript Function
  *
  * We also define other types here
  *
- * When are we using UIKit JavaScript Compnents, they contain methods, if we want to use
+ * When are we using UIKit JavaScript Components, they contain methods, if we want to use
  * methods we need the pass doom element to the method, so for getting element target we
  * have 3 way:
- * 1. set element compnent to a prop in that compnent (it can be accessed
- * from parent when define the ref - recomened)
- * 2. define templateRef (or ref) when useing component ex: <PrAccordion ref="x"> and
- * access the element with: xRef.value?.$el (optianl - maybe not work always)
+ * 1. set element component to a prop in that component (it can be accessed
+ * from parent when define the ref - recommend)
+ * 2. define templateRef (or ref) when using component ex: <PrAccordion ref="x"> and
+ * access the element with: xRef.value?.$el (optional - maybe not work always)
  * 3. define that method in component and expose component to access it from parent (removed)
  *
- * We preferd option one, becuase its lean for prodction build, and we
+ * We prefer option one, because its lean for production build, and we
  * make it conditional, so if specific props define in component it will compile it
  *
  * So all UIKit JavaScript Component Contains a prop named: refElement with type RefElementCallback
@@ -50,7 +50,7 @@
  * PrAccordion.vue: <component :ref="setElement">
  * setElement(value) { el.value = value; props.refElement?.(value) }
  *
- * RefElement type will use for those refs that will assing to element
+ * RefElement type will use for those refs that will assign to element
  *
  * ========================================================================
  */
@@ -200,7 +200,7 @@ interface UIkitDropElement extends UIkitElementBase {
   hide(delay?: UIkitBoolean): void
 }
 
-type UIkitDropdownOptions = UIkitDropOptionsBase
+// type UIkitDropdownOptions = UIkitDropOptionsBase
 
 interface UIkitDropdownElement extends UIkitElementBase {
   /** Shows the dropdown. */
