@@ -69,7 +69,7 @@
  * const { iconName } = useComponentIcon(props, getAccordionIconName)
  * utils.ts
  * const accordionIconMap = { default: 'component-default-accordion-default', chevron: 'component-default-accordion-chevron', ...styles } as const
- * type AccordionIconType = keyof typeof accordionIconMap | 'none' | (string & {})
+ * type AccordionIconType = keyof typeof accordionIconMap | 'none' | IconNames
  * export function getAccordionIconName(icon: AccordionIconType) {
  *   // for component without icon style
  *   if (icon === 'none') {
@@ -87,93 +87,100 @@
  * ========================================================================
  */
 
+export interface BaseIconStyles {
+  'default': true
+  'uikit-regular': true
+  'fa-duotone': true
+  'fa-duotoneli': true
+  'fa-duotoneso': true
+  'fa-duotoneth': true
+  'fa-light': true
+  'fa-regular': true
+  'fa-sharp': true
+  'fa-sharpduotone': true
+  'fa-sharpduotoneli': true
+  'fa-sharpduotoneso': true
+  'fa-sharpduotoneth': true
+  'fa-sharpli': true
+  'fa-sharpso': true
+  'fa-sharpth': true
+  'fa-solid': true
+  'fa-thin': true
+  'fa-brand': true
+  'huge-bulk': true
+  'huge-duotone': true
+  'huge-regular': true
+  'huge-rounded': true
+  'huge-sharp': true
+  'huge-solid': true
+  'huge-solidro': true
+  'huge-solidsh': true
+  'huge-twotone': true
+  'iconoir-regular': true
+  'iconoir-solid': true
+  'ion-regular': true
+  'ion-outline': true
+  'ion-sharp': true
+  'ion-logo': true
+  'isocons-left': true
+  'isocons-right': true
+  'isocons-top': true
+  'isocons-duotoneleft': true
+  'isocons-duotoneright': true
+  'isocons-duotonetop': true
+  'isocons-duotonesharpleft': true
+  'isocons-duotonesharpright': true
+  'isocons-duotonesharptop': true
+  'isocons-sharpleft': true
+  'isocons-sharpright': true
+  'isocons-sharptop': true
+  'isocons-solidleft': true
+  'isocons-solidright': true
+  'isocons-solidtop': true
+  'isocons-solidsharpleft': true
+  'isocons-solidsharpright': true
+  'isocons-solidsharptop': true
+  'lucide-regular': true
+  'magi-duotone': true
+  'magi-light': true
+  'magi-regular': true
+  'magi-solid': true
+  'md-outlined': true
+  'md-round': true
+  'md-sharp': true
+  'md-solid': true
+  'md-twotone': true
+  'ming-cute': true
+  'ming-cutefi': true
+  'ming-cuteli': true
+  'ming-duotone': true
+  'ming-light': true
+  'ming-regular': true
+  'ming-sharp': true
+  'ming-solid': true
+  'ming-twotone': true
+  'ph-bold': true
+  'ph-duotone': true
+  'ph-light': true
+  'ph-regular': true
+  'ph-solid': true
+  'ph-thin': true
+  'solar-bold': true
+  'solar-bolddu': true
+  'solar-broken': true
+  'solar-linear': true
+  'solar-linedu': true
+  'solar-outline': true
+  'uni-line': true
+  'uni-mono': true
+  'uni-solid': true
+  'uni-thin': true
+}
+
 export type IconStyles =
-  | 'uikit-regular'
-  | 'fa-duotone'
-  | 'fa-duotoneli'
-  | 'fa-duotoneso'
-  | 'fa-duotoneth'
-  | 'fa-light'
-  | 'fa-regular'
-  | 'fa-sharp'
-  | 'fa-sharpduotone'
-  | 'fa-sharpduotoneli'
-  | 'fa-sharpduotoneso'
-  | 'fa-sharpduotoneth'
-  | 'fa-sharpli'
-  | 'fa-sharpso'
-  | 'fa-sharpth'
-  | 'fa-solid'
-  | 'fa-thin'
-  | 'fa-brand'
-  | 'huge-bulk'
-  | 'huge-duotone'
-  | 'huge-regular'
-  | 'huge-rounded'
-  | 'huge-sharp'
-  | 'huge-solid'
-  | 'huge-solidro'
-  | 'huge-solidsh'
-  | 'huge-twotone'
-  | 'iconoir-regular'
-  | 'iconoir-solid'
-  | 'ion-regular'
-  | 'ion-outline'
-  | 'ion-sharp'
-  | 'ion-logo'
-  | 'isocons-left'
-  | 'isocons-right'
-  | 'isocons-top'
-  | 'isocons-duotoneleft'
-  | 'isocons-duotoneright'
-  | 'isocons-duotonetop'
-  | 'isocons-duotonesharpleft'
-  | 'isocons-duotonesharpright'
-  | 'isocons-duotonesharptop'
-  | 'isocons-sharpleft'
-  | 'isocons-sharpright'
-  | 'isocons-sharptop'
-  | 'isocons-solidleft'
-  | 'isocons-solidright'
-  | 'isocons-solidtop'
-  | 'isocons-solidsharpleft'
-  | 'isocons-solidsharpright'
-  | 'isocons-solidsharptop'
-  | 'lucide-regular'
-  | 'magi-duotone'
-  | 'magi-light'
-  | 'magi-regular'
-  | 'magi-solid'
-  | 'md-outlined'
-  | 'md-round'
-  | 'md-sharp'
-  | 'md-solid'
-  | 'md-twotone'
-  | 'ming-cute'
-  | 'ming-cutefi'
-  | 'ming-cuteli'
-  | 'ming-duotone'
-  | 'ming-light'
-  | 'ming-regular'
-  | 'ming-sharp'
-  | 'ming-solid'
-  | 'ming-twotone'
-  | 'ph-bold'
-  | 'ph-duotone'
-  | 'ph-light'
-  | 'ph-regular'
-  | 'ph-solid'
-  | 'ph-thin'
-  | 'solar-bold'
-  | 'solar-bolddu'
-  | 'solar-broken'
-  | 'solar-linear'
-  | 'solar-linedu'
-  | 'solar-outline'
-  | 'uni-line'
-  | 'uni-mono'
-  | 'uni-solid'
-  | 'uni-thin'
+  keyof BaseIconStyles extends never
+    ? string
+    : keyof BaseIconStyles
 
 export const defaultIconStyle: IconStyles = 'ming-cute' // ming-solid-twotone
 

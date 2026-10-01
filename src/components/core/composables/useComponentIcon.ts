@@ -11,13 +11,13 @@
  *
  * The process is we define HTML element to icon render inside it.
  * like: <span ref="icon" />
- * then we define component icon names inside util.ts for
- * like: const accordionIconMap = {
+ * then we define component icon names inside util.ts like:
+ * const accordionIconMap = {
  *   default: 'component-default-accordion-default',
  *   plus: 'component-default-accordion-plus'
  * } as const
  * then we must define icon props for component:
- * like: type accordionIconType = keyof typeof accordionIconMap | 'none' | (string & {})
+ * like: type accordionIconType = keyof typeof accordionIconMap | 'none' | IconNames
  * also for condition icon compile and access the full name of icon we define function that return icon name
  * like: export function getAccordionIconName(icon: AccordionIconType) {
  *   if (icon === 'none') {

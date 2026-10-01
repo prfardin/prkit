@@ -56,12 +56,28 @@
  */
 
 /**
+ * Imports
+ * ======================================================================== */
+
+import type { IconStyles } from '@u/config'
+
+
+/**
  * Generic|Custom Types
  * ======================================================================== */
 
 export type RefElement = HTMLElement | null
 export type RefElementCallback = (el: RefElement) => void
 
+/** Icon names Types  */
+type StringSuffix<T extends string> =
+  T | (`${T}${string}` & { _?: string })
+
+export type IconStylePrefix = {
+  [Style in IconStyles]: `icon-${Style}-`
+}[IconStyles]
+
+export type IconName = StringSuffix<IconStylePrefix>
 
 /** useComponentIcon Types */
 export type IconNameResolver<T extends string = string> = (icon: T) => string | false

@@ -39,8 +39,9 @@
  *
  * Refer to configs.ts line 48 to 73 components which contains icons in their template must follow this
  * structure:
+ * import type { IconNames } from '@u/types.ts'
  * const xIconMap = { style1: 'component-default-x-style1', style2: 'component-default-x-style2', ... } as const
- * type AccordionIconType = keyof typeof xIconMap | 'none' (if component style include: without icon) | (string & {})
+ * type AccordionIconType = keyof typeof xIconMap | 'none' (if component style include: without icon) | IconNames
  * function getXIconName(icon: xIconType) {
  *   // if component style include: without icon
  *   if (icon === 'none') {
@@ -72,7 +73,7 @@
  * ======================================================================== */
 
 import UIkit from 'uikit'
-import type { RefElement, UIkitIconOptions } from '@u/types.ts'
+import type { RefElement, IconName, UIkitIconOptions } from '@u/types.ts'
 import type { AccordionPropsType, IconPropsType } from '@u/props'
 
 
@@ -123,7 +124,7 @@ export const accordionIconMap = {
   circle: 'component-default-accordion-circle',
 } as const
 
-export type AccordionIconType = keyof typeof accordionIconMap | 'none' | (string & {})
+export type AccordionIconType = keyof typeof accordionIconMap | 'none' | IconName
 
 export function getAccordionIconName(icon: AccordionIconType) {
   if (icon === 'none') {

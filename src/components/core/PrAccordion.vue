@@ -205,7 +205,7 @@ function setElement(value: RefElement) {
  * We Define emits for components with this structure:
  * const emit = defineEmits<xEmitsType>()
  * const emitHandler = (event: Event) => {
- *   emit(event.type as any, event, ...if any other orgument defined)
+ *   emit(event.type as any, event, ...if any other argument defined)
  * }
  * useComponentEmit(el, xEmits, emitHandler)
  *
@@ -213,7 +213,7 @@ function setElement(value: RefElement) {
  * for example accordionEmits is like:
  * const accordionEmits = [ 'beforeshow', 'show', 'shown', 'beforehide', 'hide', 'hidden' ] as const
  *
- * xEmitsType is the vue emits defined as pure type annotations. for exmaple:
+ * xEmitsType is the vue emits defined as pure type annotations. for example:
  * interface AccordionEmitsType {
  *   (e: 'beforeshow', event: Event, value: unknown): void
  *   (e: 'show', event: Event, value: unknown): void
@@ -223,14 +223,14 @@ function setElement(value: RefElement) {
  *   (e: 'hidden', event: Event, value: unknown): void
  * }
  *
- * emitHandler is same for most components but if emits pass additional argumanet
- * we must add it to emit handled also. for exmaple accordion also pass addtional arg in
+ * emitHandler is same for most components but if emits pass additional argument
+ * we must add it to emit handled also. for example accordion also pass additional arg in
  * emit:
  * const emitHandler = (event: Event) => {
- *   emit(event.type as any, event, ...adintional arguments goes here)
+ *   emit(event.type as any, event, ...additional arguments goes here)
  * }
  *
- * For components that not contains UIKit JavaScript Compnoents we will not use this structure,
+ * For components that not contains UIKit JavaScript Components we will not use this structure,
  * and we will use the simple way of vue for defining emit. most time we will not use emit if
  * there is no event.
  *
@@ -274,7 +274,7 @@ useComponentEmit(el, accordionEmits, emitHandler)
  *   return accordionVariantMap[props.variant!]
  * }
  *
- * If component contains mutle xClassTypeKey the structure for component in classes.ts will be:
+ * If component contains multiple xClassTypeKey the structure for component in classes.ts will be:
  * interface xClassType {
  *   class1?: value1 | value2
  *   class2?: value1 | value2
@@ -322,22 +322,22 @@ const accordionClass = devComputed(() => accordionClasses(props))
  * const { iconName } = useComponentIcon(props, getXIconName)
  * <span v-if="iconName" ref="icon" />
  *
- * useComponentIcon will recive 2 argument:
+ * useComponentIcon will receive 2 argument:
  * 1. props: it will use icon, iconRatio and strokeRatio defined in props to define props for icon
  * render function.
  *
- * 2. getXIconName: its condtional rendering for structure of icon name. sometimes needed becuase
+ * 2. getXIconName: its conditional rendering for structure of icon name. sometimes needed because
  * we want to define our icon style for component, and sometimes we just pass the props default
  * icon name or props defined icon name. if we have style or condition rendering icon name we need
  * to define getXIconName. for example, we define icon type/style for accordion component so the
- * structre of getXIconName is like:
+ * structure of getXIconName is like:
  * export const accordionIconMap = {
  *   default: 'component-default-accordion-default',
  *   plus: 'component-default-accordion-plus',
  *   chevron: 'component-default-accordion-chevron',
  *   circle: 'component-default-accordion-circle',
  * } as const
- * export type AccordionIconType = keyof typeof accordionIconMap | 'none' | (string & {})
+ * export type AccordionIconType = keyof typeof accordionIconMap | 'none' | IconNames
  * export function getAccordionIconName(icon: AccordionIconType) {
  *   if (icon === 'none') {
  *     return false
@@ -348,7 +348,7 @@ const accordionClass = devComputed(() => accordionClasses(props))
  * most component will follow the same role as getAccordionIconName if they have multiple icon
  * style/type or conditional icon render.
  *
- * if they dosnt have multiple icon style/type or conditional icon rendering they will use
+ * if they dos'nt have multiple icon style/type or conditional icon rendering they will use
  * this structure (best for performance - Use the direct resolver for simple icons):
  * const xIconName = () => props.icon
  * const { iconName } = useComponentIcon(props, xIconName)
@@ -356,7 +356,7 @@ const accordionClass = devComputed(() => accordionClasses(props))
  *
  * Use getXIconName only when the component needs icon mapping or conditional icon resolution.
  *
- * If component contain icons we use the one of the structre above. otherwise, this section
+ * If component contain icons we use the one of the structure above. otherwise, this section
  * is not needed.
  *
  * ========================================================================
@@ -376,7 +376,7 @@ const { iconName } = useComponentIcon(props, getAccordionIconName)
  * For UIKit JavaScript Components, initialize the component in onMounted:
  * setX(el.value, props, ...additional-args)
  *
- * The setX is function wich defined in util.js and will render UIKit JavaScript component
+ * The setX is function which defined in util.js and will render UIKit JavaScript component
  * into element (like UIKit HTML attribute uk-x).
  *
  * The structure of setX function is:
@@ -400,8 +400,8 @@ const { iconName } = useComponentIcon(props, getAccordionIconName)
  * }
  * Why do we use devPropsWatch? Some prop changes, such as the active accordion item, are not
  * automatically synchronized with the initialized UIKit component, so we recompile the component
- * when those props change during development. it will just happend in development mode
- * (becuase of isDev) and we don't need it at production build.
+ * when those props change during development. it will just happened in development mode
+ * (because of isDev) and we don't need it at production build.
  *
  * For most UIKit JavaScript Component we will use setX and devPropsWatch but for rest of them
  * we will prevent to using these methods.
