@@ -9,11 +9,11 @@ export default function devRoutes(): RouteRecordRaw[] {
       name: 'Docs',
       path: '/docs',
       component: () => import('@vd/doc-index.vue'),
-      children: docLinks.map((name) => {
+      children: docLinks.map(([name, type]) => {
         return {
           name: name,
           path: `/docs/${name.toLowerCase()}`,
-          component: () => import(`../views/docs/components/${name}.md`),
+          component: () => import(`../views/docs/components/${name}.${type}`),
         }
       }),
     },

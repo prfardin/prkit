@@ -62,9 +62,7 @@ onMounted(() => {
 
 <p class="uk-text-lead">Create a list of items that can be shown individually by clicking an item's header.</p>
 
-<hr cls="uk-margin-large-top uk-margin-medium-bottom" />
-
-<h2 class="uk-h3">Usage</h2>
+## Usage
 
 The Accordion component consists of a parent container with the `uk-accordion` attribute, and a
 title and content part for each accordion item.

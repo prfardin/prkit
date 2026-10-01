@@ -28,7 +28,7 @@ const darkMode = useDarkModeStore()
         <li>Components</li>
         <li class="uk-nav-divider"></li>
         <RouterLink
-          v-for="(link, index) in docLinks"
+          v-for="([link], index) in docLinks"
           :to="`/docs/${link.toLowerCase()}`"
           v-bind="$props"
           v-slot="{ navigate }"
