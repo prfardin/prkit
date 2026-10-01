@@ -100,7 +100,7 @@ v-model="selected"
 
 <PrAccordion :list="accordionList" variant="hover" />
 
-<hr class="uk-margin-large" />
+---
 
 ## With List Array
 
