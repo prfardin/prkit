@@ -6,7 +6,6 @@
 
 // Miscellaneous Variables
 @uikit-less: 'uikit/src/less/components';
-@font-path: '/back-office/src/fonts';
 
 //
 // Less Variables
@@ -44,20 +43,7 @@
 // Typography
 //
 
-@global-font-family:
-  @global-font-family-base,
-  -apple-system,
-  BlinkMacSystemFont,
-  'Segoe UI',
-  Roboto,
-  'Helvetica Neue',
-  Arial,
-  'Noto Sans',
-  sans-serif,
-  'Apple Color Emoji',
-  'Segoe UI Emoji',
-  'Segoe UI Symbol',
-  'Noto Color Emoji';
+@global-font-family:                            var(--global-font-family);
 @global-font-size:                              var(--global-font-size);
 @global-line-height:                            var(--global-line-height);
 
@@ -116,7 +102,7 @@
 @global-icon-iso-duotone-tertiary-color:        var(--global-icon-iso-duotone-tertiary-color);
 @global-icon-iso-duotone-quaternary-color:      var(--global-icon-iso-duotone-quaternary-color);
 
-@global-icon-favourite-color:                   var(--global-icon-favourite-color);
+@global-icon-favorite-color:                    var(--global-icon-favorite-color);
 
 //
 // Backgrounds
@@ -192,20 +178,3 @@
 @global-rounded-radius:                         var(--global-rounded-radius);
 @global-middle-transform-top:                   var(--global-middle-transform-top);
 @global-middle-transform:                       var(--global-middle-transform);
-
-// PRKit Global variables
-// ========================================================================
-
-//
-// Sidebar
-//
-
-@global-sidebar-width:                          var(--global-sidebar-width);
-@global-sidebar-height:                         var(--global-sidebar-height);
-
-//
-// Spinners
-//
-
-@global-spinner-width:                          var(--global-spinner-width);
-@global-spinner-height:                         var(--global-spinner-height);

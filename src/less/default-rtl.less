@@ -1,18 +1,44 @@
-// Import UIkit default theme (or uikit.less with only core styles)
-// @import "node_modules/uikit/src/less/uikit.theme.less";
+// import fonts for rtl language. must import at the top
+// we keep rtl .css file separated from main css file because
+// it has different directions and fonts and some options like line-height are different
+// in rtl fonts
+@import 'default/font.less';
 
-// import fonts: for rtl
-// cause most fonts are support one language
-// and some options like line-height are different in multiple language
-// that fonts are not support them
-@import 'default/fonts-rtl';
-
-// import css variables
-// must import at top after fonts
-@import 'default/variables-css';
+// import css variables. must import at top after fonts
+@import 'default/variables-css.less';
 
 // import UIkit core
 @import 'core.less';
 
-// import custom theme
-@import 'default/_import';
+// import PrKit theme
+@import 'default/_import.less';
+
+
+// define default rtl font family. we put one example
+// then put the name in --global-font-family-base in .variables()
+.font-face() {
+  @font-face {
+    font-family: 'vazirmatn';
+    src: url('@f/vazirmatn/vazirmatn.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 200 800;
+  }
+}
+
+// change default variables and new .less or css or any stylesheets goes here
+.variables() {
+  --global-font-family-base:          'vazirmatn';
+  --global-font-family:               var(--global-font-family-base),
+                                        -apple-system,
+                                        BlinkMacSystemFont,
+                                        'Segoe UI',
+                                        Roboto,
+                                        'Helvetica Neue',
+                                        Arial,
+                                        'Noto Sans',
+                                        sans-serif,
+                                        'Apple Color Emoji',
+                                        'Segoe UI Emoji',
+                                        'Segoe UI Symbol',
+                                        'Noto Color Emoji';
+}

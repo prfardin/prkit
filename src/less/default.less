@@ -1,32 +1,48 @@
-// Import UIkit default theme (or uikit.less with only core styles)
-// @import "node_modules/uikit/src/less/uikit.theme.less";
+// import fonts for default lang. must import at the top
+@import 'default/font.less';
 
-// import fonts: for ltr
-@import 'default/fonts';
-
-// import css variables
-// must import at top after fonts
-@import 'default/variables-css';
+// import css variables. must import at top after fonts
+@import 'default/variables-css.less';
 
 // import UIkit core
 @import 'core.less';
 
-// import custom themes
-@import 'default/_import';
+// import PrKit themes
+@import 'default/_import.less';
 
 
-// must change in future
-// change global colors for just theming
-:root {
-/*  --global-color: #5e6b86;
-  --global-emphasis-color: #333;
-  --global-muted-color: #c2c4c9;
-  --global-white-color: #fdfdfd;
-  --global-muted-background: #f0f4f7;
-  --global-primary-background: #2785ff;
-  --global-secondary-background: #161719;
-  --global-success-background: #6fcf96;
-  --global-warning-background: #fe754b;
-  --global-danger-background: #f0506e;
-  --global-border: #ecf0f6;*/
-}
+// define default font family. we put one example
+// then put the name in --global-font-family-base in .variables()
+// .font-face() {
+//   @font-face {
+//     font-family: 'inter';
+//     src: url('@f/inter/inter.woff2') format('woff2');
+//     font-style: normal;
+//     font-weight: 200 800;
+//   }
+
+//   @font-face {
+//     font-family: 'inter';
+//     src: url('@f/inter/inter-italic.woff2') format('woff2');
+//     font-style: italic;
+//     font-weight: 200 800;
+//   }
+// }
+
+// change default variables and new .less or css or any stylesheets goes here
+// .variables() {
+//   --global-font-family-base:          'inter';
+//   --global-font-family:               var(--global-font-family-base), 'other-font-families';
+
+//   --global-color: #5e6b86;
+//   --global-emphasis-color: #333;
+//   --global-muted-color: #c2c4c9;
+//   --global-white-color: #fdfdfd;
+//   --global-muted-background: #f0f4f7;
+//   --global-primary-background: #2785ff;
+//   --global-secondary-background: #161719;
+//   --global-success-background: #6fcf96;
+//   --global-warning-background: #fe754b;
+//   --global-danger-background: #f0506e;
+//   --global-border: #ecf0f6;
+// }

@@ -7,27 +7,29 @@
 // Variables
 // ========================================================================
 
-@global-font-family-base:               'Karla';
-
 /* ========================================================================
    Component: Fonts
  ========================================================================== */
 
 /*
- * 1. set font-weights
+ * 1. set global fonts
  */
 
 /* 1 */
-.font-face('Karla', '@f/karla/karla-extralight', 200);
+.font-face() when (default()) {
+  @font-face {
+    font-family: var(--global-font-family-base);
+    src: url('@f/karla/karla.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 200 800;
+  }
 
-.font-face('Karla', '@f/karla/karla-light', 300);
+  @font-face {
+    font-family: var(--global-font-family-base);
+    src: url('@f/karla/karla-italic.woff2') format('woff2');
+    font-style: italic;
+    font-weight: 200 800;
+  }
+}
 
-.font-face('Karla', '@f/karla/karla-regular', normal);
-
-.font-face('Karla', '@f/karla/karla-medium', 500);
-
-.font-face('Karla', '@f/karla/karla-semibold', 600);
-
-.font-face('Karla', '@f/karla/karla-bold', 700);
-
-.font-face('Karla', '@f/karla/karla-extrabold', 800);
+.font-face();
